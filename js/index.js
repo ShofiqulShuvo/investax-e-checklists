@@ -25,18 +25,16 @@ let currentStep = 1;
         prevBtn.disabled = step === 1;
     }
 
-    function nextStep(event) {
+    function nextStep() {
         if (currentStep < totalSteps) {
             currentStep++;
             showStep(currentStep);
         }
-        event.preventDefault();
     }
 
-    function prevStep(event) {
+    function prevStep() {
         if (currentStep > 1) {
             currentStep--;
             showStep(currentStep);
         }
-        event.preventDefault();
     }

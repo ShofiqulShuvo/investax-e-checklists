@@ -2,7 +2,7 @@
 
 
 .navbar .navbar-brand {
-  max-width: 250px;
+  max-width: 180px;
 }
 
 .navbar .navbar-brand img {
@@ -30,7 +30,12 @@
   border-color: #9e6d2d;
 }
 
-/* step form */
+/* info heading */
+.info-heading p {
+  font-weight: 500;
+}
+
+/*  form */
 .step-form {
   margin: 2rem auto;
   padding: 1.25rem;
@@ -40,6 +45,36 @@
   display: none;
 }
 
-.step-form .form-heading p {
-    font-weight: 500;
+
+.step-form label {
+  font-weight: 500;
+  color: #000;
+  font-size: 1.05rem;
+}
+
+.step p.lead {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #000;
+}
+
+
+
+
+
+
+/* login page and */
+.login-page, .otp-page {
+  background: #ebebeb;
+}
+
+.login-page .card, .otp-page .card {
+  border-radius: 10px;
+  border: unset;
+}
+
+.login-page label, .otp-page label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #000;
 }

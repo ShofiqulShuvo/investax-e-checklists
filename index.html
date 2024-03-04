@@ -58,35 +58,103 @@
 
     <main>
       <div class="container">
+
+        <div class="info-heading my-5">
+          <h2 class="text-center mb-4">Individual Information Checklist</h2>
+          <p class="lead text-center">
+            Please note that most of 2022-2023 tax returns are due for
+            lodgment by 15 May 2024 (unless you have been informed otherwise).
+            In order for us to complete your return by the due date, we will
+            require your documentation no later than 1 March 2024.
+          </p>
+          <p class="lead text-center">
+            During peak tax periods our turnaround is 6-8 weeks from when we
+            receive your documentation.
+          </p>
+        </div>
+
         <form
           class="step-form bg-white border border-secondary-subtle rounded-3 p-5"
         >
-          <div class="form-heading mb-5">
-            <h2 class="text-center mb-4">Individual Information Checklist</h2>
-            <p class="lead text-center">
-              Please note that most of 2022-2023 tax returns are due for
-              lodgment by 15 May 2024 (unless you have been informed otherwise).
-              In order for us to complete your return by the due date, we will
-              require your documentation no later than 1 March 2024.
-            </p>
-            <p class="lead text-center">
-              During peak tax periods our turnaround is 6-8 weeks from when we
-              receive your documentation.
-            </p>
+
+          <div class="step">
+            <label class="form-label d-block">
+              If your return is not required urgently, please indicate period that would be suitable:
+            </label>
+
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="requiredPeriod" id="urgent">
+              <label class="form-check-label" for="urgent">
+                Urgent
+              </label>
+            </div>
+
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="requiredPeriod" id="4-6-week">
+              <label class="form-check-label" for="4-6-week">
+                4-6 Weeks
+              </label>
+            </div>
+
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="requiredPeriod" id="6-8-week">
+              <label class="form-check-label" for="6-8-week">
+                6-8 Weeks
+              </label>
+            </div>
+
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="requiredPeriod" id="8-10-week">
+              <label class="form-check-label" for="8-10-week">
+                8-10 Weeks
+              </label>
+            </div>
+
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="requiredPeriod" id="anytime">
+              <label class="form-check-label" for="anytime">
+                Anytime before Due Date
+              </label>
+            </div>
+
           </div>
 
-          <div class="step" id="step1">
+          <div class="step">
             <div class="row g-3">
               <div class="col-md-6">
-                <label for="inputEmail4" class="form-label">Email</label>
-                <input type="email" class="form-control" id="inputEmail4" />
+                <label for="givenName" class="form-label">Given Name</label>
+                <input type="text" class="form-control" id="givenName" />
               </div>
               <div class="col-md-6">
-                <label for="inputPassword4" class="form-label">Password</label>
+                <label for="middleName" class="form-label">Middle Name</label>
                 <input
-                  type="password"
+                  type="text"
                   class="form-control"
-                  id="inputPassword4"
+                  id="middleName"
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="surName" class="form-label">Surname</label>
+                <input type="text" class="form-control" id="surName" />
+              </div>
+              <div class="col-md-6">
+                <label for="birthDate" class="form-label">Date of Birth</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="birthDate"
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="taxFileNumber" class="form-label">Text File Number</label>
+                <input type="text" class="form-control" id="taxFileNumber" />
+              </div>
+              <div class="col-md-6">
+                <label for="Occupation" class="form-label">Occupation</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="Occupation"
                 />
               </div>
               <div class="col-12">
@@ -97,17 +165,131 @@
                   id="inputAddress"
                 />
               </div>
+              <div class="col-md-6">
+                <label for="homePhone" class="form-label">Home Phone</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="homePhone"
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="mobile" class="form-label">Mobile</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="mobile"
+                />
+              </div>
+              <div class="col-12">
+                <label for="accountName" class="form-label">Account Name*</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="accountName"
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="bankBsbNumber" class="form-label">Bank BSB Number*</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="bankBsbNumber"
+                  required
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="bankAccNumber" class="form-label">Bank ACC Number*</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="bankAccNumber"
+                  required
+                />
+              </div>
+              <div class="col-md-12">
+                <label for="emailAddress" class="form-label">Email Address</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="emailAddress"
+                />
+              </div>
+              <div class="col-md-12">
+                <label class="form-label">
+                  Names of Dependent Children & D.O.B
+                </label>
+                <input
+                  type="text"
+                  class="form-control mb-3"
+                />
+                <input
+                  type="text"
+                  class="form-control mb-3"
+                />
+                <input
+                  type="text"
+                  class="form-control"
+                />
+              </div>
+              <div class="col-md-12">
+                <label for="spousePartner" class="form-label">
+                  Name of Spouse or Partner & D.O.B (Includes same sex couples)*
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="spousePartner"
+                  required
+                />
+              </div>
+              <div class="col-md-12">
+                <p class="text-danger">
+                  *COMPULSORY: Please supply spouse taxable income, include Reportable Fringe Benefits, Reportable Superannuation
+                </p>
+              </div>
             </div>
           </div>
 
-          <div class="step" id="step2">
-            <h2>Step 2</h2>
-            <p>Step 2 Content</p>
-          </div>
+          <div class="step">
+            <label class="form-check-label d-block mb-2">
+              Are You an Employee? (Including pensions)
+            </label>
 
-          <div class="step" id="step3">
-            <h2>Step 3</h2>
-            <p>Step 3 Content</p>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="anEmployee" id="anEmployeeYes">
+              <label class="form-check-label" for="anEmployeeYes">
+                yes
+              </label>
+            </div>
+
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="anEmployee" id="anEmployeeNo">
+              <label class="form-check-label" for="anEmployeeNo">
+                No
+              </label>
+            </div>
+
+            <p class="mt-2">
+              If yes, your PAYG income summaries from your employers will be available via the ATO portal or MY GOV
+            </p>
+
+            <label class="form-label">
+              Names of Dependent Children & D.O.B
+            </label>
+            <input
+              type="text"
+              class="form-control mb-3"
+            />
+            <input
+              type="text"
+              class="form-control mb-3"
+            />
+            <input
+              type="text"
+              class="form-control"
+            />
+
           </div>
 
           <div class="mt-5 d-flex flex-row gap-2 justify-content-center">
@@ -136,6 +318,7 @@
               Submit
             </button>
           </div>
+
         </form>
       </div>
     </main>

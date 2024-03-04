@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+
+    <!-- bootstrap 5 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+      integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    
+    <section class="vh-100 login-page">
+        <div class="container py-5 h-100">
+          <div class=" d-flex justify-content-center align-items-center h-100">
+              <div class="card">
+                <div class="card-body p-5 ">
+                  <h3 class="mb-5 text-center">Sign in</h3>
+      
+                  <div class=" mb-4">
+                    <label class="form-label" for="userEmail">Email</label>
+                    <input type="email" id="userEmail" class="form-control form-control-lg" />
+                  </div>
+      
+                  <div class="mb-4">
+                    <label class="form-label" for="userPassword">Password</label>
+                    <input type="password" id="userPassword" class="form-control form-control-lg" />
+                  </div>
+
+      
+                  <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+
+                </div>
+              </div>
+          </div>
+        </div>
+    </section>
+
+  </body>
+</html>
