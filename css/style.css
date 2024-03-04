@@ -78,3 +78,28 @@
   font-weight: 500;
   color: #000;
 }
+
+.otp-page .otp-field {
+  flex-direction: row;
+  column-gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.otp-page .otp-field input {
+  height: 45px;
+  width: 42px;
+  border-radius: 6px;
+  outline: none;
+  font-size: 1.125rem;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+.otp-page .otp-field input:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+.otp-page .otp-field input::-webkit-inner-spin-button,
+.otp-page .otp-field input::-webkit-outer-spin-button {
+  display: none;
+}
