@@ -1,7 +1,45 @@
-
-
 /* navbar */
-.navbar-toggler {
-    border: none !important;
-    box-shadow: none !important;
+
+
+.navbar .navbar-brand {
+  max-width: 250px;
+}
+
+.navbar .navbar-brand img {
+  width: 100%;
+}
+
+.navbar .navbar-toggler {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.navbar .nav-item .nav-link {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #282828;
+  border-bottom: 3px solid transparent;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
+  color: #000;
+}
+
+.navbar-nav .nav-link:hover {
+  border-color: #9e6d2d;
+}
+
+/* step form */
+.step-form {
+  margin: 2rem auto;
+  padding: 1.25rem;
+}
+
+.step {
+  display: none;
+}
+
+.step-form .form-heading p {
+    font-weight: 500;
 }
