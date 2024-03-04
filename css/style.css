@@ -16,9 +16,13 @@
 
 .navbar .nav-item .nav-link {
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 500;
   color: #282828;
   border-bottom: 3px solid transparent;
+}
+
+.navbar .nav-item .login-btn-link {
+  font-weight: 500;
 }
 
 .navbar-nav .nav-link.active,
