@@ -40,7 +40,7 @@
             class="navbar-nav ms-auto mb-2 mb-lg-0 pt-3 pt-lg-0 gap-0 gap-lg-2"
           >
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./index.html"
+              <a class="nav-link" aria-current="page" href="./index.html"
                 >Individual</a
               >
             </li>
@@ -48,7 +48,7 @@
               <a class="nav-link" href="./company-trust-partnership.html">Company/Trust/Partnership</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/">Self-Managed Superannuation Fund</a>
+              <a class="nav-link active" href="/">Self-Managed Superannuation Fund</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="./ISC–client-form.html">ISC – Client Form</a>
@@ -65,73 +65,552 @@
 
     <main>
       <div class="container">
+        <div class="info-heading my-5">
+          <h2 class="text-center mb-4">2022 - 2023 Tax Return Checklist</h2>
+          <p class="lead text-center">
+            Self-Managed Superannuation Fund
+          </p>
+          <p class="lead fw-normal">For year ended 30th June 2023.</p>
+        </div>
 
         <form
           class="step-form bg-white border border-secondary-subtle rounded-3 p-5"
         >
-          <!-- return required time -->
+          <!-- IMPORTANT NOTE - WORKFLOW MANAGEMENT -->
           <div class="step">
-            <label class="form-label d-block">
-              If your return is not required urgently, please indicate period
-              that would be suitable:
-            </label>
+            <h4 class="mb-3">IMPORTANT NOTE - WORKFLOW MANAGEMENT</h4>
 
-            <div class="form-check form-check-inline">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="requiredPeriod"
-                id="urgent"
-              />
-              <label class="form-check-label" for="urgent"> Urgent </label>
+            <p class="lead fw-normal mb-2">
+              The lodgement due date of your tax return is between 31st October 2023 and 15th May 2024 (depending on your circumstances)
+            </p>
+
+            <p class="lead fw-normal mb-2">
+              Is your tax required urgently? If yes, please contact your Client Manager. (Express fees may apply)
+            </p>
+
+            <p class="lead fw-normal mb-4">
+              This will allow us sufficient time for preparing and lodging the
+              tax return. If the relevant information and documentation is not
+              received by the due date, we may not be able to guarantee that the
+              tax return will be lodged on time.
+            </p>
+            
+            <p class="lead fw-normal mb-4">
+              If the relevant information and documentation is not received by the due date, we may not be able to guarantee that the tax return is lodged in time.
+            </p>
+
+            <!-- Name of SMSF Client -->
+            <div class="mb-3">
+              <label for="name-smsf-client" class="form-label">Name of SMSF Client:</label>
+              <input type="text" class="form-control" id="name-smsf-client" />
             </div>
 
-            <div class="form-check form-check-inline">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="requiredPeriod"
-                id="4-6-week"
-              />
-              <label class="form-check-label" for="4-6-week"> 4-6 Weeks </label>
+            <!-- Name of Trustee(s) -->
+            <div class="mb-3">
+              <label for="name-trustee" class="form-label">Name of Trustee(s):</label>
+              <input type="text" class="form-control" id="name-trustee" />
             </div>
 
-            <div class="form-check form-check-inline">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="requiredPeriod"
-                id="6-8-week"
-              />
-              <label class="form-check-label" for="6-8-week"> 6-8 Weeks </label>
+            <!-- Preferred Email Address* -->
+            <div class="mb-3">
+              <label for="preferred-email-address" class="form-label">Preferred Email Address*</label>
+              <input type="text" class="form-control" id="preferred-email-address" />
             </div>
 
-            <div class="form-check form-check-inline">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="requiredPeriod"
-                id="8-10-week"
-              />
-              <label class="form-check-label" for="8-10-week">
-                8-10 Weeks
-              </label>
-            </div>
-
-            <div class="form-check form-check-inline">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="requiredPeriod"
-                id="anytime"
-              />
-              <label class="form-check-label" for="anytime">
-                Anytime before Due Date
-              </label>
-            </div>
+            <p class="lead fw-normal mb-4">
+              We shall ensure that the tax return of the Superannuation Fund is lodged with the ATO by the due date, provided ALL relevant information and documentation is received by 15th January 2024. This will allow us sufficient time for preparing and lodging the tax return. If the relevant information and documentation is not received by the due date, we may not be able to guarantee that the tax return is lodged in time.
+            </p>
+            
+            
           </div>
 
+          <!-- Income & Expenses -->
+          <div class="step">
+            <h4 class="mb-3">1. Income & Expenses</h4>
 
+            <ul>
+              <li>
+                <p class="lead fw-normal">
+                  If you maintain your own cloud based accounting software, please contact your client manager to go through the steps to enable appropriate Invest Group access.
+                </p>
+              </li>
+              <li>
+                <p class="lead fw-normal">
+                  If you maintain your own desktop based accounting software please submit a copy of the file via usb or via email to your relevant client manager.
+                </p>
+              </li>
+              <li>
+                <p class="lead fw-normal">
+                  If you pay an ATO GST instalment amount every quarter, we shall prepare the Annual GST Return for you based on the date you provide, unless we are advised otherwise;
+
+                </p>
+              </li>
+              <li>
+                <p class="lead fw-normal">
+                  If you do not maintain cloud or desktop based accounting software, please forward the following documents to us, if applicable:
+                </p>
+                <ol type="a">
+                  <li>
+                    <p class="lead fw-normal">
+                      cashbooks (either manual or in Microsoft excel);
+                    </p>
+                  </li>
+                  <li>
+                    <p class="lead fw-normal">
+                      bank statement from 1st July 2022 to 30th June 2023
+                    </p>
+                  </li>
+                  <li>
+                    <p class="lead fw-normal">
+                      cheque butts
+                    </p>
+                  </li>
+                  <li>
+                    <p class="lead fw-normal">
+                      deposit slips;
+                    </p>
+                  </li>
+                  <li>
+                    <p class="lead fw-normal">
+                      expenses summaries/invoices;
+                    </p>
+                  </li>
+                  <li>
+                    <p class="lead fw-normal">
+                      loan statements, if applicable;
+                    </p>
+                  </li>
+                  <li>
+                    <p class="lead fw-normal">
+                      amounts of money that other entities, including the beneficiaries (for trust), owe the Trust/Partnership in connection with the business as at 30th June 2023, if any
+                    </p>
+                  </li>
+                  <li>
+                    <p class="lead fw-normal">
+                      amounts of money that the Trust/Partnership owes other entities, including the beneficiaries (for trust), in connection with the business as at 30 June 2023, if any
+                    </p>
+                  </li>
+                  <li>
+                    <p class="lead fw-normal">
+                      PAYG Payment Summaries (group certificates) and annual reconciliation statement, if applicable.
+                    </p>
+                  </li>
+                </ol>
+              </li>
+            </ul>
+            
+            <p class="lead fw-normal">
+              Please note that we need the GST component of each expense so that we can work out the GST input tax credit claimed by the Trust/Partnership.
+            </p>
+            
+          </div>
+
+          <!-- Distribution from other trusts/partnerships && Rent -->
+          <div class="step">
+
+            <!-- Distribution from other trusts/partnerships -->
+            <div class="mb-4">
+              <h4 class="mb-3">1. Distribution from other trusts/partnerships</h4>
+
+              <p class="lead fw-normal">
+                Do you receive distribution from other trusts/partnerships?
+              </p>
+
+              <!-- receive distribution from other trusts/partnerships -->
+              <div class="mb-3">
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="distribution-from-other-trust-partners"
+                    id="distribution-from-other-trust-partners-yes"
+                  />
+                  <label class="form-check-label" for="distribution-from-other-trust-partners-yes"> Yes </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="distribution-from-other-trust-partners"
+                    id="distribution-from-other-trust-partners-no"
+                  />
+                  <label class="form-check-label" for="distribution-from-other-trust-partners-no"> No </label>
+                </div>
+              </div>
+
+              <p class="lead fw-normal">
+                If you received distribution from another private trust or partnership, please provide a copy of the tax return or distribution statement;
+              </p>
+
+              <!-- distribution from another private trust or partnership -->
+              <textarea class="form-control" name="" id="" ></textarea>
+
+              <p class="lead fw-normal">
+                If you have invested in units of a private unit trust, please provide the market value of the units as at 30th June 2023. If you have any problem on this issue, please feel free to give us a call;
+              </p>
+
+              <!-- market value of invested units -->
+              <textarea class="form-control" name="" id="" ></textarea>
+
+              <p class="lead fw-normal">
+                If you received a distribution from public unit trust, please provide a copy of the annual distribution summary and end of year portfolio statement.
+              </p>
+
+              <!-- distribution from public unit trust -->
+              <textarea class="form-control" name="" id="" ></textarea>
+
+            </div>
+
+            <!-- Rent -->
+            <div>
+              <h4 class="mb-3">3. Rent</h4>
+
+              <p class="lead fw-normal">
+                Do you receive rental income?*
+              </p>
+
+              <!--  rental income -->
+              <div class="mb-3">
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="rental-income"
+                    id="rental-income-yes"
+                  />
+                  <label class="form-check-label" for="rental-income-yes"> Yes </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="rental-income"
+                    id="rental-income-no"
+                  />
+                  <label class="form-check-label" for="rental-income-no"> No </label>
+                </div>
+              </div>
+
+              <p class="lead fw-normal">
+                Provide copies of the monthly rental statements or a copy of the annual summary, if available, of all investment properties.
+              </p>
+
+              <!-- monthly rental statements or a copy of the annual summary -->
+              <textarea class="form-control" name="" id="" ></textarea>
+
+              <p class="lead fw-normal">
+                Supply settlement sheets and purchase documents if you acquired property after 1st July 2022
+              </p>
+
+              <!-- settlement sheets and purchase documents -->
+              <textarea class="form-control" name="" id="" ></textarea>
+
+              <p class="lead fw-normal">
+                Provide the market value of each rental property as of 30th June 2023. If you have any problem on this issue, please feel free to give us a call;
+              </p>
+
+              <!-- market value of each rental property -->
+              <textarea class="form-control" name="" id="" ></textarea>
+
+              <p class="lead fw-normal">
+                Indicate if there’s any joint venture arrangement underlying any properties. If so, your client manager will advise what info to provide;
+              </p>
+
+              <!-- joint venture arrangement -->
+              <textarea class="form-control" name="" id="" ></textarea>
+            </div>
+            
+          </div>
+
+          <!-- Interest && Dividends && Capital Gain -->
+          <div class="step">
+
+            <!-- Interest -->
+            <div class="mb-4">
+              <h4 class="mb-3">4. Interest:</h4>
+
+              <div class="row g-3">
+
+                <!-- Name of Bank -->
+                <div class="col-12 col-md-6 col-lg-4">
+                  <label for="name-of-bank" class="form-label">Name of Bank</label>
+                  <input type="text" class="form-control" id="name-of-bank" />
+                </div>
+
+                <!-- Account Number -->
+                <div class="col-12 col-md-6 col-lg-4">
+                  <label for="account-number" class="form-label">Account Number</label>
+                  <input type="text" class="form-control" id="account-number" />
+                </div>
+
+                <!-- Total Interest Received ($) -->
+                <div class="col-12 col-md-6 col-lg-4">
+                  <label for="total-interest-received" class="form-label">Total Interest Received ($)</label>
+                  <input type="text" class="form-control" id="total-interest-received" />
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- Dividends: -->
+            <div class="mb-4">
+              <h4 class="mb-3">5. Dividends:</h4>
+
+              <p class="lead fw-normal">
+                Please provide copies of all dividend statements including those that take part in dividend reinvestment plan. If you have problems finding all these statements, please feel free to contact us
+              </p>
+
+              <div class="row g-3">
+
+                <!-- Name of Shares (please indicate if the shares take part in DRP) -->
+                <div class="col-12">
+                  <label for="name-of-shares" class="form-label">Name of Shares (please indicate if the shares take part in DRP)</label>
+                  <input type="text" class="form-control" id="name-of-shares" />
+                </div>
+
+                <!-- Unfranked Dividend -->
+                <div class="col-12 col-md-6 col-lg-4">
+                  <label for="unfranked-dividend" class="form-label">Unfranked Dividend</label>
+                  <input type="text" class="form-control" id="unfranked-dividend" />
+                </div>
+
+                <!-- Franked Dividend -->
+                <div class="col-12 col-md-6 col-lg-4">
+                  <label for="franked-dividend" class="form-label">Franked Dividend</label>
+                  <input type="text" class="form-control" id="franked-dividend" />
+                </div>
+
+                <!-- imputation-credit -->
+                <div class="col-12 col-md-6 col-lg-4">
+                  <label for="imputation-credit" class="form-label">Imputation Credit</label>
+                  <input type="text" class="form-control" id="imputation-credit" />
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Capital Gain: -->
+            <div>
+              <h4 class="mb-3">6. Capital Gain:</h4>
+
+              <p class="lead fw-normal">
+                Capital Gain: Did you sell any assets such as share investments or property in the 2022 financial year.
+              </p>
+
+              <!--   share investments or property -->
+              <div class="mb-3">
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="share-investments-property"
+                    id="share-investments-property-yes"
+                  />
+                  <label class="form-check-label" for="share-investments-property-yes"> Yes </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="share-investments-property"
+                    id="share-investments-property-no"
+                  />
+                  <label class="form-check-label" for="share-investments-property-no"> No </label>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+
+          <!-- Any other Income && Roll overs from other Super Funds && Contributions && Pension && Expenses && Investments -->
+          <div class="step">
+
+            <!-- Any other Income -->
+            <div class="mb-4">
+              <h4 class="mb-3">7. Any other Income</h4>
+
+              <p class="lead fw-normal">
+                (Details of all receipts during the financial year, e.g. gross payments subject to foreign resident withholding etc. which do not fit into any of the above categories.)
+              </p>
+
+              <!-- Details of all receipts during the financial year -->
+              <textarea class="form-control" name="" id="" ></textarea>
+
+            </div>
+
+            <!-- Roll overs from other Super Funds -->
+            <div class="mb-4">
+              <h4 class="mb-3">8. Roll overs from other Super Funds</h4>
+
+              <p class="lead fw-normal">
+                If there was any rollover of funds from the member?
+              </p>
+
+              <!-- any rollover of funds -->
+              <textarea class="form-control" name="" id="" ></textarea>
+
+            </div>
+
+            <!--  Contributions -->
+            <div class="mb-4">
+              <h4 class="mb-3">9.  Contributions</h4>
+
+              <p class="lead fw-normal">
+                Did the fund receive any contribution? If so, please provide a list of contributions received and identify name of member who received the contribution.
+              </p>
+
+              <!-- fund receive any contribution -->
+              <textarea class="form-control" name="" id="" ></textarea>
+
+            </div>
+
+            <!--  Pension -->
+            <div class="mb-4">
+              <h4 class="mb-3">10. Pension</h4>
+
+              <p class="lead fw-normal">
+                Did the fund pay any pension? If so, please provide a list of pensions paid and identify name of member who received the pension.
+              </p>
+
+              <!-- fund pay any pension -->
+              <textarea class="form-control" name="" id="" ></textarea>
+
+            </div>
+
+            <!--  Expenses -->
+            <div class="mb-4">
+              <h4 class="mb-3">11. Expenses</h4>
+
+              <p class="lead fw-normal">
+                Please provide a list of expenses paid by the Fund. If the Fund pays allocated pensions to its members, please contact us as you may have to provide more information regarding the exempt pension income as an actuarial certificate required.
+              </p>
+
+              <!-- list of expenses paid by the Fund -->
+              <textarea class="form-control" name="" id="" ></textarea>
+
+            </div>
+
+            <!--  Investments -->
+            <div class="mb-4">
+              <h4 class="mb-3">11. Investments</h4>
+
+              <p class="lead fw-normal">
+                Please provide copies of evidence of proof of the existence, ownership, and acquisition of assets, which in simple English, means the buy contract of shares in listed companies, title deeds of property, investing holding balance as of 30/06/2023, etc. If you have a problem with this issue, please feel free to give us a call. If the Fund invests in art, paintings, antiques, etc please advise where the items are stored and how their market values as at 30th June 2023are arrived at. (up to 5MB-Please ZIP into single file)
+              </p>
+
+              <!-- proof of the existence, ownership, and acquisition of assets -->
+              <textarea class="form-control" name="" id="" ></textarea>
+
+            </div>
+            
+          </div>
+
+          
+          <!-- Tax Loss && Loans && Other: Any other information && How did you hear about Investax? -->
+          <div class="step">
+
+            <!-- Tax Loss -->
+            <div class="mb-4">
+              <h4 class="mb-3">13. Tax Loss</h4>
+
+              <p class="lead fw-normal">
+                Did the SMSF have a loss to be brought forward from prior year?
+              </p>
+
+              <!-- Tax Loss radio button -->
+              <div class="mb-3">
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="tax-loss"
+                    id="tax-loss-yes"
+                  />
+                  <label class="form-check-label" for="tax-loss-yes"> Yes </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="tax-loss"
+                    id="tax-loss-no"
+                  />
+                  <label class="form-check-label" for="tax-loss-no"> No </label>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Loans -->
+            <div class="mb-4">
+              <h4 class="mb-3">14. Loans</h4>
+
+              <p class="lead fw-normal">
+                Are your loans looked after via a broker or directly through a bank manager?
+              </p>
+
+              <!-- loans looked after via -->
+              <div class="mb-3">
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="loans-looked-after-via"
+                    id="loans-looked-after-via-broker"
+                  />
+                  <label class="form-check-label" for="loans-looked-after-via-broker"> Broker </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="loans-looked-after-via"
+                    id="loans-looked-after-via-bank-manager"
+                  />
+                  <label class="form-check-label" for="loans-looked-after-via-bank-manager"> Bank Manager </label>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Other: Any other information -->
+            <div class="mb-4">
+              <h4 class="mb-3">15. Other: Any other information</h4>
+
+              <p class="lead fw-normal">
+                Please note that you are required to forward some or all the above documents to us for preparing your financial statements and tax return. The above list, while being quite comprehensive, is not meant to be exhaustive. If you are not certain whether additional information/documents are required or some of the documents are missing, please feel free to give us a call.
+              </p>
+              
+
+            </div>
+
+            <!-- How did you hear about Investax? -->
+            <div class="mb-4">
+              <h4 class="mb-3">How did you hear about Investax?</h4>
+
+              <p class="lead fw-normal">
+                Please note that you are required to forward some or all the above documents to us for preparing your financial statements and tax return. The above list, while being quite comprehensive, is not meant to be exhaustive. If you are not certain whether additional information/documents are required or some of the documents are missing, please feel free to give us a call.
+              </p>
+
+              <textarea class="form-control" name="" id="" ></textarea>
+
+            </div>
+            
+          </div>
+
+          <!-- TAXPAYER’S DECLARATION -->
+          <div class="step">
+            <h4 class="mb-3">TAXPAYER'S DECLARATION*</h4>
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="declaration">
+              <label class="form-check-label" for="declaration">
+                I declare that all the information I have given is true and correct.
+              </label>
+            </div>
+            
+          </div>
 
           <!-- Buttons -->
           <div class="mt-5 d-flex flex-row gap-2 justify-content-center">

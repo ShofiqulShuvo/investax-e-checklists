@@ -33,6 +33,7 @@ textarea {
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link.show {
   color: #000;
+  border-color: #9e6d2d
 }
 
 .navbar-nav .nav-link:hover {
