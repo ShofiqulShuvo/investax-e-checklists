@@ -1,6 +1,11 @@
+/* utility */
+textarea {
+  margin-bottom: 1rem;
+}
+/* utility end */
+
+
 /* navbar */
-
-
 .navbar .navbar-brand {
   max-width: 180px;
 }

@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- bootstrap 5 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+      integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <title>Businesses, Company's, Trust's, Partnerships & Sole Traders</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img src="./img/Investax-Logo.png" alt="" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul
+            class="navbar-nav ms-auto mb-2 mb-lg-0 pt-3 pt-lg-0 gap-0 gap-lg-2"
+          >
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./index.html"
+                >Individual</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/">Company/Trust/Partnership</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./self-managed-superannuation-fund.html"
+                >Self-Managed Superannuation Fund</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./ISC–client-form.html"
+                >ISC – Client Form</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="login-btn-link btn btn-primary" href="./login.html"
+                >Login</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div class="container">
+        <div class="info-heading my-5">
+          <h2 class="text-center mb-4">2022-2023 Tax Return Checklist</h2>
+          <p class="lead text-center">
+            Businesses, Company’s, Trust’s, Partnerships & Sole Traders
+          </p>
+          <p class="lead fw-normal">For year ended 30th June 2023</p>
+        </div>
+
+        <form
+          class="step-form bg-white border border-secondary-subtle rounded-3 p-5"
+        >
+          <!-- return required time -->
+          <div class="step">
+            <h4 class="mb-3">IMPORTANT NOTE - WORKFLOW MANAGEMENT</h4>
+
+            <p class="lead fw-normal mb-2">
+              The lodgement due date of your tax return is between 31st October
+              2023 and 15th May 2024 (depending on your circumstances). Is your
+              tax required urgently? If yes, please contact your Client Manager.
+              (Express fees may apply)
+            </p>
+            <p class="lead fw-normal mb-2">
+              We shall endeavour to ensure that the tax return is lodged with
+              the ATO by the due date, provided ALL relevant information and
+              documentation is received no later than 2 months before the due
+              date.
+            </p>
+            <p class="lead fw-normal mb-4">
+              This will allow us sufficient time for preparing and lodging the
+              tax return. If the relevant information and documentation is not
+              received by the due date, we may not be able to guarantee that the
+              tax return will be lodged on time.
+            </p>
+
+            <div class="row g-3">
+              <!-- Entity Name  -->
+              <div class="col-12 col-md-6">
+                <label for="entity-name" class="form-label">Entity Name</label>
+                <input type="text" class="form-control" id="entity-name" />
+              </div>
+              <!-- Director &/or Partner(s)  -->
+              <div class="col-12 col-md-6">
+                <label for="director-or-partner" class="form-label">Director &/or Partner(s)</label>
+                <input type="text" class="form-control" id="director-or-partner" />
+              </div>
+              <!-- Street Address  -->
+              <div class="col-12">
+                <label for="street-address" class="form-label">Street Address*</label>
+                <input type="text" class="form-control" id="street-address" />
+              </div>
+              <!-- Suburb  -->
+              <div class="col-12 col-md-6 col-lg-4">
+                <label for="suburb" class="form-label">Suburb*</label>
+                <input type="text" class="form-control" id="suburb" />
+              </div>
+              <!-- State/Territory  -->
+              <div class="col-12 col-md-6 col-lg-4">
+                <label for="state-territory" class="form-label">State/Territory*</label>
+                <input type="text" class="form-control" id="state-territory" />
+              </div>
+              <!-- Zip/Postal Code  -->
+              <div class="col-12 col-md-6 col-lg-4">
+                <label for="zip-postal-code" class="form-label">Zip/Postal Code*</label>
+                <input type="text" class="form-control" id="zip-postal-code" />
+              </div>
+              <!-- Preferred Phone Number  -->
+              <div class="col-12">
+                <label for="preferred-phone-number" class="form-label">Preferred Phone Number*</label>
+                <input type="text" class="form-control" id="preferred-phone-number" />
+              </div>
+              <!-- Preferred Email Address  -->
+              <div class="col-12">
+                <label for="preferred-email-address" class="form-label">Preferred Email Address*</label>
+                <input type="text" class="form-control" id="preferred-email-address" />
+              </div>
+              <!-- Business Activity  -->
+              <div class="col-12">
+                <label for="business-activity" class="form-label">Business Activity</label>
+                <input type="text" class="form-control" id="business-activity" />
+              </div>
+            </div>
+            
+          </div>
+
+
+          <!-- INCOME & EXPENSES -->
+          <div class="step">
+            <h4 class="mb-3">INCOME & EXPENSES</h4>
+
+            <ol>
+
+              <!-- 1. Income & Expenses -->
+              <li class="mb-4">
+                <h5>Income & Expenses</h5>
+                <ul>
+                  <li>
+                    <p class="lead fw-normal">
+                      If you maintain your own cloud based accounting software, please contact your client manager to go through the steps to enable appropriate Investax Group access.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="lead fw-normal">
+                      If you maintain your own desktop based accounting software please submit a copy of the file via usb or via email to your relevant client manager.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="lead fw-normal">
+                      If you do not maintain cloud or desktop based accounting software, please forward the following documents to us, if applicable:
+                    </p>
+                    <ol>
+                      <li>
+                        <p class="lead fw-normal">
+                          cashbook;
+                        </p>
+                      </li>
+                      <li>
+                        <p class="lead fw-normal">
+                          bank statement;
+                        </p>
+                      </li>
+                      <li>
+                        <p class="lead fw-normal">
+                          cheque butts;
+                        </p>
+                      </li>
+                      <li>
+                        <p class="lead fw-normal">
+                          deposit slips;
+                        </p>
+                      </li>
+                      <li>
+                        <p class="lead fw-normal">
+                          expenses summaries/invoices;
+                        </p>
+                      </li>
+                      <li>
+                        <p class="lead fw-normal">
+                          copies of buy/sell contracts of listed shares, if applicable;
+                        </p>
+                      </li>
+                      <li>
+                        <p class="lead fw-normal">
+                          copies of the quarterly PAYG Instalment returns;
+                        </p>
+                      </li>
+                      <li>
+                        <p class="lead fw-normal">
+                          summary of employers’ contributions to members, if available;
+                        </p>
+                      </li>
+                    </ol>
+                  </li>
+                </ul>
+                <p class="lead fw-normal">
+                  N.B. Should the company be registered for Payroll Tax? Are there any likely Payroll Tax Grouping issues?
+                </p>
+              </li>
+
+              <!-- 2. Distribution from other company, partnership or trust -->
+              <li class="mb-4">
+                <h5>
+                  Distribution from other company, partnership or trust
+                </h5>
+                <p class="lead fw-normal">
+                  Do you receive distribution from another entity?*
+                </p>
+
+                <!-- receive distribution from another entity radio button -->
+                <div class="mb-3">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="distribution-from-another-entry"
+                      id="distribution-from-another-entry-yes"
+                    />
+                    <label class="form-check-label" for="distribution-from-another-entry-yes"> Yes </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="distribution-from-another-entry"
+                      id="distribution-from-another-entry-no"
+                    />
+                    <label class="form-check-label" for="distribution-from-another-entry-no"> No </label>
+                  </div>
+                </div>
+
+                <p class="lead fw-normal">
+                  If you received distribution from another entity, please provide a copy of the tax return or distribution statement.
+                </p>
+
+                <!-- copy of the tax return or distribution statement -->
+                <textarea class="form-control" name="" id=""></textarea>
+
+                
+                <p class="lead fw-normal">
+                  If you have invested in units of a private unit trust, please provide the market value of the units as at 30th June 2023. If you have any problem on this issue, please feel free to give us a call.
+                </p>
+
+                <!-- invested in units of a private unit trust -->
+                <textarea class="form-control" name="" id=""></textarea>
+
+                
+                <p class="lead fw-normal">
+                  If you received a distribution from public unit trust, please provide a copy of the annual distribution summary and end of year portfolio statement.
+
+                </p>
+
+                <!-- received a distribution from public unit trust -->
+                <textarea class="form-control" name="" id=""></textarea>
+              </li>
+
+              <!-- 3. Rent -->
+              <li class="mb-4">
+                <h5>Rent</h5>
+                <p class="lead fw-normal">
+                  Do you receive rental income?*
+                </p>
+
+                <!-- receive rental income? -->
+                <div class="mb-3">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="recieve-rental-income"
+                      id="recieve-rental-income-yes"
+                    />
+                    <label class="form-check-label" for="recieve-rental-income-yes"> Yes </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="recieve-rental-income"
+                      id="recieve-rental-income-no"
+                    />
+                    <label class="form-check-label" for="recieve-rental-income-no"> No </label>
+                  </div>
+                </div>
+
+                <p class="lead fw-normal">
+                  Provide copies of the monthly rental statements or a copy of the annual summary, if available, of all investment properties.
+                </p>
+
+                <!-- copies of the monthly rental statements or a copy of the annual summary -->
+                <textarea class="form-control" name="" id=""></textarea>
+
+                <p class="lead fw-normal">
+                  Supply settlement sheets and purchase documents if you acquired property after 1st July 2022
+                </p>
+
+                <!-- settlement sheets and purchase documents -->
+                <textarea class="form-control" name="" id=""></textarea>
+
+                <p class="lead fw-normal">
+                  Provide the market value of each rental property as of 30th June 2023. If you have any problem on this issue, please feel free to give us a call.
+                </p>
+
+                <!-- market value of each rental property -->
+                <textarea class="form-control" name="" id=""></textarea>
+
+                <p class="lead fw-normal">
+                  Indicate if there’s any joint venture arrangement underlying any properties. If so, your client manager will advise what info to provide.
+                </p>
+
+                <!-- market value of each rental property -->
+                <textarea class="form-control" name="" id=""></textarea>
+              </li>
+
+              <!-- 4. Interest -->
+              <li class="mb-4">
+                <h5>Interest</h5>
+                
+                <div class="row g-3 mb-2">
+                  <!-- Name of Bank -->
+                  <div class="col-12 col-md-6 col-lg-4">
+                    <label for="name-of-bank" class="form-label">Name of Bank</label>
+                    <input type="text" class="form-control" id="name-of-bank" />
+                  </div>
+
+                  <!-- Account Number -->
+                  <div class="col-12 col-md-6 col-lg-4">
+                    <label for="account-number" class="form-label">Account Number</label>
+                    <input type="text" class="form-control" id="account-number" />
+                  </div>
+
+                  <!-- Total Interest Received ($) -->
+                  <div class="col-12 col-md-6 col-lg-4">
+                    <label for="total-interest-received" class="form-label">Total Interest Received ($)</label>
+                    <input type="text" class="form-control" id="total-interest-received" />
+                  </div>
+                  
+                </div>
+              </li>
+
+              <!-- 5. Dividends -->
+              <li class="mb-4">
+                <h5>Dividends</h5>
+                <p class="lead fw-normal">
+                  Please provide copies of all dividend statements including those that take part in dividend reinvestment plan. If you have problems finding all these statements, please feel free to contact us.
+                </p>
+                
+                <div class="row g-3 mb-2">
+                  <!-- Name of Shares (please indicate if the shares take part in DRP) -->
+                  <div class="col-12">
+                    <label for="name-of-shares" class="form-label">Name of Shares (please indicate if the shares take part in DRP)</label>
+                    <input type="text" class="form-control" id="name-of-shares" />
+                  </div>
+
+                  <!-- Unfranked Dividend -->
+                  <div class="col-12 col-md-6 col-lg-4">
+                    <label for="unfranked-dividend" class="form-label">Unfranked Dividend</label>
+                    <input type="text" class="form-control" id="unfranked-dividend" />
+                  </div>
+
+                  <!-- Franked Dividend -->
+                  <div class="col-12 col-md-6 col-lg-4">
+                    <label for="franked-dividend" class="form-label">Franked Dividend</label>
+                    <input type="text" class="form-control" id="franked-dividend" />
+                  </div>
+
+                  <!-- Imputation Credit -->
+                  <div class="col-12 col-md-6 col-lg-4">
+                    <label for="imputation-credit" class="form-label">Imputation Credit</label>
+                    <input type="text" class="form-control" id="imputation-credit" />
+                  </div>
+                  
+                </div>
+              </li>
+
+              <!-- 6. Capital Gain -->
+              <li class="mb-4">
+                <h5>
+                  Capital Gain
+                </h5>
+
+                <p class="lead fw-normal">
+                  Capital Gain: Did you sell any assets such as share investments or property in the 2023 financial year. i.e. from 1st July 2022 to 30th June 2023?
+                </p>
+
+                <!-- Capital Gain radio buttons -->
+                <div class="mb-3">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="capital-gain"
+                      id="capital-gain-yes"
+                    />
+                    <label class="form-check-label" for="capital-gain-yes"> Yes </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="capital-gain"
+                      id="capital-gain-no"
+                    />
+                    <label class="form-check-label" for="capital-gain-no"> No </label>
+                  </div>
+                </div>
+
+              </li>
+
+              <!-- 7. Any other Income -->
+              <li class="mb-4">
+                <h5>
+                  Any other Income
+                </h5>
+
+                <p class="lead fw-normal">
+                  (Details of all receipts during the financial year, e.g. gross payments subject to foreign resident withholding etc. which do not fit into any of the above categories.)
+                </p>
+
+                <!-- Any other Income textarea -->
+                <textarea class="form-control" name="" id="" rows="4"></textarea>
+
+              </li>
+
+              
+              <!-- 8.  Loans -->
+              <li class="mb-4">
+                <h5>
+                   Loans
+                </h5>
+
+                <p class="lead">
+                  Are your loans looked after via a broker or directly through a bank manager?
+                </p>
+
+                <!-- r loans looked after via a broker or directly -->
+                <div class="mb-3">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="loans-looked-after"
+                      id="loans-looked-after-broker"
+                    />
+                    <label class="form-check-label" for="loans-looked-after-broker"> Broker </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="loans-looked-after"
+                      id="loans-looked-after-bank-manager"
+                    />
+                    <label class="form-check-label" for="loans-looked-after-bank-manager"> Bank Manager </label>
+                  </div>
+                </div>
+
+              </li>
+            </ol>
+            
+          </div>
+
+          <!-- BUSINESS INCOME & EXPENSES -->
+          <div class="step">
+            <h4 class="mb-3">BUSINESS INCOME & EXPENSES</h4>
+
+            <ol>
+
+              <!-- 1. Motor Vehicle -->
+              <li class="mb-4">
+                <h5>Motor Vehicle</h5>
+                
+                <p class="lead">
+                  Was there any motor vehicles owned by the business or did you use your own car for business purposes through the year?
+                </p>
+
+                <!-- motor vehicles owned by the business radio buttons -->
+                <div class="mb-3">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="vehicles-owned-by-the-business"
+                      id="vehicles-owned-by-the-business-yes"
+                    />
+                    <label class="form-check-label" for="vehicles-owned-by-the-business-yes"> Yes </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="vehicles-owned-by-the-business"
+                      id="vehicles-owned-by-the-business-no"
+                    />
+                    <label class="form-check-label" for="vehicles-owned-by-the-business-no"> No </label>
+                  </div>
+                </div>
+
+                <p class="lead fw-normal">
+                  If yes, please provide one of the following:
+                </p>
+
+                <h5>Log Book Method - Business % use</h5>
+
+                <p class="lead fw-normal">
+                  Please provide details of all expenses you incurred over the financial year including repairs/maintenance, registration/insurance, fuel (can be estimated) etc.
+                </p>
+
+                <p class="lead fw-normal">
+                  If the car was newly acquired during 2022/2023 please also provide car purchase invoice.
+                </p>
+
+                <!-- Any other Income textarea -->
+                <textarea class="form-control" name="" id="" rows="3"></textarea>
+
+                <p class="lead">
+                  If you have a loan for the vehicle, please provide details of the interest you paid over the year and the cost of the car. If you have a hire purchase, please provide a copy of the purchase invoice and car finance contract.
+                </p>
+
+                <!-- a loan for the vehicle details textarea -->
+                <textarea class="form-control" name="" id="" rows="3"></textarea>
+
+                <p class="lead">
+                  If you had a lease for your vehicle, please provide figures of your lease payments.
+                </p>
+
+                <p class="lead fw-normal">
+                  Kilometres Method:
+                  <br>
+                  If you have not kept a log book but used your car for business, let us know how many kilometres you have traveled for business in 2023. The maximum the tax office allows you to claim using this method is 5000 kilometres. 
+                </p>
+
+                <!-- how many kilometres input -->
+                <input type="text" class="form-control" style="max-width: 350px;" id="kilometres" />
+
+              </li>
+
+              <!-- 2. Tax Loss -->
+              <li class="mb-4">
+                <h5>
+                  Tax Loss
+                </h5>
+                <p class="lead">
+                  Did the entity/business have a loss to be brought forward from prior year?
+                </p>
+
+                <!-- entity/business have a loss -->
+                <div class="mb-3">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="entity-business-loss"
+                      id="entity-business-loss-yes"
+                    />
+                    <label class="form-check-label" for="entity-business-loss-yes"> Yes </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="entity-business-loss"
+                      id="entity-business-loss-no"
+                    />
+                    <label class="form-check-label" for="entity-business-loss-no"> No </label>
+                  </div>
+                </div>
+
+              </li>
+
+              <!-- 3. Superannuation -->
+              <li class="mb-4">
+                <h5>
+                  Superannuation
+                </h5>
+
+                <p class="lead">
+                  Has the entity/business made any contributions to a superannuation fund?
+                </p>
+
+                <!-- entity/business made any contributions -->
+                <div class="mb-3">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="entity-business-made-contributions"
+                      id="entity-business-made-contributions-yes"
+                    />
+                    <label class="form-check-label" for="entity-business-made-contributions-yes"> Yes </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="entity-business-made-contributions"
+                      id="entity-business-made-contributions-no"
+                    />
+                    <label class="form-check-label" for="entity-business-made-contributions-no"> No </label>
+                  </div>
+                </div>
+
+                <p class="lead">
+                  If yes, please provide the names of the funds and the amount of contributions made for each beneficiary/employee/partner.
+                </p>
+
+                <!-- e names of the funds and the amount of contributions -->
+                <textarea class="form-control" name="" id="" rows="4"></textarea>
+
+              </li>
+
+              <!-- 4.  Capital/Purchases -->
+              <li class="mb-4">
+                <h5> Capital/Purchases</h5>
+                
+                <p class="lead fw-normal">
+                  If the Company purchased any capital assets during the year, please provide an itemised list with date of purchase, description of the item purchased and the purchase cost (including shipping and installation) *New small business capital purchase rules may apply.
+                </p>
+
+                <!-- names of the funds and the amount of contributions -->
+                <textarea class="form-control" name="" id="" rows="4"></textarea>
+              </li>
+
+              <!-- 5.  Other Deductions -->
+              <li class="mb-4">
+                <h5> Other Deductions</h5>
+                
+                <p class="lead fw-normal">
+                  Show only expenses not listed at any other item. Any other information which you would like us to be aware of:
+                </p>
+
+                <!-- Any other information -->
+                <textarea class="form-control" name="" id="" rows="4"></textarea>
+              </li>
+
+              <!-- 6.  Distribution to stakeholders -->
+              <li class="mb-4">
+                <h5>Distribution to stakeholders</h5>
+                
+                <p class="lead fw-normal">
+                  Please provide a list of payments made to shareholders
+                </p>
+
+                <!-- list of payments made to shareholders -->
+                <textarea class="form-control" name="" id="" rows="4"></textarea>
+              </li>
+
+              <!-- 7. Small Business Entities(SBEs) -->
+              <li class="mb-4">
+                <h5>Small Business Entities(SBEs)</h5>
+                
+                <p class="lead fw-normal">
+                  If you carry on a business and your annual turnover is less than $50 million, you will be eligible to be treated as SBE. The benefits of being a SBE taxpayer are, among other things:
+                </p>
+
+                <ul>
+                  <li>
+                    <p class="lead fw-normal">
+                      Either cash/accrual accounting method available
+                    </p>
+                  </li>
+                  <li>
+                    <p class="lead fw-normal">
+                      simplified trading stock rules where businesses only need to conduct stocktakes and account for changes in the value of trading stock in limited circumstances,
+                    </p>
+                  </li>
+                  <li>
+                    <p class="lead fw-normal">
+                      simplified depreciation rules where most depreciating assets costing less than $30,000 each are written off immediately. Most other depreciating assets are pooled and deducted at a rate of either 15% for the first year of acquisition or 30% for each year after the first year.
+                    </p>
+                  </li>
+                </ul>
+
+                <p class="lead fw-normal">
+                  *Please call your Client Manager who can answer any query you may have <strong>on this matter.</strong>
+                </p>
+
+                <p class="lead fw-normal">
+                  Please note that you are required to forward all the above documents to us for preparing your financial statements and tax return. The above list of documents, while being quite comprehensive, is not meant to be exhaustive. If you are not certain whether additional information/documents are required or some of the documents are missing, please feel free to give us a call.
+                </p>
+
+                <p class="lead fw-bold">
+                  How did you hear about Investax Group?
+                </p>
+
+                <!-- hear about Investax Group -->
+                <textarea class="form-control" name="" id="" rows="4"></textarea>
+              </li>
+
+            </ol>
+            
+          </div>
+
+          <!-- TAXPAYER’S DECLARATION -->
+          <div class="step">
+            <h4 class="mb-3">TAXPAYER'S DECLARATION*</h4>
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="declaration">
+              <label class="form-check-label" for="declaration">
+                I declare that all the information I have given is true and correct.
+              </label>
+            </div>
+            
+          </div>
+
+          <!-- Buttons -->
+          <div class="mt-5 d-flex flex-row gap-2 justify-content-center">
+            <button
+              class="btn btn-lg btn-primary"
+              type="button"
+              onclick="prevStep()"
+              id="prevBtn"
+            >
+              Previous
+            </button>
+            <button
+              class="btn btn-lg btn-primary"
+              type="button"
+              onclick="nextStep()"
+              id="nextBtn"
+            >
+              Next
+            </button>
+            <button
+              class="btn btn-lg btn-success"
+              type="submit"
+              id="submitBtn"
+              style="display: none"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <!-- bootstrap js -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"
+      integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- custom js -->
+    <script src="./js/index.js"></script>
+  </body>
+</html>
