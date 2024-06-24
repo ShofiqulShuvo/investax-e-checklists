@@ -78,6 +78,7 @@
         <form
           class="step-form bg-white border border-secondary-subtle rounded-3 p-5"
         >
+          <!-- client basic info -->
           <div class="step">
             <!-- Name of  Client -->
             <div class="mb-3 d-block w-full d-md-flex gap-2 align-items-center">
@@ -387,7 +388,7 @@
 
           <!-- Client Information Form -->
           <div class="step">
-            <h4 class="mb-4">Client Information Form</h4>
+            <h4 class="mb-4">Client Information</h4>
             <!-- CLIENT DETAILS -->
             <div class="mb-3">
               <label class="form-check-label d-block mb-2"
@@ -459,10 +460,10 @@
               </button>
             </div>
 
-            <!-- ADDRESS DETAILS -->
+            <!-- ADDRESS (Home and Postal) -->
             <div class="mb-3">
               <label class="form-check-label d-block mb-2"
-                >Address Details</label
+                >Address(Home, Postal)</label
               >
 
               <div class="table-responsive">
@@ -475,6 +476,82 @@
                       <th>Post Code</th>
                     </tr>
                   </thead>
+                  <tbody>
+                    <!-- Home address -->
+                    <tr>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Home address"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                        />
+                      </td>
+                    </tr>
+
+                    <!-- Postal address -->
+                    <tr>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Postal address"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                        />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- ADDRESS -->
+            <div class="mb-3">
+              <label class="form-check-label d-block mb-2"
+                >Address Details</label
+              >
+
+              <div class="table-responsive">
+                <table class="table table-bordered table-sm align-middle">
+                  <thead>
+                    <tr>
+                      <th>Address</th>
+                    </tr>
+                  </thead>
                   <tbody id="addressDetailsTableBody">
                     <!-- Address 1 -->
                     <tr>
@@ -483,27 +560,6 @@
                           type="text"
                           class="form-control"
                           name="address[0]"
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="text"
-                          class="form-control"
-                          name="suburb[0]"
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="text"
-                          class="form-control"
-                          name="state[0]"
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="text"
-                          class="form-control"
-                          name="postCode[0]"
                         />
                       </td>
                     </tr>
@@ -1246,11 +1302,13 @@
               <textarea class="form-control" name="" id=""></textarea>
             </div>
 
-            <!-- future shares investment plan -->
+            <!-- like an analysis of your future shares -->
             <div class="mt-2 mb-3">
-              <label class="form-label" for="urgent"> Would you like an analysis of your future shares and managed funds plans by a Chan & Naylor Financial Planner?: </label>
+              <label class="form-label" for="urgent">
+                Would you like an analysis of your future shares and managed
+                funds plans by a Chan & Naylor Financial Planner?:
+              </label>
               <div>
-  
                 <div class="form-check form-check-inline">
                   <input
                     class="form-check-input"
@@ -1258,9 +1316,13 @@
                     name="future-shares-investment-plan"
                     id="future-shares-investment-plan-card"
                   />
-                  <label class="form-check-label" for="future-shares-investment-plan-card">Yes</label>
+                  <label
+                    class="form-check-label"
+                    for="future-shares-investment-plan-card"
+                    >Yes</label
+                  >
                 </div>
-  
+
                 <div class="form-check form-check-inline">
                   <input
                     class="form-check-input"
@@ -1268,7 +1330,11 @@
                     name="future-shares-investment-plan"
                     id="future-shares-investment-plan-not-yet"
                   />
-                  <label class="form-check-label" for="future-shares-investment-plan-not-yet">Not Yet</label>
+                  <label
+                    class="form-check-label"
+                    for="future-shares-investment-plan-not-yet"
+                    >Not Yet</label
+                  >
                 </div>
 
                 <div class="form-check form-check-inline">
@@ -1278,11 +1344,12 @@
                     name="future-shares-investment-plan"
                     id="future-shares-investment-plan-never"
                   />
-                  <label class="form-check-label" for="future-shares-investment-plan-never"
+                  <label
+                    class="form-check-label"
+                    for="future-shares-investment-plan-never"
                     >Never</label
                   >
                 </div>
-
               </div>
             </div>
 
@@ -1290,6 +1357,803 @@
             <div class="mb-3">
               <p class="lead mb-2">Comments</p>
               <textarea class="form-control" name="" id=""></textarea>
+            </div>
+          </div>
+
+          <!-- Other Assets and Liabilities Details -->
+          <div class="step">
+            <h4 class="mb-4">Other Assets and Liabilities Details</h4>
+
+            <!-- Lifestyle Assets -->
+            <div class="mb-3">
+              <p class="lead mb-3">Lifestyle Assets</p>
+
+              <div class="table-responsive">
+                <table
+                  id="shares-funds-table"
+                  class="table table-bordered table-sm align-middle"
+                >
+                  <thead>
+                    <tr>
+                      <th class="align-middle">Lifestyle Assets</th>
+                      <th class="align-middle">Description</th>
+                      <th class="align-middle">Value ($)</th>
+                      <th class="align-middle">Owner</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Home Contents -->
+                    <tr>
+                      <td>Home Contents</td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                    </tr>
+
+                    <!-- Motor Vehicle(s) -->
+                    <tr>
+                      <td>Motor Vehicle(s)</td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                    </tr>
+
+                    <!-- Other Vehicle(s) -->
+                    <tr>
+                      <td>Other Vehicle(s)</td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                    </tr>
+
+                    <!-- Collectibles/Antiques -->
+                    <tr>
+                      <td>Collectibles/Antiques</td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                    </tr>
+
+                    <!-- Other -->
+                    <tr>
+                      <td>Other</td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                    </tr>
+
+                    <!-- Other -->
+                    <tr>
+                      <td>Other</td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                    </tr>
+
+                    <!-- Total -->
+                    <tr>
+                      <th>Total</th>
+                      <td></td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Superannuation Assets -->
+            <div class="mb-3">
+              <p class="lead mb-3">Superannuation Assets</p>
+
+              <div class="table-responsive">
+                <table
+                  id="shares-funds-table"
+                  class="table table-bordered table-sm align-middle"
+                >
+                  <thead>
+                    <tr>
+                      <th class="align-middle">Superannuation Assets</th>
+                      <th class="align-middle">
+                        Superannuation Provider (SMSF, Industry, Retail, etc)
+                      </th>
+                      <th class="align-middle">Insurance Yes / No</th>
+                      <th class="align-middle">Current Value($)</th>
+                      <th class="align-middle">Owner</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Superannuation 1 -->
+                    <tr>
+                      <td>Superannuation 1</td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+
+                      <td>
+                        <select class="form-select">
+                          <option value="Yes">Yes</option>
+                          <option value="No">No</option>
+                        </select>
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                    </tr>
+                    <!-- Superannuation 2 -->
+                    <tr>
+                      <td>Superannuation 2</td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+
+                      <td>
+                        <select class="form-select">
+                          <option value="Yes">Yes</option>
+                          <option value="No">No</option>
+                        </select>
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                    </tr>
+                    <!-- Superannuation 3 -->
+                    <tr>
+                      <td>Superannuation 3</td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+
+                      <td>
+                        <select class="form-select">
+                          <option value="Yes">Yes</option>
+                          <option value="No">No</option>
+                        </select>
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                    </tr>
+                    <!-- Superannuation 4 -->
+                    <tr>
+                      <td>Superannuation 4</td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+
+                      <td>
+                        <select class="form-select">
+                          <option value="Yes">Yes</option>
+                          <option value="No">No</option>
+                        </select>
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                    </tr>
+                    <!-- Total -->
+                    <tr>
+                      <th>Total</th>
+                      <td></td>
+
+                      <td></td>
+
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Liabilities -->
+            <div class="mb-3">
+              <p class="lead mb-3">Liabilities</p>
+
+              <div class="table-responsive">
+                <table
+                  id="shares-funds-table"
+                  class="table table-bordered table-sm align-middle"
+                >
+                  <thead>
+                    <tr>
+                      <th class="align-middle">Liabilities</th>
+                      <th class="align-middle">Balance Owing ($)</th>
+                      <th class="align-middle">Lender</th>
+                      <th class="align-middle">Interest Rate (%)</th>
+                      <th class="align-middle">Repayment Amount</th>
+                      <th class="align-middle">Repayment (P&I–I/O)</th>
+                      <th class="align-middle">Owner</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Mortgage -->
+                    <tr>
+                      <td>Mortgage</td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                    </tr>
+
+                    <!-- Personal loan(s) -->
+                    <tr>
+                      <td>Personal loan(s)</td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                    </tr>
+
+                    <!-- Credit Card(s) 1 -->
+                    <tr>
+                      <td>Credit Card(s)</td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                    </tr>
+
+                    <!-- Credit Card(s) 2 -->
+                    <tr>
+                      <td>Credit Card(s)</td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                    </tr>
+
+                    <!-- Business Loan(s) -->
+                    <tr>
+                      <td>Business Loan(s)</td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                    </tr>
+
+                    <!-- Lease(s)/rental agreement -->
+                    <tr>
+                      <td>Lease(s)/rental agreement</td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                    </tr>
+
+                    <!-- Other 1 -->
+                    <tr>
+                      <td>Other</td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                    </tr>
+
+                    <!-- Other 2 -->
+                    <tr>
+                      <td>Other</td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                    </tr>
+
+                    <!-- Total -->
+                    <tr>
+                      <th>Total</th>
+                      <td class="d-flex gap-1">
+                        <span>$</span>
+                        <span>
+                          <input type="text" class="form-control" />
+                        </span>
+                      </td>
+
+                      <td></td>
+
+                      <td></td>
+
+                      <td class="d-flex gap-1">
+                        <span>$</span>
+                        <span>
+                          <input type="text" class="form-control" />
+                        </span>
+                      </td>
+
+                      <td></td>
+
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Objectives -->
+          <div class="step">
+            <h4 class="mb-4">Objectives</h4>
+
+            <!-- areas require assistance -->
+            <div class="mb-3">
+              <p class="lead mb-2">
+                In what areas do you require assistance and what's important
+                about money to you?
+              </p>
+              <textarea class="form-control" name="" id=""></textarea>
+            </div>
+
+            <!-- achieve over the timeframes -->
+            <div class="mb-3">
+              <p class="lead mb-2">
+                Please describe what you would like to achieve over the
+                following timeframes:
+              </p>
+              <textarea class="form-control" name="" id=""></textarea>
+            </div>
+
+            <!-- Short Term -->
+            <div class="mb-3">
+              <p class="lead mb-2">Short Term (Immediate):</p>
+              <textarea class="form-control" name="" id=""></textarea>
+            </div>
+
+            <!-- Medium Term -->
+            <div class="mb-3">
+              <p class="lead mb-2">Medium Term (2 - 5 years):</p>
+              <textarea class="form-control" name="" id=""></textarea>
+            </div>
+
+            <!-- Long Term -->
+            <div class="mb-3">
+              <p class="lead mb-2">Long Term ( 5yrs +):</p>
+              <textarea class="form-control" name="" id=""></textarea>
+            </div>
+          </div>
+
+          <!-- Insurances & Wills -->
+          <div class="step">
+            <h4 class="mb-4">Insurances & Wills</h4>
+
+            <!-- Insurances – Do you have: -->
+            <div class="mb-3">
+              <p class="lead mb-2">Insurances – Do you have:</p>
+
+              <!-- insurances -->
+              <div class="table-responsive mb-3">
+                <table
+                  id="shares-funds-table"
+                  class="table table-bordered table-sm align-middle"
+                >
+                  <tbody class="align-middle">
+                    <!-- Life Insurance -->
+                    <tr>
+                      <th>Life Insurance</th>
+                      <td>
+                        <div class="d-inline-flex gap-3 align-items-center">
+                          <div class="form-check form-check-inline mb-0">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="life-insurance"
+                              id="life-insurance-no"
+                            />
+                            <label
+                              class="form-check-label"
+                              for="life-insurance-no"
+                            >
+                              No
+                            </label>
+                          </div>
+
+                          <p class="lead fw-normal mb-0">go to next question</p>
+
+                          <div class="form-check form-check-inline mb-0">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="life-insurance"
+                              id="life-insurance-yes"
+                            />
+                            <label
+                              class="form-check-label"
+                              for="life-insurance-yes"
+                            >
+                              Yes
+                            </label>
+                          </div>
+                        </div>
+                      </td>
+                      <th class="text-right">Approximate Insured Value $</th>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                    </tr>
+
+                    <!-- Income Protection? -->
+                    <tr>
+                      <th>Income Protection?</th>
+                      <td>
+                        <div class="d-inline-flex gap-3 align-items-center">
+                          <div class="form-check form-check-inline mb-0">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="life-insurance"
+                              id="life-insurance-no"
+                            />
+                            <label
+                              class="form-check-label"
+                              for="life-insurance-no"
+                            >
+                              No
+                            </label>
+                          </div>
+
+                          <p class="lead fw-normal mb-0">go to next question</p>
+
+                          <div class="form-check form-check-inline mb-0">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="life-insurance"
+                              id="life-insurance-yes"
+                            />
+                            <label
+                              class="form-check-label"
+                              for="life-insurance-yes"
+                            >
+                              Yes
+                            </label>
+                          </div>
+                        </div>
+                      </td>
+                      <th class="text-right">Approximate Insured Value $</th>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                    </tr>
+
+                    <!-- Trauma Insurance? -->
+                    <tr>
+                      <th>Trauma Insurance?</th>
+                      <td>
+                        <div class="d-inline-flex gap-3 align-items-center">
+                          <div class="form-check form-check-inline mb-0">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="life-insurance"
+                              id="life-insurance-no"
+                            />
+                            <label
+                              class="form-check-label"
+                              for="life-insurance-no"
+                            >
+                              No
+                            </label>
+                          </div>
+
+                          <p class="lead fw-normal mb-0">go to next question</p>
+
+                          <div class="form-check form-check-inline mb-0">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="life-insurance"
+                              id="life-insurance-yes"
+                            />
+                            <label
+                              class="form-check-label"
+                              for="life-insurance-yes"
+                            >
+                              Yes
+                            </label>
+                          </div>
+                        </div>
+                      </td>
+                      <th class="text-right">Approximate Insured Value $</th>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!--  like a free analysis -->
+              <div class="mt-2 mb-3">
+                <label class="form-label" for="urgent">
+                  Would you like an analysis of your future shares and managed
+                  funds plans by a Chan & Naylor Financial Planner?:
+                </label>
+                <div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="like-free-analysis"
+                      id="have-will-yes"
+                    />
+                    <label
+                      class="form-check-label"
+                      for="have-will-yes"
+                      >Yes</label
+                    >
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="like-free-analysis"
+                      id="like-free-analysis-not-yet"
+                    />
+                    <label
+                      class="form-check-label"
+                      for="like-free-analysis-not-yet"
+                      >Not Yet</label
+                    >
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="like-free-analysis"
+                      id="like-free-analysis-no"
+                    />
+                    <label
+                      class="form-check-label"
+                      for="like-free-analysis-no"
+                      >No</label
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- have a will? -->
+              <div class="mt-2 mb-3">
+                <label class="form-label" for="urgent">
+                  Will – Do you have a will?
+                </label>
+                <div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="have-will"
+                      id="have-will-yes"
+                    />
+                    <label
+                      class="form-check-label"
+                      for="have-will-yes"
+                      >Yes</label
+                    >
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="have-will"
+                      id="have-will-no"
+                    />
+                    <label
+                      class="form-check-label"
+                      for="have-will-no"
+                      >No</label
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- have Powers of Attorney -->
+              <div class="mt-2 mb-3">
+                <label class="form-label" for="urgent">
+                  Do you Have Enduring Powers of Attorney?
+                </label>
+                <div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="have-powers-of-attorney"
+                      id="have-powers-of-attorney-yes"
+                    />
+                    <label
+                      class="form-check-label"
+                      for="have-powers-of-attorney-yes"
+                      >Yes</label
+                    >
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="have-powers-of-attorney"
+                      id="have-powers-of-attorney-no"
+                    />
+                    <label
+                      class="form-check-label"
+                      for="have-powers-of-attorney-no"
+                      >No</label
+                    >
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Notes and Diagrams -->
+            <div class="mb-3">
+              <p class="lead mb-2">Notes and Diagrams</p>
+              <textarea class="form-control" name="" id="" rows="5"></textarea>
             </div>
           </div>
 

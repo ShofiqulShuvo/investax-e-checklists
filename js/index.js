@@ -401,44 +401,21 @@ document.getElementById('add-address-row')?.addEventListener('click', function()
 
   // Define the cells with input elements
   let addressCell = document.createElement('td');
-  let suburbCell = document.createElement('td');
-  let stateCell = document.createElement('td');
-  let postCodeCell = document.createElement('td');
 
   // Create input elements for each cell
   let addressInput = document.createElement('input');
-  let suburbInput = document.createElement('input');
-  let stateInput = document.createElement('input');
-  let postCodeInput = document.createElement('input');
 
   // Set attributes for each input element
   addressInput.type = "text";
   addressInput.className = "form-control";
   addressInput.name = `address[${addressDetailsRowIndex}]`;
 
-  suburbInput.type = "text";
-  suburbInput.className = "form-control";
-  suburbInput.name = `suburb[${addressDetailsRowIndex}]`;
-
-  stateInput.type = "text";
-  stateInput.className = "form-control";
-  stateInput.name = `state[${addressDetailsRowIndex}]`;
-
-  postCodeInput.type = "text";
-  postCodeInput.className = "form-control";
-  postCodeInput.name = `postCode[${addressDetailsRowIndex}]`;
 
   // Append inputs to their respective cells
   addressCell.appendChild(addressInput);
-  suburbCell.appendChild(suburbInput);
-  stateCell.appendChild(stateInput);
-  postCodeCell.appendChild(postCodeInput);
 
   // Append cells to the new row
   newRow.appendChild(addressCell);
-  newRow.appendChild(suburbCell);
-  newRow.appendChild(stateCell);
-  newRow.appendChild(postCodeCell);
 
   // Append the new row to the table body
   tableBody.appendChild(newRow);
