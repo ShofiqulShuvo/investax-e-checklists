@@ -45,10 +45,14 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./company-trust-partnership.html">Company/Trust/Partnership</a>
+              <a class="nav-link" href="./company-trust-partnership.html"
+                >Company/Trust/Partnership</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./self-managed-superannuation-fund.html">Self-Managed Superannuation Fund</a>
+              <a class="nav-link" href="./self-managed-superannuation-fund.html"
+                >Self-Managed Superannuation Fund</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link active" href="/">ISC – Client Form</a>
@@ -65,73 +69,1229 @@
 
     <main>
       <div class="container">
+        <!-- heading -->
+        <div class="info-heading my-5">
+          <h2 class="text-center mb-4">Strategic Consultation</h2>
+          <p class="lead text-center">Client Information Form</p>
+        </div>
 
         <form
           class="step-form bg-white border border-secondary-subtle rounded-3 p-5"
         >
-          <!-- return required time -->
           <div class="step">
-            <label class="form-label d-block">
-              If your return is not required urgently, please indicate period
-              that would be suitable:
-            </label>
-
-            <div class="form-check form-check-inline">
+            <!-- Name of  Client -->
+            <div class="mb-3 d-block w-full d-md-flex gap-2 align-items-center">
+              <label for="client-name" class="text-nowrap form-label fw-normal"
+                >1. Enter your name here:</label
+              >
               <input
-                class="form-check-input"
-                type="radio"
-                name="requiredPeriod"
-                id="urgent"
+                type="text"
+                class="form-control w-full"
+                id="client-name"
+                placeholder="eg: John Doe"
               />
-              <label class="form-check-label" for="urgent"> Urgent </label>
+            </div>
+            <p class="lead fw-normal">
+              2. Fill out the <strong>Order Form.</strong>
+            </p>
+            <p class="lead fw-normal">
+              3. Attach any relevant documents or extra notes.
+            </p>
+            <p class="lead fw-normal">
+              4. Please indicate the most preferable time and days for your
+              Strategic Consultation
+            </p>
+
+            <!-- preferable time and days -->
+            <div class="mb-5 d-flex flex-column flex-lg-row gap-3 gap-lg-4">
+              <!-- day -->
+              <div
+                class="d-flex flex-column flex-lg-row gap-1 gap-lg-2 align-items-lg-end"
+              >
+                <label for="client-name" class="form-label fw-normal"
+                  >Day:
+                </label>
+                <input type="text" class="form-control" id="client-name" />
+                <div class="form-text text-nowrap">(between Mon-Fri)</div>
+              </div>
+
+              <!-- time -->
+              <div
+                class="d-flex flex-column flex-lg-row gap-1 gap-lg-2 align-items-lg-end"
+              >
+                <label for="client-name" class="form-label fw-normal"
+                  >Time:
+                </label>
+                <input type="text" class="form-control" id="client-name" />
+                <div class="form-text text-nowrap">(between 9am-3pm)</div>
+              </div>
             </div>
 
-            <div class="form-check form-check-inline">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="requiredPeriod"
-                id="4-6-week"
-              />
-              <label class="form-check-label" for="4-6-week"> 4-6 Weeks </label>
+            <p class="lead fw-normal mb-3">
+              We will be in touch with you shortly to schedule your appointment
+            </p>
+
+            <p class="lead fw-normal mb-1">Kind Regards</p>
+
+            <p class="lead">Ershad Ullah | Managing Partner | Investax Group</p>
+          </div>
+
+          <!-- services && Payment Details -->
+          <div class="step">
+            <!-- Services -->
+            <div class="mb-4">
+              <h4 class="mb-3">Services</h4>
+
+              <div class="table-responsive">
+                <table class="table table-bordered table-sm align-middle">
+                  <tbody>
+                    <tr>
+                      <th>Strategic Consultation (Inc GST)</th>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Advanced Strategic Consultation (Inc GST)</th>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Total (Inc GST)</th>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
 
-            <div class="form-check form-check-inline">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="requiredPeriod"
-                id="6-8-week"
-              />
-              <label class="form-check-label" for="6-8-week"> 6-8 Weeks </label>
+            <!-- Payment Details -->
+            <div class="mb-4">
+              <h4 class="mb-3">Payment Details</h4>
+
+              <!-- card selector -->
+              <div class="d-flex gap-2 mb-2">
+                <label class="form-label" for="urgent"> Credit Card: </label>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="credit-card"
+                    id="master-card"
+                  />
+                  <label class="form-check-label" for="master-card"
+                    >Master Card</label
+                  >
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="credit-card"
+                    id="visa-card"
+                  />
+                  <label class="form-check-label" for="visa-card">Visa</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="credit-card"
+                    id="other-card"
+                  />
+                  <label class="form-check-label" for="other-card">Other</label>
+                </div>
+              </div>
+
+              <!-- card details -->
+              <div class="mb-5">
+                <div class="row g-3">
+                  <!-- card Number -->
+                  <div class="col-12 col-md-6">
+                    <label for="card-number" class="form-label"
+                      >Card Number</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control w-full"
+                      id="card-number"
+                    />
+                  </div>
+
+                  <!-- Expiry -->
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <label for="card-expiry" class="form-label">Expiry</label>
+                    <input
+                      type="text"
+                      class="form-control w-full"
+                      id="card-expiry"
+                    />
+                  </div>
+
+                  <!-- Name on Card -->
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <label for="name-on-card" class="form-label"
+                      >Name on Card</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control w-full"
+                      id="name-on-card"
+                    />
+                  </div>
+
+                  <!-- Amount -->
+                  <div class="col-12 col-md-6 col-lg-4">
+                    <label for="card-amount" class="form-label"
+                      >Amount($)</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control w-full"
+                      id="card-amount"
+                    />
+                  </div>
+
+                  <!-- CVV -->
+                  <div class="col-12 col-md-6 col-lg-4">
+                    <label for="card-CVV" class="form-label">CVV</label>
+                    <input
+                      type="text"
+                      class="form-control w-full"
+                      id="card-CVV"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Cheque Direct Deposit -->
+              <div class="mb-2">
+                <div class="row g-3">
+                  <p class="lead col-12 mb-0">Cheque Direct Deposit</p>
+
+                  <!-- BSB: -->
+                  <div class="col-12 col-md-6">
+                    <label for="bsb" class="form-label">BSB:</label>
+                    <input type="text" class="form-control w-full" id="bsb" />
+                  </div>
+
+                  <!-- Account Number: -->
+                  <div class="col-12 col-md-6">
+                    <label for="account-number" class="form-label"
+                      >Account Number:</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control w-full"
+                      id="account-number"
+                    />
+                  </div>
+
+                  <!-- Account Name -->
+                  <div class="col-12 col-md-6">
+                    <label for="account-name" class="form-label"
+                      >Account Name:</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control w-full"
+                      id="account-name"
+                    />
+                  </div>
+
+                  <!-- Reference -->
+                  <div class="col-12 col-md-6">
+                    <label for="reference" class="form-label">Reference:</label>
+                    <input
+                      type="text"
+                      class="form-control w-full"
+                      id="reference"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <p class="lead mt-4">
+                What information and knowledge do you hope to gain from your
+                consultation?
+              </p>
             </div>
 
-            <div class="form-check form-check-inline">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="requiredPeriod"
-                id="8-10-week"
-              />
-              <label class="form-check-label" for="8-10-week">
-                8-10 Weeks
-              </label>
+            <!-- extra text -->
+            <div class="mb-4">
+              <h5 class="mb-3">Not a Financial Plan</h5>
+
+              <p>
+                (Information provided by us to you during your consultation or
+                financial strategic Consultation is of a general nature and not
+                intended to be nor purported to be financial advice. Investax
+                Group or any of the director/s, officers, employees, licensees
+                or contractors) are NOT Australian Financial Services Licensees
+                authorised to provide financial product advice or deal in
+                financial products including SMSF. Any discussion during a
+                Financial Strategic Consultation or other consultation about
+                superannuation, shares, managed funds, investments, or similar
+                topics are only made in the context of accounting and taxation
+                and should not be taken to be general or personal financial
+                advice to you. You must not act on any matter discussed without
+                taking professional advice from a licensed financial planner who
+                will take due regard to your specific and particular needs.
+                <br /><br />
+                At your request Investax Group may also refer you to Investax
+                Group for specific loan product information
+              </p>
             </div>
 
-            <div class="form-check form-check-inline">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="requiredPeriod"
-                id="anytime"
-              />
-              <label class="form-check-label" for="anytime">
-                Anytime before Due Date
-              </label>
+            <!-- extra text -->
+            <div class="mb-4">
+              <h5 class="mb-3">Agency Agreement</h5>
+
+              <p>
+                You appoint Investax Group or its related companies or any of
+                their directors, officers, employees or licensees (“Investax
+                Group”) as your agent to undertake communication or
+                correspondence with any required legal advisor to provide you
+                with legal advice. Investax Group will maintain the
+                confidentiality of any communications or correspondence so
+                created within the law and use such information in furtherance
+                of your requirements.
+              </p>
+            </div>
+
+            <!-- extra text -->
+            <div class="mb-4">
+              <h5 class="mb-3">Privacy / Communication Agreement</h5>
+
+              <p>
+                It is our policy not to sell or pass on any personal information
+                that you may have provided to us unless we have your express
+                consent to do so. Your details will be added to the Investax
+                Group data base and you will receive communications from
+                Investax Group in the form of newsletters, tax notifications and
+                promotional material. You can opt out by selecting unsubscribe.
+                <br /><br />
+                From time to time, we may receive requests to furnish your
+                financial details to third parties. In order to comply with
+                privacy laws please acknowledge that we are able accept your
+                verbal authority as legal confirmation in these circumstances.
+                An exception to this is where Investax Group may be required by
+                law to disclose certain information.
+              </p>
             </div>
           </div>
 
+          <!-- Client Information Form -->
+          <div class="step">
+            <h4 class="mb-4">Client Information Form</h4>
+            <!-- CLIENT DETAILS -->
+            <div class="mb-3">
+              <label class="form-check-label d-block mb-2"
+                >Client Details</label
+              >
 
+              <div class="table-responsive">
+                <table class="table table-bordered table-sm align-middle">
+                  <thead>
+                    <tr>
+                      <th>Title</th>
+                      <th>First Name</th>
+                      <th>Surname</th>
+                      <th>D.O.B</th>
+                      <th>Age</th>
+                      <th>Sex (M/F)</th>
+                      <th>Relationship</th>
+                    </tr>
+                  </thead>
+                  <tbody id="clientDetailsTableBody">
+                    <tr>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="title[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="firstName[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="surname[0]"
+                        />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" name="dob[0]" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" name="age[0]" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" name="sex[0]" />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="relationship[0]"
+                        />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <button
+                id="add-client-row"
+                class="mb-3 ms-auto d-block btn btn-sm btn-primary"
+                type="button"
+              >
+                Add +
+              </button>
+            </div>
+
+            <!-- ADDRESS DETAILS -->
+            <div class="mb-3">
+              <label class="form-check-label d-block mb-2"
+                >Address Details</label
+              >
+
+              <div class="table-responsive">
+                <table class="table table-bordered table-sm align-middle">
+                  <thead>
+                    <tr>
+                      <th>Address</th>
+                      <th>Suburb</th>
+                      <th>State</th>
+                      <th>Post Code</th>
+                    </tr>
+                  </thead>
+                  <tbody id="addressDetailsTableBody">
+                    <!-- Address 1 -->
+                    <tr>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="address[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="suburb[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="state[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="postCode[0]"
+                        />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <button
+                id="add-address-row"
+                class="mb-3 ms-auto d-block btn btn-sm btn-primary"
+                type="button"
+              >
+                Add +
+              </button>
+            </div>
+
+            <!-- CONTACT DETAILS  -->
+            <div class="mb-3">
+              <label class="form-check-label d-block mb-2"
+                >Contact Details</label
+              >
+
+              <div class="table-responsive">
+                <table class="table table-bordered table-sm align-middle">
+                  <thead>
+                    <tr>
+                      <th>Phone</th>
+                      <th>Work</th>
+                      <th>Mobile</th>
+                      <th>Email Address</th>
+                    </tr>
+                  </thead>
+                  <tbody id="contactDetailsTableBody">
+                    <!-- Contact 1 -->
+                    <tr>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="phone[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="work[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="mobile[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="email[0]"
+                        />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <button
+                id="add-contact-row"
+                class="mb-3 ms-auto d-block btn btn-sm btn-primary"
+                type="button"
+              >
+                Add +
+              </button>
+            </div>
+
+            <!-- DEPENDANT CHILD'S DETAILS -->
+            <div class="mb-3">
+              <label class="form-check-label d-block mb-2"
+                >Dependant Child’s Details</label
+              >
+
+              <div class="table-responsive">
+                <table class="table table-bordered table-sm align-middle">
+                  <thead>
+                    <tr>
+                      <th>Child’s Name</th>
+                      <th>Age</th>
+                      <th>Sex</th>
+                      <th>Living at home (Y/N)</th>
+                      <th>Salary</th>
+                      <th>Comments</th>
+                    </tr>
+                  </thead>
+                  <tbody id="dependantChildDetailsTableBody">
+                    <!-- Dependant Child 1 -->
+                    <tr>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="childName[0]"
+                        />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" name="age[0]" />
+                      </td>
+                      <td>
+                        <input type="text" class="form-control" name="sex[0]" />
+                      </td>
+                      <td>
+                        <div
+                          class="d-flex justify-content-center align-items-center gap-1"
+                        >
+                          <input
+                            type="checkbox"
+                            class="form-check-input"
+                            name="livingAtHome[0]"
+                            id="livingAtHome[0]"
+                          />
+                          <label for="livingAtHome[0]">Yes</label>
+                        </div>
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="salary[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="comments[0]"
+                        />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <button
+                id="add-dependant-child-row"
+                class="mb-3 ms-auto d-block btn btn-sm btn-primary"
+                type="button"
+              >
+                Add +
+              </button>
+            </div>
+
+            <!--  hear about  -->
+            <div class="mb-3">
+              <!-- How did you hear about -->
+              <div class="d-flex gap-2 mb-2">
+                <label class="form-label">
+                  How did you hear about Chan & Naylor? :
+                </label>
+
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="hear-about"
+                    id="hear-about-book"
+                  />
+                  <label class="form-check-label" for="hear-about-book"
+                    >Book</label
+                  >
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="hear-about"
+                    id="hear-about-seminar"
+                  />
+                  <label class="form-check-label" for="hear-about-seminar"
+                    >Seminar</label
+                  >
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="hear-about"
+                    id="hear-about-website"
+                  />
+                  <label class="form-check-label" for="hear-about-website"
+                    >Website</label
+                  >
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="hear-about"
+                    id="hear-about-reffered"
+                  />
+                  <label class="form-check-label" for="hear-about-reffered"
+                    >Reffered</label
+                  >
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="hear-about"
+                    id="hear-about-email"
+                  />
+                  <label class="form-check-label" for="hear-about-email"
+                    >Email</label
+                  >
+                </div>
+              </div>
+
+              <!-- had Financial Strategic Consultation -->
+              <div class="d-flex gap-2 mb-2">
+                <label class="form-label">
+                  If Friend /Family, have they had a Financial Strategic
+                  Consultation? :
+                </label>
+
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="financial-strategic-consultation"
+                    id="financial-strategic-consultation-yes"
+                  />
+                  <label
+                    class="form-check-label"
+                    for="financial-strategic-consultation-yes"
+                    >Yes</label
+                  >
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="financial-strategic-consultation"
+                    id="financial-strategic-consultation-no"
+                  />
+                  <label
+                    class="form-check-label"
+                    for="financial-strategic-consultation-no"
+                    >No</label
+                  >
+                </div>
+              </div>
+
+              <!-- OTHER -->
+              <div class="d-flex align-items-center gap-2">
+                <label for="hear-about-other" class="form-label">Other</label>
+                <input type="text" class="form-control" id="hear-about-other" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Income Details -->
+          <div class="step">
+            <h4 class="mb-4">Income Details</h4>
+
+            <!-- about business -->
+            <div class="mb-3">
+              <p class="lead mb-2">Tell us about your business</p>
+
+              <div class="table-responsive">
+                <table class="table table-bordered table-sm align-middle">
+                  <thead>
+                    <tr>
+                      <th class="align-middle">Business Name</th>
+                      <th class="align-middle">Description</th>
+                      <th class="align-middle">
+                        Corporate Structure (attach hand drawn picture on page 9
+                        if necessary)
+                      </th>
+                      <th class="align-middle">Ownership Details</th>
+                      <th class="align-middle">Turnover $000</th>
+                      <th class="align-middle">Business Assets</th>
+                      <th class="align-middle">
+                        Value of Business Assets $000
+                      </th>
+                      <th class="align-middle">No. of Employees</th>
+                      <th class="align-middle">Date Started</th>
+                    </tr>
+                  </thead>
+                  <tbody id="about-business">
+                    <tr>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="businessName[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="description[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="corporateStructure[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="ownershipDetails[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="turnover[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="businessAssets[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="valueOfBusinessAssets[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="numOfEmployees[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="dateStarted[0]"
+                        />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <button
+                id="add-business-row"
+                class="mb-3 ms-auto d-block btn btn-sm btn-primary"
+                type="button"
+              >
+                Add +
+              </button>
+            </div>
+
+            <!-- about employment -->
+            <div class="mb-3">
+              <p class="lead mb-2">Tell us about your employment</p>
+
+              <div class="table-responsive">
+                <table
+                  id="employment-table"
+                  class="table table-bordered table-sm align-middle"
+                >
+                  <thead>
+                    <tr>
+                      <th class="align-middle">Client Name</th>
+                      <th class="align-middle">Job Description</th>
+                      <th class="align-middle">Date Started</th>
+                      <th class="align-middle">Salary $000</th>
+                      <th class="align-middle">Bonuses $000</th>
+                      <th class="align-middle">Qualifications</th>
+                      <th class="align-middle">
+                        Additional Super Contributions
+                      </th>
+                      <th class="align-middle">Comments</th>
+                    </tr>
+                  </thead>
+                  <tbody id="employment-details">
+                    <!-- Initial row -->
+                    <tr>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="clientName[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="jobDescription[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="dateStarted[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="salary[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="bonuses[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="qualifications[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="superContributions[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="comments[0]"
+                        />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <button
+                id="add-employment-row"
+                class="mb-3 ms-auto d-block btn btn-sm btn-primary"
+                type="button"
+              >
+                Add +
+              </button>
+            </div>
+          </div>
+
+          <!-- Property Investment Details -->
+          <div class="step">
+            <h4 class="mb-4">Property Investment Details</h4>
+
+            <!-- property -->
+            <div class="mb-3">
+              <p class="lead mb-2">Do you have any property?</p>
+              <p class="lead fw-normal mb-2">
+                Property Details (include your Principal Place of Residence)
+              </p>
+              <div class="table-responsive">
+                <table
+                  id="property-table"
+                  class="table table-bordered table-sm align-middle"
+                >
+                  <thead>
+                    <tr>
+                      <th class="align-middle">Suburb</th>
+                      <th class="align-middle">State</th>
+                      <th class="align-middle">Ownership Details</th>
+                      <th class="align-middle">Property Type</th>
+                      <th class="align-middle">Date of Purchase</th>
+                      <th class="align-middle">Purchase Price $000</th>
+                      <th class="align-middle">Current Market Value $000</th>
+                      <th class="align-middle">Debt $000</th>
+                      <th class="align-middle">Loan Type/ Lender</th>
+                      <th class="align-middle">Equity $000</th>
+                      <th class="align-middle">Weekly Rental Income</th>
+                      <th class="align-middle">Depreciation Claimed?</th>
+                      <th class="align-middle">
+                        Have you lived in this property?
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody id="property-details">
+                    <!-- Initial row -->
+                    <tr>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="suburb[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="state[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="ownershipDetails[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="propertyType[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="dateOfPurchase[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="purchasePrice[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="currentMarketValue[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="debt[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="loanTypeLender[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="equity[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="weeklyRentalIncome[0]"
+                        />
+                      </td>
+                      <td>
+                        <select
+                          class="form-select"
+                          name="depreciationClaimed[0]"
+                        >
+                          <option value="Yes">Yes</option>
+                          <option value="No">No</option>
+                        </select>
+                      </td>
+                      <td>
+                        <select class="form-select" name="livedInProperty[0]">
+                          <option value="Yes">Yes</option>
+                          <option value="No">No</option>
+                        </select>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <button
+                id="add-property-row"
+                class="mb-3 ms-auto d-block btn btn-sm btn-primary"
+                type="button"
+              >
+                Add +
+              </button>
+            </div>
+
+            <!-- investment plan -->
+            <div class="mb-3">
+              <p class="lead mb-2">
+                What are your future property investment plans?
+              </p>
+              <textarea class="form-control" name="" id=""></textarea>
+            </div>
+
+            <!-- Comments -->
+            <div class="mb-3">
+              <p class="lead mb-2">Comments</p>
+              <textarea class="form-control" name="" id=""></textarea>
+            </div>
+          </div>
+
+          <!-- Shares and Managed Funds Details -->
+          <div class="step">
+            <h4 class="mb-4">Shares and Managed Funds Details</h4>
+
+            <!-- Shares or Managed Funds -->
+            <div class="mb-3">
+              <p class="lead mb-2">Do you own any Shares or Managed Funds?</p>
+              <p class="lead fw-normal mb-2">Share/Managed Funds Details</p>
+              <div class="table-responsive">
+                <table
+                  id="shares-funds-table"
+                  class="table table-bordered table-sm align-middle"
+                >
+                  <thead>
+                    <tr>
+                      <th class="align-middle">Name</th>
+                      <th class="align-middle">Ownership Details</th>
+                      <th class="align-middle">Date of Purchase</th>
+                      <th class="align-middle">Total Value of Purchase $000</th>
+                      <th class="align-middle">Current Market Value $000</th>
+                      <th class="align-middle">Debt $000</th>
+                      <th class="align-middle">Loan Type</th>
+                      <th class="align-middle">Equity $000</th>
+                      <th class="align-middle">Dividend</th>
+                      <th class="align-middle">Holding or selling?</th>
+                    </tr>
+                  </thead>
+                  <tbody id="shares-funds-details">
+                    <!-- Initial row -->
+                    <tr>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="shareName[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="ownershipDetails[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="dateOfPurchase[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="totalValueOfPurchase[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="currentMarketValue[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="debt[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="loanType[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="equity[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="dividend[0]"
+                        />
+                      </td>
+                      <td>
+                        <select class="form-select" name="holdingOrSelling[0]">
+                          <option value="Holding">Holding</option>
+                          <option value="Selling">Selling</option>
+                        </select>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <button
+                id="add-shares-funds-row"
+                class="mb-3 ms-auto d-block btn btn-sm btn-primary"
+                type="button"
+              >
+                Add +
+              </button>
+            </div>
+
+            <!-- future shares investment plan -->
+            <div class="mb-3">
+              <p class="lead mb-2">
+                What are your future shares or managed funds investment plans?
+              </p>
+              <textarea class="form-control" name="" id=""></textarea>
+            </div>
+
+            <!-- future shares investment plan -->
+            <div class="mt-2 mb-3">
+              <label class="form-label" for="urgent"> Would you like an analysis of your future shares and managed funds plans by a Chan & Naylor Financial Planner?: </label>
+              <div>
+  
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="future-shares-investment-plan"
+                    id="future-shares-investment-plan-card"
+                  />
+                  <label class="form-check-label" for="future-shares-investment-plan-card">Yes</label>
+                </div>
+  
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="future-shares-investment-plan"
+                    id="future-shares-investment-plan-not-yet"
+                  />
+                  <label class="form-check-label" for="future-shares-investment-plan-not-yet">Not Yet</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="future-shares-investment-plan"
+                    id="future-shares-investment-plan-never"
+                  />
+                  <label class="form-check-label" for="future-shares-investment-plan-never"
+                    >Never</label
+                  >
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Comments -->
+            <div class="mb-3">
+              <p class="lead mb-2">Comments</p>
+              <textarea class="form-control" name="" id=""></textarea>
+            </div>
+          </div>
 
           <!-- Buttons -->
           <div class="mt-5 d-flex flex-row gap-2 justify-content-center">
