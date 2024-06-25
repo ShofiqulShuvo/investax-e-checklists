@@ -82,6 +82,16 @@
         <form
           class="step-form bg-white border border-secondary-subtle rounded-3 p-5"
         >
+          <!-- email -->
+          <div class="step">
+            <div class="d-flex align-items-center justify-content-center gap-3">
+              <label for="emailInput" class="form-label text-nowrap fs-5">Enter Your Email: </label>
+              <div class="input-group">
+                <input type="email" class="form-control" id="emailInput" placeholder="example@example.com"  />
+              </div>
+            </div>
+          </div>
+
           <!-- return required time -->
           <div class="step">
             <label class="form-label d-block">
@@ -1807,7 +1817,7 @@
           <!-- Buttons -->
           <div class="mt-5 d-flex flex-row gap-2 justify-content-center">
             <button
-              class="btn btn-lg btn-primary"
+              class="step-button"
               type="button"
               onclick="prevStep()"
               id="prevBtn"
@@ -1815,7 +1825,7 @@
               Previous
             </button>
             <button
-              class="btn btn-lg btn-primary"
+              class="step-button"
               type="button"
               onclick="nextStep()"
               id="nextBtn"
@@ -1823,7 +1833,7 @@
               Next
             </button>
             <button
-              class="btn btn-lg btn-success"
+              class="submit-button"
               type="submit"
               id="submitBtn"
               style="display: none"
@@ -1831,6 +1841,7 @@
               Submit
             </button>
           </div>
+          
         </form>
       </div>
     </main>

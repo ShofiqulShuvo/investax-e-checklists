@@ -46,6 +46,51 @@ let currentStep = 1;
 
     // function for step end
 
+    // for otp modal
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const inputs = document.querySelectorAll('.otp-input');
+      const submitBtn = document.getElementById('submitBtn');
+    
+      function checkInputs() {
+        let allFilled = true;
+        inputs.forEach(input => {
+          if (input.value.length === 0) {
+            allFilled = false;
+          }
+        });
+        submitBtn.disabled = !allFilled;
+      }
+    
+      inputs.forEach((input, index) => {
+        input.addEventListener('input', (event) => {
+          if (event.inputType === 'insertText' && input.value.length === 1) {
+            if (index < inputs.length - 1) {
+              inputs[index + 1].focus();
+            }
+          }
+          checkInputs();
+        });
+    
+        input.addEventListener('keydown', (event) => {
+          if (event.key === 'Backspace' && input.value.length === 0) {
+            if (index > 0) {
+              inputs[index - 1].focus();
+              inputs[index - 1].value = ''; // Clear the previous input field
+            }
+          }
+        });
+      });
+    
+      document.getElementById('resendOtpBtn').addEventListener('click', () => {
+        inputs.forEach(input => {
+          input.value = '';
+        });
+        inputs[0].focus();
+        checkInputs();
+      });
+    });
+    
+  // otp modal end
 
 
 // for otp page
