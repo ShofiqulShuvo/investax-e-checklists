@@ -4,17 +4,25 @@ const nextBtn = document.getElementById("nextBtn");
 const prevBtn = document.getElementById("prevBtn");
 const submitBtn = document.getElementById("submitBtn");
 
-showStep(currentStep);
+// Ensure DOM is fully loaded before accessing elements
+document.addEventListener("DOMContentLoaded", function() {
+  showStep(currentStep); // Show initial step when DOM is loaded
+
+  nextBtn?.addEventListener("click", nextStep);
+  prevBtn?.addEventListener("click", prevStep);
+});
 
 function showStep(step) {
   const steps = document.querySelectorAll(".step");
 
-  if (steps.length > 0) {
-    for (let i = 0; i < steps.length; i++) {
-      steps[i].style.display = "none";
-    }
-
-    steps[step - 1].style.display = "block";
+  if (steps.length > 0 && step >= 1 && step <= steps.length) {
+    steps.forEach((stepElement, index) => {
+      if (index === step - 1) {
+        stepElement.style.display = "block";
+      } else {
+        stepElement.style.display = "none";
+      }
+    });
 
     if (step === totalSteps) {
       nextBtn.style.display = "none";
@@ -24,16 +32,42 @@ function showStep(step) {
       submitBtn.style.display = "none";
     }
 
-    // Disable previous button on the first step
     prevBtn.disabled = step === 1;
-  }
+  } 
 }
 
 function nextStep() {
-  if (currentStep < totalSteps) {
+  if (validateStep(currentStep)) {
     currentStep++;
     showStep(currentStep);
   }
+}
+
+function validateStep(step) {
+  const currentStepFields = document.querySelectorAll(`.step:nth-child(${step}) input[required]`);
+
+  let isValid = true;
+
+  currentStepFields.forEach(field => {
+    if (!field.value.trim()) {
+      isValid = false;
+      const errorMessage = document.createElement('div');
+      errorMessage.className = 'text-danger';
+      errorMessage.textContent = `Please fill out the '${field.name}' field.`;
+
+      const existingErrorMessage = field.parentElement.querySelector('.text-danger');
+      if (!existingErrorMessage) {
+        field.parentElement.appendChild(errorMessage);
+      }
+    } else {
+      const existingErrorMessage = field.parentElement.querySelector('.text-danger');
+      if (existingErrorMessage) {
+        existingErrorMessage.remove();
+      }
+    }
+  });
+
+  return isValid;
 }
 
 function prevStep() {
@@ -47,8 +81,9 @@ nextBtn?.addEventListener("click", nextStep);
 prevBtn?.addEventListener("click", prevStep);
 
 
+
 // for otp modal
-document.addEventListener("DOMContentLoaded", (event) => {
+document?.addEventListener("DOMContentLoaded", (event) => {
   const inputs = document.querySelectorAll(".otp-input");
   const submitBtn = document.getElementById("submitBtn");
 
@@ -82,7 +117,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
   });
 
-  document.getElementById("resendOtpBtn").addEventListener("click", () => {
+  document.getElementById("resendOtpBtn")?.addEventListener("click", () => {
     inputs.forEach((input) => {
       input.value = "";
     });
