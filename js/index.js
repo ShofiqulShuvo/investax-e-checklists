@@ -53,7 +53,7 @@ function validateStep(step) {
       isValid = false;
       const errorMessage = document.createElement('div');
       errorMessage.className = 'text-danger';
-      errorMessage.textContent = `Please fill out the '${field.name}' field.`;
+      errorMessage.textContent = `Please fill out the field.`;
 
       const existingErrorMessage = field.parentElement.querySelector('.text-danger');
       if (!existingErrorMessage) {
