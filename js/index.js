@@ -128,46 +128,54 @@ document?.addEventListener("DOMContentLoaded", (event) => {
 
 // otp modal end
 
-// add children name and date of birth start
 let addChildrenInputIndex = 0;
-document.getElementById("add-children")?.addEventListener("click", function () {
-  let fieldGroupWrapper = document.createElement("div");
-  let nameFieldWrapper = document.createElement("div");
-  let birthDateFieldWrapper = document.createElement("div");
-  let nameInput = document.createElement("input");
-  let birthDateInput = document.createElement("input");
 
-  // for creating input name attribute
+document.getElementById("add-children")?.addEventListener("click", function () {
   addChildrenInputIndex++;
 
-  // adding classname
+  let fieldGroupWrapper = document.createElement("div");
   fieldGroupWrapper.classList.add("mb-2", "row");
-  nameFieldWrapper.classList.add("col-12", "col-md-6");
-  birthDateFieldWrapper.classList.add("col-12", "col-md-6");
-  nameInput.classList.add("form-control");
-  birthDateInput.classList.add("form-control");
-  // adding classname end
 
-  // adding type to input and placeholder
+  let nameFieldWrapper = document.createElement("div");
+  nameFieldWrapper.classList.add("col-12", "col-md-6");
+
+  let birthDateFieldWrapper = document.createElement("div");
+  birthDateFieldWrapper.classList.add("col-12", "col-md-6");
+
+  let nameInput = document.createElement("input");
   nameInput.type = "text";
+  nameInput.classList.add("form-control");
   nameInput.placeholder = "Children Name";
   nameInput.name = `childrenName[${addChildrenInputIndex}]`;
-  birthDateInput.type = "date";
-  birthDateInput.name = `childrenDob[${addChildrenInputIndex}]`;
-  // adding type to input and placeholder end
 
-  // appending inputs to wrappers
+  let birthDateInput = document.createElement("input");
+  birthDateInput.type = "date";
+  birthDateInput.classList.add("form-control");
+  birthDateInput.name = `childrenDob[${addChildrenInputIndex}]`;
+
   nameFieldWrapper.appendChild(nameInput);
   birthDateFieldWrapper.appendChild(birthDateInput);
 
-  // appending wrappers to the field group
+  let removeButtonWrapper = document.createElement("div");
+  removeButtonWrapper.classList.add("col-12");
+
+  let removeButton = document.createElement("button");
+  removeButton.classList.add("remove-btn", "btn", "btn-sm", "btn-danger", "ms-auto", "d-block", "ms-auto", "mt-1");
+  removeButton.type = "button";
+  removeButton.innerHTML = 'x'; // Bootstrap Icon for 'x'
+
+  removeButton.addEventListener("click", function () {
+    fieldGroupWrapper.remove();
+  });
+
+  removeButtonWrapper.appendChild(removeButton);
+
   fieldGroupWrapper.appendChild(nameFieldWrapper);
   fieldGroupWrapper.appendChild(birthDateFieldWrapper);
+  fieldGroupWrapper.appendChild(removeButtonWrapper);
 
-  // appending the field group to the main container
   document.getElementById("childrenInput").appendChild(fieldGroupWrapper);
 });
-// add children name and date of birth start
 
 // interest receiverd
 // Initialize index for additional rows
