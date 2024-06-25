@@ -115,6 +115,20 @@ footer a {
   width: 100%;
   max-width: 300px;
   font-weight: 600;
+  border-color: #9e6d2d;
+  background: #9e6d2d;
+  color: #fff;
+}
+
+#otpForm button:hover {
+  border-color: #61431c;
+  background: #61431c;
+  color: #fff;
+}
+
+#otpForm button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
 }
 
 
@@ -146,6 +160,18 @@ footer a {
   font-size: 1.1rem;
   font-weight: 500;
   color: #000;
+}
+
+.step p.lead {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #000;
+}
+
+.step .add-btn {
+  display: block;
+  background: #9e6d2d;
+  color: #fff;
 }
 
 /* index page */
