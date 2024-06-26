@@ -99,18 +99,19 @@
         >
           <!-- email -->
           <div class="step">
-            <div class="d-flex align-items-center justify-content-center gap-3">
+            <div class="d-block d-lg-flex align-items-start justify-content-center gap-3">
               <label for="emailInput" class="form-label text-nowrap fs-5"
-                >Enter Your Email:
-              </label>
-              <div class="input-group">
-                <input
-                  type="email"
-                  class="form-control"
-                  id="emailInput"
-                  placeholder="example@example.com"
-                />
-              </div>
+                  >Enter Your Email:
+                </label>
+                <div class="input-group d-block w-100">
+                  <input
+                    type="email"
+                    class="form-control w-100"
+                    id="emailInput"
+                    placeholder="example@example.com"
+                    required
+                  />
+                </div>
             </div>
           </div>
 
@@ -399,6 +400,7 @@
                     <th>TOTAL INTEREST RECEIVED $</th>
                     <th>TFN WITHHOLDING $</th>
                     <th>JOINT ACCOUNT?</th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody id="interestReceivedTableBody">
@@ -445,6 +447,7 @@
                         <label for="jointAccount[0]">Yes</label>
                       </div>
                     </td>
+                    <td></td>
                   </tr>
                 </tbody>
               </table>
@@ -474,6 +477,7 @@
                     <th>NAME OF SHARES</th>
                     <th>NUMBER OF SHARES HELD</th>
                     <th>AMOUNT RECEIVED $</th>
+                    <td></td>
                   </tr>
                 </thead>
                 <tbody id="dividendsTableBody">
@@ -499,6 +503,7 @@
                         name="shareAmount[0]"
                       />
                     </td>
+                    <td></td>
                   </tr>
                 </tbody>
               </table>

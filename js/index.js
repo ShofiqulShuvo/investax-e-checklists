@@ -128,8 +128,10 @@ document?.addEventListener("DOMContentLoaded", (event) => {
 
 // otp modal end
 
-let addChildrenInputIndex = 0;
 
+// add children 
+// Initialize index for additional rows
+let addChildrenInputIndex = 0;
 document.getElementById("add-children")?.addEventListener("click", function () {
   addChildrenInputIndex++;
 
@@ -176,137 +178,172 @@ document.getElementById("add-children")?.addEventListener("click", function () {
 
   document.getElementById("childrenInput").appendChild(fieldGroupWrapper);
 });
+// add children end
+
+
+
+
 
 // interest receiverd
 // Initialize index for additional rows
 let interestReceivedRowIndex = 0;
-document
-  .getElementById("add-interest-row")
-  ?.addEventListener("click", function () {
-    let tableBody = document.getElementById("interestReceivedTableBody");
 
-    // Increment the row index
-    interestReceivedRowIndex++;
+document.getElementById("add-interest-row")?.addEventListener("click", function () {
+  let tableBody = document.getElementById("interestReceivedTableBody");
 
-    // Create a new row
-    let newRow = document.createElement("tr");
+  // Increment the row index
+  interestReceivedRowIndex++;
 
-    // Define the cells with input elements
-    let bankNameCell = document.createElement("td");
-    let accountNumberCell = document.createElement("td");
-    let totalInterestCell = document.createElement("td");
-    let tfnWithholdingCell = document.createElement("td");
-    let jointAccountCell = document.createElement("td");
+  // Create a new row
+  let newRow = document.createElement("tr");
 
-    // Create input elements for each cell
-    let bankNameInput = document.createElement("input");
-    let accountNumberInput = document.createElement("input");
-    let totalInterestInput = document.createElement("input");
-    let tfnWithholdingInput = document.createElement("input");
-    let jointAccountInput = document.createElement("input");
-    let jointAccountLabel = document.createElement("label");
+  // Define the cells with input elements
+  let bankNameCell = document.createElement("td");
+  let accountNumberCell = document.createElement("td");
+  let totalInterestCell = document.createElement("td");
+  let tfnWithholdingCell = document.createElement("td");
+  let jointAccountCell = document.createElement("td");
+  let actionsCell = document.createElement("td"); // New cell for actions
 
-    // Set attributes for each input element
-    bankNameInput.type = "text";
-    bankNameInput.className = "form-control";
-    bankNameInput.name = `bankName[${interestReceivedRowIndex}]`;
+  // Create input elements for each cell
+  let bankNameInput = document.createElement("input");
+  let accountNumberInput = document.createElement("input");
+  let totalInterestInput = document.createElement("input");
+  let tfnWithholdingInput = document.createElement("input");
+  let jointAccountInput = document.createElement("input");
+  let jointAccountLabel = document.createElement("label");
 
-    accountNumberInput.type = "text";
-    accountNumberInput.className = "form-control";
-    accountNumberInput.name = `accountNumber[${interestReceivedRowIndex}]`;
+  // Set attributes for each input element
+  bankNameInput.type = "text";
+  bankNameInput.className = "form-control";
+  bankNameInput.name = `bankName[${interestReceivedRowIndex}]`;
 
-    totalInterestInput.type = "text";
-    totalInterestInput.className = "form-control";
-    totalInterestInput.name = `totalInterest[${interestReceivedRowIndex}]`;
+  accountNumberInput.type = "text";
+  accountNumberInput.className = "form-control";
+  accountNumberInput.name = `accountNumber[${interestReceivedRowIndex}]`;
 
-    tfnWithholdingInput.type = "text";
-    tfnWithholdingInput.className = "form-control";
-    tfnWithholdingInput.name = `tfnWithholding[${interestReceivedRowIndex}]`;
+  totalInterestInput.type = "text";
+  totalInterestInput.className = "form-control";
+  totalInterestInput.name = `totalInterest[${interestReceivedRowIndex}]`;
 
-    jointAccountInput.type = "checkbox";
-    jointAccountInput.className = "form-check-input";
-    jointAccountInput.name = `jointAccount[${interestReceivedRowIndex}]`;
-    jointAccountInput.id = `jointAccount[${interestReceivedRowIndex}]`;
+  tfnWithholdingInput.type = "text";
+  tfnWithholdingInput.className = "form-control";
+  tfnWithholdingInput.name = `tfnWithholding[${interestReceivedRowIndex}]`;
 
-    jointAccountLabel.setAttribute("for", jointAccountInput.id);
-    jointAccountLabel.innerText = "Yes";
+  jointAccountInput.type = "checkbox";
+  jointAccountInput.className = "form-check-input";
+  jointAccountInput.name = `jointAccount[${interestReceivedRowIndex}]`;
+  jointAccountInput.id = `jointAccount[${interestReceivedRowIndex}]`;
 
-    // Create a flex container for the checkbox and label
-    let flexContainer = document.createElement("div");
-    flexContainer.className =
-      "d-flex justify-content-center align-items-center gap-1";
-    flexContainer.appendChild(jointAccountInput);
-    flexContainer.appendChild(jointAccountLabel);
+  jointAccountLabel.setAttribute("for", jointAccountInput.id);
+  jointAccountLabel.innerText = "Yes";
 
-    // Append inputs to their respective cells
-    bankNameCell.appendChild(bankNameInput);
-    accountNumberCell.appendChild(accountNumberInput);
-    totalInterestCell.appendChild(totalInterestInput);
-    tfnWithholdingCell.appendChild(tfnWithholdingInput);
-    jointAccountCell.appendChild(flexContainer);
+  // Create a flex container for the checkbox and label
+  let flexContainer = document.createElement("div");
+  flexContainer.className = "d-flex justify-content-center align-items-center gap-1";
+  flexContainer.appendChild(jointAccountInput);
+  flexContainer.appendChild(jointAccountLabel);
 
-    // Append cells to the new row
-    newRow.appendChild(bankNameCell);
-    newRow.appendChild(accountNumberCell);
-    newRow.appendChild(totalInterestCell);
-    newRow.appendChild(tfnWithholdingCell);
-    newRow.appendChild(jointAccountCell);
+  // Append inputs to their respective cells
+  bankNameCell.appendChild(bankNameInput);
+  accountNumberCell.appendChild(accountNumberInput);
+  totalInterestCell.appendChild(totalInterestInput);
+  tfnWithholdingCell.appendChild(tfnWithholdingInput);
+  jointAccountCell.appendChild(flexContainer);
 
-    // Append the new row to the table body
-    tableBody.appendChild(newRow);
+  // Create remove button
+  let removeButton = document.createElement("button");
+  removeButton.className = "remove-btn btn btn-sm btn-danger";
+  removeButton.type = "button";
+  removeButton.innerHTML = 'remove'; 
+
+  // Add event listener to remove the row
+  removeButton.addEventListener("click", function () {
+    newRow.remove();
   });
+
+  // Append remove button to actions cell
+  actionsCell.appendChild(removeButton);
+
+  // Append cells to the new row
+  newRow.appendChild(bankNameCell);
+  newRow.appendChild(accountNumberCell);
+  newRow.appendChild(totalInterestCell);
+  newRow.appendChild(tfnWithholdingCell);
+  newRow.appendChild(jointAccountCell);
+  newRow.appendChild(actionsCell); // Append actions cell
+
+  // Append the new row to the table body
+  tableBody.appendChild(newRow);
+});
+
 // interest receiverd end
 
 // dividents
 // Initialize index for additional rows
 let dividendsRowIndex = 0;
-document
-  .getElementById("add-dividend-row")
-  ?.addEventListener("click", function () {
-    let tableBody = document.getElementById("dividendsTableBody");
 
-    // Increment the row index
-    dividendsRowIndex++;
+document.getElementById("add-dividend-row")?.addEventListener("click", function () {
+  let tableBody = document.getElementById("dividendsTableBody");
 
-    // Create a new row
-    let newRow = document.createElement("tr");
+  // Increment the row index
+  dividendsRowIndex++;
 
-    // Define the cells with input elements
-    let shareNameCell = document.createElement("td");
-    let sharesNumberCell = document.createElement("td");
-    let shareAmountCell = document.createElement("td");
+  // Create a new row
+  let newRow = document.createElement("tr");
 
-    // Create input elements for each cell
-    let shareNameInput = document.createElement("input");
-    let sharesNumberInput = document.createElement("input");
-    let shareAmountInput = document.createElement("input");
+  // Define the cells with input elements
+  let shareNameCell = document.createElement("td");
+  let sharesNumberCell = document.createElement("td");
+  let shareAmountCell = document.createElement("td");
+  let actionsCell = document.createElement("td"); // New cell for actions
 
-    // Set attributes for each input element
-    shareNameInput.type = "text";
-    shareNameInput.className = "form-control";
-    shareNameInput.name = `sharesName[${dividendsRowIndex}]`;
+  // Create input elements for each cell
+  let shareNameInput = document.createElement("input");
+  let sharesNumberInput = document.createElement("input");
+  let shareAmountInput = document.createElement("input");
 
-    sharesNumberInput.type = "text";
-    sharesNumberInput.className = "form-control";
-    sharesNumberInput.name = `sharesNumber[${dividendsRowIndex}]`;
+  // Set attributes for each input element
+  shareNameInput.type = "text";
+  shareNameInput.className = "form-control";
+  shareNameInput.name = `sharesName[${dividendsRowIndex}]`;
 
-    shareAmountInput.type = "text";
-    shareAmountInput.className = "form-control";
-    shareAmountInput.name = `shareAmount[${dividendsRowIndex}]`;
+  sharesNumberInput.type = "text";
+  sharesNumberInput.className = "form-control";
+  sharesNumberInput.name = `sharesNumber[${dividendsRowIndex}]`;
 
-    // Append inputs to their respective cells
-    shareNameCell.appendChild(shareNameInput);
-    sharesNumberCell.appendChild(sharesNumberInput);
-    shareAmountCell.appendChild(shareAmountInput);
+  shareAmountInput.type = "text";
+  shareAmountInput.className = "form-control";
+  shareAmountInput.name = `shareAmount[${dividendsRowIndex}]`;
 
-    // Append cells to the new row
-    newRow.appendChild(shareNameCell);
-    newRow.appendChild(sharesNumberCell);
-    newRow.appendChild(shareAmountCell);
+  // Append inputs to their respective cells
+  shareNameCell.appendChild(shareNameInput);
+  sharesNumberCell.appendChild(sharesNumberInput);
+  shareAmountCell.appendChild(shareAmountInput);
 
-    // Append the new row to the table body
-    tableBody.appendChild(newRow);
+  // Create remove button
+  let removeButton = document.createElement("button");
+  removeButton.className = "remove-btn btn btn-sm btn-danger";
+  removeButton.type = "button";
+  removeButton.innerHTML = 'remove'; // Bootstrap Icon for 'x'
+
+  // Add event listener to remove the row
+  removeButton.addEventListener("click", function () {
+    newRow.remove();
   });
+
+  // Append remove button to actions cell
+  actionsCell.appendChild(removeButton);
+
+  // Append cells to the new row
+  newRow.appendChild(shareNameCell);
+  newRow.appendChild(sharesNumberCell);
+  newRow.appendChild(shareAmountCell);
+  newRow.appendChild(actionsCell); // Append actions cell
+
+  // Append the new row to the table body
+  tableBody.appendChild(newRow);
+});
 
 // dividents end
 
@@ -922,7 +959,9 @@ document
     // Append the new row to the table body
     tableBody.appendChild(newRow);
   });
-// about property End
+  // about property End
+
+
 
 // share and managed funds
 // Initialize index for additional rows
