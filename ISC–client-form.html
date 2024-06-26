@@ -74,6 +74,25 @@
         <form
           class="step-form bg-white border border-secondary-subtle rounded-3 p-5"
         >
+
+          <!-- email -->
+          <div class="step">
+            <div class="d-block d-lg-flex align-items-start justify-content-center gap-3">
+              <label for="emailInput" class="form-label text-nowrap fs-5"
+                  >Enter Your Email*:
+                </label>
+                <div class="input-group d-block w-100">
+                  <input
+                    type="email"
+                    class="form-control w-100"
+                    id="emailInput"
+                    placeholder="example@example.com"
+                    required
+                  />
+                </div>
+            </div>
+          </div>
+
           <!-- client basic info -->
           <div class="step">
             <!-- Name of  Client -->
@@ -844,6 +863,7 @@
                       </th>
                       <th class="align-middle">No. of Employees</th>
                       <th class="align-middle">Date Started</th>
+                      <th></th>
                     </tr>
                   </thead>
                   <tbody id="about-business">
@@ -911,6 +931,7 @@
                           name="dateStarted[0]"
                         />
                       </td>
+                      <td></td>
                     </tr>
                   </tbody>
                 </table>
@@ -945,6 +966,7 @@
                         Additional Super Contributions
                       </th>
                       <th class="align-middle">Comments</th>
+                      <th></th>
                     </tr>
                   </thead>
                   <tbody id="employment-details">
@@ -1006,6 +1028,7 @@
                           name="comments[0]"
                         />
                       </td>
+                      <td></td>
                     </tr>
                   </tbody>
                 </table>
@@ -1203,6 +1226,7 @@
                       <th class="align-middle">Equity $000</th>
                       <th class="align-middle">Dividend</th>
                       <th class="align-middle">Holding or selling?</th>
+                      <th></th>
                     </tr>
                   </thead>
                   <tbody id="shares-funds-details">
@@ -1277,6 +1301,7 @@
                           <option value="Selling">Selling</option>
                         </select>
                       </td>
+                      <td></td>
                     </tr>
                   </tbody>
                 </table>

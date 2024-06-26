@@ -622,193 +622,223 @@ document
 // about business
 // Initialize index for additional rows
 let businessDetailsRowIndex = 0;
-document
-  .getElementById("add-business-row")
-  ?.addEventListener("click", function () {
-    let tableBody = document.getElementById("about-business");
+document.getElementById("add-business-row")?.addEventListener("click", function () {
+  let tableBody = document.getElementById("about-business");
 
-    // Increment the row index
-    businessDetailsRowIndex++;
+  // Increment the row index
+  businessDetailsRowIndex++;
 
-    // Create a new row
-    let newRow = document.createElement("tr");
+  // Create a new row
+  let newRow = document.createElement("tr");
 
-    // Define the cells with input elements
-    let businessNameCell = document.createElement("td");
-    let descriptionCell = document.createElement("td");
-    let corporateStructureCell = document.createElement("td");
-    let ownershipDetailsCell = document.createElement("td");
-    let turnoverCell = document.createElement("td");
-    let businessAssetsCell = document.createElement("td");
-    let valueOfBusinessAssetsCell = document.createElement("td");
-    let numOfEmployeesCell = document.createElement("td");
-    let dateStartedCell = document.createElement("td");
+  // Define the cells with input elements
+  let businessNameCell = document.createElement("td");
+  let descriptionCell = document.createElement("td");
+  let corporateStructureCell = document.createElement("td");
+  let ownershipDetailsCell = document.createElement("td");
+  let turnoverCell = document.createElement("td");
+  let businessAssetsCell = document.createElement("td");
+  let valueOfBusinessAssetsCell = document.createElement("td");
+  let numOfEmployeesCell = document.createElement("td");
+  let dateStartedCell = document.createElement("td");
+  let actionsCell = document.createElement("td"); // New cell for actions
 
-    // Create input elements for each cell
-    let businessNameInput = document.createElement("input");
-    let descriptionInput = document.createElement("input");
-    let corporateStructureInput = document.createElement("input");
-    let ownershipDetailsInput = document.createElement("input");
-    let turnoverInput = document.createElement("input");
-    let businessAssetsInput = document.createElement("input");
-    let valueOfBusinessAssetsInput = document.createElement("input");
-    let numOfEmployeesInput = document.createElement("input");
-    let dateStartedInput = document.createElement("input");
+  // Create input elements for each cell
+  let businessNameInput = document.createElement("input");
+  let descriptionInput = document.createElement("input");
+  let corporateStructureInput = document.createElement("input");
+  let ownershipDetailsInput = document.createElement("input");
+  let turnoverInput = document.createElement("input");
+  let businessAssetsInput = document.createElement("input");
+  let valueOfBusinessAssetsInput = document.createElement("input");
+  let numOfEmployeesInput = document.createElement("input");
+  let dateStartedInput = document.createElement("input");
 
-    // Set attributes for each input element
-    businessNameInput.type = "text";
-    businessNameInput.className = "form-control";
-    businessNameInput.name = `businessName[${businessDetailsRowIndex}]`;
+  // Set attributes for each input element
+  businessNameInput.type = "text";
+  businessNameInput.className = "form-control";
+  businessNameInput.name = `businessName[${businessDetailsRowIndex}]`;
 
-    descriptionInput.type = "text";
-    descriptionInput.className = "form-control";
-    descriptionInput.name = `description[${businessDetailsRowIndex}]`;
+  descriptionInput.type = "text";
+  descriptionInput.className = "form-control";
+  descriptionInput.name = `description[${businessDetailsRowIndex}]`;
 
-    corporateStructureInput.type = "text";
-    corporateStructureInput.className = "form-control";
-    corporateStructureInput.name = `corporateStructure[${businessDetailsRowIndex}]`;
+  corporateStructureInput.type = "text";
+  corporateStructureInput.className = "form-control";
+  corporateStructureInput.name = `corporateStructure[${businessDetailsRowIndex}]`;
 
-    ownershipDetailsInput.type = "text";
-    ownershipDetailsInput.className = "form-control";
-    ownershipDetailsInput.name = `ownershipDetails[${businessDetailsRowIndex}]`;
+  ownershipDetailsInput.type = "text";
+  ownershipDetailsInput.className = "form-control";
+  ownershipDetailsInput.name = `ownershipDetails[${businessDetailsRowIndex}]`;
 
-    turnoverInput.type = "text";
-    turnoverInput.className = "form-control";
-    turnoverInput.name = `turnover[${businessDetailsRowIndex}]`;
+  turnoverInput.type = "text";
+  turnoverInput.className = "form-control";
+  turnoverInput.name = `turnover[${businessDetailsRowIndex}]`;
 
-    businessAssetsInput.type = "text";
-    businessAssetsInput.className = "form-control";
-    businessAssetsInput.name = `businessAssets[${businessDetailsRowIndex}]`;
+  businessAssetsInput.type = "text";
+  businessAssetsInput.className = "form-control";
+  businessAssetsInput.name = `businessAssets[${businessDetailsRowIndex}]`;
 
-    valueOfBusinessAssetsInput.type = "text";
-    valueOfBusinessAssetsInput.className = "form-control";
-    valueOfBusinessAssetsInput.name = `valueOfBusinessAssets[${businessDetailsRowIndex}]`;
+  valueOfBusinessAssetsInput.type = "text";
+  valueOfBusinessAssetsInput.className = "form-control";
+  valueOfBusinessAssetsInput.name = `valueOfBusinessAssets[${businessDetailsRowIndex}]`;
 
-    numOfEmployeesInput.type = "text";
-    numOfEmployeesInput.className = "form-control";
-    numOfEmployeesInput.name = `numOfEmployees[${businessDetailsRowIndex}]`;
+  numOfEmployeesInput.type = "text";
+  numOfEmployeesInput.className = "form-control";
+  numOfEmployeesInput.name = `numOfEmployees[${businessDetailsRowIndex}]`;
 
-    dateStartedInput.type = "text";
-    dateStartedInput.className = "form-control";
-    dateStartedInput.name = `dateStarted[${businessDetailsRowIndex}]`;
+  dateStartedInput.type = "text";
+  dateStartedInput.className = "form-control";
+  dateStartedInput.name = `dateStarted[${businessDetailsRowIndex}]`;
 
-    // Append inputs to their respective cells
-    businessNameCell.appendChild(businessNameInput);
-    descriptionCell.appendChild(descriptionInput);
-    corporateStructureCell.appendChild(corporateStructureInput);
-    ownershipDetailsCell.appendChild(ownershipDetailsInput);
-    turnoverCell.appendChild(turnoverInput);
-    businessAssetsCell.appendChild(businessAssetsInput);
-    valueOfBusinessAssetsCell.appendChild(valueOfBusinessAssetsInput);
-    numOfEmployeesCell.appendChild(numOfEmployeesInput);
-    dateStartedCell.appendChild(dateStartedInput);
+  // Append inputs to their respective cells
+  businessNameCell.appendChild(businessNameInput);
+  descriptionCell.appendChild(descriptionInput);
+  corporateStructureCell.appendChild(corporateStructureInput);
+  ownershipDetailsCell.appendChild(ownershipDetailsInput);
+  turnoverCell.appendChild(turnoverInput);
+  businessAssetsCell.appendChild(businessAssetsInput);
+  valueOfBusinessAssetsCell.appendChild(valueOfBusinessAssetsInput);
+  numOfEmployeesCell.appendChild(numOfEmployeesInput);
+  dateStartedCell.appendChild(dateStartedInput);
 
-    // Append cells to the new row
-    newRow.appendChild(businessNameCell);
-    newRow.appendChild(descriptionCell);
-    newRow.appendChild(corporateStructureCell);
-    newRow.appendChild(ownershipDetailsCell);
-    newRow.appendChild(turnoverCell);
-    newRow.appendChild(businessAssetsCell);
-    newRow.appendChild(valueOfBusinessAssetsCell);
-    newRow.appendChild(numOfEmployeesCell);
-    newRow.appendChild(dateStartedCell);
+  // Create remove button
+  let removeButton = document.createElement("button");
+  removeButton.className = "remove-btn btn btn-sm btn-danger";
+  removeButton.type = "button";
+  removeButton.innerHTML = 'remove'; // Bootstrap Icon for 'x'
 
-    // Append the new row to the table body
-    tableBody.appendChild(newRow);
+  // Add event listener to remove the row
+  removeButton.addEventListener("click", function () {
+    newRow.remove();
   });
+
+  // Append remove button to actions cell
+  actionsCell.appendChild(removeButton);
+
+  // Append cells to the new row
+  newRow.appendChild(businessNameCell);
+  newRow.appendChild(descriptionCell);
+  newRow.appendChild(corporateStructureCell);
+  newRow.appendChild(ownershipDetailsCell);
+  newRow.appendChild(turnoverCell);
+  newRow.appendChild(businessAssetsCell);
+  newRow.appendChild(valueOfBusinessAssetsCell);
+  newRow.appendChild(numOfEmployeesCell);
+  newRow.appendChild(dateStartedCell);
+  newRow.appendChild(actionsCell); // Append actions cell
+
+  // Append the new row to the table body
+  tableBody.appendChild(newRow);
+});
 // about business end
 
 // about employment
 // Initialize index for additional rows
 let employmentRowIndex = 0;
-document
-  .getElementById("add-employment-row")
-  ?.addEventListener("click", function () {
-    let tableBody = document.getElementById("employment-details");
 
-    // Increment the row index
-    employmentRowIndex++;
+document.getElementById("add-employment-row")?.addEventListener("click", function () {
+  let tableBody = document.getElementById("employment-details");
 
-    // Create a new row
-    let newRow = document.createElement("tr");
+  // Increment the row index
+  employmentRowIndex++;
 
-    // Define the cells with input elements
-    let clientNameCell = document.createElement("td");
-    let jobDescriptionCell = document.createElement("td");
-    let dateStartedCell = document.createElement("td");
-    let salaryCell = document.createElement("td");
-    let bonusesCell = document.createElement("td");
-    let qualificationsCell = document.createElement("td");
-    let superContributionsCell = document.createElement("td");
-    let commentsCell = document.createElement("td");
+  // Create a new row
+  let newRow = document.createElement("tr");
 
-    // Create input elements for each cell
-    let clientNameInput = document.createElement("input");
-    let jobDescriptionInput = document.createElement("input");
-    let dateStartedInput = document.createElement("input");
-    let salaryInput = document.createElement("input");
-    let bonusesInput = document.createElement("input");
-    let qualificationsInput = document.createElement("input");
-    let superContributionsInput = document.createElement("input");
-    let commentsInput = document.createElement("input");
+  // Define the cells with input elements
+  let clientNameCell = document.createElement("td");
+  let jobDescriptionCell = document.createElement("td");
+  let dateStartedCell = document.createElement("td");
+  let salaryCell = document.createElement("td");
+  let bonusesCell = document.createElement("td");
+  let qualificationsCell = document.createElement("td");
+  let superContributionsCell = document.createElement("td");
+  let commentsCell = document.createElement("td");
+  let actionsCell = document.createElement("td"); // New cell for actions
 
-    // Set attributes for each input element
-    clientNameInput.type = "text";
-    clientNameInput.className = "form-control";
-    clientNameInput.name = `clientName[${employmentRowIndex}]`;
+  // Create input elements for each cell
+  let clientNameInput = document.createElement("input");
+  let jobDescriptionInput = document.createElement("input");
+  let dateStartedInput = document.createElement("input");
+  let salaryInput = document.createElement("input");
+  let bonusesInput = document.createElement("input");
+  let qualificationsInput = document.createElement("input");
+  let superContributionsInput = document.createElement("input");
+  let commentsInput = document.createElement("input");
 
-    jobDescriptionInput.type = "text";
-    jobDescriptionInput.className = "form-control";
-    jobDescriptionInput.name = `jobDescription[${employmentRowIndex}]`;
+  // Set attributes for each input element
+  clientNameInput.type = "text";
+  clientNameInput.className = "form-control";
+  clientNameInput.name = `clientName[${employmentRowIndex}]`;
 
-    dateStartedInput.type = "text";
-    dateStartedInput.className = "form-control";
-    dateStartedInput.name = `dateStarted[${employmentRowIndex}]`;
+  jobDescriptionInput.type = "text";
+  jobDescriptionInput.className = "form-control";
+  jobDescriptionInput.name = `jobDescription[${employmentRowIndex}]`;
 
-    salaryInput.type = "text";
-    salaryInput.className = "form-control";
-    salaryInput.name = `salary[${employmentRowIndex}]`;
+  dateStartedInput.type = "text";
+  dateStartedInput.className = "form-control";
+  dateStartedInput.name = `dateStarted[${employmentRowIndex}]`;
 
-    bonusesInput.type = "text";
-    bonusesInput.className = "form-control";
-    bonusesInput.name = `bonuses[${employmentRowIndex}]`;
+  salaryInput.type = "text";
+  salaryInput.className = "form-control";
+  salaryInput.name = `salary[${employmentRowIndex}]`;
 
-    qualificationsInput.type = "text";
-    qualificationsInput.className = "form-control";
-    qualificationsInput.name = `qualifications[${employmentRowIndex}]`;
+  bonusesInput.type = "text";
+  bonusesInput.className = "form-control";
+  bonusesInput.name = `bonuses[${employmentRowIndex}]`;
 
-    superContributionsInput.type = "text";
-    superContributionsInput.className = "form-control";
-    superContributionsInput.name = `superContributions[${employmentRowIndex}]`;
+  qualificationsInput.type = "text";
+  qualificationsInput.className = "form-control";
+  qualificationsInput.name = `qualifications[${employmentRowIndex}]`;
 
-    commentsInput.type = "text";
-    commentsInput.className = "form-control";
-    commentsInput.name = `comments[${employmentRowIndex}]`;
+  superContributionsInput.type = "text";
+  superContributionsInput.className = "form-control";
+  superContributionsInput.name = `superContributions[${employmentRowIndex}]`;
 
-    // Append inputs to their respective cells
-    clientNameCell.appendChild(clientNameInput);
-    jobDescriptionCell.appendChild(jobDescriptionInput);
-    dateStartedCell.appendChild(dateStartedInput);
-    salaryCell.appendChild(salaryInput);
-    bonusesCell.appendChild(bonusesInput);
-    qualificationsCell.appendChild(qualificationsInput);
-    superContributionsCell.appendChild(superContributionsInput);
-    commentsCell.appendChild(commentsInput);
+  commentsInput.type = "text";
+  commentsInput.className = "form-control";
+  commentsInput.name = `comments[${employmentRowIndex}]`;
 
-    // Append cells to the new row
-    newRow.appendChild(clientNameCell);
-    newRow.appendChild(jobDescriptionCell);
-    newRow.appendChild(dateStartedCell);
-    newRow.appendChild(salaryCell);
-    newRow.appendChild(bonusesCell);
-    newRow.appendChild(qualificationsCell);
-    newRow.appendChild(superContributionsCell);
-    newRow.appendChild(commentsCell);
+  // Append inputs to their respective cells
+  clientNameCell.appendChild(clientNameInput);
+  jobDescriptionCell.appendChild(jobDescriptionInput);
+  dateStartedCell.appendChild(dateStartedInput);
+  salaryCell.appendChild(salaryInput);
+  bonusesCell.appendChild(bonusesInput);
+  qualificationsCell.appendChild(qualificationsInput);
+  superContributionsCell.appendChild(superContributionsInput);
+  commentsCell.appendChild(commentsInput);
 
-    // Append the new row to the table body
-    tableBody.appendChild(newRow);
+  // Create remove button
+  let removeButton = document.createElement("button");
+  removeButton.className = "remove-btn btn btn-sm btn-danger";
+  removeButton.type = "button";
+  removeButton.innerHTML = 'remove'; // Bootstrap Icon for 'x'
+
+  // Add event listener to remove the row
+  removeButton.addEventListener("click", function () {
+    newRow.remove();
   });
+
+  // Append remove button to actions cell
+  actionsCell.appendChild(removeButton);
+
+  // Append cells to the new row
+  newRow.appendChild(clientNameCell);
+  newRow.appendChild(jobDescriptionCell);
+  newRow.appendChild(dateStartedCell);
+  newRow.appendChild(salaryCell);
+  newRow.appendChild(bonusesCell);
+  newRow.appendChild(qualificationsCell);
+  newRow.appendChild(superContributionsCell);
+  newRow.appendChild(commentsCell);
+  newRow.appendChild(actionsCell); // Append actions cell
+
+  // Append the new row to the table body
+  tableBody.appendChild(newRow);
+});
+
 //  about employment end
 
 // about property
@@ -966,116 +996,132 @@ document
 // share and managed funds
 // Initialize index for additional rows
 let sharesFundsRowIndex = 0;
-document
-  .getElementById("add-shares-funds-row")
-  ?.addEventListener("click", function () {
-    let tableBody = document.getElementById("shares-funds-details");
 
-    // Increment the row index
-    sharesFundsRowIndex++;
+document.getElementById("add-shares-funds-row")?.addEventListener("click", function () {
+  let tableBody = document.getElementById("shares-funds-details");
 
-    // Create a new row
-    let newRow = document.createElement("tr");
+  // Increment the row index
+  sharesFundsRowIndex++;
 
-    // Define the cells with input/select elements
-    let nameCell = document.createElement("td");
-    let ownershipDetailsCell = document.createElement("td");
-    let dateOfPurchaseCell = document.createElement("td");
-    let totalValueOfPurchaseCell = document.createElement("td");
-    let currentMarketValueCell = document.createElement("td");
-    let debtCell = document.createElement("td");
-    let loanTypeCell = document.createElement("td");
-    let equityCell = document.createElement("td");
-    let dividendCell = document.createElement("td");
-    let holdingOrSellingCell = document.createElement("td");
+  // Create a new row
+  let newRow = document.createElement("tr");
 
-    // Create input/select elements for each cell
-    let nameInput = document.createElement("input");
-    let ownershipDetailsInput = document.createElement("input");
-    let dateOfPurchaseInput = document.createElement("input");
-    let totalValueOfPurchaseInput = document.createElement("input");
-    let currentMarketValueInput = document.createElement("input");
-    let debtInput = document.createElement("input");
-    let loanTypeInput = document.createElement("input");
-    let equityInput = document.createElement("input");
-    let dividendInput = document.createElement("input");
-    let holdingOrSellingSelect = document.createElement("select");
+  // Define the cells with input/select elements
+  let nameCell = document.createElement("td");
+  let ownershipDetailsCell = document.createElement("td");
+  let dateOfPurchaseCell = document.createElement("td");
+  let totalValueOfPurchaseCell = document.createElement("td");
+  let currentMarketValueCell = document.createElement("td");
+  let debtCell = document.createElement("td");
+  let loanTypeCell = document.createElement("td");
+  let equityCell = document.createElement("td");
+  let dividendCell = document.createElement("td");
+  let holdingOrSellingCell = document.createElement("td");
+  let actionsCell = document.createElement("td"); // New cell for actions
 
-    // Set attributes and options for input/select elements
-    nameInput.type = "text";
-    nameInput.className = "form-control";
-    nameInput.name = `shareName[${sharesFundsRowIndex}]`;
+  // Create input/select elements for each cell
+  let nameInput = document.createElement("input");
+  let ownershipDetailsInput = document.createElement("input");
+  let dateOfPurchaseInput = document.createElement("input");
+  let totalValueOfPurchaseInput = document.createElement("input");
+  let currentMarketValueInput = document.createElement("input");
+  let debtInput = document.createElement("input");
+  let loanTypeInput = document.createElement("input");
+  let equityInput = document.createElement("input");
+  let dividendInput = document.createElement("input");
+  let holdingOrSellingSelect = document.createElement("select");
 
-    ownershipDetailsInput.type = "text";
-    ownershipDetailsInput.className = "form-control";
-    ownershipDetailsInput.name = `ownershipDetails[${sharesFundsRowIndex}]`;
+  // Set attributes and options for input/select elements
+  nameInput.type = "text";
+  nameInput.className = "form-control";
+  nameInput.name = `shareName[${sharesFundsRowIndex}]`;
 
-    dateOfPurchaseInput.type = "text";
-    dateOfPurchaseInput.className = "form-control";
-    dateOfPurchaseInput.name = `dateOfPurchase[${sharesFundsRowIndex}]`;
+  ownershipDetailsInput.type = "text";
+  ownershipDetailsInput.className = "form-control";
+  ownershipDetailsInput.name = `ownershipDetails[${sharesFundsRowIndex}]`;
 
-    totalValueOfPurchaseInput.type = "text";
-    totalValueOfPurchaseInput.className = "form-control";
-    totalValueOfPurchaseInput.name = `totalValueOfPurchase[${sharesFundsRowIndex}]`;
+  dateOfPurchaseInput.type = "text";
+  dateOfPurchaseInput.className = "form-control";
+  dateOfPurchaseInput.name = `dateOfPurchase[${sharesFundsRowIndex}]`;
 
-    currentMarketValueInput.type = "text";
-    currentMarketValueInput.className = "form-control";
-    currentMarketValueInput.name = `currentMarketValue[${sharesFundsRowIndex}]`;
+  totalValueOfPurchaseInput.type = "text";
+  totalValueOfPurchaseInput.className = "form-control";
+  totalValueOfPurchaseInput.name = `totalValueOfPurchase[${sharesFundsRowIndex}]`;
 
-    debtInput.type = "text";
-    debtInput.className = "form-control";
-    debtInput.name = `debt[${sharesFundsRowIndex}]`;
+  currentMarketValueInput.type = "text";
+  currentMarketValueInput.className = "form-control";
+  currentMarketValueInput.name = `currentMarketValue[${sharesFundsRowIndex}]`;
 
-    loanTypeInput.type = "text";
-    loanTypeInput.className = "form-control";
-    loanTypeInput.name = `loanType[${sharesFundsRowIndex}]`;
+  debtInput.type = "text";
+  debtInput.className = "form-control";
+  debtInput.name = `debt[${sharesFundsRowIndex}]`;
 
-    equityInput.type = "text";
-    equityInput.className = "form-control";
-    equityInput.name = `equity[${sharesFundsRowIndex}]`;
+  loanTypeInput.type = "text";
+  loanTypeInput.className = "form-control";
+  loanTypeInput.name = `loanType[${sharesFundsRowIndex}]`;
 
-    dividendInput.type = "text";
-    dividendInput.className = "form-control";
-    dividendInput.name = `dividend[${sharesFundsRowIndex}]`;
+  equityInput.type = "text";
+  equityInput.className = "form-control";
+  equityInput.name = `equity[${sharesFundsRowIndex}]`;
 
-    let holdingOrSellingOption1 = document.createElement("option");
-    holdingOrSellingOption1.value = "Holding";
-    holdingOrSellingOption1.textContent = "Holding";
+  dividendInput.type = "text";
+  dividendInput.className = "form-control";
+  dividendInput.name = `dividend[${sharesFundsRowIndex}]`;
 
-    let holdingOrSellingOption2 = document.createElement("option");
-    holdingOrSellingOption2.value = "Selling";
-    holdingOrSellingOption2.textContent = "Selling";
+  let holdingOrSellingOption1 = document.createElement("option");
+  holdingOrSellingOption1.value = "Holding";
+  holdingOrSellingOption1.textContent = "Holding";
 
-    holdingOrSellingSelect.className = "form-select";
-    holdingOrSellingSelect.name = `holdingOrSelling[${sharesFundsRowIndex}]`;
-    holdingOrSellingSelect.appendChild(holdingOrSellingOption1);
-    holdingOrSellingSelect.appendChild(holdingOrSellingOption2);
+  let holdingOrSellingOption2 = document.createElement("option");
+  holdingOrSellingOption2.value = "Selling";
+  holdingOrSellingOption2.textContent = "Selling";
 
-    // Append input/select elements to their respective cells
-    nameCell.appendChild(nameInput);
-    ownershipDetailsCell.appendChild(ownershipDetailsInput);
-    dateOfPurchaseCell.appendChild(dateOfPurchaseInput);
-    totalValueOfPurchaseCell.appendChild(totalValueOfPurchaseInput);
-    currentMarketValueCell.appendChild(currentMarketValueInput);
-    debtCell.appendChild(debtInput);
-    loanTypeCell.appendChild(loanTypeInput);
-    equityCell.appendChild(equityInput);
-    dividendCell.appendChild(dividendInput);
-    holdingOrSellingCell.appendChild(holdingOrSellingSelect);
+  holdingOrSellingSelect.className = "form-select";
+  holdingOrSellingSelect.name = `holdingOrSelling[${sharesFundsRowIndex}]`;
+  holdingOrSellingSelect.appendChild(holdingOrSellingOption1);
+  holdingOrSellingSelect.appendChild(holdingOrSellingOption2);
 
-    // Append cells to the new row
-    newRow.appendChild(nameCell);
-    newRow.appendChild(ownershipDetailsCell);
-    newRow.appendChild(dateOfPurchaseCell);
-    newRow.appendChild(totalValueOfPurchaseCell);
-    newRow.appendChild(currentMarketValueCell);
-    newRow.appendChild(debtCell);
-    newRow.appendChild(loanTypeCell);
-    newRow.appendChild(equityCell);
-    newRow.appendChild(dividendCell);
-    newRow.appendChild(holdingOrSellingCell);
+  // Append input/select elements to their respective cells
+  nameCell.appendChild(nameInput);
+  ownershipDetailsCell.appendChild(ownershipDetailsInput);
+  dateOfPurchaseCell.appendChild(dateOfPurchaseInput);
+  totalValueOfPurchaseCell.appendChild(totalValueOfPurchaseInput);
+  currentMarketValueCell.appendChild(currentMarketValueInput);
+  debtCell.appendChild(debtInput);
+  loanTypeCell.appendChild(loanTypeInput);
+  equityCell.appendChild(equityInput);
+  dividendCell.appendChild(dividendInput);
+  holdingOrSellingCell.appendChild(holdingOrSellingSelect);
 
-    // Append the new row to the table body
-    tableBody.appendChild(newRow);
+  // Create remove button
+  let removeButton = document.createElement("button");
+  removeButton.className = "remove-btn btn btn-sm btn-danger";
+  removeButton.type = "button";
+  removeButton.innerHTML = 'remove'; // Bootstrap Icon for 'x'
+
+  // Add event listener to remove the row
+  removeButton.addEventListener("click", function () {
+    newRow.remove();
   });
+
+  // Append remove button to actions cell
+  actionsCell.appendChild(removeButton);
+
+  // Append cells to the new row
+  newRow.appendChild(nameCell);
+  newRow.appendChild(ownershipDetailsCell);
+  newRow.appendChild(dateOfPurchaseCell);
+  newRow.appendChild(totalValueOfPurchaseCell);
+  newRow.appendChild(currentMarketValueCell);
+  newRow.appendChild(debtCell);
+  newRow.appendChild(loanTypeCell);
+  newRow.appendChild(equityCell);
+  newRow.appendChild(dividendCell);
+  newRow.appendChild(holdingOrSellingCell);
+  newRow.appendChild(actionsCell); // Append actions cell
+
+  // Append the new row to the table body
+  tableBody.appendChild(newRow);
+});
+
 // share and managed funds end
