@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Individual Information Results</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- bootstrap 5 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+      integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./css/pdf-style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <h1>Individual Information Checklist</h1>
+        <div class="results">
+          <!-- required period -->
+          <fieldset>
+            <legend>Required Period</legend>
+            <div class="result-group">
+              <div class="property">
+                If your return is not required urgently, please indicate period
+                that would be suitable:
+              </div>
+              <div class="value">8-10 Weeks</div>
+            </div>
+          </fieldset>
+
+          <!-- Personal Information -->
+          <fieldset>
+            <legend>Personal Information</legend>
+
+            <div class="row g-3">
+              <!-- Given Name: -->
+              <div class="col-12 col-md-6">
+                <div class="result-group">
+                  <div class="property">Given Name:</div>
+                  <div class="value">John</div>
+                </div>
+              </div>
+
+              <!-- Middle Name -->
+              <div class="col-12 col-md-6">
+                <div class="result-group">
+                  <div class="property">Middle Name:</div>
+                  <div class="value">Abc</div>
+                </div>
+              </div>
+
+              <!-- Surname -->
+              <div class="col-12 col-md-6">
+                <div class="result-group">
+                  <div class="property">Surname:</div>
+                  <div class="value">Doe</div>
+                </div>
+              </div>
+
+              <!-- Date of Birth -->
+              <div class="col-12 col-md-6">
+                <div class="result-group">
+                  <div class="property">Date of Birth:</div>
+                  <div class="value">1990-01-01</div>
+                </div>
+              </div>
+
+              <!-- Tax File Number -->
+              <div class="col-12 col-md-6">
+                <div class="result-group">
+                  <div class="property">Tax File Number:</div>
+                  <div class="value">123-456-789</div>
+                </div>
+              </div>
+
+              <!-- Occupation -->
+              <div class="col-12 col-md-6">
+                <div class="result-group">
+                  <div class="property">Occupation:</div>
+                  <div class="value">Software Engineer</div>
+                </div>
+              </div>
+
+              <!-- Address -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">Address:</div>
+                  <div class="value">123 Main St, Anytown, USA</div>
+                </div>
+              </div>
+
+              <!-- Home Phone -->
+              <div class="col-12 col-md-6">
+                <div class="result-group">
+                  <div class="property">Home Phone:</div>
+                  <div class="value">(555) 555-5555</div>
+                </div>
+              </div>
+
+              <!-- Mobile -->
+              <div class="col-12 col-md-6">
+                <div class="result-group">
+                  <div class="property">Mobile:</div>
+                  <div class="value">(555) 555-5556</div>
+                </div>
+              </div>
+
+              <!-- Account Name -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">Account Name:</div>
+                  <div class="value">John Doe</div>
+                </div>
+              </div>
+
+              <!-- Bank BSB Number -->
+              <div class="col-12 col-md-6">
+                <div class="result-group">
+                  <div class="property">Bank BSB Number:</div>
+                  <div class="value">987-654</div>
+                </div>
+              </div>
+
+              <!-- Bank Account Number -->
+              <div class="col-12 col-md-6">
+                <div class="result-group">
+                  <div class="property">Bank Account Number:</div>
+                  <div class="value">0011223344</div>
+                </div>
+              </div>
+
+              <!-- Email Address -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">Email Address:</div>
+                  <div class="value">john.doe@example.com</div>
+                </div>
+              </div>
+
+              <!-- Names of Dependent Children & D.O.B -->
+              <div class="col-12 col-md-6">
+                <div class="result-group">
+                  <div class="property">
+                    Names of Dependent Children & D.O.B:
+                  </div>
+                  <div class="value">
+                    Jane Doe (2015-06-15), Jack Doe (2018-09-20)
+                  </div>
+                </div>
+              </div>
+
+              <!-- Name of Spouse or Partner & D.O.B -->
+              <div class="col-12 col-md-6">
+                <div class="result-group">
+                  <div class="property">Name of Spouse or Partner & D.O.B:</div>
+                  <div class="value">Jane Smith (1988-02-25)</div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- income -->
+          <fieldset>
+            <legend>Income</legend>
+            <div class="row g-3">
+              <!-- Are you an employee? -->
+              <div class="col-12 col-md-6">
+                <div class="result-group">
+                  <div class="property">Are you an employee?:</div>
+                  <div class="value">Yes</div>
+                </div>
+              </div>
+
+              <!-- Other Income -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">Other Income:</div>
+                  <div class="value">$5000 from freelance work</div>
+                  <div class="value">$5000 from work</div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!--  Interest Received -->
+          <fieldset>
+            <legend>Interest Received</legend>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">NAME OF BANK</th>
+                  <th scope="col">ACCOUNT NUMBER</th>
+                  <th scope="col">TOTAL INTEREST RECEIVED $</th>
+                  <th scope="col">TFN WITHHOLDING $</th>
+                  <th scope="col">JOINT ACCOUNT?</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+              </tbody>
+            </table>
+          </fieldset>
+
+          <!--  Dividends -->
+          <fieldset>
+            <legend>Dividends</legend>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">NAME OF SHARES</th>
+                  <th scope="col">NUMBER OF SHARES HELD</th>
+                  <th scope="col">AMOUNT RECEIVED $</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+              </tbody>
+            </table>
+          </fieldset>
+
+          <!--   TRUST AND PARTNERSHIPS -->
+          <fieldset>
+            <legend>TRUST AND PARTNERSHIPS</legend>
+            <div class="result-group">
+              <div class="property">
+                Did you sell any assets such as shares or property which were
+                acquired after 20 September 1985?
+              </div>
+              <div class="value">Yes</div>
+            </div>
+          </fieldset>
+
+          <!--   EMPLOYEE SHARE/OPTION SCHEME -->
+          <fieldset>
+            <legend>EMPLOYEE SHARE/OPTION SCHEME</legend>
+            <div class="result-group">
+              <div class="property">
+                Did you receive bonus shares/options from your current employer
+                during 2023/2024?
+              </div>
+              <div class="value">Yes</div>
+            </div>
+          </fieldset>
+
+          <!--   ANY OTHER INCOME -->
+          <fieldset>
+            <legend>ANY OTHER INCOME</legend>
+
+            <!-- other income -->
+            <div class="result-group mb-3">
+              <div class="property">
+                (Any Income you have received in the financial year that does
+                not fit into any of the above categories. Please provide
+                details.) Eg. Interest on any overseas bank accounts or any
+                other foreign income received.
+              </div>
+              <div class="value">Gamming $5000</div>
+              <div class="value">Gifts $5000</div>
+              <div class="value">Other $5000</div>
+            </div>
+
+            <!-- any assets outside of Australia -->
+            <div class="result-group">
+              <div class="property">
+                Do you have any assets over $50,000AUD outside of Australia?
+              </div>
+              <div class="value">Yes</div>
+            </div>
+          </fieldset>
+
+          <!--    MOTOR VEHICLE -->
+          <fieldset>
+            <legend>MOTOR VEHICLE</legend>
+
+            <div class="row g-3">
+              <!-- own car -->
+              <div class="col-12">
+                <div class="result-group mb-3">
+                  <div class="property">
+                    Did you use your own car for business/work purposes through
+                    the year?
+                  </div>
+                  <div class="value">Yes</div>
+                </div>
+              </div>
+
+              <!-- Car Registration Number -->
+              <div class="col-12 col-md-6">
+                <div class="result-group mb-3">
+                  <div class="property">Car Registration Number:</div>
+                  <div class="value">JB009</div>
+                </div>
+              </div>
+
+              <!-- Kilometres:  -->
+              <div class="col-12 col-md-6">
+                <div class="result-group mb-3">
+                  <div class="property">Kilometres:</div>
+                  <div class="value">500</div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!--    WORK UNIFORM -->
+          <fieldset>
+            <legend>WORK UNIFORM</legend>
+
+            <div class="row g-3">
+              <!-- wear work uniform -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">Do you wear work uniform</div>
+                  <div class="value">Yes</div>
+                </div>
+              </div>
+
+              <div class="result-group">
+                <div class="property">
+                  If yes, were you out of pocket through the year for purchasing
+                  any new items. (If so please provide details) Laundering and
+                  dry cleaning of clothing listed above are claimable.
+                </div>
+                <div class="value">Laundery $5000</div>
+                <div class="value">Cleaning $50000</div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!--     SELF EDUCATION -->
+          <fieldset>
+            <legend>SELF EDUCATION</legend>
+
+            <div class="row g-3">
+              <!-- Name of Course -->
+              <div class="col-12 col-md-6">
+                <div class="result-group">
+                  <div class="property">Name of Course</div>
+                  <div class="value">abcd</div>
+                </div>
+              </div>
+
+              <!-- Institution -->
+              <div class="col-12 col-md-6">
+                <div class="result-group">
+                  <div class="property">Institution</div>
+                  <div class="value">xyz</div>
+                </div>
+              </div>
+
+              <!-- relate to current employment/employer -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">
+                    How does it relate to your current employment/employer?
+                  </div>
+                  <div class="value">nothing related</div>
+                </div>
+              </div>
+
+              <!--  Fees (Excluding HECS/HELP debt)  -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">Fees (Excluding HECS/HELP debt)</div>
+                  <div class="value">5000$</div>
+                </div>
+              </div>
+
+              <!--   Books/Stationery/Consumables   -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">Books/Stationery/Consumables</div>
+                  <div class="value">5000$</div>
+                </div>
+              </div>
+
+              <!--   Travel   -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">Travel</div>
+                  <div class="value">5000$</div>
+                </div>
+              </div>
+
+              <!--   Internet Amount  -->
+              <div class="col-12 col-md-6">
+                <div class="result-group">
+                  <div class="property">Internet Amount per month</div>
+                  <div class="value">5000$</div>
+                </div>
+              </div>
+
+              <!--   Internet used  -->
+              <div class="col-12 col-md-6">
+                <div class="result-group">
+                  <div class="property">Internet Percentage used for work</div>
+                  <div class="value">5000$</div>
+                </div>
+              </div>
+
+              <!--   Home Office Hour per week  -->
+              <div class="col-12 col-md-6">
+                <div class="result-group">
+                  <div class="property">Home Office Hours per week</div>
+                  <div class="value">5000$</div>
+                </div>
+              </div>
+
+              <!--   Home Office Hour How many weeks  -->
+              <div class="col-12 col-md-6">
+                <div class="result-group">
+                  <div class="property">Home Office How many weeks</div>
+                  <div class="value">5000$</div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!--    OTHER WORK RELATION DEDUCTIONS -->
+          <fieldset>
+            <legend>OTHER WORK RELATION DEDUCTIONS</legend>
+            <div class="row g-3">
+              <!-- Union fees/Professional bodies  -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">
+                    Union fees/Professional bodies (List names and amounts)
+                  </div>
+                  <div class="value">$5000</div>
+                </div>
+              </div>
+
+              <!--  Diary/Printing/Postage/Stationery  -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">Diary/Printing/Postage/Stationery</div>
+                  <div class="value">$5000</div>
+                </div>
+              </div>
+
+              <!-- Books and Journals  -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">Books and Journals</div>
+                  <div class="value">$5000</div>
+                </div>
+              </div>
+
+              <!-- Seminar costs    -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">Seminar costs</div>
+                  <div class="value">$5000</div>
+                </div>
+              </div>
+
+              <!-- Sickness & Accident  -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">
+                    Sickness & Accident Insurance/ Income protection (Please
+                    supply a copy of the policy )
+                  </div>
+                  <div class="value">$5000</div>
+                </div>
+              </div>
+
+              <!--   Internet Amount  -->
+              <div class="col-12 col-md-6">
+                <div class="result-group">
+                  <div class="property">Internet Amount per month</div>
+                  <div class="value">5000$</div>
+                </div>
+              </div>
+
+              <!--   Internet used  -->
+              <div class="col-12 col-md-6">
+                <div class="result-group">
+                  <div class="property">Internet Percentage used for work</div>
+                  <div class="value">5000$</div>
+                </div>
+              </div>
+
+              <!--   Home Office Hours per week -->
+              <div class="col-12 col-md-6">
+                <div class="result-group">
+                  <div class="property">
+                    Home Office Hours from (01/07/2022 to 30/06/2023) Hours per
+                    week
+                  </div>
+                  <div class="value">5000$</div>
+                </div>
+              </div>
+
+              <!--   Home Office  How many weeks -->
+              <div class="col-12 col-md-6">
+                <div class="result-group">
+                  <div class="property">
+                    Home Office Hours from (01/07/2022 to 30/06/2023) Hours per
+                    week
+                  </div>
+                  <div class="value">52</div>
+                </div>
+              </div>
+
+              <!--   Mobile Phone  Amount  -->
+              <div class="col-12 col-md-6">
+                <div class="result-group">
+                  <div class="property">Mobile Phone Amount per month</div>
+                  <div class="value">5000$</div>
+                </div>
+              </div>
+
+              <!--   Mobile Phone  used  -->
+              <div class="col-12 col-md-6">
+                <div class="result-group">
+                  <div class="property">
+                    Mobile Phone Percentage used for work
+                  </div>
+                  <div class="value">50%</div>
+                </div>
+              </div>
+
+              <!--   Outdoor workers (Sunglasses/Sunscreen/Hats)  Amount  -->
+              <div class="col-12 col-md-6">
+                <div class="result-group">
+                  <div class="property">
+                    Outdoor workers (Sunglasses/Sunscreen/Hats) Amount
+                  </div>
+                  <div class="value">5000$</div>
+                </div>
+              </div>
+
+              <!--   Outdoor workers (Sunglasses/Sunscreen/Hats)  Amount   -->
+              <div class="col-12 col-md-6">
+                <div class="result-group">
+                  <div class="property">
+                    Mobile Phone Percentage used for work
+                  </div>
+                  <div class="value">50%</div>
+                </div>
+              </div>
+
+              <!--   Tools & Equipment-Over   -->
+              <div class="col-12 col-md-6">
+                <div class="result-group">
+                  <div class="property">
+                    Tools & Equipment-Over $300 (List dates & percentage used or
+                    work purpose)
+                  </div>
+                  <div class="value">0000</div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- OTHER -->
+          <fieldset>
+            <legend>OTHER</legend>
+
+            <div class="row g-3">
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">
+                    (Costs you incurred that was directly related to your job.)
+                    Please provide details
+                  </div>
+                  <div class="value">0000</div>
+                </div>
+              </div>
+
+              <!--  Income Protection Insurance -->
+              <div class="col-12 col-md-6">
+                <div class="result-group">
+                  <div class="property">Income Protection Insurance</div>
+                  <div class="value">Yes</div>
+                </div>
+              </div>
+
+              <!--   If yes, how much did you pay  -->
+              <div class="col-12 col-md-6">
+                <div class="result-group">
+                  <div class="property">If yes, how much did you pay</div>
+                  <div class="value">999999</div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!--  GIFTS OR DONATIONS -->
+          <fieldset>
+            <legend>GIFTS OR DONATIONS</legend>
+
+            <div class="row g-3">
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">
+                    Voluntary gifts of $2 of more made to a Deductible Gift
+                    Recipient (DGR) Status Organization, please list the name of
+                    the organistaion and the amount donated. (This includes
+                    School Building Fund donations)
+                  </div>
+                  <div class="value">0000</div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Tax Offsets -->
+          <fieldset>
+            <legend>Tax Offsets</legend>
+
+            <!--  PRIVATE HEALTH INSURANCE -->
+            <div class="row g-3">
+              <div class="col-12">
+                <p class="lead fs-5 mb-2 fw-bold">Private Health Insurance:</p>
+              </div>
+              <!-- private health Insurance -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">
+                    Do you have private health Insurance?
+                  </div>
+                  <div class="value">Yes</div>
+                </div>
+              </div>
+
+              <!-- covered by private health insurance -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">
+                    Please confirm all your family members (including your
+                    spouse and children were covered by private health insurance
+                    hospital cover)
+                  </div>
+                  <div class="value">Yes</div>
+                </div>
+              </div>
+            </div>
+
+            <!--  SPOUSE OR PARTNERS TAXABLE INCOME* -->
+            <div class="row g-3 mb-3">
+              <div class="col-12">
+                <p class="lead fs-5 mb-2 fw-bold">
+                  SPOUSE OR PARTNERS TAXABLE INCOME* :
+                  <span class="fw-normal">(Includes same sex couples)</span>
+                </p>
+              </div>
+
+              <!-- spouse/partner for the full financial year -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">
+                    Did you have a spouse/partner for the full financial year?
+                  </div>
+                  <div class="value">Yes</div>
+                </div>
+              </div>
+
+              <!-- Does your spouse/partner receive any benefits from Centrelink? -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">
+                    Does your spouse/partner receive any benefits from
+                    Centrelink?
+                  </div>
+                  <div class="value">Yes</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="result-group">
+              <div class="property">
+                What was your spouse or partner's taxable income*:
+              </div>
+              <div class="value">56852$</div>
+            </div>
+          </fieldset>
+
+          <!--  SUPERANNUATION -->
+          <fieldset>
+            <legend>SUPERANNUATION</legend>
+
+            <!-- details of contribution -->
+            <div class="result-group mb-3">
+              <div class="property">
+                a) Please provide details of contributions you made to your
+                superannuation for the financial year, if any.
+              </div>
+              <div class="value">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Veritatis nobis dolor suscipit.
+              </div>
+            </div>
+
+            <!-- superannuation contributions -->
+            <div class="result-group">
+              <div class="property">
+                b) Have you made superannuation contributions on behalf of your
+                spouse?
+              </div>
+              <div class="value">Lorem ipsum dolor sit amet.</div>
+            </div>
+          </fieldset>
+
+          <!--  OTHER -->
+          <fieldset>
+            <legend>OTHER</legend>
+
+            <div class="result-group mb-3">
+              <div class="property">
+                Any other information that we should be aware of: i.e. you are
+                not entitled to Medicare Benefit, you are a student etc.
+              </div>
+              <div class="value">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Veritatis nobis dolor suscipit.
+              </div>
+            </div>
+          </fieldset>
+
+          <!--   Only rents received and expenses paid between 1 July 2022 and 30 June 2023 -->
+          <fieldset>
+            <p class="text-center fw-medium mb-3">
+              Only rents received and expenses paid between 1 July 2022 and 30
+              June 2023
+            </p>
+
+            <div class="row g-3">
+              <div class="col-12">
+                <table class="table table-bordered">
+                  <tbody>
+                    <tr>
+                      <th>
+                        Owner Names & Ownership %: Address of Rental Property:
+                      </th>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <th>Number of weeks property was rented this year:</th>
+                      <td>-</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- income -->
+              <div class="col-12">
+                <div class="property mb-2">INCOME</div>
+                <table class="table table-bordered">
+                  <tbody>
+                    <tr>
+                      <th>
+                        Gross rental income
+                      </th>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <th> Other rental related income</th>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <th> Gross Rent</th>
+                      <td>-</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- EXPENSES -->
+              <div class="col-12">
+                <div class="property mb-2">EXPENSES</div>
+                <table class="table table-bordered">
+                  <tbody>
+                    <tr>
+                      <th>
+                        D Advertising for tenants
+                      </th>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <th> E Body corporate fees (Strata Levies)</th>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <th> F Borrowing expenses</th>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <th>  G Cleaning</th>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <th>H Council Rates</th>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <th> I Capital allowances (depreciation)</th>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <th>J Gardening/lawn mowing</th>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <th>K Insurance</th>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <th> L Interest on loans </th>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <th>M Land Tax</th>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <th> N Legal fees</th>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <th> O Pest control</th>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <th>P Property agent fees/commission</th>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <th> Q Repairs and maintenance (R & M)</th>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <th>  (for R & M purchases greater than $300 need details)</th>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <th> R Capital Work’s Deduction (Building)</th>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <th>S Stationery, telephone and postage</th>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <th> T Travel expenses (Not allowed after 30/6/2017)</th>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <th>U Water charges</th>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <th> V Sundry rental expenses</th>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <th>TOTAL EXPENSES</th>
+                      <td>-</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- EXPENSES -->
+              <div class="col-12">
+                <div class="property mb-2"> NET RENT</div>
+                <table class="table table-bordered">
+                  <tbody>
+                    <tr>
+                      <th>
+                        NET RENT
+                      </th>
+                      <td>-</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
