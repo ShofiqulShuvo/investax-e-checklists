@@ -1558,330 +1558,380 @@
               <!-- SUPERANNUATION -->
               <div class="mb-2">
                 <h4 class="d-block mb-3">SUPERANNUATION</h4>
-
+          
+                <!-- Section a -->
                 <div class="mb-3">
                   <p class="mb-2">
-                    a. Please provide details of contributions you made to your
-                    superannuation for the financial year, if any.
+                    a. Please provide details of contributions you made to your superannuation for the financial year, if any.
                   </p>
-
-                  <textarea class="form-control" name="" id=""></textarea>
+                  <table class="table table-bordered" id="superannuationTable">
+                    <thead>
+                      <tr>
+                        <th>Superannuation Fund Name</th>
+                        <th>Date of Payment</th>
+                        <th>Contribution Amount</th>
+                        <th>Attach File Section</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody id="superannuationTableBody">
+                      <!-- Initial Row -->
+                      <tr>
+                        <td><input type="text" class="form-control" name="superannuationFundName[0]" /></td>
+                        <td><input type="date" class="form-control" name="superannuationDateOfPayment[0]" /></td>
+                        <td><input type="text" class="form-control" name="superannuationContributionAmount[0]" /></td>
+                        <td><input type="file" class="form-control" name="superannuationAttachment[0]" /></td>
+                        <td><button type="button" class="remove-superannuation btn btn-sm btn-danger">Remove</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p class="mt-1 mb-2 fw-medium text-info">Feel fre to attach Notice of Intent (NOI)</p>
+                  <button type="button" class="btn btn-sm ms-auto add-btn" id="addSuperannuationButton">Add Contribution</button>
+                  
                 </div>
-
+          
+                <!-- Section b -->
                 <div class="mb-3">
                   <p class="mb-2">
-                    b. Have you made superannuation contributions on behalf of
-                    your spouse?
+                    b. Have you made superannuation contributions on behalf of your spouse?
                   </p>
-
-                  <textarea class="form-control" name="" id=""></textarea>
-                </div>
-              </div>
-
-              <!-- OTHER -->
-              <div class="mb-2">
-                <h4 class="d-block mb-3">OTHER</h4>
-
-                <div class="mb-3">
-                  <p class="mb-2">
-                    Any other information that we should be aware of: i.e. you
-                    are not entitled to Medicare Benefit, you are a student etc.
-                  </p>
-
-                  <textarea class="form-control" name="" id=""></textarea>
+                  <table class="table table-bordered" id="superannuationSpouseTable">
+                    <thead>
+                      <tr>
+                        <th>Superannuation Fund Name</th>
+                        <th>Date of Payment</th>
+                        <th>Contribution Amount</th>
+                        <th>Attach File Section</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody id="superannuationSpouseTableBody">
+                      <!-- Initial Row -->
+                      <tr>
+                        <td><input type="text" class="form-control" name="superannuationSpouseFundName[0]" /></td>
+                        <td><input type="date" class="form-control" name="superannuationSpouseDateOfPayment[0]" /></td>
+                        <td><input type="text" class="form-control" name="superannuationSpouseContributionAmount[0]" /></td>
+                        <td><input type="file" class="form-control" name="superannuationSpouseAttachment[0]" /></td>
+                        <td><button type="button" class="remove-superannuation-spouse btn btn-sm btn-danger">Remove</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p class="mt-1 mb-2 fw-medium text-info">Feel fre to attach Notice of Intent (NOI)</p>
+                  <button type="button" class="btn btn-sm ms-auto add-btn" id="addSuperannuationSpouseButton">Add Spouse Contribution</button>
                 </div>
               </div>
             </div>
           </div>
+          
+          
 
           <!-- last step  (step 14)  -->
           <div class="step">
             <div class="mb-4">
-              <p class="d-block mb-3 text-center lead">
-                Only rents received and expenses <strong>paid</strong> between 1
-                July 2022 and 30 June 202
-              </p>
-
+              <!-- Investment Property Question -->
               <div class="mb-3">
-                <div class="table-responsive">
-                  <table class="table table-bordered table-sm">
-                    <tbody>
-                      <tr>
-                        <th>Owner Names & Ownership %:</th>
-                        <td>
-                          <input type="text" class="form-control" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <th>Address of Rental Property:</th>
-                        <td>
-                          <input type="text" class="form-control" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <th>Number of weeks property was rented this year:</th>
-                        <td>
-                          <input type="text" class="form-control" />
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+                <p class="d-block mb-3 text-center lead">
+                  Do you have any investment property?
+                </p>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="investmentProperty" id="investmentPropertyYes" value="yes">
+                  <label class="form-check-label" for="investmentPropertyYes">
+                    Yes
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="investmentProperty" id="investmentPropertyNo" value="no">
+                  <label class="form-check-label" for="investmentPropertyNo">
+                    No
+                  </label>
                 </div>
               </div>
-
-              <!-- INCOME -->
-              <div class="mb-3">
-                <h5 class="mb-2">INCOME</h5>
-
-                <div class="table-responsive">
-                  <table class="table table-bordered table-sm">
-                    <tbody>
-                      <tr class="p-1">
-                        <th>Gross rental income</th>
-                        <td>
-                          <input type="text" class="form-control" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <th>Other rental related income</th>
-                        <td>
-                          <input type="text" class="form-control" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <th>Gross Rent</th>
-                        <td>
-                          <input type="text" class="form-control" />
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+          
+              <!-- Investment Property Fields (Initially Hidden) -->
+              <div id="investmentPropertyFields" class="d-none">
+                <!-- Owner Information -->
+                <div class="mb-3">
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-sm">
+                      <tbody>
+                        <tr>
+                          <th>Owner Names & Ownership %:</th>
+                          <td>
+                            <input type="text" class="form-control" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <th>Address of Rental Property:</th>
+                          <td>
+                            <input type="text" class="form-control" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <th>Number of weeks property was rented this year:</th>
+                          <td>
+                            <input type="text" class="form-control" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <th>Number of weeks property was available for rent this year:</th>
+                          <td>
+                            <input type="text" class="form-control" />
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
-              </div>
-
-              <!-- EXPENSES -->
-              <div class="mb-3">
-                <h5 class="mb-2">EXPENSES</h5>
-
-                <div class="table-responsive">
-                  <table class="table table-bordered table-sm">
-                    <tbody>
-                      <tr class="p-1">
-                        <th class="mw-fit">D Advertising for tenants</th>
-                        <td>
-                          <input type="text" class="form-control" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="mw-fit">
-                          E Body corporate fees (Strata Levies)
-                        </th>
-                        <td>
-                          <input type="text" class="form-control" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="mw-fit">F Borrowing expenses</th>
-                        <td>
-                          <input type="text" class="form-control" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="mw-fit">G Cleaning</th>
-                        <td>
-                          <input type="text" class="form-control" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="mw-fit">H Council Rates</th>
-                        <td>
-                          <input type="text" class="form-control" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="mw-fit">
-                          I Capital allowances (depreciation)
-                        </th>
-                        <td>
-                          <input type="text" class="form-control" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="mw-fit">J Gardening/lawn mowing</th>
-                        <td>
-                          <input type="text" class="form-control" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="mw-fit">K Insurance</th>
-                        <td>
-                          <input type="text" class="form-control" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="mw-fit">L Interest on loans</th>
-                        <td>
-                          <input type="text" class="form-control" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="mw-fit">M Land Tax</th>
-                        <td>
-                          <input type="text" class="form-control" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="mw-fit">N Legal fees</th>
-                        <td>
-                          <input type="text" class="form-control" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="mw-fit">O Pest control</th>
-                        <td>
-                          <input type="text" class="form-control" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="mw-fit">P Property agent fees/commission</th>
-                        <td>
-                          <input type="text" class="form-control" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="mw-fit">
-                          Q Repairs and maintenance (R & M)
-                        </th>
-                        <td>
-                          <input type="text" class="form-control" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="mw-fit">
-                          (for R & M purchases greater than $300 need details)
-                        </th>
-                        <td>
-                          <input type="text" class="form-control" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="mw-fit">
-                          R Capital Work's Deduction (Building)
-                        </th>
-                        <td>
-                          <input type="text" class="form-control" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="mw-fit">
-                          S Stationery, telephone and postage
-                        </th>
-                        <td>
-                          <input type="text" class="form-control" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="mw-fit">
-                          T Travel expenses (Not allowed after 30/6/2017)
-                        </th>
-                        <td>
-                          <input type="text" class="form-control" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="mw-fit">U Water charges</th>
-                        <td>
-                          <input type="text" class="form-control" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="mw-fit">V Sundry rental expenses</th>
-                        <td>
-                          <input type="text" class="form-control" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="mw-fit">TOTAL EXPENSES</th>
-                        <td>
-                          <input type="text" class="form-control" />
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+          
+                <!-- Income Section -->
+                <div class="mb-3">
+                  <h5 class="mb-2">INCOME</h5>
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-sm">
+                      <tbody>
+                        <tr>
+                          <th>Gross rental income</th>
+                          <td>
+                            <input type="text" class="form-control" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <th>Other rental related income</th>
+                          <td>
+                            <input type="text" class="form-control" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <th>Gross Rent</th>
+                          <td>
+                            <input type="text" class="form-control" />
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
-              </div>
 
-              <!-- NET RENT -->
-              <div class="mb-3">
-                <div class="table-responsive">
-                  <table class="table table-bordered table-sm">
-                    <tbody>
-                      <tr class="p-1">
-                        <th>NET RENT</th>
-                        <td>
-                          <input type="text" class="form-control" />
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+                <!-- INTEREST ON LOANS Section -->
+                 <div class="mb-3">
+                   <h5 class="mb-2">INTEREST ON LOANS</h5>
+                   <div class="table-responsive">
+                     <table class="table table-bordered table-sm">
+                       <thead>
+                         <tr>
+                           <th>Investment Property ID</th>
+                           <th>Bank Name</th>
+                           <th>Loan Amount</th>
+                           <th>Attachment</th>
+                           <th>Actions</th>
+                         </tr>
+                       </thead>
+                       <tbody id="interestOnLoansTableBody">
+                         <tr>
+                           <td><input type="text" name="loanPropertyId[0]" class="form-control"></td>
+                           <td><input type="text" name="loanBankName[0]" class="form-control"></td>
+                           <td><input type="text" name="loanAmount[0]" class="form-control"></td>
+                           <td><input type="file" name="loanFile[0]" class="form-control"></td>
+                           <td><button type="button" class="remove-loan btn btn-sm btn-danger">Remove</button></td>
+                         </tr>
+                       </tbody>
+                     </table>
+                   </div>
+                   <button type="button" id="addInvestmentPropertyLoanButton" class="btn btn-sm btn-primary">
+                     Add Investment Property Loan
+                   </button>
+                 </div>
+          
+                <!-- Expenses Section -->
+                <div class="mb-3">
+                  <h5 class="mb-2">EXPENSES</h5>
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-sm">
+                      <tbody>
+                        <tr>
+                          <th class="mw-fit">D Advertising for tenants</th>
+                          <td>
+                            <input type="text" class="form-control" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <th class="mw-fit">E Body corporate fees (Strata Levies)</th>
+                          <td>
+                            <input type="text" class="form-control" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <th class="mw-fit">F Borrowing expenses</th>
+                          <td>
+                            <input type="text" class="form-control" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <th class="mw-fit">G Cleaning</th>
+                          <td>
+                            <input type="text" class="form-control" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <th class="mw-fit">H Council Rates</th>
+                          <td>
+                            <input type="text" class="form-control" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <th class="mw-fit">I Capital allowances (depreciation)</th>
+                          <td>
+                            <input type="text" class="form-control" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <th class="mw-fit">J Gardening/lawn mowing</th>
+                          <td>
+                            <input type="text" class="form-control" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <th class="mw-fit">K Insurance</th>
+                          <td>
+                            <input type="text" class="form-control" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <th class="mw-fit">L Interest on loans</th>
+                          <td>
+                            <input type="text" class="form-control" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <th class="mw-fit">M Land Tax</th>
+                          <td>
+                            <input type="text" class="form-control" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <th class="mw-fit">N Legal fees</th>
+                          <td>
+                            <input type="text" class="form-control" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <th class="mw-fit">O Pest control</th>
+                          <td>
+                            <input type="text" class="form-control" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <th class="mw-fit">P Property agent fees/commission</th>
+                          <td>
+                            <input type="text" class="form-control" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <th class="mw-fit">Q Repairs and maintenance (R & M)</th>
+                          <td>
+                            <input type="text" class="form-control" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <th class="mw-fit">(for R & M purchases greater than $300 need details)</th>
+                          <td>
+                            <input type="text" class="form-control" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <th class="mw-fit">R Capital Work's Deduction (Building)</th>
+                          <td>
+                            <input type="text" class="form-control" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <th class="mw-fit">S Stationery, telephone and postage</th>
+                          <td>
+                            <input type="text" class="form-control" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <th class="mw-fit">T Travel expenses (Not allowed after 30/6/2017)</th>
+                          <td>
+                            <input type="text" class="form-control" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <th class="mw-fit">U Water charges</th>
+                          <td>
+                            <input type="text" class="form-control" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <th class="mw-fit">V Sundry rental expenses</th>
+                          <td>
+                            <input type="text" class="form-control" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <th class="mw-fit">TOTAL EXPENSES</th>
+                          <td>
+                            <input type="text" class="form-control" />
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
-              </div>
-
-              <!-- NET RENT -->
-              <div class="mb-3">
-                <h6 class="mb-3">
-                  Note new rules on depreciation claims apply on signing of
-                  contracts as of 9/5/17 7.30pm
-                </h6>
-                <h5 class="mb-2">
-                  For property purchased this financial year please provide the
-                  following:
-                </h5>
-                <div class="table-responsive">
-                  <table class="table table-bordered table-sm">
-                    <tbody>
-                      <tr>
-                        <th>Settlement Sheet</th>
-                        <td>
-                          <input type="file" class="form-control" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <th>Bank Loan Offer</th>
-                        <td>
-                          <input type="file" class="form-control" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <th>First Bank Statement</th>
-                        <td>
-                          <input type="file" class="form-control" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <th>Transfer Title Documents</th>
-                        <td>
-                          <input type="file" class="form-control" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <th>First Page Of The Contract For Sale</th>
-                        <td>
-                          <input type="file" class="form-control" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <th>Depreciation Schedule (if any)</th>
-                        <td>
-                          <input type="file" class="form-control" />
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+          
+                
+          
+                <!-- Net Rent Section -->
+                <div class="mb-3">
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-sm">
+                      <tbody>
+                        <tr>
+                          <th>NET RENT</th>
+                          <td>
+                            <input type="text" class="form-control" />
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+          
+                <!-- Additional Expenses Section -->
+                <div class="mb-3">
+                  <!-- EXPENSES Section -->
+                  <h5 class="mb-2">Expenses: (Please provide information that are not included in the agent summary)</h5>
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-sm">
+                      <thead>
+                        <tr>
+                          <th>Investment Property ID</th>
+                          <th>Expense Description</th>
+                          <th>Amount</th>
+                          <th>Attachment</th>
+                          <th>Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody id="expensesTableBody">
+                        <tr>
+                          <td><input type="text" name="expensePropertyId[0]" class="form-control"></td>
+                          <td><input type="text" name="expenseDescription[0]" class="form-control"></td>
+                          <td><input type="text" name="expenseAmount[0]" class="form-control"></td>
+                          <td><input type="file" name="expenseFile[0]" class="form-control"></td>
+                          <td><button type="button" class="remove-expense btn btn-sm btn-danger">Remove</button></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <button type="button" id="addInvestmentPropertyExpenseButton" class="btn btn-sm btn-primary">
+                    Add Investment Property Expense
+                  </button>
                 </div>
               </div>
             </div>
           </div>
+          
+          
 
           <!-- Buttons -->
           <div class="mt-5 d-flex flex-row gap-2 justify-content-center">

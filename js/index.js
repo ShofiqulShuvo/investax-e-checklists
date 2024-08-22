@@ -663,7 +663,241 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+// Initialize indices for additional rows
+let superannuationRowIndex = 0;
+let superannuationSpouseRowIndex = 0;
 
+// Function to add a new superannuation row for section a
+document
+  .getElementById("addSuperannuationButton")
+  ?.addEventListener("click", function () {
+    let tableBody = document.getElementById("superannuationTableBody");
+
+    // Increment the row index
+    superannuationRowIndex++;
+
+    // Create a new row
+    let newRow = document.createElement("tr");
+
+    // Define the cells with input elements
+    let fundNameCell = document.createElement("td");
+    let dateOfPaymentCell = document.createElement("td");
+    let contributionAmountCell = document.createElement("td");
+    let attachmentCell = document.createElement("td");
+    let actionsCell = document.createElement("td");
+
+    // Create input elements for each cell
+    let fundNameInput = document.createElement("input");
+    let dateOfPaymentInput = document.createElement("input");
+    let contributionAmountInput = document.createElement("input");
+    let attachmentInput = document.createElement("input");
+
+    // Set attributes for each input element
+    fundNameInput.type = "text";
+    fundNameInput.className = "form-control";
+    fundNameInput.name = `superannuationFundName[${superannuationRowIndex}]`;
+
+    dateOfPaymentInput.type = "date";
+    dateOfPaymentInput.className = "form-control";
+    dateOfPaymentInput.name = `superannuationDateOfPayment[${superannuationRowIndex}]`;
+
+    contributionAmountInput.type = "text";
+    contributionAmountInput.className = "form-control";
+    contributionAmountInput.name = `superannuationContributionAmount[${superannuationRowIndex}]`;
+
+    attachmentInput.type = "file";
+    attachmentInput.className = "form-control";
+    attachmentInput.name = `superannuationAttachment[${superannuationRowIndex}]`;
+
+    // Append inputs to their respective cells
+    fundNameCell.appendChild(fundNameInput);
+    dateOfPaymentCell.appendChild(dateOfPaymentInput);
+    contributionAmountCell.appendChild(contributionAmountInput);
+    attachmentCell.appendChild(attachmentInput);
+
+    // Create remove button
+    let removeButton = document.createElement("button");
+    removeButton.className = "remove-superannuation btn btn-sm btn-danger";
+    removeButton.type = "button";
+    removeButton.innerHTML = "Remove";
+
+    // Add event listener to remove the row
+    removeButton.addEventListener("click", function () {
+      newRow.remove();
+    });
+
+    // Append remove button to actions cell
+    actionsCell.appendChild(removeButton);
+
+    // Append cells to the new row
+    newRow.appendChild(fundNameCell);
+    newRow.appendChild(dateOfPaymentCell);
+    newRow.appendChild(contributionAmountCell);
+    newRow.appendChild(attachmentCell);
+    newRow.appendChild(actionsCell);
+
+    // Append the new row to the table body
+    tableBody.appendChild(newRow);
+  });
+
+// Function to add a new superannuation row for section b (spouse contributions)
+document
+  .getElementById("addSuperannuationSpouseButton")
+  ?.addEventListener("click", function () {
+    let tableBody = document.getElementById("superannuationSpouseTableBody");
+
+    // Increment the row index
+    superannuationSpouseRowIndex++;
+
+    // Create a new row
+    let newRow = document.createElement("tr");
+
+    // Define the cells with input elements
+    let fundNameCell = document.createElement("td");
+    let dateOfPaymentCell = document.createElement("td");
+    let contributionAmountCell = document.createElement("td");
+    let attachmentCell = document.createElement("td");
+    let actionsCell = document.createElement("td");
+
+    // Create input elements for each cell
+    let fundNameInput = document.createElement("input");
+    let dateOfPaymentInput = document.createElement("input");
+    let contributionAmountInput = document.createElement("input");
+    let attachmentInput = document.createElement("input");
+
+    // Set attributes for each input element
+    fundNameInput.type = "text";
+    fundNameInput.className = "form-control";
+    fundNameInput.name = `superannuationSpouseFundName[${superannuationSpouseRowIndex}]`;
+
+    dateOfPaymentInput.type = "date";
+    dateOfPaymentInput.className = "form-control";
+    dateOfPaymentInput.name = `superannuationSpouseDateOfPayment[${superannuationSpouseRowIndex}]`;
+
+    contributionAmountInput.type = "text";
+    contributionAmountInput.className = "form-control";
+    contributionAmountInput.name = `superannuationSpouseContributionAmount[${superannuationSpouseRowIndex}]`;
+
+    attachmentInput.type = "file";
+    attachmentInput.className = "form-control";
+    attachmentInput.name = `superannuationSpouseAttachment[${superannuationSpouseRowIndex}]`;
+
+    // Append inputs to their respective cells
+    fundNameCell.appendChild(fundNameInput);
+    dateOfPaymentCell.appendChild(dateOfPaymentInput);
+    contributionAmountCell.appendChild(contributionAmountInput);
+    attachmentCell.appendChild(attachmentInput);
+
+    // Create remove button
+    let removeButton = document.createElement("button");
+    removeButton.className = "remove-superannuation-spouse btn btn-sm btn-danger";
+    removeButton.type = "button";
+    removeButton.innerHTML = "Remove";
+
+    // Add event listener to remove the row
+    removeButton.addEventListener("click", function () {
+      newRow.remove();
+    });
+
+    // Append remove button to actions cell
+    actionsCell.appendChild(removeButton);
+
+    // Append cells to the new row
+    newRow.appendChild(fundNameCell);
+    newRow.appendChild(dateOfPaymentCell);
+    newRow.appendChild(contributionAmountCell);
+    newRow.appendChild(attachmentCell);
+    newRow.appendChild(actionsCell);
+
+    // Append the new row to the table body
+    tableBody.appendChild(newRow);
+  });
+
+
+
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const investmentPropertyYes = document.getElementById("investmentPropertyYes");
+    const investmentPropertyNo = document.getElementById("investmentPropertyNo");
+    const investmentPropertyFields = document.getElementById("investmentPropertyFields");
+  
+    // Function to toggle visibility of the investment property fields
+    function toggleInvestmentPropertyFields() {
+      if (investmentPropertyYes.checked) {
+        investmentPropertyFields.classList.remove("d-none");
+      } else {
+        investmentPropertyFields.classList.add("d-none");
+      }
+    }
+  
+    // Add event listeners to radio buttons
+    investmentPropertyYes.addEventListener("change", toggleInvestmentPropertyFields);
+    investmentPropertyNo.addEventListener("change", toggleInvestmentPropertyFields);
+  });
+  
+  
+  document.addEventListener("DOMContentLoaded", function() {
+    let loanRowIndex = 1; // Start from 1 since the initial row is 0
+    let expenseRowIndex = 1; // Start from 1 since the initial row is 0
+  
+    const interestOnLoansTableBody = document.getElementById("interestOnLoansTableBody");
+    const expensesTableBody = document.getElementById("expensesTableBody");
+  
+    // Function to add a new loan entry row
+    document.getElementById("addInvestmentPropertyLoanButton").addEventListener("click", function() {
+      let newRow = document.createElement("tr");
+  
+      newRow.innerHTML = `
+        <td><input type="text" name="loanPropertyId[${loanRowIndex}]" class="form-control"></td>
+        <td><input type="text" name="loanBankName[${loanRowIndex}]" class="form-control"></td>
+        <td><input type="text" name="loanAmount[${loanRowIndex}]" class="form-control"></td>
+        <td><input type="file" name="loanFile[${loanRowIndex}]" class="form-control"></td>
+        <td><button type="button" class="remove-loan btn btn-sm btn-danger">Remove</button></td>
+      `;
+  
+      interestOnLoansTableBody.appendChild(newRow);
+  
+      // Increment the row index
+      loanRowIndex++;
+  
+      // Add event listener to remove the row
+      newRow.querySelector(".remove-loan").addEventListener("click", function() {
+        newRow.remove();
+      });
+    });
+  
+    // Function to add a new expense entry row
+    document.getElementById("addInvestmentPropertyExpenseButton").addEventListener("click", function() {
+      let newRow = document.createElement("tr");
+  
+      newRow.innerHTML = `
+        <td><input type="text" name="expensePropertyId[${expenseRowIndex}]" class="form-control"></td>
+        <td><input type="text" name="expenseDescription[${expenseRowIndex}]" class="form-control"></td>
+        <td><input type="text" name="expenseAmount[${expenseRowIndex}]" class="form-control"></td>
+        <td><input type="file" name="expenseFile[${expenseRowIndex}]" class="form-control"></td>
+        <td><button type="button" class="remove-expense btn btn-sm btn-danger">Remove</button></td>
+      `;
+  
+      expensesTableBody.appendChild(newRow);
+  
+      // Increment the row index
+      expenseRowIndex++;
+  
+      // Add event listener to remove the row
+      newRow.querySelector(".remove-expense").addEventListener("click", function() {
+        newRow.remove();
+      });
+    });
+  
+    // Add event listeners to remove the initial rows
+    document.querySelector(".remove-loan").addEventListener("click", function() {
+      this.closest("tr").remove();
+    });
+  
+    document.querySelector(".remove-expense").addEventListener("click", function() {
+      this.closest("tr").remove();
+    });
+  });
 
 
 
