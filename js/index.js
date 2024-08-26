@@ -114,8 +114,8 @@ document?.addEventListener("DOMContentLoaded", (event) => {
     checkInputs();
   });
 });
-
 // otp modal end
+
 
 // This script listens for the "change" event on the "Urgent" radio button.
 // If the "Urgent" option is selected, it triggers the Bootstrap modal to display.
@@ -395,7 +395,7 @@ document
 
 
 
-
+// add remove other work relation expenses
 // Initialize index for additional rows
 let otherWorkRelationExpenseRowIndex = 0;
 
@@ -632,7 +632,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
+// for spouse partner
 document.addEventListener("DOMContentLoaded", function () {
   const spousePartnerForYearYes = document.getElementById("spousePartnerForYearYes");
   const spousePartnerForYearNo = document.getElementById("spousePartnerForYearNo");
@@ -662,7 +662,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
+// add remove superannuation
 // Initialize indices for additional rows
 let superannuationRowIndex = 0;
 let superannuationSpouseRowIndex = 0;
@@ -816,91 +816,7 @@ document
 
 
 
-  document.addEventListener("DOMContentLoaded", function() {
-    const investmentPropertyYes = document.getElementById("investmentPropertyYes");
-    const investmentPropertyNo = document.getElementById("investmentPropertyNo");
-    const investmentPropertyFields = document.getElementById("investmentPropertyFields");
-  
-    // Function to toggle visibility of the investment property fields
-    function toggleInvestmentPropertyFields() {
-      if (investmentPropertyYes.checked) {
-        investmentPropertyFields.classList.remove("d-none");
-      } else {
-        investmentPropertyFields.classList.add("d-none");
-      }
-    }
-  
-    // Add event listeners to radio buttons
-    investmentPropertyYes.addEventListener("change", toggleInvestmentPropertyFields);
-    investmentPropertyNo.addEventListener("change", toggleInvestmentPropertyFields);
-  });
-  
-  
-  document.addEventListener("DOMContentLoaded", function() {
-    let loanRowIndex = 1; // Start from 1 since the initial row is 0
-    let expenseRowIndex = 1; // Start from 1 since the initial row is 0
-  
-    const interestOnLoansTableBody = document.getElementById("interestOnLoansTableBody");
-    const expensesTableBody = document.getElementById("expensesTableBody");
-  
-    // Function to add a new loan entry row
-    document.getElementById("addInvestmentPropertyLoanButton").addEventListener("click", function() {
-      let newRow = document.createElement("tr");
-  
-      newRow.innerHTML = `
-        <td><input type="text" name="loanPropertyId[${loanRowIndex}]" class="form-control"></td>
-        <td><input type="text" name="loanBankName[${loanRowIndex}]" class="form-control"></td>
-        <td><input type="text" name="loanAmount[${loanRowIndex}]" class="form-control"></td>
-        <td><input type="file" name="loanFile[${loanRowIndex}]" class="form-control"></td>
-        <td><button type="button" class="remove-loan btn btn-sm btn-danger">Remove</button></td>
-      `;
-  
-      interestOnLoansTableBody.appendChild(newRow);
-  
-      // Increment the row index
-      loanRowIndex++;
-  
-      // Add event listener to remove the row
-      newRow.querySelector(".remove-loan").addEventListener("click", function() {
-        newRow.remove();
-      });
-    });
-  
-    // Function to add a new expense entry row
-    document.getElementById("addInvestmentPropertyExpenseButton").addEventListener("click", function() {
-      let newRow = document.createElement("tr");
-  
-      newRow.innerHTML = `
-        <td><input type="text" name="expensePropertyId[${expenseRowIndex}]" class="form-control"></td>
-        <td><input type="text" name="expenseDescription[${expenseRowIndex}]" class="form-control"></td>
-        <td><input type="text" name="expenseAmount[${expenseRowIndex}]" class="form-control"></td>
-        <td><input type="file" name="expenseFile[${expenseRowIndex}]" class="form-control"></td>
-        <td><button type="button" class="remove-expense btn btn-sm btn-danger">Remove</button></td>
-      `;
-  
-      expensesTableBody.appendChild(newRow);
-  
-      // Increment the row index
-      expenseRowIndex++;
-  
-      // Add event listener to remove the row
-      newRow.querySelector(".remove-expense").addEventListener("click", function() {
-        newRow.remove();
-      });
-    });
-  
-    // Add event listeners to remove the initial rows
-    document.querySelector(".remove-loan").addEventListener("click", function() {
-      this.closest("tr").remove();
-    });
-  
-    document.querySelector(".remove-expense").addEventListener("click", function() {
-      this.closest("tr").remove();
-    });
-  });
-
-
-
+// add or show vehicle details
 // Show/Hide fields based on selected method
 document.querySelectorAll('input[name="calculationMethod"]').forEach((input) => {
   input.addEventListener("change", function () {
@@ -969,204 +885,6 @@ document.getElementById("add-expense-row").addEventListener("click", function ()
 
   tableBody.appendChild(newRow);
 });
-
-
-
-
-
-
-
-
-// for self educational information 
-document.addEventListener("DOMContentLoaded", function () {
-  // Toggle display of self-education fields based on user selection
-  document.querySelectorAll('input[name="selfEducation"]').forEach(function (input) {
-    input.addEventListener("change", function () {
-      const selfEducationFields = document.getElementById("selfEducationFields");
-      const addEducationContainer = document.getElementById("addEducationContainer");
-      if (document.getElementById("selfEducationYes").checked) {
-        addEducationContainer.style.display = "block";
-      } else {
-        addEducationContainer.style.display = "none";
-        selfEducationFields.innerHTML = ""; // Clear existing fields if 'No' is selected
-      }
-    });
-  });
-
-  // Initialize index for new self-education entries
-  let educationIndex = 0;
-
-  // Add event listener to the 'Add Self-Education' button
-  document.getElementById("addSelfEducation").addEventListener("click", function () {
-    educationIndex++;
-
-    // Create a new self-education entry
-    const newEntry = document.createElement("div");
-    newEntry.classList.add("mb-4");
-    newEntry.innerHTML = `
-      <h4 class="mb-3">Self-Education Entry ${educationIndex}</h4>
-      <div class="mb-2">
-        <label for="nameOfCourse${educationIndex}" class="form-label">Name of Course:</label>
-        <input type="text" class="form-control" id="nameOfCourse${educationIndex}" />
-      </div>
-      <div class="mb-2">
-        <label for="institution${educationIndex}" class="form-label">Institution:</label>
-        <input type="text" class="form-control" id="institution${educationIndex}" />
-      </div>
-      <div class="mb-2">
-        <label for="relateToCurrentEmployment${educationIndex}" class="form-label">How does it relate to your current employment/employer?:</label>
-        <textarea class="form-control" id="relateToCurrentEmployment${educationIndex}"></textarea>
-      </div>
-      <div class="mb-2">
-        <label for="feesExcludingHecs${educationIndex}" class="form-label">Fees (Excluding HECS/HELP debt):</label>
-        <textarea class="form-control" id="feesExcludingHecs${educationIndex}"></textarea>
-      </div>
-      <div class="mb-2">
-        <label for="hecsHelpDebt${educationIndex}" class="form-label">Did you have any HECS/HELP debt related to the education?:</label>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="radio"
-            name="hecsHelpDebt${educationIndex}"
-            id="hecsHelpDebtYes${educationIndex}"
-            value="yes"
-          />
-          <label class="form-check-label" for="hecsHelpDebtYes${educationIndex}">Yes</label>
-        </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="radio"
-            name="hecsHelpDebt${educationIndex}"
-            id="hecsHelpDebtNo${educationIndex}"
-            value="no"
-          />
-          <label class="form-check-label" for="hecsHelpDebtNo${educationIndex}">No</label>
-        </div>
-        <div id="hecsHelpDebtAmount${educationIndex}" style="display: none;">
-          <label for="hecsHelpDebtAmountInput${educationIndex}" class="form-label">HECS/HELP Debt Amount:</label>
-          <input type="text" class="form-control" id="hecsHelpDebtAmountInput${educationIndex}" />
-        </div>
-      </div>
-      <div class="mb-4">
-        <h5 class="mb-2">Expenses</h5>
-        <table class="table table-bordered" id="expensesTable${educationIndex}">
-          <thead>
-            <tr>
-              <th>Expense</th>
-              <th>Amount</th>
-              <th>Attachment</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><input type="text" class="form-control" name="expenseName${educationIndex}[]" /></td>
-              <td><input type="text" class="form-control" name="expenseAmount${educationIndex}[]" /></td>
-              <td><input type="file" class="form-control" name="expenseAttachment${educationIndex}[]" /></td>
-              <td><button type="button" class="btn btn-danger btn-sm remove-expense">Remove</button></td>
-            </tr>
-          </tbody>
-        </table>
-        <button type="button" class="btn btn-primary btn-sm add-expense" data-index="${educationIndex}">Add Expense</button>
-      </div>
-      <div class="mt-3 row g-3">
-        <h5 class="col-12 mb-2">Internet</h5>
-        <div class="col-12 col-md-6">
-          <label for="internetAmountPerMonth${educationIndex}" class="form-label">Amount per month:</label>
-          <input type="text" class="form-control" id="internetAmountPerMonth${educationIndex}" />
-        </div>
-        <div class="col-12 col-md-6">
-          <label for="internetUsedForwork${educationIndex}" class="form-label">Percentage used for work:</label>
-          <input type="text" class="form-control" id="internetUsedForwork${educationIndex}" />
-        </div>
-      </div>
-      <div class="mt-3 row g-3">
-        <h5 class="col-12 mb-2">Home Office Hour</h5>
-        <div class="col-12 col-md-6">
-          <label for="homeOfficeHoursPerWeek${educationIndex}" class="form-label">Hours per week:</label>
-          <input type="text" class="form-control" id="homeOfficeHoursPerWeek${educationIndex}" />
-        </div>
-        <div class="col-12 col-md-6">
-          <label for="homeOfficeHowManyWeeks${educationIndex}" class="form-label">How many weeks:</label>
-          <input type="text" class="form-control" id="homeOfficeHowManyWeeks${educationIndex}" />
-        </div>
-      </div>
-      <button type="button" class="btn btn-danger remove-education" data-index="${educationIndex}">Remove</button>
-      <hr class="my-3" />
-    `;
-    
-    // Append the new entry to the self-education fields container
-    document.getElementById("selfEducationFields").appendChild(newEntry);
-
-    // Add event listener to the remove button of the new entry
-    newEntry.querySelector(".remove-education").addEventListener("click", function () {
-      newEntry.remove();
-    });
-
-    // Add event listener to HECS/HELP debt radios
-    const hecsHelpYes = newEntry.querySelector(`#hecsHelpDebtYes${educationIndex}`);
-    const hecsHelpNo = newEntry.querySelector(`#hecsHelpDebtNo${educationIndex}`);
-    const hecsHelpDebtAmount = newEntry.querySelector(`#hecsHelpDebtAmount${educationIndex}`);
-
-    hecsHelpYes.addEventListener("change", function () {
-      hecsHelpDebtAmount.style.display = "block";
-    });
-
-    hecsHelpNo.addEventListener("change", function () {
-      hecsHelpDebtAmount.style.display = "none";
-    });
-
-    // Initialize the expenses table with event listener for adding rows
-    initializeExpensesTable(educationIndex);
-  });
-
-  // Function to initialize expense rows with remove functionality
-  function initializeExpensesTable(index) {
-    // Add event listener to 'Add Expense' button for each entry
-    document.querySelector(`#expensesTable${index} .add-expense`).addEventListener("click", function () {
-      addExpenseRow(index);
-    });
-
-    // Initialize remove buttons for existing expense rows
-    document.querySelectorAll(`#expensesTable${index} .remove-expense`).forEach(function (button) {
-      button.addEventListener("click", function () {
-        button.closest("tr").remove();
-      });
-    });
-  }
-
-  // Function to add expense rows
-  function addExpenseRow(index) {
-    const tableBody = document.querySelector(`#expensesTable${index} tbody`);
-    const newRow = document.createElement("tr");
-    newRow.innerHTML = `
-      <td><input type="text" class="form-control" name="expenseName${index}[]" /></td>
-      <td><input type="text" class="form-control" name="expenseAmount${index}[]" /></td>
-      <td><input type="file" class="form-control" name="expenseAttachment${index}[]" /></td>
-      <td><button type="button" class="btn btn-danger btn-sm remove-expense">Remove</button></td>
-    `;
-    tableBody.appendChild(newRow);
-
-    // Add event listener to the new remove button
-    newRow.querySelector(".remove-expense").addEventListener("click", function () {
-      newRow.remove();
-    });
-  }
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1974,3 +1692,308 @@ document
   });
 
 // share and managed funds end
+
+
+
+
+
+// if investment property is yes then show form
+document.addEventListener("DOMContentLoaded", function() {
+  const investmentPropertyYes = document.getElementById("investmentPropertyYes");
+  const investmentPropertyNo = document.getElementById("investmentPropertyNo");
+  const investmentPropertyFields = document.getElementById("investmentPropertyFields");
+
+  // Function to toggle visibility of the investment property fields
+  function toggleInvestmentPropertyFields() {
+    if (investmentPropertyYes.checked) {
+      investmentPropertyFields.classList.remove("d-none");
+    } else {
+      investmentPropertyFields.classList.add("d-none");
+    }
+  }
+
+  // Add event listeners to radio buttons
+  investmentPropertyYes.addEventListener("change", toggleInvestmentPropertyFields);
+  investmentPropertyNo.addEventListener("change", toggleInvestmentPropertyFields);
+});
+
+
+
+
+// add remove extra option for interest on loan
+document.addEventListener("DOMContentLoaded", function() {
+  let loanRowIndex = 1; // Start index at 1, since the first row is already present
+
+  // Function to add a new loan row
+  function addLoanRow() {
+    let tableBody = document.getElementById("interestOnLoansTableBody");
+
+    // Create a new row
+    let newRow = document.createElement("tr");
+
+    // Define the cells with input elements
+    let propertyIdCell = document.createElement("td");
+    let bankNameCell = document.createElement("td");
+    let loanAmountCell = document.createElement("td");
+    let attachmentCell = document.createElement("td");
+    let actionsCell = document.createElement("td");
+
+    // Create input elements for each cell
+    let propertyIdInput = document.createElement("input");
+    let bankNameInput = document.createElement("input");
+    let loanAmountInput = document.createElement("input");
+    let attachmentInput = document.createElement("input");
+
+    // Set attributes for each input element
+    propertyIdInput.type = "text";
+    propertyIdInput.className = "form-control";
+    propertyIdInput.name = `loanPropertyId[${loanRowIndex}]`;
+
+    bankNameInput.type = "text";
+    bankNameInput.className = "form-control";
+    bankNameInput.name = `loanBankName[${loanRowIndex}]`;
+
+    loanAmountInput.type = "text";
+    loanAmountInput.className = "form-control";
+    loanAmountInput.name = `loanAmount[${loanRowIndex}]`;
+
+    attachmentInput.type = "file";
+    attachmentInput.className = "form-control";
+    attachmentInput.name = `loanFile[${loanRowIndex}]`;
+
+    // Append inputs to their respective cells
+    propertyIdCell.appendChild(propertyIdInput);
+    bankNameCell.appendChild(bankNameInput);
+    loanAmountCell.appendChild(loanAmountInput);
+    attachmentCell.appendChild(attachmentInput);
+
+    // Create remove button
+    let removeButton = document.createElement("button");
+    removeButton.className = "remove-loan btn btn-sm btn-danger";
+    removeButton.type = "button";
+    removeButton.innerHTML = "Remove";
+
+    // Add event listener to remove the row
+    removeButton.addEventListener("click", function () {
+      newRow.remove();
+    });
+
+    // Append remove button to actions cell
+    actionsCell.appendChild(removeButton);
+
+    // Append cells to the new row
+    newRow.appendChild(propertyIdCell);
+    newRow.appendChild(bankNameCell);
+    newRow.appendChild(loanAmountCell);
+    newRow.appendChild(attachmentCell);
+    newRow.appendChild(actionsCell);
+
+    // Append the new row to the table body
+    tableBody.appendChild(newRow);
+
+    // Increment the row index
+    loanRowIndex++;
+  }
+
+  // Add more rows dynamically when the button is clicked
+  document
+    .getElementById("addInvestmentPropertyLoanButton")
+    .addEventListener("click", addLoanRow);
+
+  // Add remove functionality to the initial row
+  document.querySelectorAll(".remove-loan").forEach(button => {
+    button.addEventListener("click", function () {
+      button.closest("tr").remove();
+    });
+  });
+});
+
+// add remove extra option for interest on loan end
+
+
+
+// add remove aditional expenses forinvetsment property 
+document.addEventListener("DOMContentLoaded", function() {
+  let expenseRowIndex = 1; // Start index at 1, since the first row is already present
+
+  // Function to add a new expense row
+  function addExpenseRow() {
+    let tableBody = document.getElementById("investmentPropertyExpenseTableBody");
+
+    // Create a new row
+    let newRow = document.createElement("tr");
+
+    // Define the cells with input elements
+    let propertyIdCell = document.createElement("td");
+    let descriptionCell = document.createElement("td");
+    let amountCell = document.createElement("td");
+    let attachmentCell = document.createElement("td");
+    let actionsCell = document.createElement("td");
+
+    // Create input elements for each cell
+    let propertyIdInput = document.createElement("input");
+    let descriptionInput = document.createElement("input");
+    let amountInput = document.createElement("input");
+    let attachmentInput = document.createElement("input");
+
+    // Set attributes for each input element
+    propertyIdInput.type = "text";
+    propertyIdInput.className = "form-control";
+    propertyIdInput.name = `expensePropertyId[${expenseRowIndex}]`;
+
+    descriptionInput.type = "text";
+    descriptionInput.className = "form-control";
+    descriptionInput.name = `expenseDescription[${expenseRowIndex}]`;
+
+    amountInput.type = "text";
+    amountInput.className = "form-control";
+    amountInput.name = `expenseAmount[${expenseRowIndex}]`;
+
+    attachmentInput.type = "file";
+    attachmentInput.className = "form-control";
+    attachmentInput.name = `expenseFile[${expenseRowIndex}]`;
+
+    // Append inputs to their respective cells
+    propertyIdCell.appendChild(propertyIdInput);
+    descriptionCell.appendChild(descriptionInput);
+    amountCell.appendChild(amountInput);
+    attachmentCell.appendChild(attachmentInput);
+
+    // Create remove button
+    let removeButton = document.createElement("button");
+    removeButton.className = "removeInvestmentPropertyExpense btn btn-sm btn-danger";
+    removeButton.type = "button";
+    removeButton.innerHTML = "Remove";
+
+    // Add event listener to remove the row
+    removeButton.addEventListener("click", function () {
+      newRow.remove();
+    });
+
+    // Append remove button to actions cell
+    actionsCell.appendChild(removeButton);
+
+    // Append cells to the new row
+    newRow.appendChild(propertyIdCell);
+    newRow.appendChild(descriptionCell);
+    newRow.appendChild(amountCell);
+    newRow.appendChild(attachmentCell);
+    newRow.appendChild(actionsCell);
+
+    // Append the new row to the table body
+    tableBody.appendChild(newRow);
+
+    // Increment the row index
+    expenseRowIndex++;
+  }
+
+  // Add more rows dynamically when the button is clicked
+  document
+    .getElementById("addInvestmentPropertyExpenseButton")
+    .addEventListener("click", addExpenseRow);
+
+  // Add remove functionality to the initial row
+  document.querySelectorAll(".removeInvestmentPropertyExpense").forEach(button => {
+    button.addEventListener("click", function () {
+      button.closest("tr").remove();
+    });
+  });
+});
+
+// add remove aditional expenses forinvetsment property end 
+
+
+
+
+
+
+
+// for add remove show  self education
+document.addEventListener("DOMContentLoaded", function() {
+  let educationIndex = 0;
+
+  function toggleSelfEducationFields() {
+      const selfEducationYes = document.getElementById("selfEducationYes");
+      const addEducationContainer = document.getElementById("addEducationContainer");
+      const selfEducationFields = document.getElementById("selfEducationFields");
+
+      if (selfEducationYes.checked) {
+          selfEducationFields.style.display = "block";
+          addEducationContainer.style.display = "block";
+      } else {
+          selfEducationFields.style.display = "none";
+          addEducationContainer.style.display = "none";
+          selfEducationFields.innerHTML = ""; // Clear all self-education entries
+      }
+  }
+
+  function addSelfEducationEntry() {
+      const selfEducationFields = document.getElementById("selfEducationFields");
+      const template = document.getElementById("selfEducationTemplate").innerHTML;
+      
+      // Replace placeholders in the template with the current index
+      const entryHtml = template.replace(/__EDU_INDEX__/g, educationIndex);
+      const newEntry = document.createElement('div');
+      newEntry.innerHTML = entryHtml;
+      
+      selfEducationFields.appendChild(newEntry);
+      educationIndex++;
+  }
+
+  function removeSelfEducationEntry(event) {
+      const selfEducationFields = document.getElementById("selfEducationFields");
+      
+      if (selfEducationFields.querySelectorAll(".self-education-entry").length > 1) {
+          event.target.closest(".self-education-entry").remove();
+      } else {
+          event.target.closest(".self-education-entry").remove();
+          document.getElementById("selfEducationNo").checked = true;
+          toggleSelfEducationFields();
+      }
+  }
+
+  function addSelfEducationExpenseRow(event) {
+      const selfEducationEntry = event.target.closest(".self-education-entry");
+      const expenseTableBody = selfEducationEntry.querySelector(".expenses-table-body");
+      const expenseRowTemplate = document.getElementById("expenseRowTemplate").innerHTML;
+      const expenseIndex = expenseTableBody.children.length;
+      
+      // Replace placeholders in the template with the current indexes
+      const rowHtml = expenseRowTemplate
+          .replace(/__EDU_INDEX__/g, selfEducationEntry.querySelector("input[name^='courseName']").name.match(/\[(\d+)\]/)[1])
+          .replace(/__EXP_INDEX__/g, expenseIndex);
+      const newRow = document.createElement('tr');
+      newRow.innerHTML = rowHtml;
+
+      expenseTableBody.appendChild(newRow);
+  }
+
+  function removeSelfEducationExpenseRow(event) {
+      const row = event.target.closest("tr");
+      if (row.closest("tbody").children.length > 1) {
+          row.remove();
+      }
+  }
+
+  document.querySelectorAll("input[name='selfEducation']").forEach(radio => {
+      radio.addEventListener("change", toggleSelfEducationFields);
+  });
+
+  document.getElementById("addSelfEducation").addEventListener("click", addSelfEducationEntry);
+
+  document.body.addEventListener("click", function(event) {
+      if (event.target.classList.contains("removeSelfEducation")) {
+          removeSelfEducationEntry(event);
+      } else if (event.target.classList.contains("removeSelfEducationExpense")) {
+          removeSelfEducationExpenseRow(event);
+      }
+  });
+
+  document.body.addEventListener("click", function(event) {
+      if (event.target.classList.contains("addSelfEducationExpense")) {
+          addSelfEducationExpenseRow(event);
+      }
+  });
+
+  toggleSelfEducationFields();
+});

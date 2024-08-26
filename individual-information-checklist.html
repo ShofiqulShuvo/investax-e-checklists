@@ -1006,48 +1006,124 @@
           <!-- SELF EDUCATION (step 9) -->
           <div class="step">
             <h3 class="d-block mb-3">SELF EDUCATION</h3>
-
+          
             <!-- Ask if the user has any self-education -->
             <div class="mb-4">
               <p class="mb-2">Do you have any self-education expenses?</p>
               <div class="form-check form-check-inline">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="selfEducation"
-                  id="selfEducationYes"
-                  value="yes"
-                />
-                <label class="form-check-label" for="selfEducationYes"
-                  >Yes</label
-                >
+                <input class="form-check-input" type="radio" name="selfEducation" id="selfEducationYes" value="yes" />
+                <label class="form-check-label" for="selfEducationYes">Yes</label>
               </div>
               <div class="form-check form-check-inline">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="selfEducation"
-                  id="selfEducationNo"
-                  value="no"
-                />
+                <input class="form-check-input" type="radio" name="selfEducation" id="selfEducationNo" value="no" />
                 <label class="form-check-label" for="selfEducationNo">No</label>
               </div>
             </div>
-
+          
             <!-- Container for Self-Education Entries -->
             <div id="selfEducationFields"></div>
-
+          
             <!-- Button to Add Self-Education -->
             <div id="addEducationContainer" style="display: none">
-              <button
-                type="button"
-                id="addSelfEducation"
-                class="btn mb-3 add-btn"
-              >
-                Add Self-Education
-              </button>
+              <button type="button" id="addSelfEducation" class="btn mb-3 add-btn">Add Self-Education</button>
             </div>
           </div>
+          
+          <!-- Template for self-education entry -->
+          <template id="selfEducationTemplate">
+            <div class="self-education-entry">
+              <h4 class="mb-3">Self-Education</h4>
+              <div class="mb-2">
+                <label class="form-label">Name of Course:</label>
+                <input type="text" class="form-control" name="courseName[__EDU_INDEX__]" />
+              </div>
+              <div class="mb-2">
+                <label class="form-label">Institution:</label>
+                <input type="text" class="form-control" name="institution[__EDU_INDEX__]" />
+              </div>
+              <div class="mb-2">
+                <label class="form-label">How does it relate to your current employment/employer?:</label>
+                <textarea class="form-control" name="employmentRelation[__EDU_INDEX__]"></textarea>
+              </div>
+              <div class="mb-2">
+                <label class="form-label">Fees (Excluding HECS/HELP debt):</label>
+                <textarea class="form-control" name="fees[__EDU_INDEX__]"></textarea>
+              </div>
+              <div class="mb-2">
+                <label class="form-label">Did you have any HECS/HELP debt related to the education?:</label>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="hecsDebt[__EDU_INDEX__]" value="yes" />
+                  <label class="form-check-label">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="hecsDebt[__EDU_INDEX__]" value="no" />
+                  <label class="form-check-label">No</label>
+                </div>
+                <div class="hecs-debt-amount">
+                  <label class="form-label">HECS/HELP Debt Amount:</label>
+                  <input type="text" class="form-control" name="hecsDebtAmount[__EDU_INDEX__]" />
+                </div>
+              </div>
+              <div class="mb-4">
+                <h5 class="mb-2">Expenses</h5>
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>Expense</th>
+                      <th>Amount</th>
+                      <th>Attachment</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody class="expenses-table-body"></tbody>
+                </table>
+                <button type="button" class="ms-auto btn add-btn btn-sm addSelfEducationExpense">Add Expense</button>
+              </div>
+              <div class="mt-3 row g-3">
+                <h5 class="col-12 mb-2">Internet</h5>
+                <div class="col-12 col-md-6">
+                  <label class="form-label">Amount per month:</label>
+                  <input type="text" class="form-control" name="internetAmount[__EDU_INDEX__]" />
+                </div>
+                <div class="col-12 col-md-6">
+                  <label class="form-label">Percentage used for work:</label>
+                  <input type="text" class="form-control" name="internetPercentage[__EDU_INDEX__]" />
+                </div>
+              </div>
+              <div class="mt-3 row g-3">
+                <h5 class="col-12 mb-2">Home Office Hour</h5>
+                <div class="col-12 col-md-6">
+                  <label class="form-label">Hours per week:</label>
+                  <input type="text" class="form-control" name="homeOfficeHours[__EDU_INDEX__]" />
+                </div>
+                <div class="col-12 col-md-6">
+                  <label class="form-label">How many weeks:</label>
+                  <input type="text" class="form-control" name="homeOfficeWeeks[__EDU_INDEX__]" />
+                </div>
+              </div>
+              <button type="button" class="d-block ms-auto mt-4 btn btn-danger removeSelfEducation">Remove Self-Education</button>
+              <hr class="my-5" />
+            </div>
+          </template>
+          
+          <!-- Template for expense row -->
+          <template id="expenseRowTemplate">
+            <tr>
+              <td>
+                <input type="text" class="form-control" name="expenseDescription[__EDU_INDEX__][__EXP_INDEX__]" />
+              </td>
+              <td>
+                <input type="text" class="form-control" name="expenseAmount[__EDU_INDEX__][__EXP_INDEX__]" />
+              </td>
+              <td>
+                <input type="file" class="form-control" name="expenseFile[__EDU_INDEX__][__EXP_INDEX__]" />
+              </td>
+              <td>
+                <button type="button" class="btn btn-danger btn-sm removeSelfEducationExpense">Remove</button>
+              </td>
+            </tr>
+          </template>
+          
 
           <!-- OTHER WORK RELATION DEDUCTIONS (step 10) -->
           <div class="step">
@@ -1154,7 +1230,7 @@
                 </table>
                 <button
                   type="button"
-                  class="btn btn-sm add-btn"
+                  class="ms-auto btn btn-sm add-btn"
                   id="addOtherWorkRelationExpenseButton"
                 >
                   Add Expense
@@ -1268,12 +1344,11 @@
 
           <!-- OTHER & GIFTS OR DONATIONS (step 11) -->
           <div class="step">
-
             <h5 class="mb-5">Other Expenses</h5>
             <!-- OTHER -->
             <div class="mb-4">
               <label class="d-block mb-2">Income Protection Insurance</label>
-          
+
               <div class="form-check form-check-inline">
                 <input
                   class="form-check-input"
@@ -1288,7 +1363,7 @@
                   Yes
                 </label>
               </div>
-          
+
               <div class="form-check form-check-inline">
                 <input
                   class="form-check-input"
@@ -1303,13 +1378,13 @@
                   No
                 </label>
               </div>
-          
+
               <!-- Attachment field -->
-              <div id="attachmentField" style="display: none;">
+              <div id="attachmentField" style="display: none">
                 <p class="mt-2">If yes, please attach a copy</p>
                 <input type="file" class="form-control mb-3" />
               </div>
-          
+
               <!-- Expenses Table for OTHER -->
               <div class="mt-4">
                 <h6 class="mb-2">Expenses</h6>
@@ -1325,29 +1400,66 @@
                   <tbody id="otherExpensesTableBody">
                     <!-- Initial Row -->
                     <tr>
-                      <td><input type="text" class="form-control" name="otherExpenseName[0]" /></td>
-                      <td><input type="text" class="form-control" name="otherExpenseAmount[0]" /></td>
-                      <td><input type="file" class="form-control" name="otherExpenseAttachment[0]" /></td>
-                      <td><button type="button" class="remove-other-expense btn btn-danger btn-sm">Remove</button></td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="otherExpenseName[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="otherExpenseAmount[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="file"
+                          class="form-control"
+                          name="otherExpenseAttachment[0]"
+                        />
+                      </td>
+                      <td>
+                        <button
+                          type="button"
+                          class="remove-other-expense btn btn-danger btn-sm"
+                        >
+                          Remove
+                        </button>
+                      </td>
                     </tr>
                   </tbody>
                 </table>
-                <button type="button" class="btn btn-sm add-btn" id="addOtherExpenseButton">Add Expense</button>
+                <button
+                  type="button"
+                  class="ms-auto btn btn-sm add-btn"
+                  id="addOtherExpenseButton"
+                >
+                  Add Expense
+                </button>
               </div>
             </div>
-          
+
             <!-- GIFTS OR DONATIONS -->
             <div class="mb-4">
               <label class="d-block mb-2">GIFTS OR DONATIONS</label>
-          
+
               <p class="mb-2">
-                Voluntary gifts of $2 or more made to a Deductible Gift Recipient (DGR) Status Organization, please list the name of the organization and the amount donated. (This includes School Building Fund donations)
+                Voluntary gifts of $2 or more made to a Deductible Gift
+                Recipient (DGR) Status Organization, please list the name of the
+                organization and the amount donated. (This includes School
+                Building Fund donations)
               </p>
-        
+
               <!-- Expenses Table for GIFTS OR DONATIONS -->
               <div class="mt-4">
                 <h6 class="mb-2">Expenses</h6>
-                <table class="table table-bordered" id="giftsDonationsExpensesTable">
+                <table
+                  class="table table-bordered"
+                  id="giftsDonationsExpensesTable"
+                >
                   <thead>
                     <tr>
                       <th>Expense</th>
@@ -1359,31 +1471,61 @@
                   <tbody id="giftsDonationsExpensesTableBody">
                     <!-- Initial Row -->
                     <tr>
-                      <td><input type="text" class="form-control" name="giftsDonationsExpenseName[0]" /></td>
-                      <td><input type="text" class="form-control" name="giftsDonationsExpenseAmount[0]" /></td>
-                      <td><input type="file" class="form-control" name="giftsDonationsExpenseAttachment[0]" /></td>
-                      <td><button type="button" class="remove-gifts-donations-expense btn btn-danger btn-sm">Remove</button></td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="giftsDonationsExpenseName[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="giftsDonationsExpenseAmount[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="file"
+                          class="form-control"
+                          name="giftsDonationsExpenseAttachment[0]"
+                        />
+                      </td>
+                      <td>
+                        <button
+                          type="button"
+                          class="remove-gifts-donations-expense btn btn-danger btn-sm"
+                        >
+                          Remove
+                        </button>
+                      </td>
                     </tr>
                   </tbody>
                 </table>
-                <button type="button" class="btn btn-sm add-btn" id="addGiftsDonationsExpenseButton">Add Expense</button>
+                <button
+                  type="button"
+                  class="ms-auto btn btn-sm add-btn"
+                  id="addGiftsDonationsExpenseButton"
+                >
+                  Add Expense
+                </button>
               </div>
             </div>
-          </div>       
-          
+          </div>
 
           <!-- TAX OFFSETS (step 12) -->
           <div class="step">
             <div class="mb-4">
               <h4 class="d-block mb-3">TAX OFFSETS</h4>
-          
+
               <!-- PRIVATE HEALTH INSURANCE -->
               <div class="mt-3">
                 <h6 class="mb-2">PRIVATE HEALTH INSURANCE</h6>
-          
+
                 <div class="mb-2">
                   <p>Do you have private health Insurance?</p>
-          
+
                   <div class="form-check form-check-inline">
                     <input
                       class="form-check-input"
@@ -1398,7 +1540,7 @@
                       yes
                     </label>
                   </div>
-          
+
                   <div class="form-check form-check-inline">
                     <input
                       class="form-check-input"
@@ -1414,14 +1556,14 @@
                     </label>
                   </div>
                 </div>
-          
+
                 <div class="mb-2">
                   <p>
                     Please confirm all your family members (including your
                     spouse and children were covered by private health insurance
                     hospital cover)
                   </p>
-          
+
                   <div class="form-check form-check-inline">
                     <input
                       class="form-check-input"
@@ -1436,7 +1578,7 @@
                       yes
                     </label>
                   </div>
-          
+
                   <div class="form-check form-check-inline">
                     <input
                       class="form-check-input"
@@ -1453,15 +1595,17 @@
                   </div>
                 </div>
               </div>
-          
+
               <!-- SPOUSE OR PARTNERS TAXABLE INCOME -->
               <div class="mt-3">
                 <h6 class="mb-2">SPOUSE OR PARTNER'S TAXABLE INCOME*</h6>
                 <p class="mb-2">(Includes same sex couples)</p>
-          
+
                 <div class="mb-2">
-                  <p>Did you have a spouse/partner for the full financial year?</p>
-          
+                  <p>
+                    Did you have a spouse/partner for the full financial year?
+                  </p>
+
                   <div class="form-check form-check-inline">
                     <input
                       class="form-check-input"
@@ -1476,7 +1620,7 @@
                       yes
                     </label>
                   </div>
-          
+
                   <div class="form-check form-check-inline">
                     <input
                       class="form-check-input"
@@ -1492,12 +1636,15 @@
                     </label>
                   </div>
                 </div>
-          
+
                 <!-- Field for Yes -->
-                <div id="spousePartnerDetails" style="display: none;">
+                <div id="spousePartnerDetails" style="display: none">
                   <div class="mb-2">
-                    <p>Does your spouse/partner receive any benefits from Centrelink?</p>
-          
+                    <p>
+                      Does your spouse/partner receive any benefits from
+                      Centrelink?
+                    </p>
+
                     <div class="form-check form-check-inline">
                       <input
                         class="form-check-input"
@@ -1512,7 +1659,7 @@
                         yes
                       </label>
                     </div>
-          
+
                     <div class="form-check form-check-inline">
                       <input
                         class="form-check-input"
@@ -1528,29 +1675,31 @@
                       </label>
                     </div>
                   </div>
-          
+
                   <div class="mb-2">
                     <label for="nameOfCourse" class="form-label">
                       What was your spouse or partner’s taxable income*:
                     </label>
                     <input type="text" class="form-control" />
                   </div>
-          
                 </div>
-          
+
                 <!-- Separate Input for No -->
-                <div id="separateInput" style="display: none;">
+                <div id="separateInput" style="display: none">
                   <div class="mb-2">
                     <label for="separationDate" class="form-label">
                       Separation Date
                     </label>
-                    <input type="date" class="form-control" id="separationDate" />
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="separationDate"
+                    />
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          
 
           <!-- SUPERANNUATION & OTHER (step 13) -->
           <div class="step">
@@ -1558,11 +1707,12 @@
               <!-- SUPERANNUATION -->
               <div class="mb-2">
                 <h4 class="d-block mb-3">SUPERANNUATION</h4>
-          
+
                 <!-- Section a -->
                 <div class="mb-3">
                   <p class="mb-2">
-                    a. Please provide details of contributions you made to your superannuation for the financial year, if any.
+                    a. Please provide details of contributions you made to your
+                    superannuation for the financial year, if any.
                   </p>
                   <table class="table table-bordered" id="superannuationTable">
                     <thead>
@@ -1577,25 +1727,67 @@
                     <tbody id="superannuationTableBody">
                       <!-- Initial Row -->
                       <tr>
-                        <td><input type="text" class="form-control" name="superannuationFundName[0]" /></td>
-                        <td><input type="date" class="form-control" name="superannuationDateOfPayment[0]" /></td>
-                        <td><input type="text" class="form-control" name="superannuationContributionAmount[0]" /></td>
-                        <td><input type="file" class="form-control" name="superannuationAttachment[0]" /></td>
-                        <td><button type="button" class="remove-superannuation btn btn-sm btn-danger">Remove</button></td>
+                        <td>
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="superannuationFundName[0]"
+                          />
+                        </td>
+                        <td>
+                          <input
+                            type="date"
+                            class="form-control"
+                            name="superannuationDateOfPayment[0]"
+                          />
+                        </td>
+                        <td>
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="superannuationContributionAmount[0]"
+                          />
+                        </td>
+                        <td>
+                          <input
+                            type="file"
+                            class="form-control"
+                            name="superannuationAttachment[0]"
+                          />
+                        </td>
+                        <td>
+                          <button
+                            type="button"
+                            class="remove-superannuation btn btn-sm btn-danger"
+                          >
+                            Remove
+                          </button>
+                        </td>
                       </tr>
                     </tbody>
                   </table>
-                  <p class="mt-1 mb-2 fw-medium text-info">Feel fre to attach Notice of Intent (NOI)</p>
-                  <button type="button" class="btn btn-sm ms-auto add-btn" id="addSuperannuationButton">Add Contribution</button>
-                  
+                  <p class="mt-1 mb-2 fw-medium text-info">
+                    Feel fre to attach Notice of Intent (NOI)
+                  </p>
+                  <button
+                    type="button"
+                    class="btn btn-sm ms-auto add-btn"
+                    id="addSuperannuationButton"
+                  >
+                    Add Contribution
+                  </button>
                 </div>
-          
+
                 <!-- Section b -->
                 <div class="mb-3">
                   <p class="mb-2">
-                    b. Have you made superannuation contributions on behalf of your spouse?
+                    b. Have you made superannuation contributions on behalf of
+                    your spouse?
                   </p>
-                  <table class="table table-bordered" id="superannuationSpouseTable">
+                  <table
+                    class="table table-bordered"
+                    id="superannuationSpouseTable"
+                  >
                     <thead>
                       <tr>
                         <th>Superannuation Fund Name</th>
@@ -1608,45 +1800,94 @@
                     <tbody id="superannuationSpouseTableBody">
                       <!-- Initial Row -->
                       <tr>
-                        <td><input type="text" class="form-control" name="superannuationSpouseFundName[0]" /></td>
-                        <td><input type="date" class="form-control" name="superannuationSpouseDateOfPayment[0]" /></td>
-                        <td><input type="text" class="form-control" name="superannuationSpouseContributionAmount[0]" /></td>
-                        <td><input type="file" class="form-control" name="superannuationSpouseAttachment[0]" /></td>
-                        <td><button type="button" class="remove-superannuation-spouse btn btn-sm btn-danger">Remove</button></td>
+                        <td>
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="superannuationSpouseFundName[0]"
+                          />
+                        </td>
+                        <td>
+                          <input
+                            type="date"
+                            class="form-control"
+                            name="superannuationSpouseDateOfPayment[0]"
+                          />
+                        </td>
+                        <td>
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="superannuationSpouseContributionAmount[0]"
+                          />
+                        </td>
+                        <td>
+                          <input
+                            type="file"
+                            class="form-control"
+                            name="superannuationSpouseAttachment[0]"
+                          />
+                        </td>
+                        <td>
+                          <button
+                            type="button"
+                            class="remove-superannuation-spouse btn btn-sm btn-danger"
+                          >
+                            Remove
+                          </button>
+                        </td>
                       </tr>
                     </tbody>
                   </table>
-                  <p class="mt-1 mb-2 fw-medium text-info">Feel fre to attach Notice of Intent (NOI)</p>
-                  <button type="button" class="btn btn-sm ms-auto add-btn" id="addSuperannuationSpouseButton">Add Spouse Contribution</button>
+                  <p class="mt-1 mb-2 fw-medium text-info">
+                    Feel fre to attach Notice of Intent (NOI)
+                  </p>
+                  <button
+                    type="button"
+                    class="btn btn-sm ms-auto add-btn"
+                    id="addSuperannuationSpouseButton"
+                  >
+                    Add Spouse Contribution
+                  </button>
                 </div>
               </div>
             </div>
           </div>
-          
-          
 
           <!-- last step  (step 14)  -->
           <div class="step">
             <div class="mb-4">
               <!-- Investment Property Question -->
               <div class="mb-3">
-                <p class="d-block mb-3 text-center lead">
+                <p class="d-block mb-3 lead">
                   Do you have any investment property?
                 </p>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="investmentProperty" id="investmentPropertyYes" value="yes">
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="investmentProperty"
+                    id="investmentPropertyYes"
+                    value="yes"
+                  />
                   <label class="form-check-label" for="investmentPropertyYes">
                     Yes
                   </label>
                 </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="investmentProperty" id="investmentPropertyNo" value="no">
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="investmentProperty"
+                    id="investmentPropertyNo"
+                    value="no"
+                  />
                   <label class="form-check-label" for="investmentPropertyNo">
                     No
                   </label>
                 </div>
               </div>
-          
+
               <!-- Investment Property Fields (Initially Hidden) -->
               <div id="investmentPropertyFields" class="d-none">
                 <!-- Owner Information -->
@@ -1667,13 +1908,18 @@
                           </td>
                         </tr>
                         <tr>
-                          <th>Number of weeks property was rented this year:</th>
+                          <th>
+                            Number of weeks property was rented this year:
+                          </th>
                           <td>
                             <input type="text" class="form-control" />
                           </td>
                         </tr>
                         <tr>
-                          <th>Number of weeks property was available for rent this year:</th>
+                          <th>
+                            Number of weeks property was available for rent this
+                            year:
+                          </th>
                           <td>
                             <input type="text" class="form-control" />
                           </td>
@@ -1682,7 +1928,7 @@
                     </table>
                   </div>
                 </div>
-          
+
                 <!-- Income Section -->
                 <div class="mb-3">
                   <h5 class="mb-2">INCOME</h5>
@@ -1713,35 +1959,70 @@
                 </div>
 
                 <!-- INTEREST ON LOANS Section -->
-                 <div class="mb-3">
-                   <h5 class="mb-2">INTEREST ON LOANS</h5>
-                   <div class="table-responsive">
-                     <table class="table table-bordered table-sm">
-                       <thead>
-                         <tr>
-                           <th>Investment Property ID</th>
-                           <th>Bank Name</th>
-                           <th>Loan Amount</th>
-                           <th>Attachment</th>
-                           <th>Actions</th>
-                         </tr>
-                       </thead>
-                       <tbody id="interestOnLoansTableBody">
-                         <tr>
-                           <td><input type="text" name="loanPropertyId[0]" class="form-control"></td>
-                           <td><input type="text" name="loanBankName[0]" class="form-control"></td>
-                           <td><input type="text" name="loanAmount[0]" class="form-control"></td>
-                           <td><input type="file" name="loanFile[0]" class="form-control"></td>
-                           <td><button type="button" class="remove-loan btn btn-sm btn-danger">Remove</button></td>
-                         </tr>
-                       </tbody>
-                     </table>
-                   </div>
-                   <button type="button" id="addInvestmentPropertyLoanButton" class="btn btn-sm btn-primary">
-                     Add Investment Property Loan
-                   </button>
-                 </div>
-          
+                <div class="mb-3">
+                  <h5 class="mb-2">INTEREST ON LOANS</h5>
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-sm">
+                      <thead>
+                        <tr>
+                          <th>Investment Property ID</th>
+                          <th>Bank Name</th>
+                          <th>Loan Amount</th>
+                          <th>Attachment</th>
+                          <th>Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody id="interestOnLoansTableBody">
+                        <tr>
+                          <td>
+                            <input
+                              type="text"
+                              name="loanPropertyId[0]"
+                              class="form-control"
+                            />
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              name="loanBankName[0]"
+                              class="form-control"
+                            />
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              name="loanAmount[0]"
+                              class="form-control"
+                            />
+                          </td>
+                          <td>
+                            <input
+                              type="file"
+                              name="loanFile[0]"
+                              class="form-control"
+                            />
+                          </td>
+                          <td>
+                            <button
+                              type="button"
+                              class="remove-loan btn btn-sm btn-danger"
+                            >
+                              Remove
+                            </button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <button
+                    type="button"
+                    id="addInvestmentPropertyLoanButton"
+                    class="ms-auto btn btn-sm add-btn"
+                  >
+                    Add Investment Property Loan
+                  </button>
+                </div>
+
                 <!-- Expenses Section -->
                 <div class="mb-3">
                   <h5 class="mb-2">EXPENSES</h5>
@@ -1755,7 +2036,9 @@
                           </td>
                         </tr>
                         <tr>
-                          <th class="mw-fit">E Body corporate fees (Strata Levies)</th>
+                          <th class="mw-fit">
+                            E Body corporate fees (Strata Levies)
+                          </th>
                           <td>
                             <input type="text" class="form-control" />
                           </td>
@@ -1779,7 +2062,9 @@
                           </td>
                         </tr>
                         <tr>
-                          <th class="mw-fit">I Capital allowances (depreciation)</th>
+                          <th class="mw-fit">
+                            I Capital allowances (depreciation)
+                          </th>
                           <td>
                             <input type="text" class="form-control" />
                           </td>
@@ -1821,37 +2106,49 @@
                           </td>
                         </tr>
                         <tr>
-                          <th class="mw-fit">P Property agent fees/commission</th>
+                          <th class="mw-fit">
+                            P Property agent fees/commission
+                          </th>
                           <td>
                             <input type="text" class="form-control" />
                           </td>
                         </tr>
                         <tr>
-                          <th class="mw-fit">Q Repairs and maintenance (R & M)</th>
+                          <th class="mw-fit">
+                            Q Repairs and maintenance (R & M)
+                          </th>
                           <td>
                             <input type="text" class="form-control" />
                           </td>
                         </tr>
                         <tr>
-                          <th class="mw-fit">(for R & M purchases greater than $300 need details)</th>
+                          <th class="mw-fit">
+                            (for R & M purchases greater than $300 need details)
+                          </th>
                           <td>
                             <input type="text" class="form-control" />
                           </td>
                         </tr>
                         <tr>
-                          <th class="mw-fit">R Capital Work's Deduction (Building)</th>
+                          <th class="mw-fit">
+                            R Capital Work's Deduction (Building)
+                          </th>
                           <td>
                             <input type="text" class="form-control" />
                           </td>
                         </tr>
                         <tr>
-                          <th class="mw-fit">S Stationery, telephone and postage</th>
+                          <th class="mw-fit">
+                            S Stationery, telephone and postage
+                          </th>
                           <td>
                             <input type="text" class="form-control" />
                           </td>
                         </tr>
                         <tr>
-                          <th class="mw-fit">T Travel expenses (Not allowed after 30/6/2017)</th>
+                          <th class="mw-fit">
+                            T Travel expenses (Not allowed after 30/6/2017)
+                          </th>
                           <td>
                             <input type="text" class="form-control" />
                           </td>
@@ -1878,9 +2175,7 @@
                     </table>
                   </div>
                 </div>
-          
-                
-          
+
                 <!-- Net Rent Section -->
                 <div class="mb-3">
                   <div class="table-responsive">
@@ -1896,11 +2191,14 @@
                     </table>
                   </div>
                 </div>
-          
+
                 <!-- Additional Expenses Section -->
                 <div class="mb-3">
                   <!-- EXPENSES Section -->
-                  <h5 class="mb-2">Expenses: (Please provide information that are not included in the agent summary)</h5>
+                  <h5 class="mb-2">
+                    Expenses: (Please provide information that are not included
+                    in the agent summary)
+                  </h5>
                   <div class="table-responsive">
                     <table class="table table-bordered table-sm">
                       <thead>
@@ -1912,26 +2210,59 @@
                           <th>Actions</th>
                         </tr>
                       </thead>
-                      <tbody id="expensesTableBody">
+                      <tbody id="investmentPropertyExpenseTableBody">
                         <tr>
-                          <td><input type="text" name="expensePropertyId[0]" class="form-control"></td>
-                          <td><input type="text" name="expenseDescription[0]" class="form-control"></td>
-                          <td><input type="text" name="expenseAmount[0]" class="form-control"></td>
-                          <td><input type="file" name="expenseFile[0]" class="form-control"></td>
-                          <td><button type="button" class="remove-expense btn btn-sm btn-danger">Remove</button></td>
+                          <td>
+                            <input
+                              type="text"
+                              name="expensePropertyId[0]"
+                              class="form-control"
+                            />
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              name="expenseDescription[0]"
+                              class="form-control"
+                            />
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              name="expenseAmount[0]"
+                              class="form-control"
+                            />
+                          </td>
+                          <td>
+                            <input
+                              type="file"
+                              name="expenseFile[0]"
+                              class="form-control"
+                            />
+                          </td>
+                          <td>
+                            <button
+                              type="button"
+                              class="removeInvestmentPropertyExpense btn btn-sm btn-danger"
+                            >
+                              Remove
+                            </button>
+                          </td>
                         </tr>
                       </tbody>
                     </table>
                   </div>
-                  <button type="button" id="addInvestmentPropertyExpenseButton" class="btn btn-sm btn-primary">
+                  <button
+                    type="button"
+                    id="addInvestmentPropertyExpenseButton"
+                    class="ms-auto btn btn-sm add-btn"
+                  >
                     Add Investment Property Expense
                   </button>
                 </div>
               </div>
             </div>
           </div>
-          
-          
 
           <!-- Buttons -->
           <div class="mt-5 d-flex flex-row gap-2 justify-content-center">
