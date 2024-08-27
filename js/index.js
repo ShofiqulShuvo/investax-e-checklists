@@ -116,7 +116,6 @@ document?.addEventListener("DOMContentLoaded", (event) => {
 });
 // otp modal end
 
-
 // This script listens for the "change" event on the "Urgent" radio button.
 // If the "Urgent" option is selected, it triggers the Bootstrap modal to display.
 document.getElementById("urgent").addEventListener("change", function () {
@@ -158,63 +157,55 @@ document.getElementById("spouseYes").addEventListener("change", function () {
 });
 
 // for add multiple children
-// Initialize index for additional rows
-let addChildrenInputIndex = 0;
-document.getElementById("add-children")?.addEventListener("click", function () {
+let addChildrenInputIndex = 0; // Initialize index for additional rows
+
+document.getElementById("add-children").addEventListener("click", function () {
   addChildrenInputIndex++;
 
-  let fieldGroupWrapper = document.createElement("div");
-  fieldGroupWrapper.classList.add("mb-2", "row");
+  let childrenTableBody = document.getElementById("childrenTableBody");
 
-  let nameFieldWrapper = document.createElement("div");
-  nameFieldWrapper.classList.add("col-12", "col-md-6");
+  let row = document.createElement("tr");
 
-  let birthDateFieldWrapper = document.createElement("div");
-  birthDateFieldWrapper.classList.add("col-12", "col-md-6");
-
+  // Name input
+  let nameCell = document.createElement("td");
   let nameInput = document.createElement("input");
   nameInput.type = "text";
   nameInput.classList.add("form-control");
   nameInput.placeholder = "Children Name";
   nameInput.name = `childrenName[${addChildrenInputIndex}]`;
+  nameCell.appendChild(nameInput);
 
-  let birthDateInput = document.createElement("input");
-  birthDateInput.type = "date";
-  birthDateInput.classList.add("form-control");
-  birthDateInput.name = `childrenDob[${addChildrenInputIndex}]`;
+  // DOB input
+  let dobCell = document.createElement("td");
+  let dobInput = document.createElement("input");
+  dobInput.type = "date";
+  dobInput.classList.add("form-control");
+  dobInput.name = `childrenDob[${addChildrenInputIndex}]`;
+  dobCell.appendChild(dobInput);
 
-  nameFieldWrapper.appendChild(nameInput);
-  birthDateFieldWrapper.appendChild(birthDateInput);
-
-  let removeButtonWrapper = document.createElement("div");
-  removeButtonWrapper.classList.add("col-12");
-
+  // Remove button
+  let actionCell = document.createElement("td");
+  actionCell.classList.add("text-center");
   let removeButton = document.createElement("button");
-  removeButton.classList.add(
-    "remove-btn",
-    "btn",
-    "btn-sm",
-    "btn-danger",
-    "ms-auto",
-    "d-block",
-    "ms-auto",
-    "mt-1"
-  );
+  removeButton.classList.add("remove-btn", "btn", "btn-sm", "btn-danger");
   removeButton.type = "button";
-  removeButton.innerHTML = "x"; // Bootstrap Icon for 'x'
+  removeButton.innerHTML = "remove"; // Bootstrap Icon for 'x'
 
   removeButton.addEventListener("click", function () {
-    fieldGroupWrapper.remove();
+    row.remove();
   });
 
-  removeButtonWrapper.appendChild(removeButton);
+  actionCell.appendChild(removeButton);
 
-  fieldGroupWrapper.appendChild(nameFieldWrapper);
-  fieldGroupWrapper.appendChild(birthDateFieldWrapper);
-  fieldGroupWrapper.appendChild(removeButtonWrapper);
+  // Append cells to the row
+  row.appendChild(nameCell);
+  row.appendChild(dobCell);
+  row.appendChild(actionCell);
 
-  document.getElementById("childrenInput").appendChild(fieldGroupWrapper);
+  // Append row to the table body
+  childrenTableBody.appendChild(row);
 });
+
 // add children end
 
 // interest receiverd
@@ -393,8 +384,6 @@ document
 
 // dividents end
 
-
-
 // add remove other work relation expenses
 // Initialize index for additional rows
 let otherWorkRelationExpenseRowIndex = 0;
@@ -403,7 +392,9 @@ let otherWorkRelationExpenseRowIndex = 0;
 document
   .getElementById("addOtherWorkRelationExpenseButton")
   ?.addEventListener("click", function () {
-    let tableBody = document.getElementById("otherWorkRelationExpensesTableBody");
+    let tableBody = document.getElementById(
+      "otherWorkRelationExpensesTableBody"
+    );
 
     // Increment the row index
     otherWorkRelationExpenseRowIndex++;
@@ -463,9 +454,6 @@ document
     // Append the new row to the table body
     tableBody.appendChild(newRow);
   });
-
-
-
 
 // Initialize indices for additional rows
 let otherExpenseRowIndex = 0;
@@ -579,7 +567,8 @@ document
 
     // Create remove button
     let removeButton = document.createElement("button");
-    removeButton.className = "remove-gifts-donations-expense btn btn-sm btn-danger";
+    removeButton.className =
+      "remove-gifts-donations-expense btn btn-sm btn-danger";
     removeButton.type = "button";
     removeButton.innerHTML = "Remove";
 
@@ -601,15 +590,15 @@ document
     tableBody.appendChild(newRow);
   });
 
-
-
-
-
 // Function to toggle the display of the attachment field based on radio button selection
 document.addEventListener("DOMContentLoaded", function () {
   const attachmentField = document.getElementById("attachmentField");
-  const incomeProtectionInsuranceYes = document.getElementById("incomeProtectionInsuranceYes");
-  const incomeProtectionInsuranceNo = document.getElementById("incomeProtectionInsuranceNo");
+  const incomeProtectionInsuranceYes = document.getElementById(
+    "incomeProtectionInsuranceYes"
+  );
+  const incomeProtectionInsuranceNo = document.getElementById(
+    "incomeProtectionInsuranceNo"
+  );
 
   // Initial check to set the display state
   if (incomeProtectionInsuranceYes.checked) {
@@ -628,14 +617,14 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
-
-
-
 // for spouse partner
 document.addEventListener("DOMContentLoaded", function () {
-  const spousePartnerForYearYes = document.getElementById("spousePartnerForYearYes");
-  const spousePartnerForYearNo = document.getElementById("spousePartnerForYearNo");
+  const spousePartnerForYearYes = document.getElementById(
+    "spousePartnerForYearYes"
+  );
+  const spousePartnerForYearNo = document.getElementById(
+    "spousePartnerForYearNo"
+  );
   const spousePartnerDetails = document.getElementById("spousePartnerDetails");
   const separateInput = document.getElementById("separateInput");
 
@@ -659,8 +648,6 @@ document.addEventListener("DOMContentLoaded", function () {
     separateInput.style.display = "block";
   });
 });
-
-
 
 // add remove superannuation
 // Initialize indices for additional rows
@@ -790,7 +777,8 @@ document
 
     // Create remove button
     let removeButton = document.createElement("button");
-    removeButton.className = "remove-superannuation-spouse btn btn-sm btn-danger";
+    removeButton.className =
+      "remove-superannuation-spouse btn btn-sm btn-danger";
     removeButton.type = "button";
     removeButton.innerHTML = "Remove";
 
@@ -813,82 +801,79 @@ document
     tableBody.appendChild(newRow);
   });
 
-
-
-
 // add or show vehicle details
 // Show/Hide fields based on selected method
-document.querySelectorAll('input[name="calculationMethod"]').forEach((input) => {
-  input.addEventListener("change", function () {
-    const logBookFields = document.getElementById("logBookFields");
-    const kilometresFields = document.getElementById("kilometresFields");
+document
+  .querySelectorAll('input[name="calculationMethod"]')
+  .forEach((input) => {
+    input.addEventListener("change", function () {
+      const logBookFields = document.getElementById("logBookFields");
+      const kilometresFields = document.getElementById("kilometresFields");
 
-    if (this.id === "logBookMethod") {
-      logBookFields.classList.remove("d-none");
-      kilometresFields.classList.add("d-none");
-    } else if (this.id === "kilometresMethod") {
-      logBookFields.classList.add("d-none");
-      kilometresFields.classList.remove("d-none");
-    }
+      if (this.id === "logBookMethod") {
+        logBookFields.classList.remove("d-none");
+        kilometresFields.classList.add("d-none");
+      } else if (this.id === "kilometresMethod") {
+        logBookFields.classList.add("d-none");
+        kilometresFields.classList.remove("d-none");
+      }
+    });
   });
-});
 
 // Add additional expenses rows for Log Book Method
 let expensesRowIndex = 0;
 
-document.getElementById("add-expense-row").addEventListener("click", function () {
-  let tableBody = document.getElementById("expensesTableBody");
-  expensesRowIndex++;
+document
+  .getElementById("add-expense-row")
+  .addEventListener("click", function () {
+    let tableBody = document.getElementById("expensesTableBody");
+    expensesRowIndex++;
 
-  let newRow = document.createElement("tr");
+    let newRow = document.createElement("tr");
 
-  let expenseCell = document.createElement("td");
-  let amountCell = document.createElement("td");
-  let fileCell = document.createElement("td");
-  let actionsCell = document.createElement("td");
+    let expenseCell = document.createElement("td");
+    let amountCell = document.createElement("td");
+    let fileCell = document.createElement("td");
+    let actionsCell = document.createElement("td");
 
-  let expenseInput = document.createElement("input");
-  let amountInput = document.createElement("input");
-  let fileInput = document.createElement("input");
+    let expenseInput = document.createElement("input");
+    let amountInput = document.createElement("input");
+    let fileInput = document.createElement("input");
 
-  expenseInput.type = "text";
-  expenseInput.className = "form-control";
-  expenseInput.name = `expense[${expensesRowIndex}]`;
+    expenseInput.type = "text";
+    expenseInput.className = "form-control";
+    expenseInput.name = `expense[${expensesRowIndex}]`;
 
-  amountInput.type = "text";
-  amountInput.className = "form-control";
-  amountInput.name = `amount[${expensesRowIndex}]`;
+    amountInput.type = "text";
+    amountInput.className = "form-control";
+    amountInput.name = `amount[${expensesRowIndex}]`;
 
-  fileInput.type = "file";
-  fileInput.className = "form-control";
-  fileInput.name = `file[${expensesRowIndex}]`;
+    fileInput.type = "file";
+    fileInput.className = "form-control";
+    fileInput.name = `file[${expensesRowIndex}]`;
 
-  expenseCell.appendChild(expenseInput);
-  amountCell.appendChild(amountInput);
-  fileCell.appendChild(fileInput);
+    expenseCell.appendChild(expenseInput);
+    amountCell.appendChild(amountInput);
+    fileCell.appendChild(fileInput);
 
-  let removeButton = document.createElement("button");
-  removeButton.className = "remove-btn btn btn-sm btn-danger";
-  removeButton.type = "button";
-  removeButton.innerHTML = "Remove";
+    let removeButton = document.createElement("button");
+    removeButton.className = "remove-btn btn btn-sm btn-danger";
+    removeButton.type = "button";
+    removeButton.innerHTML = "Remove";
 
-  removeButton.addEventListener("click", function () {
-    newRow.remove();
+    removeButton.addEventListener("click", function () {
+      newRow.remove();
+    });
+
+    actionsCell.appendChild(removeButton);
+
+    newRow.appendChild(expenseCell);
+    newRow.appendChild(amountCell);
+    newRow.appendChild(fileCell);
+    newRow.appendChild(actionsCell);
+
+    tableBody.appendChild(newRow);
   });
-
-  actionsCell.appendChild(removeButton);
-
-  newRow.appendChild(expenseCell);
-  newRow.appendChild(amountCell);
-  newRow.appendChild(fileCell);
-  newRow.appendChild(actionsCell);
-
-  tableBody.appendChild(newRow);
-});
-
-
-
-
 
 // client details
 // Initialize index for additional rows
@@ -1693,15 +1678,15 @@ document
 
 // share and managed funds end
 
-
-
-
-
 // if investment property is yes then show form
-document.addEventListener("DOMContentLoaded", function() {
-  const investmentPropertyYes = document.getElementById("investmentPropertyYes");
+document.addEventListener("DOMContentLoaded", function () {
+  const investmentPropertyYes = document.getElementById(
+    "investmentPropertyYes"
+  );
   const investmentPropertyNo = document.getElementById("investmentPropertyNo");
-  const investmentPropertyFields = document.getElementById("investmentPropertyFields");
+  const investmentPropertyFields = document.getElementById(
+    "investmentPropertyFields"
+  );
 
   // Function to toggle visibility of the investment property fields
   function toggleInvestmentPropertyFields() {
@@ -1713,15 +1698,18 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   // Add event listeners to radio buttons
-  investmentPropertyYes.addEventListener("change", toggleInvestmentPropertyFields);
-  investmentPropertyNo.addEventListener("change", toggleInvestmentPropertyFields);
+  investmentPropertyYes.addEventListener(
+    "change",
+    toggleInvestmentPropertyFields
+  );
+  investmentPropertyNo.addEventListener(
+    "change",
+    toggleInvestmentPropertyFields
+  );
 });
 
-
-
-
 // add remove extra option for interest on loan
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   let loanRowIndex = 1; // Start index at 1, since the first row is already present
 
   // Function to add a new loan row
@@ -1801,7 +1789,7 @@ document.addEventListener("DOMContentLoaded", function() {
     .addEventListener("click", addLoanRow);
 
   // Add remove functionality to the initial row
-  document.querySelectorAll(".remove-loan").forEach(button => {
+  document.querySelectorAll(".remove-loan").forEach((button) => {
     button.addEventListener("click", function () {
       button.closest("tr").remove();
     });
@@ -1810,15 +1798,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // add remove extra option for interest on loan end
 
-
-
-// add remove aditional expenses forinvetsment property 
-document.addEventListener("DOMContentLoaded", function() {
+// add remove aditional expenses forinvetsment property
+document.addEventListener("DOMContentLoaded", function () {
   let expenseRowIndex = 1; // Start index at 1, since the first row is already present
 
   // Function to add a new expense row
   function addExpenseRow() {
-    let tableBody = document.getElementById("investmentPropertyExpenseTableBody");
+    let tableBody = document.getElementById(
+      "investmentPropertyExpenseTableBody"
+    );
 
     // Create a new row
     let newRow = document.createElement("tr");
@@ -1861,7 +1849,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Create remove button
     let removeButton = document.createElement("button");
-    removeButton.className = "removeInvestmentPropertyExpense btn btn-sm btn-danger";
+    removeButton.className =
+      "removeInvestmentPropertyExpense btn btn-sm btn-danger";
     removeButton.type = "button";
     removeButton.innerHTML = "Remove";
 
@@ -1893,106 +1882,142 @@ document.addEventListener("DOMContentLoaded", function() {
     .addEventListener("click", addExpenseRow);
 
   // Add remove functionality to the initial row
-  document.querySelectorAll(".removeInvestmentPropertyExpense").forEach(button => {
-    button.addEventListener("click", function () {
-      button.closest("tr").remove();
+  document
+    .querySelectorAll(".removeInvestmentPropertyExpense")
+    .forEach((button) => {
+      button.addEventListener("click", function () {
+        button.closest("tr").remove();
+      });
     });
-  });
 });
 
-// add remove aditional expenses forinvetsment property end 
-
-
-
-
-
-
+// add remove aditional expenses forinvetsment property end
 
 // for add remove show  self education
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   let educationIndex = 0;
 
+  // Function to toggle the display of self-education fields
   function toggleSelfEducationFields() {
-      const selfEducationYes = document.getElementById("selfEducationYes");
-      const addEducationContainer = document.getElementById("addEducationContainer");
-      const selfEducationFields = document.getElementById("selfEducationFields");
+    const selfEducationYes = document.getElementById("selfEducationYes");
+    const addEducationContainer = document.getElementById(
+      "addEducationContainer"
+    );
+    const selfEducationFields = document.getElementById("selfEducationFields");
 
-      if (selfEducationYes.checked) {
-          selfEducationFields.style.display = "block";
-          addEducationContainer.style.display = "block";
-      } else {
-          selfEducationFields.style.display = "none";
-          addEducationContainer.style.display = "none";
-          selfEducationFields.innerHTML = ""; // Clear all self-education entries
-      }
+    if (selfEducationYes.checked) {
+      selfEducationFields.style.display = "block";
+      addEducationContainer.style.display = "block";
+    } else {
+      selfEducationFields.style.display = "none";
+      addEducationContainer.style.display = "none";
+      selfEducationFields.innerHTML = ""; // Clear all self-education entries
+    }
   }
 
+  // Function to add a new self-education entry
   function addSelfEducationEntry() {
-      const selfEducationFields = document.getElementById("selfEducationFields");
-      const template = document.getElementById("selfEducationTemplate").innerHTML;
-      
-      // Replace placeholders in the template with the current index
-      const entryHtml = template.replace(/__EDU_INDEX__/g, educationIndex);
-      const newEntry = document.createElement('div');
-      newEntry.innerHTML = entryHtml;
-      
-      selfEducationFields.appendChild(newEntry);
-      educationIndex++;
+    const selfEducationFields = document.getElementById("selfEducationFields");
+    const template = document.getElementById("selfEducationTemplate").innerHTML;
+
+    // Replace placeholders in the template with the current index
+    const entryHtml = template.replace(/__EDU_INDEX__/g, educationIndex);
+    const newEntry = document.createElement("div");
+    newEntry.innerHTML = entryHtml;
+
+    selfEducationFields.appendChild(newEntry);
+    educationIndex++;
+
+    // Add event listener for HECS/HELP debt radio buttons
+    newEntry.querySelectorAll(".hecs-debt-radio").forEach((radio) => {
+      radio.addEventListener("change", function () {
+        toggleHeCSHelpDebtAmount(newEntry);
+      });
+    });
   }
 
+  // Function to remove a self-education entry
   function removeSelfEducationEntry(event) {
-      const selfEducationFields = document.getElementById("selfEducationFields");
-      
-      if (selfEducationFields.querySelectorAll(".self-education-entry").length > 1) {
-          event.target.closest(".self-education-entry").remove();
-      } else {
-          event.target.closest(".self-education-entry").remove();
-          document.getElementById("selfEducationNo").checked = true;
-          toggleSelfEducationFields();
-      }
+    const selfEducationFields = document.getElementById("selfEducationFields");
+
+    if (
+      selfEducationFields.querySelectorAll(".self-education-entry").length > 1
+    ) {
+      event.target.closest(".self-education-entry").remove();
+    } else {
+      event.target.closest(".self-education-entry").remove();
+      document.getElementById("selfEducationNo").checked = true;
+      toggleSelfEducationFields();
+    }
   }
 
+  // Function to add a new expense row
   function addSelfEducationExpenseRow(event) {
-      const selfEducationEntry = event.target.closest(".self-education-entry");
-      const expenseTableBody = selfEducationEntry.querySelector(".expenses-table-body");
-      const expenseRowTemplate = document.getElementById("expenseRowTemplate").innerHTML;
-      const expenseIndex = expenseTableBody.children.length;
-      
-      // Replace placeholders in the template with the current indexes
-      const rowHtml = expenseRowTemplate
-          .replace(/__EDU_INDEX__/g, selfEducationEntry.querySelector("input[name^='courseName']").name.match(/\[(\d+)\]/)[1])
-          .replace(/__EXP_INDEX__/g, expenseIndex);
-      const newRow = document.createElement('tr');
-      newRow.innerHTML = rowHtml;
+    const selfEducationEntry = event.target.closest(".self-education-entry");
+    const expenseTableBody = selfEducationEntry.querySelector(
+      ".expenses-table-body"
+    );
+    const expenseRowTemplate =
+      document.getElementById("expenseRowTemplate").innerHTML;
+    const expenseIndex = expenseTableBody.children.length;
 
-      expenseTableBody.appendChild(newRow);
+    // Replace placeholders in the template with the current indexes
+    const rowHtml = expenseRowTemplate
+      .replace(
+        /__EDU_INDEX__/g,
+        selfEducationEntry
+          .querySelector("input[name^='courseName']")
+          .name.match(/\[(\d+)\]/)[1]
+      )
+      .replace(/__EXP_INDEX__/g, expenseIndex);
+    const newRow = document.createElement("tr");
+    newRow.innerHTML = rowHtml;
+
+    expenseTableBody.appendChild(newRow);
   }
 
+  // Function to remove a expense row
   function removeSelfEducationExpenseRow(event) {
-      const row = event.target.closest("tr");
-      if (row.closest("tbody").children.length > 1) {
-          row.remove();
-      }
+    const row = event.target.closest("tr");
+    if (row.closest("tbody").children.length > 1) {
+      row.remove();
+    }
   }
 
-  document.querySelectorAll("input[name='selfEducation']").forEach(radio => {
-      radio.addEventListener("change", toggleSelfEducationFields);
+  // Function to toggle HECS/HELP Debt Amount visibility
+  function toggleHeCSHelpDebtAmount(entry) {
+    const hecsDebtYes = entry.querySelector(
+      "input[name^='hecsDebt'][value='yes']"
+    );
+    const hecsDebtAmount = entry.querySelector(".hecs-debt-amount");
+
+    if (hecsDebtYes.checked) {
+      hecsDebtAmount.style.display = "block";
+    } else {
+      hecsDebtAmount.style.display = "none";
+    }
+  }
+
+  document.querySelectorAll("input[name='selfEducation']").forEach((radio) => {
+    radio.addEventListener("change", toggleSelfEducationFields);
   });
 
-  document.getElementById("addSelfEducation").addEventListener("click", addSelfEducationEntry);
+  document
+    .getElementById("addSelfEducation")
+    .addEventListener("click", addSelfEducationEntry);
 
-  document.body.addEventListener("click", function(event) {
-      if (event.target.classList.contains("removeSelfEducation")) {
-          removeSelfEducationEntry(event);
-      } else if (event.target.classList.contains("removeSelfEducationExpense")) {
-          removeSelfEducationExpenseRow(event);
-      }
+  document.body.addEventListener("click", function (event) {
+    if (event.target.classList.contains("removeSelfEducation")) {
+      removeSelfEducationEntry(event);
+    } else if (event.target.classList.contains("removeSelfEducationExpense")) {
+      removeSelfEducationExpenseRow(event);
+    }
   });
 
-  document.body.addEventListener("click", function(event) {
-      if (event.target.classList.contains("addSelfEducationExpense")) {
-          addSelfEducationExpenseRow(event);
-      }
+  document.body.addEventListener("click", function (event) {
+    if (event.target.classList.contains("addSelfEducationExpense")) {
+      addSelfEducationExpenseRow(event);
+    }
   });
 
   toggleSelfEducationFields();

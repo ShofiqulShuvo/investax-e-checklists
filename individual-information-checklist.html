@@ -194,11 +194,11 @@
               aria-hidden="true"
             >
               <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                  <div class="modal-header border-0 pt-2 pb-1">
-                    <h5 class="modal-title fw-bold" id="urgentModalLabel">
+                <div class="modal-content px-2">
+                  <div class="modal-header border-0 pt-3 pb-1">
+                    <h4 class="modal-title fw-semibold" id="urgentModalLabel">
                       Urgent Request
-                    </h5>
+                    </h4>
                     <button
                       type="button"
                       class="btn-close"
@@ -206,12 +206,12 @@
                       aria-label="Close"
                     ></button>
                   </div>
-                  <div class="modal-body fs-5 lh-sm text-danger py-2">
+                  <div class="modal-body fs-6 lh-sm text-danger py-2">
                     <!-- Modal content goes here -->
                     If you require an urgent return, you must contact the client
                     manager directly.
                   </div>
-                  <div class="modal-footer border-0 pt-1 pb-2">
+                  <div class="modal-footer border-0 pt-1 pb-3">
                     <button
                       type="button"
                       class="btn btn-sm btn-danger"
@@ -253,7 +253,7 @@
               </div>
 
               <!-- Radio Group to Ask if Address is Changed -->
-              <div class="mb-3">
+              <div class="col-12">
                 <label class="form-label d-block"
                   >Have you changed your address?</label
                 >
@@ -345,30 +345,48 @@
               </div>
 
               <!-- names of dependent children & DOB -->
-              <div class="col-md-12 mt-2">
-                <label class="form-label">
-                  Names of Dependent Children & D.O.B
-                </label>
+              <div class="col-md-12 mt-3">
+                <label class="form-label"
+                  >Names of Dependent Children & D.O.B</label
+                >
 
                 <div id="childrenInput">
-                  <div class="mb-2 row">
-                    <div class="col-12 col-md-6">
-                      <input
-                        type="text"
-                        name="childrenName[0]"
-                        class="form-control"
-                        placeholder="Children Name"
-                      />
-                    </div>
-
-                    <div class="col-12 col-md-6">
-                      <input
-                        type="date"
-                        name="childrenDob[0]"
-                        class="form-control"
-                      />
-                    </div>
-                  </div>
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Children Name</th>
+                        <th>Date of Birth</th>
+                        <th class="text-center">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody id="childrenTableBody">
+                      <tr>
+                        <td>
+                          <input
+                            type="text"
+                            name="childrenName[0]"
+                            class="form-control"
+                            placeholder="Children Name"
+                          />
+                        </td>
+                        <td>
+                          <input
+                            type="date"
+                            name="childrenDob[0]"
+                            class="form-control"
+                          />
+                        </td>
+                        <td class="text-center">
+                          <!-- <button
+                            type="button"
+                            class="remove-btn btn btn-sm btn-danger"
+                          >
+                            remove
+                          </button> -->
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
 
                 <button
@@ -381,7 +399,7 @@
               </div>
 
               <!-- Question about Spouse for Full Year -->
-              <div class="mb-3">
+              <div class="mb-3 col-md-6">
                 <label class="form-label d-block"
                   >Did you have a spouse for the full year?</label
                 >
@@ -409,31 +427,18 @@
 
               <!-- Name of Spouse/Partner & Date of Separation (Initially Hidden) -->
               <div
-                class="col-md-12 mt-1"
+                class="col-md-6 mt-1"
                 id="spouseDetails"
                 style="display: none"
               >
                 <label for="spousePartner" class="form-label">
-                  Name of Spouse or Partner & Date of Separation (Includes
-                  same-sex couples)*
+                  Date of Separation (Includes same-sex couples)*
                 </label>
-                <div class="mb-2 row">
-                  <div class="col-12 col-md-6">
-                    <input
-                      type="text"
-                      class="form-control mb-3"
-                      placeholder="Name"
-                    />
-                  </div>
-
-                  <div class="col-12 col-md-6">
-                    <input
-                      type="date"
-                      class="form-control mb-3"
-                      placeholder="Date of Separation"
-                    />
-                  </div>
-                </div>
+                <input
+                  type="date"
+                  class="form-control mb-3"
+                  placeholder="Date of Separation"
+                />
               </div>
 
               <!-- COMPULSORY -->
@@ -500,7 +505,7 @@
                     <th>TOTAL INTEREST RECEIVED $</th>
                     <th>TFN WITHHOLDING $</th>
                     <th>JOINT ACCOUNT?</th>
-                    <th></th>
+                    <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody id="interestReceivedTableBody">
@@ -578,7 +583,7 @@
                     <th>FRANKED DIVIDENDS $</th>
                     <th>UNFRANKED DIVIDENDS $</th>
                     <th>FRANKING CREDITS $</th>
-                    <td></td>
+                    <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody id="dividendsTableBody">
@@ -673,19 +678,10 @@
               </div>
 
               <div>
-                <p class="mb-2">
+                <label class="mb-2">
                   If yes, please provide documentation of when it was
                   purchased/cost and also documents on sale/funds received, etc.
-                </p>
-
-                <!-- Sample Spreadsheet Download Link -->
-                <a
-                  href="path/to/your/sample-spreadsheet.xlsx"
-                  download
-                  class="btn btn-sm btn-outline-secondary mb-3"
-                >
-                  Download Sample Spreadsheet
-                </a>
+                </label>
 
                 <!-- File Upload Input -->
                 <input
@@ -807,7 +803,7 @@
           <div class="step">
             <!-- DEDUCTIONS -->
             <div class="mb-4">
-              <label class="form-check-label d-block mb-1"> DEDUCTIONS </label>
+              <h3 class="form-check-label d-block mb-1">DEDUCTIONS</h3>
               <p class="mb-2 text-danger">
                 Please ensure you are able to substantiate all claims, even if
                 less than $300.
@@ -1006,67 +1002,139 @@
           <!-- SELF EDUCATION (step 9) -->
           <div class="step">
             <h3 class="d-block mb-3">SELF EDUCATION</h3>
-          
+
             <!-- Ask if the user has any self-education -->
             <div class="mb-4">
               <p class="mb-2">Do you have any self-education expenses?</p>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="selfEducation" id="selfEducationYes" value="yes" />
-                <label class="form-check-label" for="selfEducationYes">Yes</label>
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="selfEducation"
+                  id="selfEducationYes"
+                  value="yes"
+                />
+                <label class="form-check-label" for="selfEducationYes"
+                  >Yes</label
+                >
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="selfEducation" id="selfEducationNo" value="no" />
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="selfEducation"
+                  id="selfEducationNo"
+                  value="no"
+                />
                 <label class="form-check-label" for="selfEducationNo">No</label>
               </div>
             </div>
-          
+
             <!-- Container for Self-Education Entries -->
             <div id="selfEducationFields"></div>
-          
+
             <!-- Button to Add Self-Education -->
             <div id="addEducationContainer" style="display: none">
-              <button type="button" id="addSelfEducation" class="btn mb-3 add-btn">Add Self-Education</button>
+              <button
+                type="button"
+                id="addSelfEducation"
+                class="btn mb-3 add-btn"
+              >
+                Add Self-Education
+              </button>
             </div>
           </div>
-          
+
           <!-- Template for self-education entry -->
           <template id="selfEducationTemplate">
             <div class="self-education-entry">
               <h4 class="mb-3">Self-Education</h4>
+              <!-- course name -->
               <div class="mb-2">
                 <label class="form-label">Name of Course:</label>
-                <input type="text" class="form-control" name="courseName[__EDU_INDEX__]" />
+                <input
+                  type="text"
+                  class="form-control"
+                  name="courseName[__EDU_INDEX__]"
+                />
               </div>
+              <!-- institution -->
               <div class="mb-2">
                 <label class="form-label">Institution:</label>
-                <input type="text" class="form-control" name="institution[__EDU_INDEX__]" />
+                <input
+                  type="text"
+                  class="form-control"
+                  name="institution[__EDU_INDEX__]"
+                />
               </div>
+              <!-- employment relation -->
               <div class="mb-2">
-                <label class="form-label">How does it relate to your current employment/employer?:</label>
-                <textarea class="form-control" name="employmentRelation[__EDU_INDEX__]"></textarea>
+                <label class="form-label"
+                  >How does it relate to your current
+                  employment/employer?:</label
+                >
+                <textarea
+                  class="form-control"
+                  name="employmentRelation[__EDU_INDEX__]"
+                ></textarea>
               </div>
+              <!-- fees -->
               <div class="mb-2">
-                <label class="form-label">Fees (Excluding HECS/HELP debt):</label>
-                <textarea class="form-control" name="fees[__EDU_INDEX__]"></textarea>
+                <label class="form-label"
+                  >Fees:</label
+                >
+                <input
+                  class="form-control"
+                  name="fees[__EDU_INDEX__]"
+                />
               </div>
-              <div class="mb-2">
+              <!-- HECS/HELP debt -->
+              <div class="mb-4 hecs-debt-container">
                 <div class="mb-2">
-                  <label class="form-label d-block">Did you have any HECS/HELP debt related to the education?:</label>
+                  <label class="form-label d-block"
+                    >Did you have any HECS/HELP debt related to the
+                    education?:</label
+                  >
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="hecsDebt[__EDU_INDEX__]" value="yes" />
-                    <label class="form-check-label">Yes</label>
+                    <input
+                      class="form-check-input hecs-debt-radio"
+                      type="radio"
+                      name="hecsDebt[__EDU_INDEX__]"
+                      value="yes"
+                      id="hecsDebtYes[__EDU_INDEX__]"
+                    />
+                    <label
+                      class="form-check-label"
+                      for="hecsDebtYes[__EDU_INDEX__]"
+                      >Yes</label
+                    >
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="hecsDebt[__EDU_INDEX__]" value="no" />
-                    <label class="form-check-label">No</label>
+                    <input
+                      class="form-check-input hecs-debt-radio"
+                      type="radio"
+                      name="hecsDebt[__EDU_INDEX__]"
+                      value="no"
+                      id="hecsDebtNo[__EDU_INDEX__]"
+                    />
+                    <label
+                      class="form-check-label"
+                      for="hecsDebtNo[__EDU_INDEX__]"
+                      >No</label
+                    >
                   </div>
                 </div>
-                <div class="hecs-debt-amount">
+                <div class="hecs-debt-amount mb-2" style="display: none">
                   <label class="form-label">HECS/HELP Debt Amount:</label>
-                  <input type="text" class="form-control" name="hecsDebtAmount[__EDU_INDEX__]" />
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="hecsDebtAmount[__EDU_INDEX__]"
+                  />
                 </div>
               </div>
-              <div class="mb-4">
+              <!-- expenses -->
+              <div class="mb-2">
                 <h5 class="mb-2">Expenses</h5>
                 <table class="table table-bordered">
                   <thead>
@@ -1079,53 +1147,97 @@
                   </thead>
                   <tbody class="expenses-table-body"></tbody>
                 </table>
-                <button type="button" class="ms-auto btn add-btn btn-sm addSelfEducationExpense">Add Expense</button>
+                <button
+                  type="button"
+                  class="ms-auto btn add-btn btn-sm addSelfEducationExpense"
+                >
+                  Add Expense
+                </button>
               </div>
-              <div class="mt-3 row g-3">
-                <h5 class="col-12 mb-2">Internet</h5>
+              <!-- Internet -->
+              <div class="mb-4 row g-3">
+                <h5 class="col-12">Internet</h5>
                 <div class="col-12 col-md-6">
                   <label class="form-label">Amount per month:</label>
-                  <input type="text" class="form-control" name="internetAmount[__EDU_INDEX__]" />
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="internetAmount[__EDU_INDEX__]"
+                  />
                 </div>
                 <div class="col-12 col-md-6">
                   <label class="form-label">Percentage used for work:</label>
-                  <input type="text" class="form-control" name="internetPercentage[__EDU_INDEX__]" />
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="internetPercentage[__EDU_INDEX__]"
+                  />
                 </div>
               </div>
-              <div class="mt-3 row g-3">
-                <h5 class="col-12 mb-2">Home Office Hour</h5>
+              <!-- Home Office -->
+              <div class="mb-2 row g-3">
+                <h5 class="col-12">Home Office Hour</h5>
                 <div class="col-12 col-md-6">
                   <label class="form-label">Hours per week:</label>
-                  <input type="text" class="form-control" name="homeOfficeHours[__EDU_INDEX__]" />
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="homeOfficeHours[__EDU_INDEX__]"
+                  />
                 </div>
                 <div class="col-12 col-md-6">
                   <label class="form-label">How many weeks:</label>
-                  <input type="text" class="form-control" name="homeOfficeWeeks[__EDU_INDEX__]" />
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="homeOfficeWeeks[__EDU_INDEX__]"
+                  />
                 </div>
               </div>
-              <button type="button" class="d-block ms-auto mt-4 btn btn-danger removeSelfEducation">Remove Self-Education</button>
+              <button
+                type="button"
+                class="d-block ms-auto mt-4 btn btn-danger removeSelfEducation"
+              >
+                Remove Self-Education
+              </button>
               <hr class="my-5" />
             </div>
           </template>
-          
+
           <!-- Template for expense row -->
           <template id="expenseRowTemplate">
             <tr>
               <td>
-                <input type="text" class="form-control" name="expenseDescription[__EDU_INDEX__][__EXP_INDEX__]" />
+                <input
+                  type="text"
+                  class="form-control"
+                  name="expenseDescription[__EDU_INDEX__][__EXP_INDEX__]"
+                />
               </td>
               <td>
-                <input type="text" class="form-control" name="expenseAmount[__EDU_INDEX__][__EXP_INDEX__]" />
+                <input
+                  type="text"
+                  class="form-control"
+                  name="expenseAmount[__EDU_INDEX__][__EXP_INDEX__]"
+                />
               </td>
               <td>
-                <input type="file" class="form-control" name="expenseFile[__EDU_INDEX__][__EXP_INDEX__]" />
+                <input
+                  type="file"
+                  class="form-control"
+                  name="expenseFile[__EDU_INDEX__][__EXP_INDEX__]"
+                />
               </td>
               <td>
-                <button type="button" class="btn btn-danger btn-sm removeSelfEducationExpense">Remove</button>
+                <button
+                  type="button"
+                  class="btn btn-danger btn-sm removeSelfEducationExpense"
+                >
+                  Remove
+                </button>
               </td>
             </tr>
           </template>
-          
 
           <!-- OTHER WORK RELATION DEDUCTIONS (step 10) -->
           <div class="step">
