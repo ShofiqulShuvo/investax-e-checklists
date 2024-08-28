@@ -208,6 +208,195 @@ document.getElementById("add-children").addEventListener("click", function () {
 
 // add children end
 
+
+
+// show and hide capital gain fields
+document.addEventListener("DOMContentLoaded", function() {
+  // Function to toggle visibility of asset details and file upload
+  function toggleAssetDetails() {
+    const sellAssetYes = document.getElementById("sellAssetYes");
+    const assetDetailsContainer = document.getElementById("assetDetailsContainer");
+    
+    if (sellAssetYes.checked) {
+      assetDetailsContainer.style.display = "block";
+    } else {
+      assetDetailsContainer.style.display = "none";
+    }
+  }
+  
+  // Add event listeners to radio buttons
+  document.getElementById("sellAssetYes").addEventListener("change", toggleAssetDetails);
+  document.getElementById("sellAssetNo").addEventListener("change", toggleAssetDetails);
+  
+  // Initialize the form with the correct visibility state
+  toggleAssetDetails();
+});
+// show and hide capital gain fields end
+
+
+
+
+// show and hide EMPLOYEE SHARE/OPTION SCHEME fields end
+document.addEventListener("DOMContentLoaded", function() {
+  // Function to toggle the display of the file input
+  function toggleBonusSharesDocuments() {
+    const bonusSharesOptionsYes = document.getElementById("bonusSharesOptionsYes");
+    const bonusSharesDocuments = document.getElementById("bonusSharesDocuments");
+
+    if (bonusSharesOptionsYes.checked) {
+      bonusSharesDocuments.style.display = "block";
+    } else {
+      bonusSharesDocuments.style.display = "none";
+    }
+  }
+
+  // Add event listeners to radio buttons
+  document.getElementById("bonusSharesOptionsYes").addEventListener("change", toggleBonusSharesDocuments);
+  document.getElementById("bonusSharesOptionsNo").addEventListener("change", toggleBonusSharesDocuments);
+
+  // Initialize the form with the correct visibility state
+  toggleBonusSharesDocuments();
+});
+
+// show and hide EMPLOYEE SHARE/OPTION SCHEME fields end
+
+
+
+
+
+// show and hide WORK UNIFORM fields
+document.addEventListener("DOMContentLoaded", function() {
+  // Function to toggle uniform details based on selection
+  function toggleUniformDetails() {
+    const workUniformYes = document.getElementById("workUniformYes");
+    const uniformDetails = document.getElementById("uniformDetails");
+
+    // Show or hide uniform details based on "Yes" selection
+    if (workUniformYes.checked) {
+      uniformDetails.classList.remove("d-none");
+    } else {
+      uniformDetails.classList.add("d-none");
+    }
+  }
+
+  // Add event listeners to work uniform radio buttons
+  document.getElementById("workUniformYes").addEventListener("change", toggleUniformDetails);
+  document.getElementById("workUniformNo").addEventListener("change", toggleUniformDetails);
+
+  // Initialize the form with the correct visibility state
+  toggleUniformDetails();
+});
+
+// show and hide WORK UNIFORM fields end
+
+
+
+
+// show and hide internet fields
+document.addEventListener("DOMContentLoaded", function() {
+  const internetUseYes = document.getElementById("internetUseYes");
+  const internetUseNo = document.getElementById("internetUseNo");
+  const internetFields = document.getElementById("internetFields");
+
+  function toggleInternetFields() {
+    if (internetUseYes.checked) {
+      internetFields.style.display = "block";
+    } else {
+      internetFields.style.display = "none";
+    }
+  }
+
+  // Event listeners for radio buttons
+  internetUseYes.addEventListener("change", toggleInternetFields);
+  internetUseNo.addEventListener("change", toggleInternetFields);
+
+  // Initial check
+  toggleInternetFields();
+});
+
+// show and hide internet fields end
+
+
+// show and hide HOME OFFICE
+document.addEventListener('DOMContentLoaded', function() {
+  const homeOfficeExpensesYes = document.getElementById('homeOfficeExpensesYes');
+  const homeOfficeExpensesNo = document.getElementById('homeOfficeExpensesNo');
+  const homeOfficeOptions = document.getElementById('homeOfficeOptions');
+  const fixedRateMethod = document.getElementById('fixedRateMethod');
+  const actualCostMethod = document.getElementById('actualCostMethod');
+  const fixedRateFields = document.getElementById('fixedRateFields');
+  const actualCostFields = document.getElementById('actualCostFields');
+
+  homeOfficeExpensesYes.addEventListener('change', function() {
+    if (this.checked) {
+      homeOfficeOptions.style.display = 'block';
+      const homeOfficeGuideModal = new bootstrap.Modal(document.getElementById('homeOfficeGuideModal'));
+      homeOfficeGuideModal.show();
+    }
+  });
+
+  homeOfficeExpensesNo.addEventListener('change', function() {
+    if (this.checked) {
+      homeOfficeOptions.style.display = 'none';
+      fixedRateFields.style.display = 'none';
+      actualCostFields.style.display = 'none';
+    }
+  });
+
+  fixedRateMethod.addEventListener('change', function() {
+    if (this.checked) {
+      fixedRateFields.style.display = 'block';
+      actualCostFields.style.display = 'none';
+    }
+  });
+
+  actualCostMethod.addEventListener('change', function() {
+    if (this.checked) {
+      fixedRateFields.style.display = 'none';
+      actualCostFields.style.display = 'block';
+      const actualCostModal = new bootstrap.Modal(document.getElementById('actualCostModal'));
+      actualCostModal.show();
+    }
+  });
+
+  function toggleFields(checkboxId, fieldsId) {
+    const checkbox = document.getElementById(checkboxId);
+    const fields = document.getElementById(fieldsId);
+
+    checkbox.addEventListener('change', function() {
+      if (this.checked) {
+        fields.style.display = 'block';
+      } else {
+        fields.style.display = 'none';
+      }
+    });
+  }
+
+  document.getElementById('actualCostMethod').addEventListener('change', function () {
+      document.getElementById('actualCostFields').style.display = this.checked ? 'block' : 'none';
+  });
+
+  const checkboxes = document.querySelectorAll('#actualCostFields .form-check-input');
+  checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', function () {
+          const relatedFields = this.closest('.form-check').querySelector('.fields');
+          relatedFields.style.display = this.checked ? 'block' : 'none';
+      });
+  });
+
+
+  toggleFields('officeTableCheckbox', 'officeTableFields');
+  toggleFields('officeChairCheckbox', 'officeChairFields');
+  toggleFields('officeBookshelfCheckbox', 'officeBookshelfFields');
+  toggleFields('computerLaptopCheckbox', 'computerLaptopFields');
+  toggleFields('otherCheckbox', 'otherFields');
+
+  toggleFields('officeTableActualCheckbox', 'officeTableActualFields');
+  // Repeat for other checkboxes in the actual cost method
+});
+
+
+
 // interest receiverd
 // Initialize index for additional rows
 let interestReceivedRowIndex = 0;
@@ -803,22 +992,56 @@ document
 
 // add or show vehicle details
 // Show/Hide fields based on selected method
-document
-  .querySelectorAll('input[name="calculationMethod"]')
-  .forEach((input) => {
-    input.addEventListener("change", function () {
-      const logBookFields = document.getElementById("logBookFields");
-      const kilometresFields = document.getElementById("kilometresFields");
+document.addEventListener("DOMContentLoaded", function() {
+  // Function to toggle method fields based on motor vehicle usage
+  function toggleMethodFields() {
+    const carForWorkYes = document.getElementById("carForWorkYes");
+    const methodSelection = document.getElementById("methodSelection");
+    const logBookFields = document.getElementById("logBookFields");
+    const kilometresFields = document.getElementById("kilometresFields");
 
-      if (this.id === "logBookMethod") {
-        logBookFields.classList.remove("d-none");
-        kilometresFields.classList.add("d-none");
-      } else if (this.id === "kilometresMethod") {
-        logBookFields.classList.add("d-none");
-        kilometresFields.classList.remove("d-none");
-      }
-    });
-  });
+    // Show or hide method selection based on "Yes" selection
+    if (carForWorkYes.checked) {
+      methodSelection.classList.remove("d-none");
+    } else {
+      methodSelection.classList.add("d-none");
+      logBookFields.classList.add("d-none");
+      kilometresFields.classList.add("d-none");
+    }
+  }
+
+  // Function to toggle fields based on calculation method selection
+  function toggleCalculationFields() {
+    const logBookMethod = document.getElementById("logBookMethod");
+    const kilometresMethod = document.getElementById("kilometresMethod");
+    const logBookFields = document.getElementById("logBookFields");
+    const kilometresFields = document.getElementById("kilometresFields");
+
+    // Show or hide fields based on selected method
+    if (logBookMethod.checked) {
+      logBookFields.classList.remove("d-none");
+      kilometresFields.classList.add("d-none");
+    } else if (kilometresMethod.checked) {
+      logBookFields.classList.add("d-none");
+      kilometresFields.classList.remove("d-none");
+    } else {
+      logBookFields.classList.add("d-none");
+      kilometresFields.classList.add("d-none");
+    }
+  }
+
+  // Add event listeners to motor vehicle usage radio buttons
+  document.getElementById("carForWorkYes").addEventListener("change", toggleMethodFields);
+  document.getElementById("carForWorkNo").addEventListener("change", toggleMethodFields);
+
+  // Add event listeners to calculation method radio buttons
+  document.getElementById("logBookMethod").addEventListener("change", toggleCalculationFields);
+  document.getElementById("kilometresMethod").addEventListener("change", toggleCalculationFields);
+
+  // Initialize the form with the correct visibility state
+  toggleMethodFields();
+  toggleCalculationFields();
+});
 
 // Add additional expenses rows for Log Book Method
 let expensesRowIndex = 0;

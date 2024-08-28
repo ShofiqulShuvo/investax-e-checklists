@@ -677,15 +677,25 @@
                 </div>
               </div>
 
-              <div>
-                <label class="mb-2">
-                  If yes, please provide documentation of when it was
-                  purchased/cost and also documents on sale/funds received, etc.
+              <!-- Hidden by default -->
+              <div id="assetDetailsContainer" style="display: none">
+                <label class="mb-2 d-block">
+                  Please provide details about the asset you sold in the section
+                  below.
                 </label>
 
-                <!-- File Upload Input -->
-                <input
+                <!-- Asset Details Textarea -->
+                <label class="form-label">Details of Asset:</label>
+                <textarea
                   class="form-control"
+                  id="assetDetails"
+                  rows="4"
+                ></textarea>
+
+                <!-- File Upload Input -->
+                <label class="form-label">Attachment:</label>
+                <input
+                  class="form-control mb-3"
                   type="file"
                   id="formFileMultiple"
                   multiple
@@ -714,9 +724,9 @@
                     name="bonusSharesOptions"
                     id="bonusSharesOptionsYes"
                   />
-                  <label class="form-check-label" for="bonusSharesOptionsYes">
-                    Yes
-                  </label>
+                  <label class="form-check-label" for="bonusSharesOptionsYes"
+                    >Yes</label
+                  >
                 </div>
 
                 <div class="form-check form-check-inline">
@@ -726,13 +736,14 @@
                     name="bonusSharesOptions"
                     id="bonusSharesOptionsNo"
                   />
-                  <label class="form-check-label" for="bonusSharesOptionsNo">
-                    No
-                  </label>
+                  <label class="form-check-label" for="bonusSharesOptionsNo"
+                    >No</label
+                  >
                 </div>
               </div>
 
-              <div>
+              <!-- Hidden by default -->
+              <div id="bonusSharesDocuments" style="display: none">
                 <p class="mb-2">
                   If yes, please provide the related correspondences/documents
                   received from the employer.
@@ -810,7 +821,7 @@
               </p>
             </div>
 
-            <!-- Motor Vehicle -->
+            <!-- MOTOR VEHICLE -->
             <div class="mb-4">
               <label class="form-check-label d-block mb-1">MOTOR VEHICLE</label>
 
@@ -843,12 +854,12 @@
                 </div>
               </div>
 
-              <!-- Method Selection -->
-              <div class="mb-3">
-                <label class="form-check-label d-block mb-2"
-                  >Which method did you use for calculating your motor vehicle
-                  expenses?</label
-                >
+              <!-- Method Selection (hidden by default) -->
+              <div id="methodSelection" class="d-none">
+                <label class="form-check-label d-block mb-2">
+                  Which method did you use for calculating your motor vehicle
+                  expenses?
+                </label>
 
                 <div class="form-check form-check-inline">
                   <input
@@ -875,7 +886,7 @@
                 </div>
               </div>
 
-              <!-- Log Book Method -->
+              <!-- Log Book Method (hidden by default) -->
               <div id="logBookFields" class="d-none">
                 <label class="form-label">Expenses</label>
                 <table class="table table-bordered table-sm">
@@ -923,7 +934,7 @@
                 </button>
               </div>
 
-              <!-- Kilometres Method -->
+              <!-- Kilometres Method (hidden by default) -->
               <div id="kilometresFields" class="d-none">
                 <!-- purchase price -->
                 <div class="mb-2">
@@ -950,7 +961,6 @@
                     id="carRegistrationNumber"
                   />
                 </div>
-
                 <!-- Kilometres -->
                 <div class="mb-2">
                   <label for="kilometres" class="form-label">Kilometres:</label>
@@ -990,12 +1000,18 @@
                 </div>
               </div>
 
-              <p class="mb-2">
-                If yes, were you out of pocket through the year for purchasing
-                any new items? (If so, please provide details.) Laundering and
-                dry cleaning of clothing listed above are claimable.
-              </p>
-              <textarea class="form-control" name="" id=""></textarea>
+              <div id="uniformDetails" class="d-none">
+                <p class="mb-2">
+                  If yes, were you out of pocket through the year for purchasing
+                  any new items? (If so, please provide details.) Laundering and
+                  dry cleaning of clothing listed above are claimable.
+                </p>
+                <textarea
+                  class="form-control"
+                  name="uniformDetails"
+                  id="uniformDetailsTextarea"
+                ></textarea>
+              </div>
             </div>
           </div>
 
@@ -1080,13 +1096,8 @@
               </div>
               <!-- fees -->
               <div class="mb-2">
-                <label class="form-label"
-                  >Fees:</label
-                >
-                <input
-                  class="form-control"
-                  name="fees[__EDU_INDEX__]"
-                />
+                <label class="form-label">Fees:</label>
+                <input class="form-control" name="fees[__EDU_INDEX__]" />
               </div>
               <!-- HECS/HELP debt -->
               <div class="mb-4 hecs-debt-container">
@@ -1243,55 +1254,6 @@
           <div class="step">
             <h4 class="mb-3">OTHER WORK RELATION DEDUCTIONS</h4>
             <div class="row g-3">
-              <!-- Union fees/Professional bodies -->
-              <!-- <div class="col-12">
-                <label for="unionFees" class="form-label"
-                  >Union fees/Professional bodies (list names and amount)</label
-                >
-                <input type="text" class="form-control" id="unionFees" />
-              </div> -->
-
-              <!-- Diary/Printing/Postage/Stationery  -->
-              <!-- <div class="col-12">
-                <label for="diaryPrintingPostageStationery" class="form-label"
-                  >Diary/Printing/Postage/Stationery</label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="diaryPrintingPostageStationery"
-                />
-              </div> -->
-
-              <!-- Books and Journals  -->
-              <!-- <div class="col-12">
-                <label for="booksAndJournals" class="form-label"
-                  >Books and Journals</label
-                >
-                <input type="text" class="form-control" id="booksAndJournals" />
-              </div> -->
-
-              <!-- Seminar Cost  -->
-              <!-- <div class="col-12">
-                <label for="seminarCost" class="form-label">Seminar Cost</label>
-                <input type="text" class="form-control" id="seminarCost" />
-              </div> -->
-
-              <!-- Sickness and Accident Insurance/Income Protection  -->
-              <!-- <div class="col-12">
-                <label
-                  for="sicknessAccidentInsuranceIncomeProtection"
-                  class="form-label"
-                  >Sickness and Accident Insurance/Income Protection (please
-                  supply a copy of the policy)</label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="sicknessAccidentInsuranceIncomeProtection"
-                />
-              </div> -->
-
               <!-- Expenses Table -->
               <div class="col-12 mt-3">
                 <h5 class="mb-2">Expenses</h5>
@@ -1351,108 +1313,595 @@
                 </button>
               </div>
 
-              <!-- Internet  -->
+              <!-- Internet Use Section -->
               <div class="col-12 mt-3">
-                <label class="form-label">Internet</label>
-              </div>
-
-              <div class="col-md-6">
-                <label for="otherInternetAmountPerMonth" class="form-label"
-                  >Amount per month</label
+                <label class="form-label d-block"
+                  >Do you use the internet for work purposes?</label
                 >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="otherInternetAmountPerMonth"
-                />
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="internetUse"
+                    id="internetUseYes"
+                    value="yes"
+                  />
+                  <label class="form-check-label" for="internetUseYes"
+                    >Yes</label
+                  >
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="internetUse"
+                    id="internetUseNo"
+                    value="no"
+                  />
+                  <label class="form-check-label" for="internetUseNo">No</label>
+                </div>
               </div>
 
-              <div class="col-md-6">
-                <label
-                  for="otherInternetPercentageUsedForWork"
-                  class="form-label"
-                  >Percentage used for work</label
+              <div
+                id="internetFields"
+                class="col-12 mt-3"
+                style="display: none"
+              >
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="internetAmountPerMonth" class="form-label"
+                      >Amount per month</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="internetAmountPerMonth"
+                    />
+                  </div>
+
+                  <div class="col-md-6">
+                    <label
+                      for="internetPercentageUsedForWork"
+                      class="form-label"
+                      >Percentage used for work</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="internetPercentageUsedForWork"
+                    />
+                  </div>
+                </div>
+              </div>
+              <!-- Internet Section End -->
+
+              <!-- Home Office Expenses Section -->
+              <div class="col-12">
+                <div class="mt-4 mb-0">
+                  <label class="form-label mb-2"
+                    >Do you have home office expenses?</label
+                  >
+                </div>
+                <div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="homeOfficeExpenses"
+                      id="homeOfficeExpensesYes"
+                      value="yes"
+                    />
+                    <label class="form-check-label" for="homeOfficeExpensesYes"
+                      >Yes</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="homeOfficeExpenses"
+                      id="homeOfficeExpensesNo"
+                      value="no"
+                    />
+                    <label class="form-check-label" for="homeOfficeExpensesNo"
+                      >No</label
+                    >
+                  </div>
+                </div>
+
+                <!-- Modal for Home Office Guide -->
+                <div
+                  class="modal fade"
+                  id="homeOfficeGuideModal"
+                  tabindex="-1"
+                  aria-labelledby="homeOfficeGuideModalLabel"
+                  aria-hidden="true"
                 >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="otherInternetPercentageUsedForWork"
-                />
-              </div>
-              <!-- internet end  -->
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content px-2">
+                      <div class="modal-header border-0 pt-3 pb-1">
+                        <h4 class="modal-title fw-semibold" id="urgentModalLabel">
+                          Notice
+                        </h4>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body fs-6 lh-sm text-danger py-2">
+                        <!-- Modal content goes here -->
+                        please read our 2024 <span><a href="" target="_blank">Home Office Guide</a></span>
+                      </div>
+                      <div class="modal-footer border-0 pt-1 pb-3">
+                        <button
+                          type="button"
+                          class="btn btn-sm btn-danger"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-              <!-- Home office hours  -->
-              <div class="col-12 mt-3 mb-0">
-                <label class="form-label mb-0"
-                  >Home Office Hours From 01/07/2023 to 30/06/2024</label
+                <!-- methods -->
+                <div
+                  id="homeOfficeOptions"
+                  class="col-12 mt-4"
+                  style="display: none"
                 >
-              </div>
+                  <div class="mb-3">
+                    <label class="d-block mb-2"
+                      >If Yes, how would you like to claim home office
+                      expenses?</label
+                    >
 
-              <div class="col-md-6">
-                <label for="otherWorkHoursPerWeek" class="form-label"
-                  >Hours Per Week</label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="otherWorkHoursPerWeek"
-                />
-              </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="homeOfficeMethod"
+                        id="fixedRateMethod"
+                        value="fixedRate"
+                      />
+                      <label class="form-check-label" for="fixedRateMethod"
+                        >Fixed Rate Method</label
+                      >
+                    </div>
 
-              <div class="col-md-6">
-                <label for="otherHowManyWeeks " class="form-label"
-                  >How many weeks
-                </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="otherHowManyWeeks "
-                />
-              </div>
-              <!-- Home office hours end  -->
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="homeOfficeMethod"
+                        id="actualCostMethod"
+                        value="actualCost"
+                      />
+                      <label class="form-check-label" for="actualCostMethod"
+                        >Actual Cost Method</label
+                      >
+                    </div>
 
-              <!-- Mobile Phone  -->
-              <div class="col-12 mt-3 mb-0">
-                <label class="form-label mb-0">Mobile Phone</label>
-              </div>
+                    <!-- Modal for Actual Cost Method -->
+                    <div
+                    class="modal fade"
+                    id="actualCostModal"
+                    tabindex="-1"
+                    aria-labelledby="actualCostModalLabel"
+                    aria-hidden="true"
+                    >
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content px-2">
+                          <div class="modal-header border-0 pt-3 pb-1">
+                            <h4 class="modal-title fw-semibold" id="urgentModalLabel">
+                              Notice
+                            </h4>
+                            <button
+                              type="button"
+                              class="btn-close"
+                              data-bs-dismiss="modal"
+                              aria-label="Close"
+                            ></button>
+                          </div>
+                          <div class="modal-body fs-6 lh-sm text-danger py-2">
+                            <!-- Modal content goes here -->
+                            Please read our Home office <span><a href="" target="_blank">Article</a></span> to understand more about the actual cost method
+                          </div>
+                          <div class="modal-footer border-0 pt-1 pb-3">
+                            <button
+                              type="button"
+                              class="btn btn-sm btn-danger"
+                              data-bs-dismiss="modal"
+                            >
+                              Close
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
-              <div class="col-md-6">
-                <label for="otherMobilePhoneAmountPerMonth" class="form-label"
-                  >Amount per month</label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="otherMobilePhoneAmountPerMonth"
-                />
-              </div>
+                  <!-- Fixed Rate Method -->
+                  <div
+                    id="fixedRateFields"
+                    class="col-12 mt-3"
+                    style="display: none"
+                  >
+                    <p>2024 Fixed Rate - 67 Cents per Hour</p>
+                    <div class="row g-3 mb-3">
+                      <div class="col-12 col-md-6">
+                        <label for="hoursPerDay" class="form-label"
+                          >Number of Hours per Day</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="hoursPerDay"
+                        />
+                      </div>
+  
+                      <div class="col-12 col-md-6">
+                        <label for="daysPerYear" class="form-label"
+                          >Number of Days in the Year</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="daysPerYear"
+                        />
+                      </div>
+                    </div>
 
-              <div class="col-md-6">
-                <label
-                  for="otherMobilePhonePercentageUsedForWork"
-                  class="form-label"
-                  >Percentage used for work</label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="otherMobilePhonePercentageUsedForWork"
-                />
-              </div>
-              <!-- Mobile Phone end  -->
+                    <div class="mb-3">
+                      <label class="form-label">Additional Deduction</label>
 
-              <!-- Tools & Equipment-Over -->
-              <!-- <div class="col-12">
-                <label for="toolsAndEquipment" class="form-label">
-                  Tools & Equipment-Over $300 (List dates & percentage used or
-                  work purpose)
-                </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="toolsAndEquipment"
-                />
-              </div> -->
+                      <!-- Office Table -->
+                      <div class="form-check mb-1">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="officeTableCheckbox"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="officeTableCheckbox"
+                          >Office Table</label
+                        >
+                        <div
+                          id="officeTableFields"
+                          style="display: none"
+                        >
+                        <div  class="row g-3 mb-3">
+                          <div class="col-md-6">
+                            <label for="officeTableAmount" class="form-label"
+                              >Amount</label
+                            >
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="officeTableAmount"
+                            />
+                          </div>
+                          <div class="col-md-6">
+                            <label for="officeTableFile" class="form-label"
+                              >Attach File</label
+                            >
+                            <input
+                              type="file"
+                              class="form-control"
+                              id="officeTableFile"
+                            />
+                          </div>
+                        </div>
+                        </div>
+                      </div>
+
+                      <!-- Office Chair -->
+                      <div class="form-check mb-1">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="officeChairCheckbox"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="officeChairCheckbox"
+                          >Office Chair</label
+                        >
+                        <div
+                          id="officeChairFields"
+                          style="display: none"
+                        >
+                        <div  class="row g-3 mb-3">
+                          <div class="col-md-6">
+                            <label for="officeChairAmount" class="form-label"
+                              >Amount</label
+                            >
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="officeChairAmount"
+                            />
+                          </div>
+                          <div class="col-md-6">
+                            <label for="officeChairFile" class="form-label"
+                              >Attach File</label
+                            >
+                            <input
+                              type="file"
+                              class="form-control"
+                              id="officeChairFile"
+                            />
+                          </div>
+                        </div>
+                        </div>
+                      </div>
+                      
+                      <!-- Office Bookshelf -->
+                      <div class="form-check mb-1">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="officeBookshelfCheckbox"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="officeBookshelfCheckbox"
+                          >Office Bookshelf</label
+                        >
+                        <div
+                          id="officeBookshelfFields"
+                          style="display: none"
+                        >
+                          <div  class="row g-3 mb-3">
+                            <div class="col-md-6">
+                              <label
+                                for="officeBookshelfAmount"
+                                class="form-label"
+                                >Amount</label
+                              >
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="officeBookshelfAmount"
+                              />
+                            </div>
+                            <div class="col-md-6">
+                              <label for="officeBookshelfFile" class="form-label"
+                                >Attach File</label
+                              >
+                              <input
+                                type="file"
+                                class="form-control"
+                                id="officeBookshelfFile"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Computer / Laptop -->
+                      <div class="form-check mb-1">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="computerLaptopCheckbox"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="computerLaptopCheckbox"
+                          >Computer / Laptop</label
+                        >
+                        <div
+                          id="computerLaptopFields"
+                          style="display: none"
+                        >
+                        <div  class="row g-3 mb-3">
+                          <div class="col-md-6">
+                            <label for="computerLaptopAmount" class="form-label"
+                              >Amount</label
+                            >
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="computerLaptopAmount"
+                            />
+                          </div>
+                          <div class="col-md-6">
+                            <label for="computerLaptopFile" class="form-label"
+                              >Attach File</label
+                            >
+                            <input
+                              type="file"
+                              class="form-control"
+                              id="computerLaptopFile"
+                            />
+                          </div>
+                        </div>
+                        </div>
+                      </div>
+
+                      <!-- Other -->
+                      <div class="form-check mb-1">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="otherCheckbox"
+                        />
+                        <label class="form-check-label" for="otherCheckbox"
+                          >Other</label
+                        >
+                        <div
+                          id="otherFields"
+                          style="display: none"
+                        >
+                          <div  class="row g-3 mb-3">
+                            <div class="col-md-6">
+                              <label for="otherAmount" class="form-label"
+                                >Amount</label
+                              >
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="otherAmount"
+                              />
+                            </div>
+                            <div class="col-md-6">
+                              <label for="otherFile" class="form-label"
+                                >Attach File</label
+                              >
+                              <input
+                                type="file"
+                                class="form-control"
+                                id="otherFile"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Actual Cost Method -->
+                  <div id="actualCostFields" class="col-12 mt-3" style="display: none">
+                    <div class="mb-3">
+                      <label for="additionalCosts" class="form-label">Additional Costs</label>
+                      <div class="row g-3">
+                        <!-- Internet -->
+                        <div class="col-md-6">
+                          <label for="internetAmount" class="form-label">Internet</label>
+                          <input type="text" class="form-control" id="internetAmount" />
+                        </div>
+
+                        <!-- Mobile -->
+                        <div class="col-md-6">
+                          <label for="mobileAmount" class="form-label">Mobile</label>
+                          <input type="text" class="form-control" id="mobileAmount" />
+                        </div>
+
+                        <!-- Electricity -->
+                        <div class="col-md-6">
+                          <label for="electricityAmount" class="form-label">Electricity</label>
+                          <input type="text" class="form-control" id="electricityAmount" />
+                        </div>
+
+                        <!-- Gas -->
+                        <div class="col-md-6">
+                          <label for="gasAmount" class="form-label">Gas</label>
+                          <input type="text" class="form-control" id="gasAmount" />
+                        </div>
+
+                        <!-- Stationery -->
+                        <div class="col-md-6">
+                          <label for="stationeryAmount" class="form-label">Stationery</label>
+                          <input type="text" class="form-control" id="stationeryAmount" />
+                        </div>
+
+                        <!-- Computer Consumable -->
+                        <div class="col-md-6">
+                          <label for="computerConsumableAmount" class="form-label">Computer Consumable</label>
+                          <input type="text" class="form-control" id="computerConsumableAmount" />
+                        </div>
+                        <div class="col-12">
+                          <!-- Office Table -->
+                          <div class="form-check mb-1">
+                            <input class="form-check-input" type="checkbox" id="officeTableActualCheckbox" />
+                            <label class="form-check-label" for="officeTableActualCheckbox">Office Table</label>
+                            <div id="officeTableActualFields" class="fields"  style="display: none">
+                              <div  class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                  <label for="officeTableActualAmount" class="form-label">Amount</label>
+                                  <input type="text" class="form-control" id="officeTableActualAmount" />
+                                </div>
+                                <div class="col-md-6">
+                                  <label for="officeTableActualFile" class="form-label">Attach File</label>
+                                  <input type="file" class="form-control" id="officeTableActualFile" />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+  
+                          <!-- Office Chair -->
+                          <div class="form-check mb-1">
+                            <input class="form-check-input" type="checkbox" id="officeChairActualCheckbox" />
+                            <label class="form-check-label" for="officeChairActualCheckbox">Office Chair</label>
+                            <div id="officeChairActualFields" class="fields" style="display: none">
+                              <div  class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                  <label for="officeChairActualAmount" class="form-label">Amount</label>
+                                  <input type="text" class="form-control" id="officeChairActualAmount" />
+                                </div>
+                                <div class="col-md-6">
+                                  <label for="officeChairActualFile" class="form-label">Attach File</label>
+                                  <input type="file" class="form-control" id="officeChairActualFile" />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+  
+                          <!-- Office Bookshelf -->
+                          <div class="form-check mb-1">
+                            <input class="form-check-input" type="checkbox" id="officeBookshelfActualCheckbox" />
+                            <label class="form-check-label" for="officeBookshelfActualCheckbox">Office Bookshelf</label>
+                            <div id="officeBookshelfActualFields" class="fields" style="display: none">
+                              <div  class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                  <label for="officeBookshelfActualAmount" class="form-label">Amount</label>
+                                  <input type="text" class="form-control" id="officeBookshelfActualAmount" />
+                                </div>
+                                <div class="col-md-6">
+                                  <label for="officeBookshelfActualFile" class="form-label">Attach File</label>
+                                  <input type="file" class="form-control" id="officeBookshelfActualFile" />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+  
+                          <!-- Computer / Laptop -->
+                          <div class="form-check mb-1">
+                            <input class="form-check-input" type="checkbox" id="computerLaptopActualCheckbox" />
+                            <label class="form-check-label" for="computerLaptopActualCheckbox">Computer / Laptop</label>
+                            <div id="computerLaptopActualFields" class="fields" style="display: none">
+                              <div  class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                  <label for="computerLaptopActualAmount" class="form-label">Amount</label>
+                                  <input type="text" class="form-control" id="computerLaptopActualAmount" />
+                                </div>
+                                <div class="col-md-6">
+                                  <label for="computerLaptopActualFile" class="form-label">Attach File</label>
+                                  <input type="file" class="form-control" id="computerLaptopActualFile" />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+  
+                          <!-- Other -->
+                          <div class="form-check mb-1">
+                            <input class="form-check-input" type="checkbox" id="otherActualCheckbox" />
+                            <label class="form-check-label" for="otherActualCheckbox">Other</label>
+                            <div id="otherActualFields" class="fields" style="display: none">
+                              <div  class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                  <label for="otherActualAmount" class="form-label">Amount</label>
+                                  <input type="text" class="form-control" id="otherActualAmount" />
+                                </div>
+                                <div class="col-md-6">
+                                  <label for="otherActualFile" class="form-label">Attach File</label>
+                                  <input type="file" class="form-control" id="otherActualFile" />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
             </div>
           </div>
 
