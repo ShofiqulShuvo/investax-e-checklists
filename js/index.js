@@ -2027,7 +2027,8 @@ document
 
 
 
-// add remove aditional expenses forinvetsment property end
+
+
 
 // for add remove show  self education
 document.addEventListener("DOMContentLoaded", function () {
@@ -2165,7 +2166,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
+/* 
 
 // investment property start
 // if investment property is yes then show form
@@ -2360,6 +2361,31 @@ document.getElementById('addOwnerButton').addEventListener('click', addOwnerRow)
 document.getElementById('jointlyOwnInvestmentPropertyTableBody').addEventListener('click', removeOwnerRow);
 
 
+
+// Function to toggle the display of the  Annual Statement fields based on Property Agent's choice
+function toggleIncomeFields() {
+  const yesRadio = document.getElementById('propertyAgentsAnnualStatementYes');
+  const noRadio = document.getElementById('propertyAgentsAnnualStatementNo');
+  const statementFields = document.getElementById('propertyAgentsAnnualStatementFields');
+  const incomeFields = document.getElementById('annualIncomeFields');
+
+  if (yesRadio.checked) {
+    statementFields.style.display = 'block';
+    incomeFields.style.display = 'none';
+  } else if (noRadio.checked) {
+    statementFields.style.display = 'none';
+    incomeFields.style.display = 'block';
+  }
+}
+
+// Attach event listeners to radio buttons
+document.querySelectorAll('input[name="propertyAgentsAnnualStatement"]').forEach(radio => {
+  radio.addEventListener('change', toggleIncomeFields);
+});
+
+
+
+
 // Common function to toggle visibility of expenses in investment preoperty of fields
 function toggleExpenseFields(event) {
   const checkbox = event.target;
@@ -2373,3 +2399,145 @@ document.querySelectorAll('.toggle-fields').forEach(function(checkbox) {
 });
 
 // investment property end
+
+
+*/
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  let index = 0;
+
+  // Function to add a new investment property section
+  function addInvestmentProperty() {
+    const template = document.getElementById('investmentPropertyTemplate').innerHTML;
+    const sectionHTML = template.replace(/__INV_PROPERTY_INDEX__/g, index);
+    
+    const newSection = document.createElement('div');
+    newSection.className = 'investment-property'; // Ensure each section has this class
+    newSection.innerHTML = sectionHTML;
+    document.getElementById('investmentPropertiesContainer').appendChild(newSection);
+
+    // Add event listeners to the new section's buttons
+    setupSectionEventListeners(newSection);
+
+    index++;
+  }
+
+  // Function to handle radio button toggling for jointly owned property
+  function handleJointlyOwnedFields(section, selectedValue) {
+    const jointlyOwnedFields = section.querySelector('[id^="jointlyOwnInvestmentPropertyFields"]');
+
+    if (jointlyOwnedFields) {
+      jointlyOwnedFields.style.display = selectedValue === 'yes' ? 'block' : 'none';
+    }
+  }
+
+  // Function to setup event listeners for a given section
+  function setupSectionEventListeners(section) {
+    const addOwnerButton = section.querySelector('[id^="addOwnerButton"]');
+    if (addOwnerButton) {
+      addOwnerButton.addEventListener('click', function() {
+        addJointlyOwner(section);
+      });
+    }
+
+    section.addEventListener('click', function(event) {
+      if (event.target.classList.contains('removeJointlyOwner')) {
+        removeJointlyOwner(event.target);
+      } else if (event.target.classList.contains('remove-loan')) {
+        removeLoanRow(event.target);
+      }
+    });
+
+    // Add event listener for jointly owned property radio buttons
+    section.addEventListener('change', function(event) {
+      if (event.target.name.startsWith('jointlyOwnInvestmentProperty')) {
+        handleJointlyOwnedFields(section, event.target.value);
+      }
+    });
+
+    // Add event listener for adding loans
+    const addLoanButton = section.querySelector('[id^="addInvestmentPropertyLoanButton"]');
+    if (addLoanButton) {
+      addLoanButton.addEventListener('click', function() {
+        addLoanRow(section);
+      });
+    }
+  }
+
+  // Function to add a new jointly owned property owner row
+  function addJointlyOwner(section) {
+    const tableBody = section.querySelector('[id^="jointlyOwnInvestmentPropertyTableBody"]');
+    if (tableBody) {
+      const indexMatch = section.querySelector('[id^="jointlyOwnInvestmentPropertyFields"]').id.match(/\d+/);
+      const propertyIndex = indexMatch ? parseInt(indexMatch[0], 10) : 0;
+
+      const rowCount = tableBody.querySelectorAll('tr').length;
+      
+      // Get the template and create a new row
+      const rowTemplate = document.getElementById('jointlyOwnInvestmentPropertyRowTemplate').innerHTML;
+      const newRowHTML = rowTemplate
+        .replace(/__INV_PROPERTY_INDEX__/g, propertyIndex)
+        .replace(/__JOINTLY_OWN_PROPERTY_INDEX__/g, rowCount);
+      
+      tableBody.insertAdjacentHTML('beforeend', newRowHTML);
+    }
+  }
+
+  // Function to remove a jointly owned property owner row
+  function removeJointlyOwner(button) {
+    const row = button.closest('tr');
+    if (row) {
+      row.remove();
+    }
+  }
+
+  // Function to add a new loan row
+  function addLoanRow(section) {
+    const tableBody = section.querySelector('[id^="interestOnLoansTableBody"]');
+    if (tableBody) {
+      const indexMatch = section.querySelector('[id^="addInvestmentPropertyLoanButton"]').id.match(/\d+/);
+      const propertyIndex = indexMatch ? parseInt(indexMatch[0], 10) : 0;
+
+      const rowCount = tableBody.querySelectorAll('tr').length;
+      
+      // Get the template and create a new row
+      const rowTemplate = document.getElementById('interestOnLoansTableRowTemplate').innerHTML;
+      const newRowHTML = rowTemplate
+        .replace(/__INV_PROPERTY_INDEX__/g, propertyIndex)
+        .replace(/__INTERESY_ON_LOAN_INDEX__/g, rowCount);
+      
+      tableBody.insertAdjacentHTML('beforeend', newRowHTML);
+    }
+  }
+
+  // Function to remove a loan row
+  function removeLoanRow(button) {
+    const row = button.closest('tr');
+    if (row) {
+      row.remove();
+    }
+  }
+
+  // Event listener for dynamically added radio buttons
+  document.getElementById('investmentPropertiesContainer').addEventListener('change', function(event) {
+    if (event.target.name.startsWith('jointlyOwnInvestmentProperty')) {
+      const section = event.target.closest('.investment-property');
+      handleJointlyOwnedFields(section, event.target.value);
+    }
+  });
+
+  // Event listener to add more investment property sections
+  document.getElementById('addMoreProperties').addEventListener('click', function() {
+    addInvestmentProperty();
+  });
+
+  // Initial setup: show/hide fields based on default state of existing sections
+  document.querySelectorAll('.investment-property').forEach(section => {
+    const yesRadio = section.querySelector('input[value="yes"]');
+    if (yesRadio) {
+      handleJointlyOwnedFields(section, yesRadio.checked ? 'yes' : 'no');
+    }
+    setupSectionEventListeners(section);
+  });
+});
