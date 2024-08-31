@@ -2407,13 +2407,15 @@ document.querySelectorAll('.toggle-fields').forEach(function(checkbox) {
 document.addEventListener('DOMContentLoaded', function() {
   let index = 0;
 
+
+
   // Function to add a new investment property section
   function addInvestmentProperty() {
     const template = document.getElementById('investmentPropertyTemplate').innerHTML;
     const sectionHTML = template.replace(/__INV_PROPERTY_INDEX__/g, index);
     
     const newSection = document.createElement('div');
-    newSection.className = 'investment-property'; // Ensure each section has this class
+    newSection.className = 'investment-property';
     newSection.innerHTML = sectionHTML;
     document.getElementById('investmentPropertiesContainer').appendChild(newSection);
 
@@ -2429,6 +2431,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (jointlyOwnedFields) {
       jointlyOwnedFields.style.display = selectedValue === 'yes' ? 'block' : 'none';
+    }
+  }
+
+  // Function to handle the display of the annual statement fields
+  function handleAnnualStatementFields(section, selectedValue) {
+    const annualStatementFields = section.querySelector(`#propertyAgentsAnnualStatementFields`);
+    const annualIncomeFields = section.querySelector(`#annualIncomeFields`);
+
+    if (annualStatementFields && annualIncomeFields) {
+      if (selectedValue === 'yes') {
+        annualStatementFields.style.display = 'block';
+        annualIncomeFields.style.display = 'none';
+      } else if (selectedValue === 'no') {
+        annualStatementFields.style.display = 'none';
+        annualIncomeFields.style.display = 'block';
+      } else {
+        annualStatementFields.style.display = 'none';
+        annualIncomeFields.style.display = 'none';
+      }
     }
   }
 
@@ -2453,6 +2474,8 @@ document.addEventListener('DOMContentLoaded', function() {
     section.addEventListener('change', function(event) {
       if (event.target.name.startsWith('jointlyOwnInvestmentProperty')) {
         handleJointlyOwnedFields(section, event.target.value);
+      } else if (event.target.name.startsWith('propertyAgentsAnnualStatement')) {
+        handleAnnualStatementFields(section, event.target.value);
       }
     });
 
@@ -2524,6 +2547,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (event.target.name.startsWith('jointlyOwnInvestmentProperty')) {
       const section = event.target.closest('.investment-property');
       handleJointlyOwnedFields(section, event.target.value);
+    } else if (event.target.name.startsWith('propertyAgentsAnnualStatement')) {
+      const section = event.target.closest('.investment-property');
+      handleAnnualStatementFields(section, event.target.value);
     }
   });
 
@@ -2535,9 +2561,26 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initial setup: show/hide fields based on default state of existing sections
   document.querySelectorAll('.investment-property').forEach(section => {
     const yesRadio = section.querySelector('input[value="yes"]');
-    if (yesRadio) {
-      handleJointlyOwnedFields(section, yesRadio.checked ? 'yes' : 'no');
+    const noRadio = section.querySelector('input[value="no"]');
+    
+    if (yesRadio && yesRadio.checked) {
+      handleAnnualStatementFields(section, 'yes');
+    } else if (noRadio && noRadio.checked) {
+      handleAnnualStatementFields(section, 'no');
     }
+
     setupSectionEventListeners(section);
   });
+
+
+});
+
+
+
+
+document.addEventListener('change', function (event) {
+  if (event.target.matches('.toggle-fields')) {
+    const expenseFields = event.target.closest('.form-check').querySelector('.expense-fields');
+    expenseFields.style.display = event.target.checked ? 'block' : 'none';
+  }
 });
