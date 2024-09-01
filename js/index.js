@@ -2166,248 +2166,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-/* 
 
 // investment property start
-// if investment property is yes then show form
-document.addEventListener("DOMContentLoaded", function () {
-  const investmentPropertyYes = document.getElementById(
-    "investmentPropertyYes"
-  );
-  const investmentPropertyNo = document.getElementById("investmentPropertyNo");
-  const investmentPropertyFields = document.getElementById(
-    "investmentPropertyFields"
-  );
-
-  // Function to toggle visibility of the investment property fields
-  function toggleInvestmentPropertyFields() {
-    if (investmentPropertyYes.checked) {
-      investmentPropertyFields.classList.remove("d-none");
-    } else {
-      investmentPropertyFields.classList.add("d-none");
-    }
-  }
-
-  // Add event listeners to radio buttons
-  investmentPropertyYes.addEventListener(
-    "change",
-    toggleInvestmentPropertyFields
-  );
-  investmentPropertyNo.addEventListener(
-    "change",
-    toggleInvestmentPropertyFields
-  );
-});
-
-// add remove extra option for interest on loan
-document.addEventListener("DOMContentLoaded", function () {
-  let loanRowIndex = 1; // Start index at 1, since the first row is already present
-
-  // Function to add a new loan row
-  function addLoanRow() {
-    let tableBody = document.getElementById("interestOnLoansTableBody");
-
-    // Create a new row
-    let newRow = document.createElement("tr");
-
-    // Define the cells with input elements
-    let propertyIdCell = document.createElement("td");
-    let bankNameCell = document.createElement("td");
-    let loanAmountCell = document.createElement("td");
-    let attachmentCell = document.createElement("td");
-    let actionsCell = document.createElement("td");
-
-    // Create input elements for each cell
-    let propertyIdInput = document.createElement("input");
-    let bankNameInput = document.createElement("input");
-    let loanAmountInput = document.createElement("input");
-    let attachmentInput = document.createElement("input");
-
-    // Set attributes for each input element
-    propertyIdInput.type = "text";
-    propertyIdInput.className = "form-control";
-    propertyIdInput.name = `loanPropertyId[${loanRowIndex}]`;
-
-    bankNameInput.type = "text";
-    bankNameInput.className = "form-control";
-    bankNameInput.name = `loanBankName[${loanRowIndex}]`;
-
-    loanAmountInput.type = "text";
-    loanAmountInput.className = "form-control";
-    loanAmountInput.name = `loanAmount[${loanRowIndex}]`;
-
-    attachmentInput.type = "file";
-    attachmentInput.className = "form-control";
-    attachmentInput.name = `loanFile[${loanRowIndex}]`;
-
-    // Append inputs to their respective cells
-    propertyIdCell.appendChild(propertyIdInput);
-    bankNameCell.appendChild(bankNameInput);
-    loanAmountCell.appendChild(loanAmountInput);
-    attachmentCell.appendChild(attachmentInput);
-
-    // Create remove button
-    let removeButton = document.createElement("button");
-    removeButton.className = "remove-loan btn btn-sm btn-danger";
-    removeButton.type = "button";
-    removeButton.innerHTML = "Remove";
-
-    // Add event listener to remove the row
-    removeButton.addEventListener("click", function () {
-      newRow.remove();
-    });
-
-    // Append remove button to actions cell
-    actionsCell.appendChild(removeButton);
-
-    // Append cells to the new row
-    newRow.appendChild(propertyIdCell);
-    newRow.appendChild(bankNameCell);
-    newRow.appendChild(loanAmountCell);
-    newRow.appendChild(attachmentCell);
-    newRow.appendChild(actionsCell);
-
-    // Append the new row to the table body
-    tableBody.appendChild(newRow);
-
-    // Increment the row index
-    loanRowIndex++;
-  }
-
-  // Add more rows dynamically when the button is clicked
-  document
-    .getElementById("addInvestmentPropertyLoanButton")
-    .addEventListener("click", addLoanRow);
-
-  // Add remove functionality to the initial row
-  document.querySelectorAll(".remove-loan").forEach((button) => {
-    button.addEventListener("click", function () {
-      button.closest("tr").remove();
-    });
-  });
-});
-
-// add remove extra option for interest on loan end
-
-
-// Function to toggle visibility based on radio button selection
-function toggleJointlyOwnFields() {
-  const yesRadio = document.getElementById('jointlyOwnInvestmentPropertyYes');
-  const noRadio = document.getElementById('jointlyOwnInvestmentPropertyNo');
-  const fieldsContainer = document.getElementById('jointlyOwnInvestmentPropertyFields');
-  
-  if (yesRadio.checked) {
-    fieldsContainer.style.display = 'block';
-  } else {
-    fieldsContainer.style.display = 'none';
-  }
-}
-
-// Attach event listeners to radio buttons
-document.querySelectorAll('input[name="jointlyOwnInvestmentProperty"]').forEach(radio => {
-  radio.addEventListener('change', toggleJointlyOwnFields);
-});
-
-// Function to add a new owner row
-function addOwnerRow() {
-  const tableBody = document.getElementById('jointlyOwnInvestmentPropertyTableBody');
-  const rowCount = tableBody.querySelectorAll('tr').length;
-
-  // Create new row and its elements
-  const newRow = document.createElement('tr');
-
-  const ownerNameCell = document.createElement('td');
-  const ownerNameInput = document.createElement('input');
-  ownerNameInput.type = 'text';
-  ownerNameInput.className = 'form-control';
-  ownerNameInput.name = `jointlyOwnerName[${rowCount}]`;
-  ownerNameCell.appendChild(ownerNameInput);
-
-  const ownershipPercentCell = document.createElement('td');
-  const ownershipPercentInput = document.createElement('input');
-  ownershipPercentInput.type = 'text';
-  ownershipPercentInput.className = 'form-control';
-  ownershipPercentInput.name = `jointlyOwnerPercent[${rowCount}]`;
-  ownershipPercentCell.appendChild(ownershipPercentInput);
-
-  const actionsCell = document.createElement('td');
-  const removeButton = document.createElement('button');
-  removeButton.type = 'button';
-  removeButton.className = 'removeJointlyOwner btn btn-sm btn-danger';
-  removeButton.textContent = 'Remove';
-  actionsCell.appendChild(removeButton);
-
-  // Append cells to the new row
-  newRow.appendChild(ownerNameCell);
-  newRow.appendChild(ownershipPercentCell);
-  newRow.appendChild(actionsCell);
-
-  // Append new row to the table body
-  tableBody.appendChild(newRow);
-}
-
-// Function to remove an owner row
-function removeOwnerRow(event) {
-  if (event.target.classList.contains('removeJointlyOwner')) {
-    const row = event.target.closest('tr');
-    row.remove();
-  }
-}
-
-// Attach event listener to the "Add Owner" button
-document.getElementById('addOwnerButton').addEventListener('click', addOwnerRow);
-
-// Attach event listener to the table for removing rows
-document.getElementById('jointlyOwnInvestmentPropertyTableBody').addEventListener('click', removeOwnerRow);
-
-
-
-// Function to toggle the display of the  Annual Statement fields based on Property Agent's choice
-function toggleIncomeFields() {
-  const yesRadio = document.getElementById('propertyAgentsAnnualStatementYes');
-  const noRadio = document.getElementById('propertyAgentsAnnualStatementNo');
-  const statementFields = document.getElementById('propertyAgentsAnnualStatementFields');
-  const incomeFields = document.getElementById('annualIncomeFields');
-
-  if (yesRadio.checked) {
-    statementFields.style.display = 'block';
-    incomeFields.style.display = 'none';
-  } else if (noRadio.checked) {
-    statementFields.style.display = 'none';
-    incomeFields.style.display = 'block';
-  }
-}
-
-// Attach event listeners to radio buttons
-document.querySelectorAll('input[name="propertyAgentsAnnualStatement"]').forEach(radio => {
-  radio.addEventListener('change', toggleIncomeFields);
-});
-
-
-
-
-// Common function to toggle visibility of expenses in investment preoperty of fields
-function toggleExpenseFields(event) {
-  const checkbox = event.target;
-  const fieldsContainer = checkbox.closest('.form-check').querySelector('.expense-fields');
-  fieldsContainer.style.display = checkbox.checked ? 'block' : 'none';
-}
-
-// Attach event listeners to all checkboxes with the class 'toggle-fields'
-document.querySelectorAll('.toggle-fields').forEach(function(checkbox) {
-  checkbox.addEventListener('change', toggleExpenseFields);
-});
-
-// investment property end
-
-
-*/
-
 
 document.addEventListener('DOMContentLoaded', function() {
   let index = 0;
-
-
 
   // Function to add a new investment property section
   function addInvestmentProperty() {
@@ -2425,10 +2188,48 @@ document.addEventListener('DOMContentLoaded', function() {
     index++;
   }
 
+  // Function to remove an investment property section
+  function removeInvestmentProperty(section) {
+    section.remove();
+
+    // Update the visibility of the "Add Investment Property" button
+    handleInvestmentPropertyVisibility();
+    
+    // If no investment properties remain, select "No" and hide the container
+    if (document.querySelectorAll('.investment-property').length === 0) {
+      document.getElementById('investmentPropertyNo').checked = true;
+      handleRadioChanges({ target: document.getElementById('investmentPropertyNo') });
+    }
+  }
+
+  // Function to handle the display of the "Add Investment Property" button
+  function handleInvestmentPropertyVisibility() {
+    const addMorePropertiesButton = document.getElementById('addMoreProperties');
+    const investmentPropertiesContainer = document.getElementById('investmentPropertiesContainer');
+    
+    addMorePropertiesButton.style.display = investmentPropertiesContainer.children.length > 0 ? 'block' : 'none';
+  }
+
+  // Function to handle radio button changes
+  function handleRadioChanges(event) {
+    if (event.target.name === 'investmentProperty') {
+      const investmentPropertiesContainer = document.getElementById('investmentPropertiesContainer');
+      const addMorePropertiesButton = document.getElementById('addMoreProperties');
+      
+      if (event.target.value === 'yes') {
+        investmentPropertiesContainer.style.display = 'block';
+        addMorePropertiesButton.style.display = 'block';
+      } else if (event.target.value === 'no') {
+        investmentPropertiesContainer.innerHTML = ''; // Clear all investment properties
+        investmentPropertiesContainer.style.display = 'none';
+        addMorePropertiesButton.style.display = 'none';
+      }
+    }
+  }
+
   // Function to handle radio button toggling for jointly owned property
   function handleJointlyOwnedFields(section, selectedValue) {
     const jointlyOwnedFields = section.querySelector('[id^="jointlyOwnInvestmentPropertyFields"]');
-
     if (jointlyOwnedFields) {
       jointlyOwnedFields.style.display = selectedValue === 'yes' ? 'block' : 'none';
     }
@@ -2455,6 +2256,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Function to setup event listeners for a given section
   function setupSectionEventListeners(section) {
+    const removeButton = section.querySelector('.remove-investment-property');
+    if (removeButton) {
+      removeButton.addEventListener('click', function() {
+        removeInvestmentProperty(section);
+      });
+    }
+
     const addOwnerButton = section.querySelector('[id^="addOwnerButton"]');
     if (addOwnerButton) {
       addOwnerButton.addEventListener('click', function() {
@@ -2542,14 +2350,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // Event listener for dynamically added radio buttons
-  document.getElementById('investmentPropertiesContainer').addEventListener('change', function(event) {
-    if (event.target.name.startsWith('jointlyOwnInvestmentProperty')) {
-      const section = event.target.closest('.investment-property');
-      handleJointlyOwnedFields(section, event.target.value);
-    } else if (event.target.name.startsWith('propertyAgentsAnnualStatement')) {
-      const section = event.target.closest('.investment-property');
-      handleAnnualStatementFields(section, event.target.value);
+  // Event listener for radio button changes
+  document.addEventListener('change', function(event) {
+    if (event.target.name === 'investmentProperty') {
+      handleRadioChanges(event);
+    } else if (event.target.matches('.toggle-fields')) {
+      const expenseFields = event.target.closest('.form-check').querySelector('.expense-fields');
+      expenseFields.style.display = event.target.checked ? 'block' : 'none';
     }
   });
 
@@ -2572,15 +2379,14 @@ document.addEventListener('DOMContentLoaded', function() {
     setupSectionEventListeners(section);
   });
 
-
+  // Initial check to handle visibility of the "Add Investment Property" button
+  handleInvestmentPropertyVisibility();
 });
 
 
+// investment property end
 
 
-document.addEventListener('change', function (event) {
-  if (event.target.matches('.toggle-fields')) {
-    const expenseFields = event.target.closest('.form-check').querySelector('.expense-fields');
-    expenseFields.style.display = event.target.checked ? 'block' : 'none';
-  }
-});
+
+
+
