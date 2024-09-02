@@ -507,26 +507,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 // show and hide internet fields
-document.addEventListener("DOMContentLoaded", function() {
-  const internetUseYes = document.getElementById("internetUseYes");
-  const internetUseNo = document.getElementById("internetUseNo");
-  const internetFields = document.getElementById("internetFields");
+// document.addEventListener("DOMContentLoaded", function() {
+//   const internetUseYes = document.getElementById("internetUseYes");
+//   const internetUseNo = document.getElementById("internetUseNo");
+//   const internetFields = document.getElementById("internetFields");
 
-  function toggleInternetFields() {
-    if (internetUseYes.checked) {
-      internetFields.style.display = "block";
-    } else {
-      internetFields.style.display = "none";
-    }
-  }
+//   function toggleInternetFields() {
+//     if (internetUseYes.checked) {
+//       internetFields.style.display = "block";
+//     } else {
+//       internetFields.style.display = "none";
+//     }
+//   }
 
-  // Event listeners for radio buttons
-  internetUseYes.addEventListener("change", toggleInternetFields);
-  internetUseNo.addEventListener("change", toggleInternetFields);
+//   // Event listeners for radio buttons
+//   internetUseYes.addEventListener("change", toggleInternetFields);
+//   internetUseNo.addEventListener("change", toggleInternetFields);
 
-  // Initial check
-  toggleInternetFields();
-});
+//   // Initial check
+//   toggleInternetFields();
+// });
 
 // show and hide internet fields end
 
@@ -636,6 +636,34 @@ document.addEventListener('DOMContentLoaded', function() {
   interestYes.addEventListener('change', toggleInterestDetails);
   interestNo.addEventListener('change', toggleInterestDetails);
 });
+
+
+// This script manages the visibility of the interestRecievedOwnFigures section
+// based on user selection for providing interest income details.
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Select radio buttons and the section to show/hide
+  const useATOPreFillReportForInterest = document.getElementById('useATOPreFillReportForInterest');
+  const useMyOwnFiguresForInterest = document.getElementById('useMyOwnFiguresForInterest');
+  const interestRecievedOwnFigures = document.getElementById('interestRecievedOwnFigures');
+
+  // Function to toggle visibility of the interestRecievedOwnFigures section
+  function toggleInterestRecievedOwnFigures() {
+    if (useMyOwnFiguresForInterest.checked) {
+      interestRecievedOwnFigures.style.display = 'block';
+    } else {
+      interestRecievedOwnFigures.style.display = 'none';
+    }
+  }
+
+  // Initialize the visibility based on the initial selection
+  toggleInterestRecievedOwnFigures();
+
+  // Add event listeners to radio buttons to handle changes
+  useATOPreFillReportForInterest.addEventListener('change', toggleInterestRecievedOwnFigures);
+  useMyOwnFiguresForInterest.addEventListener('change', toggleInterestRecievedOwnFigures);
+});
+
 
 
 
@@ -765,6 +793,36 @@ document.addEventListener('DOMContentLoaded', function() {
   dividendYes.addEventListener('change', toggleDividendDetails);
   dividendNo.addEventListener('change', toggleDividendDetails);
 });
+
+
+
+// This script manages the visibility of the dividendRecievedOwnFigures section
+// based on user selection for providing dividend income details.
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Select radio buttons and the section to show/hide
+  const useATOPreFillReportForDividend = document.getElementById('useATOPreFillReportForDividend');
+  const useMyOwnFiguresForDividend = document.getElementById('useMyOwnFiguresForDividend');
+  const dividendRecievedOwnFigures = document.getElementById('dividendRecievedOwnFigures');
+
+  // Function to toggle visibility of the dividendRecievedOwnFigures section
+  function toggleDividendRecievedOwnFigures() {
+    if (useMyOwnFiguresForDividend.checked) {
+      dividendRecievedOwnFigures.style.display = 'block';
+    } else {
+      dividendRecievedOwnFigures.style.display = 'none';
+    }
+  }
+
+  // Initialize the visibility based on the initial selection
+  toggleDividendRecievedOwnFigures();
+
+  // Add event listeners to radio buttons to handle changes
+  useATOPreFillReportForDividend.addEventListener('change', toggleDividendRecievedOwnFigures);
+  useMyOwnFiguresForDividend.addEventListener('change', toggleDividendRecievedOwnFigures);
+});
+
+
 
 
 // Initialize index for additional rows
