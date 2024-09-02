@@ -141,6 +141,127 @@ document.getElementById("addressNo").addEventListener("change", function () {
   }
 });
 
+
+
+
+// This script listens for changes in the radio buttons asking if the bank account details for the tax refund are the same as last year.
+// If "No" is selected, the bank account input fields (Account Name, Bank BSB Number, Bank ACC Number) are shown.
+// If "Yes" is selected, the input fields remain hidden.
+
+document.addEventListener('DOMContentLoaded', function () {
+  const yesRadio = document.getElementById('bankAccountNotChangeYes');
+  const noRadio = document.getElementById('bankAccountNotChangeNo');
+  const bankAccountChangeInput = document.getElementById('bankAccountChangeInput');
+
+  // Function to toggle the bank account input fields
+  function toggleBankAccountInput() {
+    if (noRadio.checked) {
+      bankAccountChangeInput.style.display = 'block';
+    } else {
+      bankAccountChangeInput.style.display = 'none';
+    }
+  }
+
+  // Add event listeners to radio buttons
+  yesRadio.addEventListener('change', toggleBankAccountInput);
+  noRadio.addEventListener('change', toggleBankAccountInput);
+});
+
+
+
+
+
+// This script listens for changes in the radio buttons asking if the user is an employee.
+// If "Yes" is selected, the message about PAYG income summaries is shown.
+// If "No" is selected, the message about completing the Sole Trader Information Sheet is shown.
+
+document.addEventListener('DOMContentLoaded', function () {
+  const yesRadio = document.getElementById('anEmployeeYes');
+  const noRadio = document.getElementById('anEmployeeNo');
+  const employeeYesMessage = document.getElementById('employe-yes');
+  const employeeNoMessage = document.getElementById('employe-no');
+
+  // Function to toggle visibility of the messages
+  function toggleEmployeeMessage() {
+    if (yesRadio.checked) {
+      employeeYesMessage.style.display = 'block';
+      employeeNoMessage.style.display = 'none';
+    } else if (noRadio.checked) {
+      employeeYesMessage.style.display = 'none';
+      employeeNoMessage.style.display = 'block';
+    }
+  }
+
+  // Add event listeners to radio buttons
+  yesRadio.addEventListener('change', toggleEmployeeMessage);
+  noRadio.addEventListener('change', toggleEmployeeMessage);
+
+  // Initial check to set the correct message visibility on page load
+  toggleEmployeeMessage();
+});
+
+
+
+
+
+// This script listens for changes in the radio buttons asking if the user had an Employee Share/Option Scheme.
+// If "Yes" is selected, the fields for employer name, amount, and attachment are shown.
+// If "No" is selected, these fields remain hidden.
+
+document.addEventListener('DOMContentLoaded', function () {
+  const yesRadio = document.getElementById('employeeShareOptionSchemeYes');
+  const noRadio = document.getElementById('employeeShareOptionSchemeNo');
+  const detailsSection = document.getElementById('employeeShareOptionSchemeDetails');
+
+  // Function to toggle visibility of the details section
+  function toggleDetailsSection() {
+    if (yesRadio.checked) {
+      detailsSection.style.display = 'block';
+    } else if (noRadio.checked) {
+      detailsSection.style.display = 'none';
+    }
+  }
+
+  // Add event listeners to radio buttons
+  yesRadio.addEventListener('change', toggleDetailsSection);
+  noRadio.addEventListener('change', toggleDetailsSection);
+
+  // Initial check to set the correct visibility on page load
+  toggleDetailsSection();
+});
+
+
+
+// This script listens for changes in the radio buttons asking if the user received any Other Income.
+// If "Yes" is selected, the input fields for other income details are shown.
+// If "No" is selected, the input fields remain hidden.
+
+document.addEventListener('DOMContentLoaded', function () {
+  const yesRadio = document.getElementById('otherIncomeYes');
+  const noRadio = document.getElementById('otherIncomeNo');
+  const otherIncomeInputs = document.getElementById('othherIncomeInputs');
+
+  // Function to toggle visibility of the other income inputs section
+  function toggleOtherIncomeInputs() {
+    if (yesRadio.checked) {
+      otherIncomeInputs.style.display = 'block';
+    } else if (noRadio.checked) {
+      otherIncomeInputs.style.display = 'none';
+    }
+  }
+
+  // Add event listeners to radio buttons
+  yesRadio.addEventListener('change', toggleOtherIncomeInputs);
+  noRadio.addEventListener('change', toggleOtherIncomeInputs);
+
+  // Initial check to set the correct visibility on page load
+  toggleOtherIncomeInputs();
+});
+
+
+
+
+
 // This script listens for changes in the radio buttons asking about having a spouse for the full year.
 // If "No" is selected, the fields for the name of the spouse or partner and the date of separation are shown.
 // If "Yes" is selected, the fields remain hidden.
@@ -210,6 +331,39 @@ document.getElementById("add-children").addEventListener("click", function () {
 
 
 
+
+
+
+// This script listens for changes in the radio buttons asking about income from managed funds, trusts, and partnerships
+// If "Yes" is selected, the manageTrustFundsDetails section is shown.
+// If "No" is selected, the manageTrustFundsDetails section is hidden.
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Select radio buttons and the section to show/hide
+  const manageTrustFundsYes = document.getElementById('manageTrustFundsYes');
+  const manageTrustFundsNo = document.getElementById('manageTrustFundsNo');
+  const manageTrustFundsDetails = document.getElementById('manageTrustFundsDetails');
+
+  // Function to toggle visibility of the manageTrustFundsDetails section
+  function toggleManageTrustFundsDetails() {
+    if (manageTrustFundsYes.checked) {
+      manageTrustFundsDetails.style.display = 'block';
+    } else {
+      manageTrustFundsDetails.style.display = 'none';
+    }
+  }
+
+  // Initialize the visibility based on the initial selection
+  toggleManageTrustFundsDetails();
+
+  // Add event listeners to radio buttons to handle changes
+  manageTrustFundsYes.addEventListener('change', toggleManageTrustFundsDetails);
+  manageTrustFundsNo.addEventListener('change', toggleManageTrustFundsDetails);
+});
+
+
+
+
 // show and hide capital gain fields
 document.addEventListener("DOMContentLoaded", function() {
   // Function to toggle visibility of asset details and file upload
@@ -236,27 +390,87 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-// show and hide EMPLOYEE SHARE/OPTION SCHEME fields end
-document.addEventListener("DOMContentLoaded", function() {
-  // Function to toggle the display of the file input
-  function toggleBonusSharesDocuments() {
-    const bonusSharesOptionsYes = document.getElementById("bonusSharesOptionsYes");
-    const bonusSharesDocuments = document.getElementById("bonusSharesDocuments");
+// This script listens for changes in the radio buttons asking about receiving foreign income
+// If "Yes" is selected, the foreignIncomeDetailsContainer section is shown.
+// If "No" is selected, the foreignIncomeDetailsContainer section is hidden.
 
-    if (bonusSharesOptionsYes.checked) {
-      bonusSharesDocuments.style.display = "block";
+document.addEventListener('DOMContentLoaded', function() {
+  // Select radio buttons and the section to show/hide
+  const foreignIncomeYes = document.getElementById('foreignIncomeYes');
+  const foreignIncomeNo = document.getElementById('foreignIncomeNo');
+  const foreignIncomeDetailsContainer = document.getElementById('foreignIncomeDetailsContainer');
+
+  // Function to toggle visibility of the foreignIncomeDetailsContainer section
+  function toggleForeignIncomeDetails() {
+    if (foreignIncomeYes.checked) {
+      foreignIncomeDetailsContainer.style.display = 'block';
     } else {
-      bonusSharesDocuments.style.display = "none";
+      foreignIncomeDetailsContainer.style.display = 'none';
     }
   }
 
-  // Add event listeners to radio buttons
-  document.getElementById("bonusSharesOptionsYes").addEventListener("change", toggleBonusSharesDocuments);
-  document.getElementById("bonusSharesOptionsNo").addEventListener("change", toggleBonusSharesDocuments);
+  // Initialize the visibility based on the initial selection
+  toggleForeignIncomeDetails();
 
-  // Initialize the form with the correct visibility state
-  toggleBonusSharesDocuments();
+  // Add event listeners to radio buttons to handle changes
+  foreignIncomeYes.addEventListener('change', toggleForeignIncomeDetails);
+  foreignIncomeNo.addEventListener('change', toggleForeignIncomeDetails);
 });
+
+
+
+
+// This script manages the visibility of the assetsOver50000Details section
+// If "Yes" is selected, the section is shown.
+// If "No" is selected, the section is hidden.
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Select radio buttons and the section to show/hide
+  const assetsOver50000Yes = document.getElementById('assetsOver50000Yes');
+  const assetsOver50000No = document.getElementById('assetsOver50000No');
+  const assetsOver50000Details = document.querySelector('.assetsOver50000Details');
+
+  // Function to toggle visibility of the assetsOver50000Details section
+  function toggleAssetsOver50000Details() {
+    if (assetsOver50000Yes.checked) {
+      assetsOver50000Details.style.display = 'block';
+    } else {
+      assetsOver50000Details.style.display = 'none';
+    }
+  }
+
+  // Initialize the visibility based on the initial selection
+  toggleAssetsOver50000Details();
+
+  // Add event listeners to radio buttons to handle changes
+  assetsOver50000Yes.addEventListener('change', toggleAssetsOver50000Details);
+  assetsOver50000No.addEventListener('change', toggleAssetsOver50000Details);
+});
+
+
+
+
+// show and hide EMPLOYEE SHARE/OPTION SCHEME fields end
+// document.addEventListener("DOMContentLoaded", function() {
+//   // Function to toggle the display of the file input
+//   function toggleBonusSharesDocuments() {
+//     const bonusSharesOptionsYes = document.getElementById("bonusSharesOptionsYes");
+//     const bonusSharesDocuments = document.getElementById("bonusSharesDocuments");
+
+//     if (bonusSharesOptionsYes.checked) {
+//       bonusSharesDocuments.style.display = "block";
+//     } else {
+//       bonusSharesDocuments.style.display = "none";
+//     }
+//   }
+
+//   // Add event listeners to radio buttons
+//   document.getElementById("bonusSharesOptionsYes").addEventListener("change", toggleBonusSharesDocuments);
+//   document.getElementById("bonusSharesOptionsNo").addEventListener("change", toggleBonusSharesDocuments);
+
+//   // Initialize the form with the correct visibility state
+//   toggleBonusSharesDocuments();
+// });
 
 // show and hide EMPLOYEE SHARE/OPTION SCHEME fields end
 
@@ -396,6 +610,34 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+// This script listens for changes in the radio buttons asking about bank interest
+// If "Yes" is selected, the interestReceivedDetails section is shown.
+// If "No" is selected, the interestReceivedDetails section is hidden.
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Select radio buttons and the section to show/hide
+  const interestYes = document.getElementById('interestThisFinancialYearYes');
+  const interestNo = document.getElementById('interestThisFinancialYearNo');
+  const interestDetails = document.getElementById('interestReceivedDetails');
+
+  // Function to toggle visibility of the interestReceivedDetails section
+  function toggleInterestDetails() {
+    if (interestYes.checked) {
+      interestDetails.style.display = 'block';
+    } else {
+      interestDetails.style.display = 'none';
+    }
+  }
+
+  // Initialize the visibility based on the initial selection
+  toggleInterestDetails();
+
+  // Add event listeners to radio buttons to handle changes
+  interestYes.addEventListener('change', toggleInterestDetails);
+  interestNo.addEventListener('change', toggleInterestDetails);
+});
+
+
 
 // interest receiverd
 // Initialize index for additional rows
@@ -496,6 +738,35 @@ document
 // interest receiverd end
 
 // dividents
+
+// This script listens for changes in the radio buttons asking about earning dividends
+// If "Yes" is selected, the dividendEarnFinancialDetails section is shown.
+// If "No" is selected, the dividendEarnFinancialDetails section is hidden.
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Select radio buttons and the section to show/hide
+  const dividendYes = document.getElementById('dividendEarnFinancialYearYes');
+  const dividendNo = document.getElementById('dividendEarnFinancialYearNo');
+  const dividendDetails = document.getElementById('dividendEarnFinancialDetails');
+
+  // Function to toggle visibility of the dividendEarnFinancialDetails section
+  function toggleDividendDetails() {
+    if (dividendYes.checked) {
+      dividendDetails.style.display = 'block';
+    } else {
+      dividendDetails.style.display = 'none';
+    }
+  }
+
+  // Initialize the visibility based on the initial selection
+  toggleDividendDetails();
+
+  // Add event listeners to radio buttons to handle changes
+  dividendYes.addEventListener('change', toggleDividendDetails);
+  dividendNo.addEventListener('change', toggleDividendDetails);
+});
+
+
 // Initialize index for additional rows
 let dividendsRowIndex = 0;
 
@@ -2358,6 +2629,97 @@ document.addEventListener('DOMContentLoaded', function() {
       const expenseFields = event.target.closest('.form-check').querySelector('.expense-fields');
       expenseFields.style.display = event.target.checked ? 'block' : 'none';
     }
+
+
+    // Function to handle adding more Repairs and Maintenance (R & M) expenses
+    function addRepairsMaintenanceExpenses(event) {
+      event.preventDefault();
+
+      const currentButton = event.target;
+      const expenseFields = currentButton.closest('.expense-fields');
+      const rowCount = expenseFields.querySelectorAll('.row').length;
+      const invPropertyIndex = currentButton.closest('.form-check').querySelector('input[type="checkbox"]').id.match(/\d+/)[0];
+
+      // Create a new row for the expense
+      const newRow = document.createElement('div');
+      newRow.className = 'row g-3 mt-0';
+
+      // Create and append amount input field
+      const amountCol = document.createElement('div');
+      amountCol.className = 'col-12 col-md-6';
+      const amountInput = document.createElement('input');
+      amountInput.type = 'number';
+      amountInput.className = 'form-control';
+      amountInput.name = `repairsMaintenanceAmount[${invPropertyIndex}][${rowCount}]`;
+      amountInput.placeholder = 'Enter amount';
+      amountCol.appendChild(amountInput);
+
+      // Create and append file input field
+      const fileCol = document.createElement('div');
+      fileCol.className = 'col-12 col-md-6';
+      const fileInput = document.createElement('input');
+      fileInput.type = 'file';
+      fileInput.className = 'form-control';
+      fileInput.name = `repairsMaintenanceAttachment[${invPropertyIndex}][${rowCount}]`;
+      fileCol.appendChild(fileInput);
+
+      // Append the new columns to the new row
+      newRow.appendChild(amountCol);
+      newRow.appendChild(fileCol);
+
+      // Append the new row to the expense fields container
+      expenseFields.insertBefore(newRow, currentButton);
+    }
+
+    // Attach the add expense functionality to all "Add Expense" buttons
+    document.querySelectorAll('.add-repairs-maintenance-expenses').forEach(button => {
+      button.addEventListener('click', addRepairsMaintenanceExpenses);
+    });
+
+    // Function to handle adding more Sundry Rental Expenses
+    function addSundryRentalExpenses(event) {
+      event.preventDefault();
+
+      const currentButton = event.target;
+      const expenseFields = currentButton.closest('.expense-fields');
+      const rowCount = expenseFields.querySelectorAll('.row').length;
+      const invPropertyIndex = currentButton.closest('.form-check').querySelector('input[type="checkbox"]').id.match(/\d+/)[0];
+
+      // Create a new row for the expense
+      const newRow = document.createElement('div');
+      newRow.className = 'row g-3 mt-0';
+
+      // Create and append amount input field
+      const amountCol = document.createElement('div');
+      amountCol.className = 'col-12 col-md-6';
+      const amountInput = document.createElement('input');
+      amountInput.type = 'number';
+      amountInput.className = 'form-control';
+      amountInput.name = `sundryRentalExpensesAmount[${invPropertyIndex}][${rowCount}]`;
+      amountInput.placeholder = 'Enter amount';
+      amountCol.appendChild(amountInput);
+
+      // Create and append file input field
+      const fileCol = document.createElement('div');
+      fileCol.className = 'col-12 col-md-6';
+      const fileInput = document.createElement('input');
+      fileInput.type = 'file';
+      fileInput.className = 'form-control';
+      fileInput.name = `sundryRentalExpensesAttachment[${invPropertyIndex}][${rowCount}]`;
+      fileCol.appendChild(fileInput);
+
+      // Append the new columns to the new row
+      newRow.appendChild(amountCol);
+      newRow.appendChild(fileCol);
+
+      // Append the new row to the expense fields container
+      expenseFields.insertBefore(newRow, currentButton);
+    }
+
+    // Attach the add expense functionality to all "Add Expense" buttons
+    document.querySelectorAll('.add-sundry-rental-expenses').forEach(button => {
+      button.addEventListener('click', addSundryRentalExpenses);
+    });
   });
 
   // Event listener to add more investment property sections

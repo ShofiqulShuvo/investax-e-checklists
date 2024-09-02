@@ -141,6 +141,7 @@
                   type="radio"
                   name="Period"
                   id="4-6-week"
+                  checked 
                 />
                 <label class="form-check-label" for="4-6-week">
                   4-6 Weeks
@@ -208,8 +209,7 @@
                   </div>
                   <div class="modal-body fs-6 lh-sm text-danger py-2">
                     <!-- Modal content goes here -->
-                    If you require an urgent return, you must contact the client
-                    manager directly.
+                    If you require an urgent return, you must contact the client manager directly after completing this checklist.
                   </div>
                   <div class="modal-footer border-0 pt-1 pb-3">
                     <button
@@ -248,8 +248,8 @@
 
               <!-- occupation -->
               <div class="col-md-6">
-                <label for="Occupation" class="form-label">Occupation</label>
-                <input type="text" class="form-control" id="Occupation" />
+                <label for="Occupation" class="form-label">Occupation*</label>
+                <input type="text" class="form-control" id="Occupation" required />
               </div>
 
               <!-- Radio Group to Ask if Address is Changed -->
@@ -297,51 +297,81 @@
                 <input type="text" class="form-control" id="mobile" />
               </div>
 
-              <!-- account name -->
+              <!-- Radio Group to Ask if Bank Account Details for Tax Refund, Same as Last Year -->
               <div class="col-12">
-                <label for="accountName" class="form-label"
-                  >Account Name*</label
+                <label class="form-label d-block"
+                  >Bank Account Details for Tax Refund, Same as Last Year?</label
                 >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="accountName"
-                  required
-                />
+
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="bankAccountNotChange"
+                    id="bankAccountNotChangeYes"
+                  />
+                  <label class="form-check-label" for="bankAccountNotChangeYes">Yes</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="bankAccountNotChange"
+                    id="bankAccountNotChangeNo"
+                  />
+                  <label class="form-check-label" for="bankAccountNotChangeNo">No</label>
+                </div>
               </div>
 
-              <!-- bank bsb number -->
-              <div class="col-md-6">
-                <label for="bankBsbNumber" class="form-label"
-                  >Bank BSB Number*</label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="bankBsbNumber"
-                  required
-                />
+              <!--Bank Account Input Field (Initially Hidden) -->
+              <div class="col-12" id="bankAccountChangeInput" style="display: none">
+                <div class="row g-3">
+                  <!-- account name -->
+                  <div class="col-12">
+                    <label for="accountName" class="form-label"
+                      >Account Name</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="accountName"
+                    />
+                  </div>
+    
+                  <!-- bank bsb number -->
+                  <div class="col-md-6">
+                    <label for="bankBsbNumber" class="form-label"
+                      >Bank BSB Number</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="bankBsbNumber"
+                    />
+                  </div>
+    
+                  <!-- bank acc number -->
+                  <div class="col-md-6">
+                    <label for="bankAccNumber" class="form-label"
+                      >Bank ACC Number</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="bankAccNumber"
+                    />
+                  </div>
+                </div>
               </div>
 
-              <!-- bank acc number -->
-              <div class="col-md-6">
-                <label for="bankAccNumber" class="form-label"
-                  >Bank ACC Number*</label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="bankAccNumber"
-                  required
-                />
-              </div>
 
               <!-- email address -->
               <div class="col-md-12">
                 <label for="emailAddress" class="form-label"
-                  >Email Address</label
+                  >Email Address*</label
                 >
-                <input type="email" class="form-control" id="emailAddress" />
+                <input type="email" class="form-control" id="emailAddress" required />
               </div>
 
               <!-- names of dependent children & DOB -->
@@ -453,214 +483,404 @@
 
           <!-- PAYG income summaries (step 4) -->
           <div class="step">
-            <label class="form-check-label d-block mb-2">
-              Are You an Employee? (Including pensions)
-            </label>
 
-            <div class="form-check form-check-inline">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="anEmployee"
-                id="anEmployeeYes"
-              />
-              <label class="form-check-label" for="anEmployeeYes"> yes </label>
+            <!-- employe -->
+            <div class="mb-4">
+              <label class="form-check-label d-block mb-2">
+                Are You an Employee? (Including pensions)
+              </label>
+  
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="anEmployee"
+                  id="anEmployeeYes"
+                />
+                <label class="form-check-label" for="anEmployeeYes"> yes </label>
+              </div>
+  
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="anEmployee"
+                  id="anEmployeeNo"
+                />
+                <label class="form-check-label" for="anEmployeeNo"> No </label>
+              </div>
+              
+              <!-- employe yes -->
+              <div id="employe-yes" style="display: none;">
+                <p class="mt-2" >
+                  If yes, your PAYG income summaries from your employers will be
+                  available via the ATO portal or MY GOV.
+                </p>
+
+                <!-- employe share option scheme -->
+                 <div>
+                  <label class="form-check-label d-block mb-2">
+                    Did you have an EMPLOYEE SHARE/OPTION SCHEME?
+                  </label>
+      
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="employeeShareOptionScheme"
+                      id="employeeShareOptionSchemeYes"
+                    />
+                    <label class="form-check-label" for="employeeShareOptionSchemeYes"> yes </label>
+                  </div>
+      
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="employeeShareOptionScheme"
+                      id="employeeShareOptionSchemeNo"
+                    />
+                    <label class="form-check-label" for="employeeShareOptionSchemeNo"> No </label>
+                  </div>
+
+                  <div id="employeeShareOptionSchemeDetails" class="mt-3 " style="display: none;">
+                    <div class="row g-3">
+                      <!-- employer name -->
+                      <div class="col-12 col-md-6">
+                        <label for="nameOfEmployer" class="form-label d-block">Name of The Employer</label>
+                        <input id="nameOfEmployer" type="text" class="form-control">
+                      </div>
+                      <!-- amount -->
+                      <div class="col-12 col-md-6">
+                        <label for="employeeShareOptionSchemeAmount" class="form-label d-block">Include Amount</label>
+                        <input id="employeeShareOptionSchemeAmount" type="number" class="form-control">
+                      </div>
+                      <!-- attachment -->
+                      <div class="col-12">
+                        <label for="employeeShareOptionSchemeAttachment" class="form-label d-block">Attach File</label>
+                        <input id="employeeShareOptionSchemeAttachment" type="file" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                 </div>
+
+              </div>
+              
+              <!-- employe no -->
+               <div id="employe-no" style="display: none;">
+                 <p class="mt-2" >
+                   If you are Sole Trader Business owner please complete the Sole Trader Information Sheet at the end of this checklist.
+                 </p>
+               </div>
             </div>
+            
 
-            <div class="form-check form-check-inline">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="anEmployee"
-                id="anEmployeeNo"
-              />
-              <label class="form-check-label" for="anEmployeeNo"> No </label>
+            <!-- other inmcome -->
+            <div class="mt-4">
+
+              <label class="form-check-label d-block mb-2">
+                Did you receive any Other Income (i.e. Director Fee, Commissions, Income Protection insurance payment) ?
+              </label>
+  
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="otherIncome"
+                  id="otherIncomeYes"
+                />
+                <label class="form-check-label" for="otherIncomeYes"> yes </label>
+              </div>
+  
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="otherIncome"
+                  id="otherIncomeNo"
+                />
+                <label class="form-check-label" for="otherIncomeNo"> No </label>
+              </div>
+
+              <div id="othherIncomeInputs" class="mt-3" style="display: none;">
+                <div class="row g-1">
+                  <!-- employer name -->
+                  <div class="col-12 ">
+                    <label for="otherIncomeDetails" class="form-label">
+                      Details of other income
+                    </label>
+                    <textarea class="form-control" name="otherIncomeDetails" id=""></textarea>
+                  </div>
+                  <div class="col-12">
+                    <label for="otherIncomeAmount" class="form-label d-block">Amount</label>
+                    <input id="otherIncomeAmount" type="number" name="otherIncomeAmount" class="form-control">
+                  </div>
+                </div>
+              </div>
+
             </div>
-
-            <p class="mt-2">
-              If yes, your PAYG income summaries from your employers will be
-              available via the ATO portal or MY GOV
-            </p>
-
-            <label class="form-label">
-              OTHER INCOME (Includes any business income, director’s fee,
-              commissions etc)
-            </label>
-            <textarea class="form-control" name="" id=""></textarea>
           </div>
 
           <!-- INTEREST RECEIVED & DIVIDENDS (step 5) -->
           <div class="step">
+            <h3 class="mb-4">DIVIDENDS</h3>
             <!-- INTEREST RECEIVED -->
-            <div class="mb-5">
-              <label class="form-check-label d-block mb-2"
-                >INTEREST RECEIVED</label
-              >
+             <div class="mb-4">
+              <!--bank interest question -->
+              <div>
+                <label class="form-check-label d-block mb-2">
+                  Did you earn any bank interest in this financial year?
+                </label>
+    
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="interestThisFinancialYear"
+                    id="interestThisFinancialYearYes"
+                  />
+                  <label class="form-check-label" for="interestThisFinancialYearYes"> yes </label>
+                </div>
+    
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="interestThisFinancialYear"
+                    id="interestThisFinancialYearNo"
+                  />
+                  <label class="form-check-label" for="interestThisFinancialYearNo"> No </label>
+                </div>
+              </div>
 
-              <table class="table table-bordered table-sm">
-                <thead>
-                  <tr>
-                    <th>NAME OF BANK</th>
-                    <th>ACCOUNT NUMBER</th>
-                    <th>TOTAL INTEREST RECEIVED $</th>
-                    <th>TFN WITHHOLDING $</th>
-                    <th>JOINT ACCOUNT?</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody id="interestReceivedTableBody">
-                  <!-- bank 1 -->
-                  <tr>
-                    <td>
-                      <input
-                        type="text"
-                        class="form-control"
-                        name="bankName[0]"
-                      />
-                    </td>
-                    <td>
-                      <input
-                        type="text"
-                        class="form-control"
-                        name="accountNumber[0]"
-                      />
-                    </td>
-                    <td>
-                      <input
-                        type="text"
-                        class="form-control"
-                        name="totalInterest[0]"
-                      />
-                    </td>
-                    <td>
-                      <input
-                        type="text"
-                        class="form-control"
-                        name="tfnWithholding[0]"
-                      />
-                    </td>
-                    <td>
-                      <div
-                        class="d-flex justify-content-center align-items-center gap-1"
-                      >
+              <!-- interest recieve details -->
+              <div id="interestReceivedDetails" class="mb-5" style="display: none;">
+                
+                
+                <!-- interest recieve table -->
+                <table class="table table-bordered table-sm">
+                  <thead>
+                    <tr>
+                      <th>NAME OF BANK</th>
+                      <th>ACCOUNT NUMBER</th>
+                      <th>TOTAL INTEREST RECEIVED $</th>
+                      <th>TFN WITHHOLDING $</th>
+                      <th>JOINT ACCOUNT?</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="interestReceivedTableBody">
+                    <!-- bank 1 -->
+                    <tr>
+                      <td>
                         <input
-                          type="checkbox"
-                          class="form-check-input"
-                          name="jointAccount[0]"
-                          id="jointAccount[0]"
+                          type="text"
+                          class="form-control"
+                          name="bankName[0]"
                         />
-                        <label for="jointAccount[0]">Yes</label>
-                      </div>
-                    </td>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
-              <button
-                id="add-interest-row"
-                class="add-btn ms-auto mb-3 btn btn-sm"
-                type="button"
-              >
-                Add +
-              </button>
-            </div>
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="accountNumber[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="totalInterest[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="tfnWithholding[0]"
+                        />
+                      </td>
+                      <td>
+                        <div
+                          class="d-flex justify-content-center align-items-center gap-1"
+                        >
+                          <input
+                            type="checkbox"
+                            class="form-check-input"
+                            name="jointAccount[0]"
+                            id="jointAccount[0]"
+                          />
+                          <label for="jointAccount[0]">Yes</label>
+                        </div>
+                      </td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <button
+                  id="add-interest-row"
+                  class="add-btn ms-auto mb-3 btn btn-sm"
+                  type="button"
+                >
+                  Add +
+                </button>
+              </div>
+             </div>
 
             <!-- DIVIDENDS -->
-            <div>
-              <label class="form-check-label d-block mb-2">DIVIDENDS</label>
-              <p class="mb-3">
-                <strong
-                  >Please provide copies of dividend statements of Income
-                  received,</strong
-                >
-                including Dividend Reinvestment Plans (DRP)
-              </p>
+             <div class="mb-4">
+              <!--DIVIDENDS interest question -->
+              <div class="mb-3">
+                <label class="form-check-label d-block mb-2">
+                  Did you earn any Dividend in this financial year? 
+                </label>
+    
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="dividendEarnFinancialYear"
+                    id="dividendEarnFinancialYearYes"
+                  />
+                  <label class="form-check-label" for="dividendEarnFinancialYearYes"> yes </label>
+                </div>
+    
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="dividendEarnFinancialYear"
+                    id="dividendEarnFinancialYearNo"
+                  />
+                  <label class="form-check-label" for="dividendEarnFinancialYearNo"> No </label>
+                </div>
+              </div>
 
-              <table class="table table-bordered table-sm">
-                <thead>
-                  <tr>
-                    <th>NAME OF SHARES</th>
-                    <th>FRANKED DIVIDENDS $</th>
-                    <th>UNFRANKED DIVIDENDS $</th>
-                    <th>FRANKING CREDITS $</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody id="dividendsTableBody">
-                  <tr>
-                    <td>
-                      <input
-                        type="text"
-                        class="form-control"
-                        name="sharesName[0]"
-                      />
-                    </td>
-                    <td>
-                      <input
-                        type="text"
-                        class="form-control"
-                        name="frankedDividends[0]"
-                      />
-                    </td>
-                    <td>
-                      <input
-                        type="text"
-                        class="form-control"
-                        name="unfrankedDividends[0]"
-                      />
-                    </td>
-                    <td>
-                      <input
-                        type="text"
-                        class="form-control"
-                        name="frankingCredits[0]"
-                      />
-                    </td>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
-              <button
-                id="add-dividend-row"
-                class="mb-3 ms-auto btn btn-sm add-btn"
-                type="button"
-              >
-                Add +
-              </button>
-            </div>
+              <!-- DIVIDENDS details -->
+              <div id="dividendEarnFinancialDetails" class="mb-5" style="display: none;">
+                
+                
+                <p class="mb-3">
+                  <strong
+                    >Please provide copies of dividend statements of Income
+                    received,</strong
+                  >
+                  including Dividend Reinvestment Plans (DRP)
+                </p>
+  
+                <table class="table table-bordered table-sm">
+                  <thead>
+                    <tr>
+                      <th>NAME OF SHARES</th>
+                      <th>FRANKED DIVIDENDS $</th>
+                      <th>UNFRANKED DIVIDENDS $</th>
+                      <th>FRANKING CREDITS $</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="dividendsTableBody">
+                    <tr>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="sharesName[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="frankedDividends[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="unfrankedDividends[0]"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="frankingCredits[0]"
+                        />
+                      </td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <button
+                  id="add-dividend-row"
+                  class="mb-3 ms-auto btn btn-sm add-btn"
+                  type="button"
+                >
+                  Add +
+                </button>
+              </div>
+             </div>
+            
           </div>
 
           <!-- Managed TRUST AND PARTNERSHIPS & CAPITAL GAIN (step 6)-->
           <div class="step">
             <!-- TRUST AND PARTNERSHIPS -->
-            <div class="mb-5">
-              <label class="form-check-label d-block mb-1">
-                MANAGED FUNDS,TRUST AND PARTNERSHIPS
-              </label>
-              <p class="mb-2">
-                (Eg: BT funds, Vanguard, AXA etc) Name of trust or partnership -
-              </p>
-              <p class="mb-2">
-                Please provide <strong>Annual Tax Statements</strong>
-              </p>
+             <div class="mb-4">
+              <!--MANAGED FUNDS, TRUST AND PARTNERSHIPS question -->
+              <div class="mb-3">
+                <label class="form-check-label d-block mb-2">
+                  Did you receive income from MANAGED FUNDS, TRUST AND PARTNERSHIPS?
+                </label>
+    
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="manageTrustFunds"
+                    id="manageTrustFundsYes"
+                  />
+                  <label class="form-check-label" for="manageTrustFundsYes"> yes </label>
+                </div>
+    
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="manageTrustFunds"
+                    id="manageTrustFundsNo"
+                  />
+                  <label class="form-check-label" for="manageTrustFundsNo"> No </label>
+                </div>
+              </div>
 
-              <textarea class="form-control" name="" id=""></textarea>
-            </div>
+              <!-- manage Trust Funds details -->
+              <div id="manageTrustFundsDetails" class="mb-5" style="display: none;">
+                <!-- fund details -->
+                <div class="mb-3">
+                  <label for="trustDetails" class="form-label mb-2">Details of Fund:</label><input class="form-control " type="text" name="trustDetails" id="trustDetails"></label>
+                </div>
+                <!-- attachment -->
+                <div class="mb-3">
+                  <label for="trustAttachment" class="form-label mb-2">Attachment:</label>
+                  <input class="form-control " type="file" name="trustAttachment" id="trustAttachment" />
+                </div>
+                
+              </div>
+             </div>
+             
 
             <!-- CAPITAL GAIN -->
             <div>
-              <label class="form-check-label d-block mb-2">CAPITAL GAIN</label>
-              <p class="mb-2">
-                Did you sell any assets such as shares or property which were
-                acquired after 20 September 1985?
-              </p>
+              <label class="form-check-label d-block mb-2">Did you sell any Assets and incurred a Capital Gain or Loss?</label>
 
               <div class="mb-3">
                 <div class="form-check form-check-inline">
                   <input
                     class="form-check-input"
                     type="radio"
-                    name="sellAssetAfter1985"
+                    name="sellAsset"
                     id="sellAssetYes"
                   />
                   <label class="form-check-label" for="sellAssetYes">Yes</label>
@@ -670,7 +890,7 @@
                   <input
                     class="form-check-input"
                     type="radio"
-                    name="sellAssetAfter1985"
+                    name="sellAsset"
                     id="sellAssetNo"
                   />
                   <label class="form-check-label" for="sellAssetNo">No</label>
@@ -704,76 +924,56 @@
             </div>
           </div>
 
-          <!-- EMPLOYEE SHARE/OPTION SCHEME & ANY OTHER INCOME & assets over $50,000AUD (step 7)-->
+          <!-- foreign income & assets over $50,000AUD (step 7)-->
           <div class="step">
-            <!-- EMPLOYEE SHARE/OPTION SCHEME -->
+
+            <!-- foreign income -->
             <div class="mb-4">
-              <label class="form-check-label d-block mb-1">
-                EMPLOYEE SHARE/OPTION SCHEME
+              <p class="mb-4 lead d-block fw-bold">FOREIGN INCOME</p>
+
+              <label class="form-check-label d-block mb-2">
+                Did you receive any Foreign income (i.e., Overseas Bank Interest, Overseas Dividends, Overseas Rental Income)?
               </label>
-              <p class="mb-2">
-                Did you receive bonus shares/options from your current employer
-                during 2023/2024?
-              </p>
 
               <div class="mb-3">
                 <div class="form-check form-check-inline">
                   <input
                     class="form-check-input"
                     type="radio"
-                    name="bonusSharesOptions"
-                    id="bonusSharesOptionsYes"
+                    name="foreignIncome"
+                    id="foreignIncomeYes"
                   />
-                  <label class="form-check-label" for="bonusSharesOptionsYes"
-                    >Yes</label
-                  >
+                  <label class="form-check-label" for="foreignIncomeYes">Yes</label>
                 </div>
 
                 <div class="form-check form-check-inline">
                   <input
                     class="form-check-input"
                     type="radio"
-                    name="bonusSharesOptions"
-                    id="bonusSharesOptionsNo"
+                    name="foreignIncome"
+                    id="foreignIncomeNo"
                   />
-                  <label class="form-check-label" for="bonusSharesOptionsNo"
-                    >No</label
-                  >
+                  <label class="form-check-label" for="sellAssetNo">No</label>
                 </div>
               </div>
 
               <!-- Hidden by default -->
-              <div id="bonusSharesDocuments" style="display: none">
-                <p class="mb-2">
-                  If yes, please provide the related correspondences/documents
-                  received from the employer.
+              <div id="foreignIncomeDetailsContainer" style="display: none">
+                <label for="foreignIncomeInformation" class="form-label">
+                  Please include all the foreign Interest and Dividend related information below.
+                </label>
+
+                <textarea
+                  class="form-control mb-3"
+                  id="foreignIncomeInformation"
+                  rows="4"
+                ></textarea>
+
+                <p class="mt-1 mb-2 fw-medium text-info">
+                  Please complete a Rental Schedule at the end of this checklist
                 </p>
-
-                <input
-                  class="form-control"
-                  type="file"
-                  id="formFileMultiple"
-                  multiple
-                />
+              
               </div>
-            </div>
-
-            <!-- ANY OTHER INCOME -->
-            <div class="mb-4">
-              <label class="form-check-label d-block mb-1">
-                ANY OTHER INCOME
-              </label>
-              <p class="mb-2">
-                (Any Income you have received in the financial year that does
-                not fit into any of the above categories. Please provide
-                details.)
-                <strong>
-                  Eg. Interest on any overseas bank accounts or any other
-                  foreign income received.</strong
-                >
-              </p>
-
-              <textarea class="form-control" name="" id=""></textarea>
             </div>
 
             <!-- assets over $50,000AUD -->
@@ -807,14 +1007,19 @@
                   </label>
                 </div>
               </div>
+
+              <div class="assetsOver50000Details" style="display: none;">
+                <label for="assetsOver50000Information" class="form-label">Please provide details</label>
+                <textarea name="assetsOver50000Information" class="form-control"></textarea>
+              </div>
             </div>
           </div>
 
-          <!-- DEDUCTIONS & MOTOR VEHICLE & WORK UNIFORM (step 8)-->
+          <!-- DEDUCTIONS – WORK RELATED & MOTOR VEHICLE & WORK UNIFORM (step 8)-->
           <div class="step">
             <!-- DEDUCTIONS -->
             <div class="mb-4">
-              <h3 class="form-check-label d-block mb-1">DEDUCTIONS</h3>
+              <h3 class="form-check-label d-block mb-1">DEDUCTIONS - WORK RELATED</h3>
               <p class="mb-2 text-danger">
                 Please ensure you are able to substantiate all claims, even if
                 less than $300.
@@ -1009,16 +1214,33 @@
               </div>
 
               <div id="uniformDetails" class="d-none">
-                <p class="mb-2">
-                  If yes, were you out of pocket through the year for purchasing
-                  any new items? (If so, please provide details.) Laundering and
-                  dry cleaning of clothing listed above are claimable.
-                </p>
-                <textarea
-                  class="form-control"
-                  name="uniformDetails"
-                  id="uniformDetailsTextarea"
-                ></textarea>
+                <div class="row g-3">
+                  <!-- details -->
+                  <div class="col-12">
+                    <label class="form-label">
+                      Details
+                    </label>
+                    <textarea
+                      class="form-control"
+                      name="uniformDetails"
+                      id="uniformDetailsTextarea"
+                    ></textarea>
+                  </div>
+                  <!-- Amount -->
+                  <div class="col-12 col-md-6">
+                    <label class="form-label d-block" for="workUniformAmount">
+                      Amount
+                    </label>
+                    <input class="form-control" id="workUniformAmount" type="number" />
+                  </div>
+                  <!-- Attach File -->
+                  <div class="col-12 col-md-6">
+                    <label class="form-label d-block" for="workUniformAttachFile">
+                      Attach File
+                    </label>
+                    <input class="form-control" id="workUniformAttachFile" type="file" />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -2819,9 +3041,9 @@
             <div class="mb-4">
               <!-- Investment Property Question -->
               <div class="mb-4">
-                <p class="d-block mb-2 lead">
+                <h4 class="mb-2 ">
                   Do you have any investment property?
-                </p>
+                </h4>
                 <div class="form-check form-check-inline">
                   <input
                     class="form-check-input"
@@ -3632,6 +3854,7 @@
                         />
                       </div>
                     </div>
+                    <button class="add-repairs-maintenance-expenses mt-3 ms-auto btn btn-sm add-btn">Add Expense</button>
                   </div>
                 </div>
 
@@ -3812,6 +4035,7 @@
                         />
                       </div>
                     </div>
+                    <button class="add-sundry-rental-expenses mt-3 ms-auto btn btn-sm add-btn">Add Expense</button>
                   </div>
                 </div>
 
