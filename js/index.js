@@ -262,20 +262,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-// This script listens for changes in the radio buttons asking about having a spouse for the full year.
-// If "No" is selected, the fields for the name of the spouse or partner and the date of separation are shown.
-// If "Yes" is selected, the fields remain hidden.
-document.getElementById("spouseNo").addEventListener("change", function () {
-  if (this.checked) {
-    document.getElementById("spouseDetails").style.display = "block";
-  }
-});
 
-document.getElementById("spouseYes").addEventListener("change", function () {
-  if (this.checked) {
-    document.getElementById("spouseDetails").style.display = "none";
-  }
-});
 
 // for add multiple children
 let addChildrenInputIndex = 0; // Initialize index for additional rows
@@ -1230,37 +1217,168 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// for spouse partner
-document.addEventListener("DOMContentLoaded", function () {
-  const spousePartnerForYearYes = document.getElementById(
-    "spousePartnerForYearYes"
-  );
-  const spousePartnerForYearNo = document.getElementById(
-    "spousePartnerForYearNo"
-  );
-  const spousePartnerDetails = document.getElementById("spousePartnerDetails");
-  const separateInput = document.getElementById("separateInput");
 
-  // Initial check to set the display state
-  if (spousePartnerForYearYes.checked) {
-    spousePartnerDetails.style.display = "block";
-    separateInput.style.display = "none";
-  } else if (spousePartnerForYearNo.checked) {
-    spousePartnerDetails.style.display = "none";
-    separateInput.style.display = "block";
+
+//  private health Insurance radio toggle notes
+document.addEventListener('DOMContentLoaded', function() {
+  // Select radio buttons and the paragraphs to show/hide
+  const privateHealthInsuranceYes = document.getElementById('privateHealthInsuranceYes');
+  const privateHealthInsuranceNo = document.getElementById('privateHealthInsuranceNo');
+  const privateHealthInsuranceYesNote = document.getElementById('privateHealthInsuranceYesNote');
+  const privateHealthInsuranceNoNote = document.getElementById('privateHealthInsuranceNoNote');
+
+  // Function to toggle visibility of the notes based on selection
+  function togglePrivateHealthInsuranceNote() {
+    if (privateHealthInsuranceYes.checked) {
+      privateHealthInsuranceYesNote.style.display = 'block';
+      privateHealthInsuranceNoNote.style.display = 'none';
+    } else if (privateHealthInsuranceNo.checked) {
+      privateHealthInsuranceYesNote.style.display = 'none';
+      privateHealthInsuranceNoNote.style.display = 'block';
+    } else {
+      privateHealthInsuranceYesNote.style.display = 'none';
+      privateHealthInsuranceNoNote.style.display = 'none';
+    }
   }
 
-  // Event listeners to update the display when a radio button is selected
-  spousePartnerForYearYes.addEventListener("change", function () {
-    spousePartnerDetails.style.display = "block";
-    separateInput.style.display = "none";
-  });
+  // Initialize the visibility based on the initial selection
+  togglePrivateHealthInsuranceNote();
 
-  spousePartnerForYearNo.addEventListener("change", function () {
-    spousePartnerDetails.style.display = "none";
-    separateInput.style.display = "block";
-  });
+  // Add event listeners to radio buttons to handle changes
+  privateHealthInsuranceYes.addEventListener('change', togglePrivateHealthInsuranceNote);
+  privateHealthInsuranceNo.addEventListener('change', togglePrivateHealthInsuranceNote);
 });
+
+//  private health Insurance radio toggle notes
+document.addEventListener('DOMContentLoaded', function() {
+  // Select the radio buttons and the note paragraph
+  const allPrivateHealthInsuranceYes = document.getElementById('allPrivateHealthInsuranceYes');
+  const allPrivateHealthInsuranceNo = document.getElementById('allPrivateHealthInsuranceNo');
+  const allPrivateHealthInsuranceNoNote = document.getElementById('allPrivateHealthInsuranceNoNote');
+
+  // Function to toggle visibility of the note based on selection
+  function togglePrivateHealthInsuranceFamilyNote() {
+    if (allPrivateHealthInsuranceNo.checked) {
+      allPrivateHealthInsuranceNoNote.style.display = 'block';
+    } else {
+      allPrivateHealthInsuranceNoNote.style.display = 'none';
+    }
+  }
+
+  // Initialize the visibility based on the initial selection
+  togglePrivateHealthInsuranceFamilyNote();
+
+  // Add event listeners to radio buttons to handle changes
+  allPrivateHealthInsuranceYes.addEventListener('change', togglePrivateHealthInsuranceFamilyNote);
+  allPrivateHealthInsuranceNo.addEventListener('change', togglePrivateHealthInsuranceFamilyNote);
+});
+
+
+// tax offset for spouse
+document.addEventListener("DOMContentLoaded", function () {
+  // Elements for spouse for the full year
+  const spouseForYearYes = document.getElementById("spousePartnerForYearYes");
+  const spouseForYearNo = document.getElementById("spousePartnerForYearNo");
+  const spouseInputsYes = document.getElementById("spousePartnerInputsYes");
+  const spouseInputsNo = document.getElementById("spousePartnerInputsNo");
+
+  // Elements for spouse for part of the year
+  const spouseForPartYearYes = document.getElementById("spousePartnerForPartYearYes");
+  const spouseForPartYearNo = document.getElementById("spousePartnerForPartYearNo");
+  const spousePartYearInputsYes = document.getElementById("spousePartnerForPartYearInputsYes");
+
+  // Elements for Centrelink benefit details
+  const centrelinkBenefitYes = document.getElementById("spousePartnerCentrelinkBenefitYes");
+  const centrelinkBenefitNo = document.getElementById("spousePartnerCentrelinkBenefitNo");
+  const centrelinkBenefitNA = document.getElementById("spousePartnerCentrelinkBenefitNotApplicable");
+  const centrelinkBenefitDetails = document.getElementById("spousePartnerCentrelinkBenefitDetails");
+  const centrelinkBenefitDetailsInputsYes = document.getElementById("spousePartnerCentrelinkBenefitDetailsInputsYes");
+
+  // Show or hide spouse inputs based on full year selection
+  function handleSpouseForYear() {
+    if (spouseForYearYes.checked) {
+      spouseInputsYes.style.display = "block";
+      spouseInputsNo.style.display = "none";
+      centrelinkBenefitDetails.style.display = "block";
+    } else if (spouseForYearNo.checked) {
+      spouseInputsYes.style.display = "none";
+      spouseInputsNo.style.display = "block";
+      handleSpouseForPartYear(); // Check the state of spouse for part year
+    } else {
+      spouseInputsYes.style.display = "none";
+      spouseInputsNo.style.display = "none";
+      centrelinkBenefitDetails.style.display = "none";
+    }
+  }
+
+  // Show or hide part-year inputs based on part-year selection
+  function handleSpouseForPartYear() {
+    if (spouseForPartYearYes && spouseForPartYearYes.checked) {
+      spousePartYearInputsYes.style.display = "block";
+      centrelinkBenefitDetails.style.display = "block";
+    } else {
+      spousePartYearInputsYes.style.display = "none";
+      centrelinkBenefitDetails.style.display = "none";
+    }
+  }
+
+  // Show or hide Centrelink benefit details
+  function handleCentrelinkBenefit() {
+    if (centrelinkBenefitYes && centrelinkBenefitYes.checked) {
+      centrelinkBenefitDetailsInputsYes.style.display = "block";
+    } else {
+      centrelinkBenefitDetailsInputsYes.style.display = "none";
+    }
+  }
+
+  // Add event listeners
+  if (spouseForYearYes) spouseForYearYes.addEventListener("change", handleSpouseForYear);
+  if (spouseForYearNo) spouseForYearNo.addEventListener("change", handleSpouseForYear);
+  if (spouseForPartYearYes) spouseForPartYearYes.addEventListener("change", handleSpouseForPartYear);
+  if (spouseForPartYearNo) spouseForPartYearNo.addEventListener("change", handleSpouseForPartYear);
+  if (centrelinkBenefitYes) centrelinkBenefitYes.addEventListener("change", handleCentrelinkBenefit);
+  if (centrelinkBenefitNo) centrelinkBenefitNo.addEventListener("change", handleCentrelinkBenefit);
+  if (centrelinkBenefitNA) centrelinkBenefitNA.addEventListener("change", handleCentrelinkBenefit);
+
+  // Initialize form state based on current selections
+  handleSpouseForYear();
+  handleSpouseForPartYear();
+  handleCentrelinkBenefit();
+});
+
+
+
+// for spouse partner
+// document.addEventListener("DOMContentLoaded", function () {
+//   const spousePartnerForYearYes = document.getElementById(
+//     "spousePartnerForYearYes"
+//   );
+//   const spousePartnerForYearNo = document.getElementById(
+//     "spousePartnerForYearNo"
+//   );
+//   const spousePartnerDetails = document.getElementById("spousePartnerDetails");
+//   const separateInput = document.getElementById("separateInput");
+
+//   // Initial check to set the display state
+//   if (spousePartnerForYearYes.checked) {
+//     spousePartnerDetails.style.display = "block";
+//     separateInput.style.display = "none";
+//   } else if (spousePartnerForYearNo.checked) {
+//     spousePartnerDetails.style.display = "none";
+//     separateInput.style.display = "block";
+//   }
+
+//   // Event listeners to update the display when a radio button is selected
+//   spousePartnerForYearYes.addEventListener("change", function () {
+//     spousePartnerDetails.style.display = "block";
+//     separateInput.style.display = "none";
+//   });
+
+//   spousePartnerForYearNo.addEventListener("change", function () {
+//     spousePartnerDetails.style.display = "none";
+//     separateInput.style.display = "block";
+//   });
+// });
 
 
 
@@ -1784,6 +1902,31 @@ document
 // contact details end
 
 // dependant child's details
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Elements for dependent children
+  const dependentChildrenYes = document.getElementById("dependentChildrenYes");
+  const dependentChildrenNo = document.getElementById("dependentChildrenNo");
+  const dependentChildrenDetails = document.getElementById("dependentChildrenDetails");
+
+  // Show or hide dependent children details
+  function handleDependentChildren() {
+    if (dependentChildrenYes && dependentChildrenYes.checked) {
+      dependentChildrenDetails.style.display = "block";
+    } else {
+      dependentChildrenDetails.style.display = "none";
+    }
+  }
+
+  // Add event listeners
+  if (dependentChildrenYes) dependentChildrenYes.addEventListener("change", handleDependentChildren);
+  if (dependentChildrenNo) dependentChildrenNo.addEventListener("change", handleDependentChildren);
+
+  // Initialize form state based on current selections
+  handleDependentChildren();
+});
+
+
 // Initialize index for additional rows
 let dependantChildDetailsRowIndex = 0;
 

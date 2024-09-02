@@ -374,103 +374,6 @@
                 <input type="email" class="form-control" id="emailAddress" required />
               </div>
 
-              <!-- names of dependent children & DOB -->
-              <div class="col-md-12 mt-3">
-                <label class="form-label"
-                  >Names of Dependent Children & D.O.B</label
-                >
-
-                <div id="childrenInput">
-                  <table class="table table-bordered">
-                    <thead>
-                      <tr>
-                        <th>Children Name</th>
-                        <th>Date of Birth</th>
-                        <th class="text-center">Actions</th>
-                      </tr>
-                    </thead>
-                    <tbody id="childrenTableBody">
-                      <tr>
-                        <td>
-                          <input
-                            type="text"
-                            name="childrenName[0]"
-                            class="form-control"
-                            placeholder="Children Name"
-                          />
-                        </td>
-                        <td>
-                          <input
-                            type="date"
-                            name="childrenDob[0]"
-                            class="form-control"
-                          />
-                        </td>
-                        <td class="text-center">
-                          <!-- <button
-                            type="button"
-                            class="remove-btn btn btn-sm btn-danger"
-                          >
-                            remove
-                          </button> -->
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-
-                <button
-                  id="add-children"
-                  class="add-btn ms-auto mb-3 btn btn-sm"
-                  type="button"
-                >
-                  Add +
-                </button>
-              </div>
-
-              <!-- Question about Spouse for Full Year -->
-              <div class="mb-3 col-md-6">
-                <label class="form-label d-block"
-                  >Did you have a spouse for the full year?</label
-                >
-
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="spouseYear"
-                    id="spouseYes"
-                  />
-                  <label class="form-check-label" for="spouseYes">Yes</label>
-                </div>
-
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="spouseYear"
-                    id="spouseNo"
-                  />
-                  <label class="form-check-label" for="spouseNo">No</label>
-                </div>
-              </div>
-
-              <!-- Name of Spouse/Partner & Date of Separation (Initially Hidden) -->
-              <div
-                class="col-md-6 mt-1"
-                id="spouseDetails"
-                style="display: none"
-              >
-                <label for="spousePartner" class="form-label">
-                  Date of Separation (Includes same-sex couples)*
-                </label>
-                <input
-                  type="date"
-                  class="form-control mb-3"
-                  placeholder="Date of Separation"
-                />
-              </div>
-
               <!-- COMPULSORY -->
               <div class="col-md-12">
                 <p class="text-danger">
@@ -2640,48 +2543,62 @@
 
               <!-- PRIVATE HEALTH INSURANCE -->
               <div class="mt-3">
-                <h6 class="mb-2">PRIVATE HEALTH INSURANCE</h6>
 
-                <div class="mb-2">
-                  <p>Do you have private health Insurance?</p>
-
-                  <div class="form-check form-check-inline">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="privateHealthInsurance"
-                      id="privateHealthInsuranceYes"
-                    />
-                    <label
-                      class="form-check-label"
-                      for="privateHealthInsuranceYes"
-                    >
-                      yes
-                    </label>
+                <!-- PRIVATE HEALTH INSURANCE -->
+                <div class="mb-4">
+                  <!-- question -->
+                  <div class="mb-2">
+                    <label class="form-label d-block mb-1">Do you have private health Insurance?</label>
+  
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="privateHealthInsurance"
+                        id="privateHealthInsuranceYes"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="privateHealthInsuranceYes"
+                      >
+                        yes
+                      </label>
+                    </div>
+  
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="privateHealthInsurance"
+                        id="privateHealthInsuranceNo"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="privateHealthInsuranceNo"
+                      >
+                        No
+                      </label>
+                    </div>
+                    
                   </div>
 
-                  <div class="form-check form-check-inline">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="privateHealthInsurance"
-                      id="privateHealthInsuranceNo"
-                    />
-                    <label
-                      class="form-check-label"
-                      for="privateHealthInsuranceNo"
-                    >
-                      No
-                    </label>
-                  </div>
+                  <p id="privateHealthInsuranceYesNote" style="display: none;">
+                    We will take the information from the ATO pre-fill report. 
+                  </p>
+                  <p id="privateHealthInsuranceNoNote" style="display: none;">
+                    You might be liable for Surcharge if your income is above Medicare Levy Surcharge income threshold.
+                  </p>
+
+
                 </div>
 
+                <!-- health insurence for family -->
                 <div class="mb-2">
-                  <p>
+                  <label class="form-label">
                     Please confirm all your family members (including your
                     spouse and children were covered by private health insurance
                     hospital cover)
-                  </p>
+                  </label>
 
                   <div class="form-check form-check-inline">
                     <input
@@ -2712,18 +2629,20 @@
                       No
                     </label>
                   </div>
+
+                  <p id="allPrivateHealthInsuranceNoNote" class="mt-2" style="display: none;">
+                    You might be liable for Surcharge if your income is above Medicare Levy Surcharge income threshold.
+                  </p>
                 </div>
               </div>
 
               <!-- SPOUSE OR PARTNERS TAXABLE INCOME -->
-              <div class="mt-3">
-                <h6 class="mb-2">SPOUSE OR PARTNER'S TAXABLE INCOME*</h6>
-                <p class="mb-2">(Includes same sex couples)</p>
+              <div class="mt-4">
 
-                <div class="mb-2">
-                  <p>
+                <div class="mb-4">
+                  <label class="form-label d-block">
                     Did you have a spouse/partner for the full financial year?
-                  </p>
+                  </label>
 
                   <div class="form-check form-check-inline">
                     <input
@@ -2757,66 +2676,251 @@
                 </div>
 
                 <!-- Field for Yes -->
-                <div id="spousePartnerDetails" style="display: none">
-                  <div class="mb-2">
-                    <p>
-                      Does your spouse/partner receive any benefits from
-                      Centrelink?
-                    </p>
+                <div id="spousePartnerInputsYes" class="mb-4" style="display: none">
+                  <!-- spouse details -->
+                  <div class="mb-3">
+                    <div class="row g-3">
 
+                      <!-- Spouse Name -->
+                      <div class="col-12 col-md-6">
+                        <label for="inputSpousePartnerName" class="form-label">Name of the Spouse</label>
+                        <input type="text" class="form-control" id="inputSpousePartnerName">
+                      </div>
+                      
+                      <!-- Spouse Birth -->
+                      <div class="col-12 col-md-6">
+                        <label for="inputSpousePartnerBirthDate" class="form-label">Date Of Birth (only if you are a new Client)</label>
+                        <input type="date" class="form-control" id="inputSpousePartnerBirthDate">
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Field for No -->
+                <div id="spousePartnerInputsNo" class="mb-4" style="display: none">
+
+                  <!-- spouse for part of year -->
+                  <div class="mb-3">
+                    <label class="form-label mb-2 d-block">
+                      Did you have a spouse for only part of this financial year?
+                    </label>
+  
                     <div class="form-check form-check-inline">
                       <input
                         class="form-check-input"
                         type="radio"
-                        name="spousePartnerBenefitsFromCentrelink"
-                        id="spousePartnerBenefitsFromCentrelinkYes"
+                        name="spousePartnerForPartYear"
+                        id="spousePartnerForPartYearYes"
                       />
                       <label
                         class="form-check-label"
-                        for="spousePartnerBenefitsFromCentrelinkYes"
+                        for="spousePartnerForPartYearYes"
                       >
                         yes
                       </label>
                     </div>
-
+  
                     <div class="form-check form-check-inline">
                       <input
                         class="form-check-input"
                         type="radio"
-                        name="spousePartnerBenefitsFromCentrelink"
-                        id="spousePartnerBenefitsFromCentrelinkNo"
+                        name="spousePartnerForPartYear"
+                        id="spousePartnerForPartYearNo"
                       />
                       <label
                         class="form-check-label"
-                        for="spousePartnerBenefitsFromCentrelinkNo"
+                        for="spousePartnerForPartYearNo"
+                      >
+                        No
+                      </label>
+                    </div>  
+                  </div>
+
+                  <div id="spousePartnerForPartYearInputsYes">
+                    <div class="mb-3">
+                      <div class="row g-3">
+  
+                        <!-- Spouse From -->
+                        <div class="col-12 col-md-6">
+                          <label for="inputSpousePartnerName" class="form-label">From</label>
+                          <input type="date" class="form-control" id="inputSpousePartnerName">
+                        </div>
+                        
+                        <!-- Spouse To -->
+                        <div class="col-12 col-md-6">
+                          <label for="inputSpousePartnerBirthDate" class="form-label">To</label>
+                          <input type="date" class="form-control" id="inputSpousePartnerBirthDate">
+                        </div>
+  
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+
+                <!-- spouse partnet centrelink benefit -->
+                <div id="spousePartnerCentrelinkBenefitDetails" class="mb-4" style="display: none">
+                  <div class="mb-3">
+                    <label class="form-label d-block">
+                      Did your Spouse receive any Centrelink Benefit?
+                    </label>
+  
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="spousePartnerCentrelinkBenefit"
+                        id="spousePartnerCentrelinkBenefitYes"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="spousePartnerCentrelinkBenefitYes"
+                      >
+                        yes
+                      </label>
+                    </div>
+  
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="spousePartnerCentrelinkBenefit"
+                        id="spousePartnerCentrelinkBenefitNo"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="spousePartnerCentrelinkBenefitNo"
                       >
                         No
                       </label>
                     </div>
+  
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="spousePartnerCentrelinkBenefit"
+                        id="spousePartnerCentrelinkBenefitNotApplicable"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="spousePartnerCentrelinkBenefitNotApplicable"
+                      >
+                        N/A
+                      </label>
+                    </div>
                   </div>
 
-                  <div class="mb-2">
-                    <label for="nameOfCourse" class="form-label">
-                      What was your spouse or partner’s taxable income*:
-                    </label>
-                    <input type="text" class="form-control" />
+                  <!-- Centrelink Benefitdetails -->
+                  <div id="spousePartnerCentrelinkBenefitDetailsInputsYes">
+                    <label for="centrelinkBenefitDetails" class="form-label d-block mb-2">Please Provide Centrelink Benefit Details</label>
+                    <textarea class="form-control" name="centrelinkBenefitDetails" id="centrelinkBenefitDetails"></textarea>
                   </div>
                 </div>
 
-                <!-- Separate Input for No -->
-                <div id="separateInput" style="display: none">
-                  <div class="mb-2">
-                    <label for="separationDate" class="form-label">
-                      Separation Date
-                    </label>
-                    <input
-                      type="date"
-                      class="form-control"
-                      id="separationDate"
-                    />
-                  </div>
-                </div>
+
+                <!-- Your Spouse’s Taxable Income  -->
+                 <div>
+                  <label class="mb-2" for="inputSpousePartnerTaxableIncome">Your Spouse's Taxable Income </label>
+                  <input type="number" name="inputSpousePartnerTaxableIncome" id="inputSpousePartnerTaxableIncome" class="form-control mb-1" />
+                  <p class="text-danger">
+                    If you do not have a spouse or your spouse do not have any taxable income please put “$0” in the text box
+                  </p>
+                 </div>
+
               </div>
+
+
+              <!-- dependent children -->
+               <div class="mt-4">
+                <div class="mb-3">
+                  <label class="form-label d-block">
+                    Do you Have Dependent Children?
+                  </label>
+
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="dependentChildren"
+                      id="dependentChildrenYes"
+                    />
+                    <label
+                      class="form-check-label"
+                      for="dependentChildrenYes"
+                    >
+                      yes
+                    </label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="dependentChildren"
+                      id="dependentChildrenNo"
+                    />
+                    <label
+                      class="form-check-label"
+                      for="dependentChildrenNo"
+                    >
+                      No
+                    </label>
+                  </div>
+
+                </div>
+
+                <!-- dependent children details -->
+                 <div id="dependentChildrenDetails" class="mb-4" style="display: none">
+                  <!-- names of dependent children & DOB -->
+                  <label class="form-label"
+                    >Names of Dependent Children & D.O.B</label
+                  >
+
+                  <div id="childrenInput">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>Children Name</th>
+                          <th>Date of Birth</th>
+                          <th class="text-center"></th>
+                        </tr>
+                      </thead>
+                      <tbody id="childrenTableBody">
+                        <tr>
+                          <td>
+                            <input
+                              type="text"
+                              name="childrenName[0]"
+                              class="form-control"
+                              placeholder="Children Name"
+                            />
+                          </td>
+                          <td>
+                            <input
+                              type="date"
+                              name="childrenDob[0]"
+                              class="form-control"
+                            />
+                          </td>
+                          <td class="text-center">
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <button
+                    id="add-children"
+                    class="add-btn ms-auto mb-3 btn btn-sm"
+                    type="button"
+                  >
+                    Add +
+                  </button>
+                 </div>
+               </div>
+
             </div>
           </div>
 
