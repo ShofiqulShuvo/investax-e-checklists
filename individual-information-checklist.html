@@ -230,8 +230,8 @@
             <div class="row g-3">
               <!-- given name -->
               <div class="col-md-6">
-                <label for="givenName" class="form-label">Given Name</label>
-                <input type="text" class="form-control" id="givenName" />
+                <label for="givenName" class="form-label">Given Name*</label>
+                <input type="text" class="form-control" id="givenName" required />
               </div>
 
               <!-- middle name -->
@@ -242,8 +242,8 @@
 
               <!-- surname -->
               <div class="col-md-6">
-                <label for="surName" class="form-label">Surname</label>
-                <input type="text" class="form-control" id="surName" />
+                <label for="surName" class="form-label">Surname*</label>
+                <input type="text" class="form-control" id="surName" required />
               </div>
 
               <!-- occupation -->
@@ -506,18 +506,36 @@
               </div>
 
               <div id="othherIncomeInputs" class="mt-3" style="display: none;">
-                <div class="row g-1">
-                  <!-- employer name -->
-                  <div class="col-12 ">
-                    <label for="otherIncomeDetails" class="form-label">
-                      Details of other income
-                    </label>
-                    <textarea class="form-control" name="otherIncomeDetails" id=""></textarea>
-                  </div>
-                  <div class="col-12">
-                    <label for="otherIncomeAmount" class="form-label d-block">Amount</label>
-                    <input id="otherIncomeAmount" type="number" name="otherIncomeAmount" class="form-control">
-                  </div>
+                <div class="table-responsive">
+                  <table class="table table-bordered table-sm align-middle">
+                    <thead>
+                      <tr>
+                        <th>Details</th>
+                        <th>Amount</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody id="otherIncomeTableBody">
+                      <tr>
+                        <td>
+                          <textarea rows="1" class="form-control mb-0 name="otherIncomeDetails[0]" id=""></textarea>
+                        </td>
+                        <td>
+                          <input id="otherIncomeAmount" type="number" name="otherIncomeAmount[0]" class="form-control">
+                        </td>
+                        <td>
+                          <button class="my-auto remove-other-income btn btn-sm btn-danger">remove</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <button
+                    id="add-other-income-row"
+                    class="add-btn ms-auto mb-3 btn btn-sm"
+                    type="button"
+                  >
+                    Add +
+                  </button>
                 </div>
               </div>
 
@@ -526,7 +544,7 @@
 
           <!-- INTEREST RECEIVED & DIVIDENDS (step 5) -->
           <div class="step">
-            <h3 class="mb-4">DIVIDENDS</h3>
+            <h3 class="mb-4">Interest & Dividends</h3>
             <!-- INTEREST RECEIVED -->
              <div class="mb-4">
               <!--bank interest question -->
@@ -588,72 +606,83 @@
 
                 <div id="interestRecievedOwnFigures" style="display: none;">
                   <!-- interest recieve table -->
-                  <table class="table table-bordered table-sm">
-                    <thead>
-                      <tr>
-                        <th>NAME OF BANK</th>
-                        <th>ACCOUNT NUMBER</th>
-                        <th>TOTAL INTEREST RECEIVED $</th>
-                        <th>TFN WITHHOLDING $</th>
-                        <th>JOINT ACCOUNT?</th>
-                        <th>Actions</th>
-                      </tr>
-                    </thead>
-                    <tbody id="interestReceivedTableBody">
-                      <!-- bank 1 -->
-                      <tr>
-                        <td>
-                          <input
-                            type="text"
-                            class="form-control"
-                            name="bankName[0]"
-                          />
-                        </td>
-                        <td>
-                          <input
-                            type="text"
-                            class="form-control"
-                            name="accountNumber[0]"
-                          />
-                        </td>
-                        <td>
-                          <input
-                            type="text"
-                            class="form-control"
-                            name="totalInterest[0]"
-                          />
-                        </td>
-                        <td>
-                          <input
-                            type="text"
-                            class="form-control"
-                            name="tfnWithholding[0]"
-                          />
-                        </td>
-                        <td>
-                          <div
-                            class="d-flex justify-content-center align-items-center gap-1"
-                          >
-                            <input
-                              type="checkbox"
-                              class="form-check-input"
-                              name="jointAccount[0]"
-                              id="jointAccount[0]"
-                            />
-                            <label for="jointAccount[0]">Yes</label>
-                          </div>
-                        </td>
-                        <td></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <button
-                    id="add-interest-row"
-                    class="add-btn ms-auto mb-3 btn btn-sm"
-                    type="button"
-                  >
-                    Add +
-                  </button>
+                   <div class="table-responsive">
+                     <table class="table table-bordered table-sm">
+                       <thead>
+                         <tr>
+                           <th>Name of Bank</th>
+                           <th>Account Number</th>
+                           <th>Total Interest Received $</th>
+                           <th>TFN Withholding $</th>
+                           <th>Joint Account?</th>
+                           <th>Attachment</th>
+                           <th>Actions</th>
+                         </tr>
+                       </thead>
+                       <tbody id="interestReceivedTableBody">
+                         <!-- bank 1 -->
+                         <tr>
+                           <td>
+                             <input
+                               type="text"
+                               class="form-control"
+                               name="interestReceivedBankName[0]"
+                             />
+                           </td>
+                           <td>
+                             <input
+                               type="text"
+                               class="form-control"
+                               name="interestReceivedAccountNumber[0]"
+                             />
+                           </td>
+                           <td>
+                             <input
+                               type="text"
+                               class="form-control"
+                               name="interestReceivedTotalInterest[0]"
+                             />
+                           </td>
+                           <td>
+                             <input
+                               type="text"
+                               class="form-control"
+                               name="interestReceivedTfnWithholding[0]"
+                             />
+                           </td>
+                           <td>
+                             <div
+                               class="d-flex justify-content-center align-items-center gap-1"
+                             >
+                               <input
+                                 type="checkbox"
+                                 class="form-check-input"
+                                 name="interestReceivedJointAccount[0]"
+                                 id="interestReceivedJointAccount[0]"
+                               />
+                               <label for="interestReceivedJointAccount[0]">Yes</label>
+                             </div>
+                           </td>
+                           <td>
+                               <input
+                                 type="file"
+                                 class="form-control"
+                                 name="interestReceivedAttachment[0]"
+                                 id="interestReceivedAttachment[0]"
+                               />
+                           </td>
+                           <td></td>
+                         </tr>
+                       </tbody>
+                     </table>
+                     <button
+                       id="add-interest-row"
+                       class="add-btn ms-auto mb-3 btn btn-sm"
+                       type="button"
+                     >
+                       Add +
+                     </button>
+                   </div>
                 </div>
                 
               </div>
@@ -727,58 +756,68 @@
                     >
                     including Dividend Reinvestment Plans (DRP)
                   </p>
-    
-                  <table class="table table-bordered table-sm">
-                    <thead>
-                      <tr>
-                        <th>NAME OF SHARES</th>
-                        <th>FRANKED DIVIDENDS $</th>
-                        <th>UNFRANKED DIVIDENDS $</th>
-                        <th>FRANKING CREDITS $</th>
-                        <th>Actions</th>
-                      </tr>
-                    </thead>
-                    <tbody id="dividendsTableBody">
-                      <tr>
-                        <td>
-                          <input
-                            type="text"
-                            class="form-control"
-                            name="sharesName[0]"
-                          />
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-sm">
+                      <thead>
+                        <tr>
+                          <th>Name of Shares</th>
+                          <th>Franked Dividends $</th>
+                          <th>Unranked Dividends $</th>
+                          <th>Franking Credits $</th>
+                          <th>Attachment</th>
+                          <th>Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody id="dividendsTableBody">
+                        <tr>
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control"
+                              name="dividendsSharesName[0]"
+                            />
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control"
+                              name="frankedDividends[0]"
+                            />
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control"
+                              name="unfrankedDividends[0]"
+                            />
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control"
+                              name="frankingCredits[0]"
+                            />
+                          </td>
+                          <td>
+                            <input
+                              type="file"
+                              class="form-control"
+                              name="dividendsAttachment[0]"
+                              id="dividendsAttachment[0]"
+                            />
                         </td>
-                        <td>
-                          <input
-                            type="text"
-                            class="form-control"
-                            name="frankedDividends[0]"
-                          />
-                        </td>
-                        <td>
-                          <input
-                            type="text"
-                            class="form-control"
-                            name="unfrankedDividends[0]"
-                          />
-                        </td>
-                        <td>
-                          <input
-                            type="text"
-                            class="form-control"
-                            name="frankingCredits[0]"
-                          />
-                        </td>
-                        <td></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <button
-                    id="add-dividend-row"
-                    class="mb-3 ms-auto btn btn-sm add-btn"
-                    type="button"
-                  >
-                    Add +
-                  </button>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <button
+                      id="add-dividend-row"
+                      class="mb-3 ms-auto btn btn-sm add-btn"
+                      type="button"
+                    >
+                      Add +
+                    </button>
+                  </div>
                 </div>
                 
               </div>
@@ -891,7 +930,7 @@
 
             <!-- foreign income -->
             <div class="mb-4">
-              <h3 class="mb-4 d-block">FOREIGN INCOME</h3>
+              <h3 class="mb-4 d-block">Foreign Income</h3>
 
               <label class="form-check-label d-block mb-2">
                 Did you receive any Foreign income (i.e., Overseas Bank Interest, Overseas Dividends, Overseas Rental Income)?
@@ -921,15 +960,31 @@
 
               <!-- Hidden by default -->
               <div id="foreignIncomeDetailsContainer" style="display: none">
-                <label for="foreignIncomeInformation" class="form-label">
-                  Please include all the foreign Interest and Dividend related information below.
-                </label>
-
-                <textarea
-                  class="form-control mb-3"
-                  id="foreignIncomeInformation"
-                  rows="4"
-                ></textarea>
+                <!-- details -->
+                <div class="mb-3">
+                  <label for="foreignIncomeInformation" class="form-label">
+                    Please include all the foreign Interest and Dividend related information below.
+                  </label>
+  
+                  <textarea
+                    class="form-control"
+                    id="foreignIncomeInformation"
+                    rows="4"
+                  ></textarea>
+                </div>
+                <!-- attachment -->
+                <div class="mb-3">
+                  <label for="foreignIncomeAttachment" class="form-label">
+                    Attachment
+                  </label>
+  
+                  <input
+                    class="form-control"
+                    id="foreignIncomeAttachment"
+                    rows="4"
+                    type="file"
+                  />
+                </div>
 
                 <p class="mt-1 mb-2 fw-medium text-info">
                   Please complete a Rental Schedule at the end of this checklist
@@ -981,7 +1036,7 @@
           <div class="step">
             <!-- DEDUCTIONS -->
             <div class="mb-4">
-              <h3 class="form-check-label d-block mb-1">DEDUCTIONS - WORK RELATED</h3>
+              <h3 class="form-check-label d-block mb-1">Deductions - Work Related</h3>
               <p class="mb-2 text-danger">
                 Please ensure you are able to substantiate all claims, even if
                 less than $300.
@@ -1509,6 +1564,51 @@
               <!-- Home Office Expenses Section -->
               
             </div>
+          </div>
+
+          <!-- Modal for motor vehicle -->
+          <div
+          class="modal fade"
+          id="motorVehicleModal"
+          tabindex="-1"
+          aria-labelledby="motorVehicleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content px-2">
+              <div class="modal-header border-0 pt-3 pb-1">
+                <h4
+                  class="modal-title fw-semibold"
+                  id="urgentModalLabel"
+                >
+                  Notice
+                </h4>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body fs-6 lh-sm text-danger py-2">
+                <!-- Modal content goes here -->
+                Please ensure you read <span
+                ><a href="https://investax.com.au/insight/work-related-car-expenses-maximize-your-tax-benefits/
+                " target="_blank"
+                  >Work-Related Car Expenses</a
+                ></span> article before claiming motor vehicle expenses. The information provided is intended for general guidance only and should not be considered as specific tax advice. Consult with a tax professional to ensure compliance with your personal tax situation.
+              </div>
+              <div class="modal-footer border-0 pt-1 pb-3">
+                <button
+                  type="button"
+                  class="btn btn-sm btn-danger"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
           </div>
 
           <!-- Modal for Home Office Guide -->
