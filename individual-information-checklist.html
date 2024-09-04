@@ -2267,50 +2267,50 @@
 
           <!-- Modal for Actual Cost Method -->
           <div
-          class="modal fade"
-          id="actualCostModal"
-          tabindex="-1"
-          aria-labelledby="actualCostModalLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content px-2">
-              <div class="modal-header border-0 pt-3 pb-1">
-                <h4
-                  class="modal-title fw-semibold"
-                  id="urgentModalLabel"
-                >
-                  Notice
-                </h4>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body fs-6 lh-sm text-danger py-2">
-                <!-- Modal content goes here -->
-                Please read our Home office
-                <span><a href="https://investax.com.au/insight/complete-guide-to-claiming-work-from-home-expenses-2024/" target="_blank">Article</a></span>
-                to understand more about the actual cost method
-              </div>
-              <div class="modal-footer border-0 pt-1 pb-3">
-                <button
-                  type="button"
-                  class="btn btn-sm btn-danger"
-                  data-bs-dismiss="modal"
-                >
-                  Close
-                </button>
+            class="modal fade"
+            id="actualCostModal"
+            tabindex="-1"
+            aria-labelledby="actualCostModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content px-2">
+                <div class="modal-header border-0 pt-3 pb-1">
+                  <h4
+                    class="modal-title fw-semibold"
+                    id="urgentModalLabel"
+                  >
+                    Notice
+                  </h4>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body fs-6 lh-sm text-danger py-2">
+                  <!-- Modal content goes here -->
+                  Please read our Home office
+                  <span><a href="https://investax.com.au/insight/complete-guide-to-claiming-work-from-home-expenses-2024/" target="_blank">Article</a></span>
+                  to understand more about the actual cost method
+                </div>
+                <div class="modal-footer border-0 pt-1 pb-3">
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-danger"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
           <!-- Home Office (step 11) -->
           <div class="step">
-            <h5 class="mb-4">HOME OFFICE</h5>
+            <h4 class="mb-4">Home Office</h4>
             <div>
               <div class="mt-1 mb-0">
                 <label class="form-label mb-2"
@@ -2937,7 +2937,7 @@
 
           <!-- OTHER expenses & GIFTS OR DONATIONS (step 12) -->
           <div class="step">
-            <h5 class="mb-5">Other Expenses</h5>
+            <h4 class="mb-4">Other Expenses</h4>
             <!-- OTHER expenses -->
             <div class="mb-4">
               <label class="d-block mb-2">Income Protection Insurance</label>
@@ -3257,7 +3257,7 @@
           <!-- TAX OFFSETS (step 13) -->
           <div class="step">
             <div class="mb-4">
-              <h4 class="d-block mb-3">TAX OFFSETS</h4>
+              <h4 class="d-block mb-3">Tax Offsets</h4>
 
               <!-- PRIVATE HEALTH INSURANCE -->
               <div class="mt-3">
@@ -3312,7 +3312,7 @@
 
                 <!-- health insurence for family -->
                 <div class="mb-2">
-                  <label class="form-label">
+                  <label class="form-label d-block mb-1">
                     Please confirm all your family members (including your
                     spouse and children were covered by private health insurance
                     hospital cover)
@@ -3647,7 +3647,7 @@
             <div class="mb-4">
               <!-- SUPERANNUATION -->
               <div class="mb-2">
-                <h4 class="d-block mb-3">SUPERANNUATION</h4>
+                <h4 class="d-block mb-3">Superannuation</h4>
 
                 <!-- Section a -->
                 <div class="mb-5">
@@ -3741,7 +3741,7 @@
                       </tbody>
                     </table>
                     <p class="mt-1 mb-2 fw-medium text-info">
-                      Feel free to attach Notice of Intent (NOI)
+                      Feel free to attach Notice of Intent (NOI) to Claim and Acceptance Letter
                     </p>
                     <button
                       type="button"
@@ -3847,7 +3847,7 @@
                       </tbody>
                     </table>
                     <p class="mt-1 mb-2 fw-medium text-info">
-                      Feel free to attach Notice of Intent (NOI)
+                      Feel free to attach Notice of Intent (NOI) to Claim and Acceptance Letter
                     </p>
                     <button
                       type="button"
@@ -4985,7 +4985,7 @@
                 <h4 class="d-block mb-3">SOLE TRADER</h4>
 
                 <!-- Question -->
-                 <div>
+                 <div class="mb-3">
                    <label class="d-block mb-2">
                      Do you operate as a Sole Trader, work as an independent
                      contractor, or earn income from driving a Taxi or Uber?
@@ -5017,1598 +5017,1693 @@
                  </div>
 
                 <!-- Sole Trader Details -->
-                <div id="soleTraderSection" style="display: none">
+                <div id="soleTraderSection" class="mb-3" style="display: none">
 
-                  <!-- income -->
+                  <!-- gst -->
+                  <div class="mb-4">
+                    <!-- registerd for gst question -->
                    <div>
-                    <label>Income</label>
-                    <!-- Income Table -->
-                    <div id="soleTraderIncome">
-                      <table
-                        class="table table-bordered mt-3"
-                        id="soleTraderIncomeTable"
-                      >
-                        <thead>
-                          <tr>
-                            <th>Type of Income</th>
-                            <th>Income Amount</th>
-                            <th>Attach File</th>
-                            <th>Actions</th>
-                          </tr>
-                        </thead>
-                        <tbody id="soleTraderIncomeTableBody">
-                          <!-- Initial Row -->
-                          <tr>
-                            <td>
-                              <input
-                                type="text"
-                                class="form-control"
-                                name="soleTraderIncomeType[0]"
-                              />
-                            </td>
-                            <td>
-                              <input
-                                type="number"
-                                class="form-control"
-                                name="soleTraderIncomeAmount[0]"
-                                placeholder="Enter amount"
-                              />
-                            </td>
-                            <td>
-                              <input
-                                type="file"
-                                class="form-control"
-                                name="soleTraderIncomeAttachment[0]"
-                              />
-                            </td>
-                            <td>
-                              <button
-                                type="button"
-                                class="remove-soleTraderIncome btn btn-sm btn-danger"
-                              >
-                                Remove
-                              </button>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                      <button
-                        type="button"
-                        class="btn btn-sm ms-auto add-btn"
-                        id="addSoleTraderIncome"
-                      >
-                        Add Income
-                      </button>
-                    </div>
+                     <label class="d-block mb-2">
+                       Are You Registered for GST?
+                     </label>
+     
+                     <!-- Yes/No radio buttons -->
+                     <div class="form-check form-check-inline">
+                       <input
+                         type="radio"
+                         class="form-check-input"
+                         name="soleTraderRegisterForGst"
+                         id="soleTraderRegisterForGstYes"
+                         value="yes"
+                       />
+                       <label class="form-check-label" for="soleTraderRegisterForGstYes"
+                         >Yes</label
+                       >
+                     </div>
+                     <div class="form-check form-check-inline">
+                       <input
+                         type="radio"
+                         class="form-check-input"
+                         name="soleTraderRegisterForGst"
+                         id="soleTraderRegisterForGstNo"
+                         value="no"
+                       />
+                       <label class="form-check-label" for="soleTraderRegisterForGstNo">No</label>
+                     </div>
                    </div>
+ 
+                   <!-- registerd for gst content -->
+                   <div id="soleTraderRegisterForGstContent" class="mt-3" style="display: none;">
+                     <label class="d-block mb-2">GST Number</label>
+                     <input
+                       type="text"
+                       class="form-control"
+                       name="soleTraderGstNumber"
+                     />
+                   </div>
+                  </div>
 
-                  <!-- Expenses -->
+
+                  <!-- Provide Software details or Excel Summary / Or Use My Own Number -->
                   <div class="mb-3">
-                    <label class="d-block mb-2">Expenses</label>
-
-                    <!-- Accounting Fee -->
-                    <div class="form-check mb-1">
-                      <input
-                        type="checkbox"
-                        class="form-check-input toggle-fields"
-                        id="accountingFeeCheck"
-                        name="accountingFeeCheck"
-                      />
-                      <label class="form-check-label" for="accountingFeeCheck"
-                        >Accounting Fee</label
-                      >
-                      <div class="expense-fields mt-2" style="display: none">
-                        <div class="table-responsive">
-                          <table
-                            class="table table-bordered mt-3"
-                            id="accountingFeeTable"
-                          >
-                            <thead>
-                              <tr>
-                                <th>Details</th>
-                                <th>Amount</th>
-                                <th>Attach File</th>
-                                <th>Actions</th>
-                              </tr>
-                            </thead>
-                            <tbody id="accountingFeeTableBody">
-                              <!-- Initial Row -->
-                              <tr>
-                                <td>
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    name="accountingFeeDetails[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="number"
-                                    class="form-control"
-                                    name="accountingFeeAmount[0]"
-                                    placeholder="Enter amount"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="file"
-                                    class="form-control"
-                                    name="accountingFeeAttachment[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <button
-                                    type="button"
-                                    class="remove-accountingFee btn btn-sm btn-danger"
-                                  >
-                                    Remove
-                                  </button>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                        <button
-                          type="button"
-                          class="btn btn-sm ms-auto add-btn"
-                          id="addAccountingFee"
-                        >
-                          Add More
-                        </button>
-                      </div>
-                    </div>
-
-                    <!-- Bookkeeping Fee -->
-                    <div class="form-check mb-1">
-                      <input
-                        type="checkbox"
-                        class="form-check-input toggle-fields"
-                        id="bookkeepingFeeCheck"
-                        name="bookkeepingFeeCheck"
-                      />
-                      <label class="form-check-label" for="bookkeepingFeeCheck"
-                        >Bookkeeping Fee</label
-                      >
-                      <div class="expense-fields mt-2" style="display: none">
-                        <div class="table-responsive">
-                          <table
-                            class="table table-bordered mt-3"
-                            id="bookkeepingFeeTable"
-                          >
-                            <thead>
-                              <tr>
-                                <th>Details</th>
-                                <th>Amount</th>
-                                <th>Attach File</th>
-                                <th>Actions</th>
-                              </tr>
-                            </thead>
-                            <tbody id="bookkeepingFeeTableBody">
-                              <!-- Initial Row -->
-                              <tr>
-                                <td>
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    name="bookkeepingFeeDetails[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="number"
-                                    class="form-control"
-                                    name="bookkeepingFeeAmount[0]"
-                                    placeholder="Enter amount"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="file"
-                                    class="form-control"
-                                    name="bookkeepingFeeAttachment[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <button
-                                    type="button"
-                                    class="remove-bookkeepingFee btn btn-sm btn-danger"
-                                  >
-                                    Remove
-                                  </button>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                        <button
-                          type="button"
-                          class="btn btn-sm ms-auto add-btn"
-                          id="addBookkeepingFee"
-                        >
-                          Add More
-                        </button>
-                      </div>
-                    </div>
-
-                    <!-- Business Mobile -->
-                    <div class="form-check mb-1">
-                      <input
-                        type="checkbox"
-                        class="form-check-input toggle-fields"
-                        id="buisnessMobileCheck"
-                        name="buisnessMobileCheck"
-                      />
-                      <label class="form-check-label" for="buisnessMobileCheck"
-                        >Business Mobile</label
-                      >
-                      <div class="expense-fields mt-2" style="display: none">
+                    <!-- Provide Software details or Excel Summary / Or Use My Own Number question -->
+                    <div>
+                      <label class="d-block mb-2">
+                        Provide Software details or Excel Summary / Or Use My Own Number
+                      </label>
+    
+                      <!-- radio buttons -->
+                      <div class="form-check form-check-inline">
                         <input
-                          type="number"
-                          class="form-control mb-3"
-                          name="businessMobile"
-                          id="businessMobile"
-                          placeholder="Enter amount"
+                          type="radio"
+                          class="form-check-input"
+                          name="soleTraderRegisterForGst"
+                          id="soleTraderRegisterForGstSoftwareDetailsExcelSummary"
+                          value="soleTraderRegisterForGstSoftwareDetailsExcelSummary"
                         />
+                        <label class="form-check-label" for="soleTraderRegisterForGstSoftwareDetailsExcelSummary"
+                          >Provide Software details or Excel Summary</label
+                        >
                       </div>
-                    </div>
-
-                    <!-- Office Rent -->
-                    <div class="form-check mb-1">
-                      <input
-                        type="checkbox"
-                        class="form-check-input toggle-fields"
-                        id="officeRentCheck"
-                        name="officeRentCheck"
-                      />
-                      <label class="form-check-label" for="officeRentCheck"
-                        >Office Rent</label
-                      >
-                      <div class="expense-fields mt-2" style="display: none">
+                      <div class="form-check form-check-inline">
                         <input
-                          type="number"
-                          class="form-control mb-3"
-                          name="officeRent"
-                          placeholder="Enter amount"
+                          type="radio"
+                          class="form-check-input"
+                          name="soleTraderRegisterForGst"
+                          id="soleTraderRegisterForGstMyOwnNumber"
+                          value="soleTraderRegisterForGstMyOwnNumber"
                         />
-                      </div>
-                    </div>
-
-                    <!-- Plant and Equipment -->
-                    <div class="form-check mb-1">
-                      <input
-                        type="checkbox"
-                        class="form-check-input toggle-fields"
-                        id="plantEquipmentCheck"
-                        name="plantEquipmentCheck"
-                      />
-                      <label class="form-check-label" for="plantEquipmentCheck"
-                        >Plant and Equipment</label
-                      >
-                      <div class="expense-fields mt-2" style="display: none">
-                        <div class="table-responsive">
-                          <table
-                            class="table table-bordered mt-3"
-                            id="plantEquipmentTable"
-                          >
-                            <thead>
-                              <tr>
-                                <th>Details</th>
-                                <th>Amount</th>
-                                <th>Attach File</th>
-                                <th>Actions</th>
-                              </tr>
-                            </thead>
-                            <tbody id="plantEquipmentTableBody">
-                              <!-- Initial Row -->
-                              <tr>
-                                <td>
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    name="plantEquipmentDetails[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="number"
-                                    class="form-control"
-                                    name="plantEquipmentAmount[0]"
-                                    placeholder="Enter amount"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="file"
-                                    class="form-control"
-                                    name="plantEquipmentAttachment[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <button
-                                    type="button"
-                                    class="remove-plantEquipment btn btn-sm btn-danger"
-                                  >
-                                    Remove
-                                  </button>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                        <button
-                          type="button"
-                          class="btn btn-sm ms-auto add-btn"
-                          id="addPlantEquipment"
-                        >
-                          Add More
-                        </button>
-                      </div>
-                    </div>
-
-                    <!-- Equipment Lease -->
-                    <div class="form-check mb-1">
-                      <input
-                        type="checkbox"
-                        class="form-check-input toggle-fields"
-                        id="equipmentLeaseCheck"
-                        name="equipmentLeaseCheck"
-                      />
-                      <label class="form-check-label" for="equipmentLeaseCheck"
-                        >Equipment Lease</label
-                      >
-                      <div class="expense-fields mt-2" style="display: none">
-                        <div class="table-responsive">
-                          <table
-                            class="table table-bordered mt-3"
-                            id="equipmentLeaseTable"
-                          >
-                            <thead>
-                              <tr>
-                                <th>Details</th>
-                                <th>Amount</th>
-                                <th>Attach File</th>
-                                <th>Actions</th>
-                              </tr>
-                            </thead>
-                            <tbody id="equipmentLeaseTableBody">
-                              <!-- Initial Row -->
-                              <tr>
-                                <td>
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    name="equipmentLeaseDetails[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="number"
-                                    class="form-control"
-                                    name="equipmentLeaseAmount[0]"
-                                    placeholder="Enter amount"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="file"
-                                    class="form-control"
-                                    name="equipmentLeaseAttachment[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <button
-                                    type="button"
-                                    class="remove-equipmentLease btn btn-sm btn-danger"
-                                  >
-                                    Remove
-                                  </button>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                        <button
-                          type="button"
-                          class="btn btn-sm ms-auto add-btn"
-                          id="addequipmentLease"
-                        >
-                          Add More
-                        </button>
-                      </div>
-                    </div>
-
-                    <!-- Service Fee -->
-                    <div class="form-check mb-1">
-                      <input
-                        type="checkbox"
-                        class="form-check-input toggle-fields"
-                        id="serviceFeeCheck"
-                        name="serviceFeeCheck"
-                      />
-                      <label class="form-check-label" for="serviceFeeCheck"
-                        >Service Fee</label
-                      >
-
-                      <div class="expense-fields mt-2" style="display: none">
-                        <div class="row g-3">
-                          <!-- details -->
-                          <div class="col-md-6">
-                            <label class="form-label">Details of the Service</label>
-                            <textarea
-                              type="text"
-                              class="form-control"
-                              name="serviceFeeDetails"
-                            ></textarea>
-                          </div>
-                          <!-- Amount -->
-                          <div class="col-md-6">
-                            <label for="serviceFeeAmount" class="form-label">Amount</label>
-                            <input
-                              type="text"
-                              class="form-control"
-                              name="serviceFeeAmount"
-                              id="serviceFeeAmount"
-                            />
-                          </div>
-                        </div>
-
-                      </div>
-                    </div>
-
-                    <!-- Medical Centre Fee -->
-                    <div class="form-check mb-1">
-                      <input
-                        type="checkbox"
-                        class="form-check-input toggle-fields"
-                        id="medicalCentreFeeCheck"
-                        name="medicalCentreFeeCheck"
-                      />
-                      <label class="form-check-label" for="medicalCentreFeeCheck"
-                        >Medical Centre Fee</label
-                      >
-                      <div class="expense-fields mt-2" style="display: none">
-                        <div class="row g-3">
-                          <div class="col-12 col-md-6">
-                            <label for="medicalCentreFee" class="d-block mb-2">Fee</label>
-                            <input
-                              type="number"
-                              class="form-control"
-                              name="medicalCentreFee"
-                              id="medicalCentreFee"
-                              placeholder="Enter amount"
-                            />
-                          </div>
-                          <div class="col-12 col-md-6">
-                            <label for="medicalCentreFeeAttachment" class="d-block mb-2">Attachment</label>
-                            <input
-                              type="file"
-                              class="form-control mt-2"
-                              name="medicalCentreFeeAttachment"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Professional Membership Fee -->
-                    <div class="form-check mb-1">
-                      <input
-                        type="checkbox"
-                        class="form-check-input toggle-fields"
-                        id="professionalMembershipFeeCheck"
-                        name="professionalMembershipFeeCheck"
-                      />
-                      <label
-                        class="form-check-label"
-                        for="professionalMembershipFeeCheck"
-                        >Professional Membership Fee</label
-                      >
-                      <div class="expense-fields mt-2" style="display: none">
-                        <div class="table-responsive">
-                          <table
-                            class="table table-bordered mt-3"
-                            id="professionalMembershipFeeTable"
-                          >
-                            <thead>
-                              <tr>
-                                <th>Details</th>
-                                <th>Amount</th>
-                                <th>Attach File</th>
-                                <th>Actions</th>
-                              </tr>
-                            </thead>
-                            <tbody id="professionalMembershipFeeTableBody">
-                              <!-- Initial Row -->
-                              <tr>
-                                <td>
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    name="professionalMembershipFeeDetails[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="number"
-                                    class="form-control"
-                                    name="professionalMembershipFeeAmount[0]"
-                                    placeholder="Enter amount"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="file"
-                                    class="form-control"
-                                    name="professionalMembershipFeeAttachment[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <button
-                                    type="button"
-                                    class="remove-professionalMembershipFee btn btn-sm btn-danger"
-                                  >
-                                    Remove
-                                  </button>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                        <button
-                          type="button"
-                          class="btn btn-sm ms-auto add-btn"
-                          id="addProfessionalMembershipFee"
-                        >
-                          Add More
-                        </button>
-                      </div>
-                    </div>
-
-                    <!-- Public Liability Insurance -->
-                    <div class="form-check mb-1">
-                      <input
-                        type="checkbox"
-                        class="form-check-input toggle-fields"
-                        id="publicLiabilityInsuranceCheck"
-                        name="publicLiabilityInsuranceCheck"
-                      />
-                      <label
-                        class="form-check-label"
-                        for="publicLiabilityInsuranceCheck"
-                        >Public Liability Insurance</label
-                      >
-                      <div class="expense-fields mt-2" style="display: none">
-                        <div class="table-responsive">
-                          <table
-                            class="table table-bordered mt-3"
-                            id="publicLiabilityInsuranceTable"
-                          >
-                            <thead>
-                              <tr>
-                                <th>Details</th>
-                                <th>Amount</th>
-                                <th>Attach File</th>
-                                <th>Actions</th>
-                              </tr>
-                            </thead>
-                            <tbody id="publicLiabilityInsuranceTableBody">
-                              <!-- Initial Row -->
-                              <tr>
-                                <td>
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    name="publicLiabilityInsuranceDetails[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="number"
-                                    class="form-control"
-                                    name="publicLiabilityInsuranceAmount[0]"
-                                    placeholder="Enter amount"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="file"
-                                    class="form-control"
-                                    name="publicLiabilityInsuranceAttachment[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <button
-                                    type="button"
-                                    class="remove-publicLiabilityInsurance btn btn-sm btn-danger"
-                                  >
-                                    Remove
-                                  </button>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                        <button
-                          type="button"
-                          class="btn btn-sm ms-auto add-btn"
-                          id="addPublicLiabilityInsurance"
-                        >
-                          Add More
-                        </button>
-                      </div>
-                    </div>
-
-                    <!-- Professional Indemnity Insurance -->
-                    <div class="form-check mb-1">
-                      <input
-                        type="checkbox"
-                        class="form-check-input toggle-fields"
-                        id="professionalIndemnityInsuranceCheck"
-                        name="professionalIndemnityInsuranceCheck"
-                      />
-                      <label
-                        class="form-check-label"
-                        for="professionalIndemnityInsuranceCheck"
-                        >Professional Indemnity Insurance</label
-                      >
-                      <div class="expense-fields mt-2" style="display: none">
-                        <div class="table-responsive">
-                          <table
-                            class="table table-bordered mt-3"
-                            id="professionalIndemnityInsuranceTable"
-                          >
-                            <thead>
-                              <tr>
-                                <th>Details</th>
-                                <th>Amount</th>
-                                <th>Attach File</th>
-                                <th>Actions</th>
-                              </tr>
-                            </thead>
-                            <tbody id="professionalIndemnityInsuranceTableBody">
-                              <!-- Initial Row -->
-                              <tr>
-                                <td>
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    name="professionalIndemnityInsuranceDetails[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="number"
-                                    class="form-control"
-                                    name="professionalIndemnityInsuranceAmount[0]"
-                                    placeholder="Enter amount"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="file"
-                                    class="form-control"
-                                    name="professionalIndemnityInsuranceAttachment[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <button
-                                    type="button"
-                                    class="remove-professionalIndemnityInsurance btn btn-sm btn-danger"
-                                  >
-                                    Remove
-                                  </button>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                        <button
-                          type="button"
-                          class="btn btn-sm ms-auto add-btn"
-                          id="addProfessionalIndemnityInsurance"
-                        >
-                          Add More
-                        </button>
-                      </div>
-                    </div>
-
-                    <!-- Income Protection Insurance -->
-                    <div class="form-check mb-1">
-                      <input
-                        type="checkbox"
-                        class="form-check-input toggle-fields"
-                        id="incomeProtectionInsuranceCheck"
-                        name="incomeProtectionInsuranceCheck"
-                      />
-                      <label
-                        class="form-check-label"
-                        for="incomeProtectionInsuranceCheck"
-                        >Income Protection Insurance</label
-                      >
-                      <div class="expense-fields mt-2" style="display: none">
-                        <div class="table-responsive">
-                          <table
-                            class="table table-bordered mt-3"
-                            id="incomeProtectionInsuranceTable"
-                          >
-                            <thead>
-                              <tr>
-                                <th>Details</th>
-                                <th>Amount</th>
-                                <th>Attach File</th>
-                                <th>Actions</th>
-                              </tr>
-                            </thead>
-                            <tbody id="incomeProtectionInsuranceTableBody">
-                              <!-- Initial Row -->
-                              <tr>
-                                <td>
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    name="incomeProtectionInsuranceDetails[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="number"
-                                    class="form-control"
-                                    name="incomeProtectionInsuranceAmount[0]"
-                                    placeholder="Enter amount"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="file"
-                                    class="form-control"
-                                    name="incomeProtectionInsuranceAttachment[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <button
-                                    type="button"
-                                    class="remove-incomeProtectionInsurance btn btn-sm btn-danger"
-                                  >
-                                    Remove
-                                  </button>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                        <button
-                          type="button"
-                          class="btn btn-sm ms-auto add-btn"
-                          id="addIncomeProtectionInsurance"
-                        >
-                          Add More
-                        </button>
-                      </div>
-                    </div>
-
-                    <!-- Protective Items/ Clothes -->
-                    <div class="form-check mb-1">
-                      <input
-                        type="checkbox"
-                        class="form-check-input toggle-fields"
-                        id="protectiveItemsCheck"
-                        name="protectiveItemsCheck"
-                      />
-                      <label class="form-check-label" for="protectiveItemsCheck"
-                        >Protective Items/ Clothes</label
-                      >
-                      <div class="expense-fields mt-2" style="display: none">
-                        <div class="table-responsive">
-                          <table
-                            class="table table-bordered mt-3"
-                            id="protectiveItemsTable"
-                          >
-                            <thead>
-                              <tr>
-                                <th>Details</th>
-                                <th>Amount</th>
-                                <th>Attach File</th>
-                                <th>Actions</th>
-                              </tr>
-                            </thead>
-                            <tbody id="protectiveItemsTableBody">
-                              <!-- Initial Row -->
-                              <tr>
-                                <td>
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    name="protectiveItemsDetails[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="number"
-                                    class="form-control"
-                                    name="protectiveItemsAmount[0]"
-                                    placeholder="Enter amount"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="file"
-                                    class="form-control"
-                                    name="protectiveItemsAttachment[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <button
-                                    type="button"
-                                    class="remove-protectiveItems btn btn-sm btn-danger"
-                                  >
-                                    Remove
-                                  </button>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                        <button
-                          type="button"
-                          class="btn btn-sm ms-auto add-btn"
-                          id="addProtectiveItems"
-                        >
-                          Add More
-                        </button>
-                      </div>
-                    </div>
-
-                    <!-- National Travel Expenses -->
-                    <div class="form-check mb-1">
-                      <input
-                        type="checkbox"
-                        class="form-check-input toggle-fields"
-                        id="nationalTravelExpensesCheck"
-                        name="nationalTravelExpensesCheck"
-                      />
-                      <label
-                        class="form-check-label"
-                        for="nationalTravelExpensesCheck"
-                        >National Travel Expenses</label
-                      >
-                      <div class="expense-fields mt-2" style="display: none">
-                        <div class="table-responsive">
-                          <table
-                            class="table table-bordered mt-3"
-                            id="nationalTravelExpensesTable"
-                          >
-                            <thead>
-                              <tr>
-                                <th>Detail</th>
-                                <th>Reason for Travel</th>
-                                <th>Amount</th>
-                                <th>Attach File</th>
-                                <th>Actions</th>
-                              </tr>
-                            </thead>
-                            <tbody id="nationalTravelExpensesTableBody">
-                              <!-- Initial Row -->
-                              <tr>
-                                <td>
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    name="nationalTravelExpenseDetail[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    name="nationalTravelExpenseReason[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="number"
-                                    class="form-control"
-                                    name="nationalTravelExpenseAmount[0]"
-                                    placeholder="Enter amount"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="file"
-                                    class="form-control"
-                                    name="nationalTravelExpenseAttachment[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <button
-                                    type="button"
-                                    class="remove-nationalTravelExpenses btn btn-sm btn-danger"
-                                  >
-                                    Remove
-                                  </button>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                        <button
-                          type="button"
-                          class="btn btn-sm ms-auto add-btn"
-                          id="addNationalTravelExpenses"
-                        >
-                          Add More
-                        </button>
-                      </div>
-                    </div>
-
-                    <!-- International Travel -->
-                    <div class="form-check mb-1">
-                      <input
-                        type="checkbox"
-                        class="form-check-input toggle-fields"
-                        id="internationalTravelCheck"
-                        name="internationalTravelCheck"
-                      />
-                      <label
-                        class="form-check-label"
-                        for="internationalTravelCheck"
-                        >International Travel</label
-                      >
-                      <div class="expense-fields mt-2" style="display: none">
-                        <div class="table-responsive">
-                          <table
-                            class="table table-bordered mt-3"
-                            id="internationalTravelTable"
-                          >
-                            <thead>
-                              <tr>
-                                <th>Detail</th>
-                                <th>Reason for Travel</th>
-                                <th>Amount</th>
-                                <th>Attach File</th>
-                                <th>Actions</th>
-                              </tr>
-                            </thead>
-                            <tbody id="internationalTravelTableBody">
-                              <!-- Initial Row -->
-                              <tr>
-                                <td>
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    name="internationalTravelDetail[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    name="internationalTravelReason[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="number"
-                                    class="form-control"
-                                    name="internationalTravelAmount[0]"
-                                    placeholder="Enter amount"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="file"
-                                    class="form-control"
-                                    name="internationalTravelAttachment[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <button
-                                    type="button"
-                                    class="remove-internationalTravel btn btn-sm btn-danger"
-                                  >
-                                    Remove
-                                  </button>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                        <button
-                          type="button"
-                          class="btn btn-sm ms-auto add-btn"
-                          id="addInternationalTravel"
-                        >
-                          Add More
-                        </button>
-                      </div>
-                    </div>
-
-                    <!-- Training, Self-Education and Travel -->
-                    <div class="form-check mb-1">
-                      <input
-                        type="checkbox"
-                        class="form-check-input toggle-fields"
-                        id="trainingSelfEducationTravelCheck"
-                        name="trainingSelfEducationTravelCheck"
-                      />
-                      <label
-                        class="form-check-label"
-                        for="trainingSelfEducationTravelCheck"
-                        >Training, Self-Education and Travel</label
-                      >
-                      <div class="expense-fields mt-2" style="display: none">
-                        <div class="table-responsive">
-                          <table
-                            class="table table-bordered mt-3"
-                            id="trainingSelfEducationTravelTable"
-                          >
-                            <thead>
-                              <tr>
-                                <th>Name of the Institute or Seminar</th>
-                                <th>Amount</th>
-                                <th>Date</th>
-                                <th>Attach File</th>
-                                <th>Actions</th>
-                              </tr>
-                            </thead>
-                            <tbody id="trainingSelfEducationTravelTableBody">
-                              <!-- Initial Row -->
-                              <tr>
-                                <td>
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    name="trainingSelfEducationTravelName[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="number"
-                                    class="form-control"
-                                    name="trainingSelfEducationTravelAmount[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="date"
-                                    class="form-control"
-                                    name="trainingSelfEducationTravelDate[0]"
-                                    placeholder="Enter amount"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="file"
-                                    class="form-control"
-                                    name="trainingSelfEducationTravelAttachment[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <button
-                                    type="button"
-                                    class="remove-trainingSelfEducationTravel btn btn-sm btn-danger"
-                                  >
-                                    Remove
-                                  </button>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                        <button
-                          type="button"
-                          class="btn btn-sm ms-auto add-btn"
-                          id="addtrainingSelfEducationTravel"
-                        >
-                          Add More
-                        </button>
-                      </div>
-                    </div>
-
-                    <!-- Contractor fees -->
-                    <div class="form-check mb-1">
-                      <input
-                        type="checkbox"
-                        class="form-check-input toggle-fields"
-                        id="contractorFeesCheck"
-                        name="contractorFeesCheck"
-                      />
-                      <label class="form-check-label" for="contractorFeesCheck"
-                        >Contractor Fees</label
-                      >
-                      <div class="expense-fields mt-2" style="display: none">
-                        <div class="table-responsive">
-                          <table
-                            class="table table-bordered mt-3"
-                            id="contractorFeesTable"
-                          >
-                            <thead>
-                              <tr>
-                                <th>Name of Contractor</th>
-                                <th>Amount</th>
-                                <th>Actions</th>
-                              </tr>
-                            </thead>
-                            <tbody id="contractorFeesTableBody">
-                              <!-- Initial Row -->
-                              <tr>
-                                <td>
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    name="contractorName[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="number"
-                                    class="form-control"
-                                    name="contractorAmount[0]"
-                                    placeholder="Enter amount"
-                                  />
-                                </td>
-                                <td>
-                                  <button
-                                    type="button"
-                                    class="remove-contractorFees btn btn-sm btn-danger"
-                                  >
-                                    Remove
-                                  </button>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                        <button
-                          type="button"
-                          class="btn btn-sm ms-auto add-btn"
-                          id="addContractorFees"
-                        >
-                          Add More
-                        </button>
-                      </div>
-                    </div>
-
-                    <!-- Material Expenses -->
-                    <div class="form-check mb-1">
-                      <input
-                        type="checkbox"
-                        class="form-check-input toggle-fields"
-                        id="materialExpensesCheck"
-                        name="materialExpensesCheck"
-                      />
-                      <label
-                        class="form-check-label"
-                        for="materialExpensesCheck"
-                        >Material Expenses</label
-                      >
-                      <div class="expense-fields mt-2" style="display: none">
-                        <div class="table-responsive">
-                          <table
-                            class="table table-bordered mt-3"
-                            id="materialExpensesTable"
-                          >
-                            <thead>
-                              <tr>
-                                <th>Details</th>
-                                <th>Amount</th>
-                                <th>Attach File</th>
-                                <th>Actions</th>
-                              </tr>
-                            </thead>
-                            <tbody id="materialExpensesTableBody">
-                              <!-- Initial Row -->
-                              <tr>
-                                <td>
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    name="materialExpenseDetails[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="number"
-                                    class="form-control"
-                                    name="materialExpenseAmount[0]"
-                                    placeholder="Enter amount"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="file"
-                                    class="form-control"
-                                    name="materialExpenseAttachment[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <button
-                                    type="button"
-                                    class="remove-materialExpenses btn btn-sm btn-danger"
-                                  >
-                                    Remove
-                                  </button>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                        <button
-                          type="button"
-                          class="btn btn-sm ms-auto add-btn"
-                          id="addMaterialExpenses"
-                        >
-                          Add More
-                        </button>
-                      </div>
-                    </div>
-
-                    <!-- Loan interest -->
-                    <div class="form-check mb-1">
-                      <input
-                        type="checkbox"
-                        class="form-check-input toggle-fields"
-                        id="loanInterestCheck"
-                        name="loanInterestCheck"
-                      />
-                      <label class="form-check-label" for="loanInterestCheck"
-                        >Loan Interest</label
-                      >
-                      <div class="expense-fields mt-2" style="display: none">
-                        <div class="table-responsive">
-                          <table
-                            class="table table-bordered mt-3"
-                            id="loanInterestTable"
-                          >
-                            <thead>
-                              <tr>
-                                <th>Details</th>
-                                <th>Amount</th>
-                                <th>Attach File</th>
-                                <th>Actions</th>
-                              </tr>
-                            </thead>
-                            <tbody id="loanInterestTableBody">
-                              <!-- Initial Row -->
-                              <tr>
-                                <td>
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    name="loanInterestDetails[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="number"
-                                    class="form-control"
-                                    name="loanInterestAmount[0]"
-                                    placeholder="Enter amount"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="file"
-                                    class="form-control"
-                                    name="loanInterestAttachment[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <button
-                                    type="button"
-                                    class="remove-loanInterest btn btn-sm btn-danger"
-                                  >
-                                    Remove
-                                  </button>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                        <button
-                          type="button"
-                          class="btn btn-sm ms-auto add-btn"
-                          id="addLoanInterest"
-                        >
-                          Add More
-                        </button>
-                      </div>
-                    </div>
-
-                    <!-- Property Expenses -->
-                    <div class="form-check mb-1">
-                      <input
-                        type="checkbox"
-                        class="form-check-input toggle-fields"
-                        id="propertyExpensesCheck"
-                        name="propertyExpensesCheck"
-                      />
-                      <label
-                        class="form-check-label"
-                        for="propertyExpensesCheck"
-                        >Property Expenses</label
-                      >
-                      <div class="expense-fields mt-2" style="display: none">
-                        <div class="table-responsive">
-                          <table
-                            class="table table-bordered mt-3"
-                            id="propertyExpensesTable"
-                          >
-                            <thead>
-                              <tr>
-                                <th>Details</th>
-                                <th>Amount</th>
-                                <th>Attach File</th>
-                                <th>Actions</th>
-                              </tr>
-                            </thead>
-                            <tbody id="propertyExpensesTableBody">
-                              <!-- Initial Row -->
-                              <tr>
-                                <td>
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    name="propertyExpenseDetails[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="number"
-                                    class="form-control"
-                                    name="propertyExpenseAmount[0]"
-                                    placeholder="Enter amount"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="file"
-                                    class="form-control"
-                                    name="propertyExpenseAttachment[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <button
-                                    type="button"
-                                    class="remove-propertyExpenses btn btn-sm btn-danger"
-                                  >
-                                    Remove
-                                  </button>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                        <button
-                          type="button"
-                          class="btn btn-sm ms-auto add-btn"
-                          id="addPropertyExpenses"
-                        >
-                          Add More
-                        </button>
-                      </div>
-                    </div>
-
-                    <!-- Income from Other Sources -->
-                    <div class="form-check mb-1">
-                      <input
-                        type="checkbox"
-                        class="form-check-input toggle-fields"
-                        id="incomeOtherSourcesCheck"
-                        name="incomeOtherSourcesCheck"
-                      />
-                      <label
-                        class="form-check-label"
-                        for="incomeOtherSourcesCheck"
-                        >Income from Other Sources</label
-                      >
-                      <div class="expense-fields mt-2" style="display: none">
-                        <div class="table-responsive">
-                          <table
-                            class="table table-bordered mt-3"
-                            id="incomeOtherSourcesTable"
-                          >
-                            <thead>
-                              <tr>
-                                <th>Source</th>
-                                <th>Amount</th>
-                                <th>Attach File</th>
-                                <th>Actions</th>
-                              </tr>
-                            </thead>
-                            <tbody id="incomeOtherSourcesTableBody">
-                              <!-- Initial Row -->
-                              <tr>
-                                <td>
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    name="incomeOtherSources[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="number"
-                                    class="form-control"
-                                    name="incomeOtherSourcesAmount[0]"
-                                    placeholder="Enter amount"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="file"
-                                    class="form-control"
-                                    name="incomeOtherSourcesAttachment[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <button
-                                    type="button"
-                                    class="remove-incomeOtherSources btn btn-sm btn-danger"
-                                  >
-                                    Remove
-                                  </button>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                        <button
-                          type="button"
-                          class="btn btn-sm ms-auto add-btn"
-                          id="addIncomeOtherSources"
-                        >
-                          Add More
-                        </button>
-                      </div>
-                    </div>
-
-                    <!-- Investment Expenses -->
-                    <div class="form-check mb-1">
-                      <input
-                        type="checkbox"
-                        class="form-check-input toggle-fields"
-                        id="investmentExpensesCheck"
-                        name="investmentExpensesCheck"
-                      />
-                      <label
-                        class="form-check-label"
-                        for="investmentExpensesCheck"
-                        >Investment Expenses</label
-                      >
-                      <div class="expense-fields mt-2" style="display: none">
-                        <div class="table-responsive">
-                          <table
-                            class="table table-bordered mt-3"
-                            id="investmentExpensesTable"
-                          >
-                            <thead>
-                              <tr>
-                                <th>Details</th>
-                                <th>Amount</th>
-                                <th>Attach File</th>
-                                <th>Actions</th>
-                              </tr>
-                            </thead>
-                            <tbody id="investmentExpensesTableBody">
-                              <!-- Initial Row -->
-                              <tr>
-                                <td>
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    name="investmentExpenseDetails[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="number"
-                                    class="form-control"
-                                    name="investmentExpenseAmount[0]"
-                                    placeholder="Enter amount"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="file"
-                                    class="form-control"
-                                    name="investmentExpenseAttachment[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <button
-                                    type="button"
-                                    class="remove-investmentExpenses btn btn-sm btn-danger"
-                                  >
-                                    Remove
-                                  </button>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                        <button
-                          type="button"
-                          class="btn btn-sm ms-auto add-btn"
-                          id="addInvestmentExpenses"
-                        >
-                          Add More
-                        </button>
-                      </div>
-                    </div>
-
-                    <!-- Donations -->
-                    <div class="form-check mb-1">
-                      <input
-                        type="checkbox"
-                        class="form-check-input toggle-fields"
-                        id="donationsCheck"
-                        name="donationsCheck"
-                      />
-                      <label class="form-check-label" for="donationsCheck"
-                        >Donations</label
-                      >
-                      <div class="expense-fields mt-2" style="display: none">
-                        <div class="table-responsive">
-                          <table
-                            class="table table-bordered mt-3"
-                            id="donationsTable"
-                          >
-                            <thead>
-                              <tr>
-                                <th>Details</th>
-                                <th>Amount</th>
-                                <th>Attach File</th>
-                                <th>Actions</th>
-                              </tr>
-                            </thead>
-                            <tbody id="donationsTableBody">
-                              <!-- Initial Row -->
-                              <tr>
-                                <td>
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    name="donationDetails[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="number"
-                                    class="form-control"
-                                    name="donationAmount[0]"
-                                    placeholder="Enter amount"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    type="file"
-                                    class="form-control"
-                                    name="donationAttachment[0]"
-                                  />
-                                </td>
-                                <td>
-                                  <button
-                                    type="button"
-                                    class="remove-donations btn btn-sm btn-danger"
-                                  >
-                                    Remove
-                                  </button>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                        <button
-                          type="button"
-                          class="btn btn-sm ms-auto add-btn"
-                          id="addDonations"
-                        >
-                          Add More
-                        </button>
+                        <label class="form-check-label" for="soleTraderRegisterForGstMyOwnNumber">My Own Number</label>
                       </div>
                     </div>
                   </div>
+
+                  <!-- for software details or excel summary -->
+                  <div id="soleTraderRegisterForGstSoftwareDetailsExcelSummaryContent" class="mb-3" style="display: none">
+                    <div class="mb-3">
+                      <label class="form-label mb-2" for="soleTraderSoftwareDetailsExcelSummary">Provide Software details or Excel Summary </label>
+                      <input type="file" class="form-control" name="soleTraderSoftwareDetailsExcelSummary" />
+                    </div>
+                  </div>
+
+
+                  <!-- for own number -->
+                  <div id="soleTraderRegisterForGstMyOwnNumberContent" class="mb-3" style="display: none">
+                    <!-- income -->
+                    <div class="mb-3">
+                      <label>Income</label>
+                      <!-- Income Table -->
+                      <div id="soleTraderIncome">
+                        <table
+                          class="table table-bordered mt-3"
+                          id="soleTraderIncomeTable"
+                        >
+                          <thead>
+                            <tr>
+                              <th>Type of Income</th>
+                              <th>Income Amount</th>
+                              <th>Attach File</th>
+                              <th>Actions</th>
+                            </tr>
+                          </thead>
+                          <tbody id="soleTraderIncomeTableBody">
+                            <!-- Initial Row -->
+                            <tr>
+                              <td>
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  name="soleTraderIncomeType[0]"
+                                />
+                              </td>
+                              <td>
+                                <input
+                                  type="number"
+                                  class="form-control"
+                                  name="soleTraderIncomeAmount[0]"
+                                  placeholder="Enter amount"
+                                />
+                              </td>
+                              <td>
+                                <input
+                                  type="file"
+                                  class="form-control"
+                                  name="soleTraderIncomeAttachment[0]"
+                                />
+                              </td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="remove-soleTraderIncome btn btn-sm btn-danger"
+                                >
+                                  Remove
+                                </button>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <button
+                          type="button"
+                          class="btn btn-sm ms-auto add-btn"
+                          id="addSoleTraderIncome"
+                        >
+                          Add Income
+                        </button>
+                      </div>
+                    </div>
+
+                    <!-- Expenses -->
+                    <div class="mb-3">
+                      
+                      
+                      <label class="d-block mb-2">Expenses</label>
+
+                      <!-- Accounting Fee -->
+                      <div class="form-check mb-1">
+
+                        <input type="checkbox" class="form-check-input toggle-fields" id="accountingFeeCheck" name="accountingFeeCheck" />
+
+                        <label class="form-check-label" for="accountingFeeCheck">Accounting Fee</label>
+
+                        <div class="expense-fields mt-2" style="display: none">
+
+                          <div class="table-responsive">
+                            <table
+                              class="table table-bordered mt-3"
+                              id="accountingFeeTable"
+                            >
+                              <thead>
+                                <tr>
+                                  <th>Details</th>
+                                  <th>Amount</th>
+                                  <th>Attach File</th>
+                                  <th>Actions</th>
+                                </tr>
+                              </thead>
+                              <tbody id="accountingFeeTableBody">
+                                <!-- Initial Row -->
+                                <tr>
+                                  <td>
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      name="accountingFeeDetails[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="number"
+                                      class="form-control"
+                                      name="accountingFeeAmount[0]"
+                                      placeholder="Enter amount"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="file"
+                                      class="form-control"
+                                      name="accountingFeeAttachment[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <button
+                                      type="button"
+                                      class="remove-accountingFee btn btn-sm btn-danger"
+                                    >
+                                      Remove
+                                    </button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <button
+                              type="button"
+                              class="btn btn-sm ms-auto add-btn"
+                              id="addAccountingFee"
+                            >
+                              Add More
+                            </button>
+                          </div>
+
+                        </div>
+
+                      </div>
+
+                      <!-- Bookkeeping Fee -->
+                      <div class="form-check mb-1">
+                        <input
+                          type="checkbox"
+                          class="form-check-input toggle-fields"
+                          id="bookkeepingFeeCheck"
+                          name="bookkeepingFeeCheck"
+                        />
+                        <label class="form-check-label" for="bookkeepingFeeCheck"
+                          >Bookkeeping Fee</label
+                        >
+                        <div class="expense-fields mt-2" style="display: none">
+                          <div class="table-responsive">
+                            <table
+                              class="table table-bordered mt-3"
+                              id="bookkeepingFeeTable"
+                            >
+                              <thead>
+                                <tr>
+                                  <th>Details</th>
+                                  <th>Amount</th>
+                                  <th>Attach File</th>
+                                  <th>Actions</th>
+                                </tr>
+                              </thead>
+                              <tbody id="bookkeepingFeeTableBody">
+                                <!-- Initial Row -->
+                                <tr>
+                                  <td>
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      name="bookkeepingFeeDetails[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="number"
+                                      class="form-control"
+                                      name="bookkeepingFeeAmount[0]"
+                                      placeholder="Enter amount"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="file"
+                                      class="form-control"
+                                      name="bookkeepingFeeAttachment[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <button
+                                      type="button"
+                                      class="remove-bookkeepingFee btn btn-sm btn-danger"
+                                    >
+                                      Remove
+                                    </button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <button
+                            type="button"
+                            class="btn btn-sm ms-auto add-btn"
+                            id="addBookkeepingFee"
+                          >
+                            Add More
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Business Mobile -->
+                      <div class="form-check mb-1">
+                        <input
+                          type="checkbox"
+                          class="form-check-input toggle-fields"
+                          id="buisnessMobileCheck"
+                          name="buisnessMobileCheck"
+                        />
+                        <label class="form-check-label" for="buisnessMobileCheck"
+                          >Business Mobile</label
+                        >
+                        <div class="expense-fields mt-2" style="display: none">
+                          <input
+                            type="number"
+                            class="form-control mb-3"
+                            name="businessMobile"
+                            id="businessMobile"
+                            placeholder="Enter amount"
+                          />
+                        </div>
+                      </div>
+
+                      <!-- Office Rent -->
+                      <div class="form-check mb-1">
+                        <input
+                          type="checkbox"
+                          class="form-check-input toggle-fields"
+                          id="officeRentCheck"
+                          name="officeRentCheck"
+                        />
+                        <label class="form-check-label" for="officeRentCheck"
+                          >Office Rent</label
+                        >
+                        <div class="expense-fields mt-2" style="display: none">
+                          <input
+                            type="number"
+                            class="form-control mb-3"
+                            name="officeRent"
+                            placeholder="Enter amount"
+                          />
+                        </div>
+                      </div>
+
+                      <!-- Plant and Equipment -->
+                      <div class="form-check mb-1">
+                        <input
+                          type="checkbox"
+                          class="form-check-input toggle-fields"
+                          id="plantEquipmentCheck"
+                          name="plantEquipmentCheck"
+                        />
+                        <label class="form-check-label" for="plantEquipmentCheck"
+                          >Plant and Equipment</label
+                        >
+                        <div class="expense-fields mt-2" style="display: none">
+                          <div class="table-responsive">
+                            <table
+                              class="table table-bordered mt-3"
+                              id="plantEquipmentTable"
+                            >
+                              <thead>
+                                <tr>
+                                  <th>Details</th>
+                                  <th>Amount</th>
+                                  <th>Attach File</th>
+                                  <th>Actions</th>
+                                </tr>
+                              </thead>
+                              <tbody id="plantEquipmentTableBody">
+                                <!-- Initial Row -->
+                                <tr>
+                                  <td>
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      name="plantEquipmentDetails[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="number"
+                                      class="form-control"
+                                      name="plantEquipmentAmount[0]"
+                                      placeholder="Enter amount"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="file"
+                                      class="form-control"
+                                      name="plantEquipmentAttachment[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <button
+                                      type="button"
+                                      class="remove-plantEquipment btn btn-sm btn-danger"
+                                    >
+                                      Remove
+                                    </button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <button
+                            type="button"
+                            class="btn btn-sm ms-auto add-btn"
+                            id="addPlantEquipment"
+                          >
+                            Add More
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Equipment Lease -->
+                      <div class="form-check mb-1">
+                        <input
+                          type="checkbox"
+                          class="form-check-input toggle-fields"
+                          id="equipmentLeaseCheck"
+                          name="equipmentLeaseCheck"
+                        />
+                        <label class="form-check-label" for="equipmentLeaseCheck"
+                          >Equipment Lease</label
+                        >
+                        <div class="expense-fields mt-2" style="display: none">
+                          <div class="table-responsive">
+                            <table
+                              class="table table-bordered mt-3"
+                              id="equipmentLeaseTable"
+                            >
+                              <thead>
+                                <tr>
+                                  <th>Details</th>
+                                  <th>Amount</th>
+                                  <th>Attach File</th>
+                                  <th>Actions</th>
+                                </tr>
+                              </thead>
+                              <tbody id="equipmentLeaseTableBody">
+                                <!-- Initial Row -->
+                                <tr>
+                                  <td>
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      name="equipmentLeaseDetails[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="number"
+                                      class="form-control"
+                                      name="equipmentLeaseAmount[0]"
+                                      placeholder="Enter amount"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="file"
+                                      class="form-control"
+                                      name="equipmentLeaseAttachment[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <button
+                                      type="button"
+                                      class="remove-equipmentLease btn btn-sm btn-danger"
+                                    >
+                                      Remove
+                                    </button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <button
+                            type="button"
+                            class="btn btn-sm ms-auto add-btn"
+                            id="addequipmentLease"
+                          >
+                            Add More
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Service Fee -->
+                      <div class="form-check mb-1">
+                        <input
+                          type="checkbox"
+                          class="form-check-input toggle-fields"
+                          id="serviceFeeCheck"
+                          name="serviceFeeCheck"
+                        />
+                        <label class="form-check-label" for="serviceFeeCheck"
+                          >Service Fee</label
+                        >
+
+                        <div class="expense-fields mt-2" style="display: none">
+                          <div class="row g-3">
+                            <!-- details -->
+                            <div class="col-md-6">
+                              <label class="form-label">Details of the Service</label>
+                              <textarea
+                                type="text"
+                                class="form-control"
+                                name="serviceFeeDetails"
+                              ></textarea>
+                            </div>
+                            <!-- Amount -->
+                            <div class="col-md-6">
+                              <label for="serviceFeeAmount" class="form-label">Amount</label>
+                              <input
+                                type="text"
+                                class="form-control"
+                                name="serviceFeeAmount"
+                                id="serviceFeeAmount"
+                              />
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- Medical Centre Fee -->
+                      <div class="form-check mb-1">
+                        <input
+                          type="checkbox"
+                          class="form-check-input toggle-fields"
+                          id="medicalCentreFeeCheck"
+                          name="medicalCentreFeeCheck"
+                        />
+                        <label class="form-check-label" for="medicalCentreFeeCheck"
+                          >Medical Centre Fee</label
+                        >
+                        <div class="expense-fields mt-2" style="display: none">
+                          <div class="row g-3">
+                            <div class="col-12 col-md-6">
+                              <label for="medicalCentreFee" class="d-block mb-2">Fee</label>
+                              <input
+                                type="number"
+                                class="form-control"
+                                name="medicalCentreFee"
+                                id="medicalCentreFee"
+                                placeholder="Enter amount"
+                              />
+                            </div>
+                            <div class="col-12 col-md-6">
+                              <label for="medicalCentreFeeAttachment" class="d-block mb-2">Attachment</label>
+                              <input
+                                type="file"
+                                class="form-control mt-2"
+                                name="medicalCentreFeeAttachment"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Professional Membership Fee -->
+                      <div class="form-check mb-1">
+                        <input
+                          type="checkbox"
+                          class="form-check-input toggle-fields"
+                          id="professionalMembershipFeeCheck"
+                          name="professionalMembershipFeeCheck"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="professionalMembershipFeeCheck"
+                          >Professional Membership Fee</label
+                        >
+                        <div class="expense-fields mt-2" style="display: none">
+                          <div class="table-responsive">
+                            <table
+                              class="table table-bordered mt-3"
+                              id="professionalMembershipFeeTable"
+                            >
+                              <thead>
+                                <tr>
+                                  <th>Details</th>
+                                  <th>Amount</th>
+                                  <th>Attach File</th>
+                                  <th>Actions</th>
+                                </tr>
+                              </thead>
+                              <tbody id="professionalMembershipFeeTableBody">
+                                <!-- Initial Row -->
+                                <tr>
+                                  <td>
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      name="professionalMembershipFeeDetails[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="number"
+                                      class="form-control"
+                                      name="professionalMembershipFeeAmount[0]"
+                                      placeholder="Enter amount"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="file"
+                                      class="form-control"
+                                      name="professionalMembershipFeeAttachment[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <button
+                                      type="button"
+                                      class="remove-professionalMembershipFee btn btn-sm btn-danger"
+                                    >
+                                      Remove
+                                    </button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <button
+                            type="button"
+                            class="btn btn-sm ms-auto add-btn"
+                            id="addProfessionalMembershipFee"
+                          >
+                            Add More
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Public Liability Insurance -->
+                      <div class="form-check mb-1">
+                        <input
+                          type="checkbox"
+                          class="form-check-input toggle-fields"
+                          id="publicLiabilityInsuranceCheck"
+                          name="publicLiabilityInsuranceCheck"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="publicLiabilityInsuranceCheck"
+                          >Public Liability Insurance</label
+                        >
+                        <div class="expense-fields mt-2" style="display: none">
+                          <div class="table-responsive">
+                            <table
+                              class="table table-bordered mt-3"
+                              id="publicLiabilityInsuranceTable"
+                            >
+                              <thead>
+                                <tr>
+                                  <th>Details</th>
+                                  <th>Amount</th>
+                                  <th>Attach File</th>
+                                  <th>Actions</th>
+                                </tr>
+                              </thead>
+                              <tbody id="publicLiabilityInsuranceTableBody">
+                                <!-- Initial Row -->
+                                <tr>
+                                  <td>
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      name="publicLiabilityInsuranceDetails[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="number"
+                                      class="form-control"
+                                      name="publicLiabilityInsuranceAmount[0]"
+                                      placeholder="Enter amount"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="file"
+                                      class="form-control"
+                                      name="publicLiabilityInsuranceAttachment[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <button
+                                      type="button"
+                                      class="remove-publicLiabilityInsurance btn btn-sm btn-danger"
+                                    >
+                                      Remove
+                                    </button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <button
+                            type="button"
+                            class="btn btn-sm ms-auto add-btn"
+                            id="addPublicLiabilityInsurance"
+                          >
+                            Add More
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Professional Indemnity Insurance -->
+                      <div class="form-check mb-1">
+                        <input
+                          type="checkbox"
+                          class="form-check-input toggle-fields"
+                          id="professionalIndemnityInsuranceCheck"
+                          name="professionalIndemnityInsuranceCheck"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="professionalIndemnityInsuranceCheck"
+                          >Professional Indemnity Insurance</label
+                        >
+                        <div class="expense-fields mt-2" style="display: none">
+                          <div class="table-responsive">
+                            <table
+                              class="table table-bordered mt-3"
+                              id="professionalIndemnityInsuranceTable"
+                            >
+                              <thead>
+                                <tr>
+                                  <th>Details</th>
+                                  <th>Amount</th>
+                                  <th>Attach File</th>
+                                  <th>Actions</th>
+                                </tr>
+                              </thead>
+                              <tbody id="professionalIndemnityInsuranceTableBody">
+                                <!-- Initial Row -->
+                                <tr>
+                                  <td>
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      name="professionalIndemnityInsuranceDetails[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="number"
+                                      class="form-control"
+                                      name="professionalIndemnityInsuranceAmount[0]"
+                                      placeholder="Enter amount"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="file"
+                                      class="form-control"
+                                      name="professionalIndemnityInsuranceAttachment[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <button
+                                      type="button"
+                                      class="remove-professionalIndemnityInsurance btn btn-sm btn-danger"
+                                    >
+                                      Remove
+                                    </button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <button
+                            type="button"
+                            class="btn btn-sm ms-auto add-btn"
+                            id="addProfessionalIndemnityInsurance"
+                          >
+                            Add More
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Income Protection Insurance -->
+                      <div class="form-check mb-1">
+                        <input
+                          type="checkbox"
+                          class="form-check-input toggle-fields"
+                          id="incomeProtectionInsuranceCheck"
+                          name="incomeProtectionInsuranceCheck"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="incomeProtectionInsuranceCheck"
+                          >Income Protection Insurance</label
+                        >
+                        <div class="expense-fields mt-2" style="display: none">
+                          <div class="table-responsive">
+                            <table
+                              class="table table-bordered mt-3"
+                              id="incomeProtectionInsuranceTable"
+                            >
+                              <thead>
+                                <tr>
+                                  <th>Details</th>
+                                  <th>Amount</th>
+                                  <th>Attach File</th>
+                                  <th>Actions</th>
+                                </tr>
+                              </thead>
+                              <tbody id="incomeProtectionInsuranceTableBody">
+                                <!-- Initial Row -->
+                                <tr>
+                                  <td>
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      name="incomeProtectionInsuranceDetails[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="number"
+                                      class="form-control"
+                                      name="incomeProtectionInsuranceAmount[0]"
+                                      placeholder="Enter amount"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="file"
+                                      class="form-control"
+                                      name="incomeProtectionInsuranceAttachment[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <button
+                                      type="button"
+                                      class="remove-incomeProtectionInsurance btn btn-sm btn-danger"
+                                    >
+                                      Remove
+                                    </button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <button
+                            type="button"
+                            class="btn btn-sm ms-auto add-btn"
+                            id="addIncomeProtectionInsurance"
+                          >
+                            Add More
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Protective Items/ Clothes -->
+                      <div class="form-check mb-1">
+                        <input
+                          type="checkbox"
+                          class="form-check-input toggle-fields"
+                          id="protectiveItemsCheck"
+                          name="protectiveItemsCheck"
+                        />
+                        <label class="form-check-label" for="protectiveItemsCheck"
+                          >Protective Items/ Clothes</label
+                        >
+                        <div class="expense-fields mt-2" style="display: none">
+                          <div class="table-responsive">
+                            <table
+                              class="table table-bordered mt-3"
+                              id="protectiveItemsTable"
+                            >
+                              <thead>
+                                <tr>
+                                  <th>Details</th>
+                                  <th>Amount</th>
+                                  <th>Attach File</th>
+                                  <th>Actions</th>
+                                </tr>
+                              </thead>
+                              <tbody id="protectiveItemsTableBody">
+                                <!-- Initial Row -->
+                                <tr>
+                                  <td>
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      name="protectiveItemsDetails[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="number"
+                                      class="form-control"
+                                      name="protectiveItemsAmount[0]"
+                                      placeholder="Enter amount"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="file"
+                                      class="form-control"
+                                      name="protectiveItemsAttachment[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <button
+                                      type="button"
+                                      class="remove-protectiveItems btn btn-sm btn-danger"
+                                    >
+                                      Remove
+                                    </button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <button
+                            type="button"
+                            class="btn btn-sm ms-auto add-btn"
+                            id="addProtectiveItems"
+                          >
+                            Add More
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- National Travel Expenses -->
+                      <div class="form-check mb-1">
+                        <input
+                          type="checkbox"
+                          class="form-check-input toggle-fields"
+                          id="nationalTravelExpensesCheck"
+                          name="nationalTravelExpensesCheck"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="nationalTravelExpensesCheck"
+                          >National Travel Expenses</label
+                        >
+                        <div class="expense-fields mt-2" style="display: none">
+                          <div class="table-responsive">
+                            <table
+                              class="table table-bordered mt-3"
+                              id="nationalTravelExpensesTable"
+                            >
+                              <thead>
+                                <tr>
+                                  <th>Detail</th>
+                                  <th>Reason for Travel</th>
+                                  <th>Amount</th>
+                                  <th>Attach File</th>
+                                  <th>Actions</th>
+                                </tr>
+                              </thead>
+                              <tbody id="nationalTravelExpensesTableBody">
+                                <!-- Initial Row -->
+                                <tr>
+                                  <td>
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      name="nationalTravelExpenseDetail[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      name="nationalTravelExpenseReason[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="number"
+                                      class="form-control"
+                                      name="nationalTravelExpenseAmount[0]"
+                                      placeholder="Enter amount"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="file"
+                                      class="form-control"
+                                      name="nationalTravelExpenseAttachment[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <button
+                                      type="button"
+                                      class="remove-nationalTravelExpenses btn btn-sm btn-danger"
+                                    >
+                                      Remove
+                                    </button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <button
+                            type="button"
+                            class="btn btn-sm ms-auto add-btn"
+                            id="addNationalTravelExpenses"
+                          >
+                            Add More
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- International Travel -->
+                      <div class="form-check mb-1">
+                        <input
+                          type="checkbox"
+                          class="form-check-input toggle-fields"
+                          id="internationalTravelCheck"
+                          name="internationalTravelCheck"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="internationalTravelCheck"
+                          >International Travel</label
+                        >
+                        <div class="expense-fields mt-2" style="display: none">
+                          <div class="table-responsive">
+                            <table
+                              class="table table-bordered mt-3"
+                              id="internationalTravelTable"
+                            >
+                              <thead>
+                                <tr>
+                                  <th>Detail</th>
+                                  <th>Reason for Travel</th>
+                                  <th>Amount</th>
+                                  <th>Attach File</th>
+                                  <th>Actions</th>
+                                </tr>
+                              </thead>
+                              <tbody id="internationalTravelTableBody">
+                                <!-- Initial Row -->
+                                <tr>
+                                  <td>
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      name="internationalTravelDetail[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      name="internationalTravelReason[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="number"
+                                      class="form-control"
+                                      name="internationalTravelAmount[0]"
+                                      placeholder="Enter amount"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="file"
+                                      class="form-control"
+                                      name="internationalTravelAttachment[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <button
+                                      type="button"
+                                      class="remove-internationalTravel btn btn-sm btn-danger"
+                                    >
+                                      Remove
+                                    </button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <button
+                            type="button"
+                            class="btn btn-sm ms-auto add-btn"
+                            id="addInternationalTravel"
+                          >
+                            Add More
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Training, Self-Education and Travel -->
+                      <div class="form-check mb-1">
+                        <input
+                          type="checkbox"
+                          class="form-check-input toggle-fields"
+                          id="trainingSelfEducationTravelCheck"
+                          name="trainingSelfEducationTravelCheck"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="trainingSelfEducationTravelCheck"
+                          >Training, Self-Education and Travel</label
+                        >
+                        <div class="expense-fields mt-2" style="display: none">
+                          <div class="table-responsive">
+                            <table
+                              class="table table-bordered mt-3"
+                              id="trainingSelfEducationTravelTable"
+                            >
+                              <thead>
+                                <tr>
+                                  <th>Name of the Institute or Seminar</th>
+                                  <th>Amount</th>
+                                  <th>Date</th>
+                                  <th>Attach File</th>
+                                  <th>Actions</th>
+                                </tr>
+                              </thead>
+                              <tbody id="trainingSelfEducationTravelTableBody">
+                                <!-- Initial Row -->
+                                <tr>
+                                  <td>
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      name="trainingSelfEducationTravelName[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="number"
+                                      class="form-control"
+                                      name="trainingSelfEducationTravelAmount[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="date"
+                                      class="form-control"
+                                      name="trainingSelfEducationTravelDate[0]"
+                                      placeholder="Enter amount"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="file"
+                                      class="form-control"
+                                      name="trainingSelfEducationTravelAttachment[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <button
+                                      type="button"
+                                      class="remove-trainingSelfEducationTravel btn btn-sm btn-danger"
+                                    >
+                                      Remove
+                                    </button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <button
+                            type="button"
+                            class="btn btn-sm ms-auto add-btn"
+                            id="addtrainingSelfEducationTravel"
+                          >
+                            Add More
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Contractor fees -->
+                      <div class="form-check mb-1">
+                        <input
+                          type="checkbox"
+                          class="form-check-input toggle-fields"
+                          id="contractorFeesCheck"
+                          name="contractorFeesCheck"
+                        />
+                        <label class="form-check-label" for="contractorFeesCheck"
+                          >Contractor Fees</label
+                        >
+                        <div class="expense-fields mt-2" style="display: none">
+                          <div class="table-responsive">
+                            <table
+                              class="table table-bordered mt-3"
+                              id="contractorFeesTable"
+                            >
+                              <thead>
+                                <tr>
+                                  <th>Name of Contractor</th>
+                                  <th>Amount</th>
+                                  <th>Actions</th>
+                                </tr>
+                              </thead>
+                              <tbody id="contractorFeesTableBody">
+                                <!-- Initial Row -->
+                                <tr>
+                                  <td>
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      name="contractorName[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="number"
+                                      class="form-control"
+                                      name="contractorAmount[0]"
+                                      placeholder="Enter amount"
+                                    />
+                                  </td>
+                                  <td>
+                                    <button
+                                      type="button"
+                                      class="remove-contractorFees btn btn-sm btn-danger"
+                                    >
+                                      Remove
+                                    </button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <button
+                            type="button"
+                            class="btn btn-sm ms-auto add-btn"
+                            id="addContractorFees"
+                          >
+                            Add More
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Material Expenses -->
+                      <div class="form-check mb-1">
+                        <input
+                          type="checkbox"
+                          class="form-check-input toggle-fields"
+                          id="materialExpensesCheck"
+                          name="materialExpensesCheck"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="materialExpensesCheck"
+                          >Material Expenses</label
+                        >
+                        <div class="expense-fields mt-2" style="display: none">
+                          <div class="table-responsive">
+                            <table
+                              class="table table-bordered mt-3"
+                              id="materialExpensesTable"
+                            >
+                              <thead>
+                                <tr>
+                                  <th>Details</th>
+                                  <th>Amount</th>
+                                  <th>Attach File</th>
+                                  <th>Actions</th>
+                                </tr>
+                              </thead>
+                              <tbody id="materialExpensesTableBody">
+                                <!-- Initial Row -->
+                                <tr>
+                                  <td>
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      name="materialExpenseDetails[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="number"
+                                      class="form-control"
+                                      name="materialExpenseAmount[0]"
+                                      placeholder="Enter amount"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="file"
+                                      class="form-control"
+                                      name="materialExpenseAttachment[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <button
+                                      type="button"
+                                      class="remove-materialExpenses btn btn-sm btn-danger"
+                                    >
+                                      Remove
+                                    </button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <button
+                            type="button"
+                            class="btn btn-sm ms-auto add-btn"
+                            id="addMaterialExpenses"
+                          >
+                            Add More
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Loan interest -->
+                      <div class="form-check mb-1">
+                        <input
+                          type="checkbox"
+                          class="form-check-input toggle-fields"
+                          id="loanInterestCheck"
+                          name="loanInterestCheck"
+                        />
+                        <label class="form-check-label" for="loanInterestCheck"
+                          >Loan Interest</label
+                        >
+                        <div class="expense-fields mt-2" style="display: none">
+                          <div class="table-responsive">
+                            <table
+                              class="table table-bordered mt-3"
+                              id="loanInterestTable"
+                            >
+                              <thead>
+                                <tr>
+                                  <th>Details</th>
+                                  <th>Amount</th>
+                                  <th>Attach File</th>
+                                  <th>Actions</th>
+                                </tr>
+                              </thead>
+                              <tbody id="loanInterestTableBody">
+                                <!-- Initial Row -->
+                                <tr>
+                                  <td>
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      name="loanInterestDetails[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="number"
+                                      class="form-control"
+                                      name="loanInterestAmount[0]"
+                                      placeholder="Enter amount"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="file"
+                                      class="form-control"
+                                      name="loanInterestAttachment[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <button
+                                      type="button"
+                                      class="remove-loanInterest btn btn-sm btn-danger"
+                                    >
+                                      Remove
+                                    </button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <button
+                            type="button"
+                            class="btn btn-sm ms-auto add-btn"
+                            id="addLoanInterest"
+                          >
+                            Add More
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Property Expenses -->
+                      <div class="form-check mb-1">
+                        <input
+                          type="checkbox"
+                          class="form-check-input toggle-fields"
+                          id="propertyExpensesCheck"
+                          name="propertyExpensesCheck"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="propertyExpensesCheck"
+                          >Property Expenses</label
+                        >
+                        <div class="expense-fields mt-2" style="display: none">
+                          <div class="table-responsive">
+                            <table
+                              class="table table-bordered mt-3"
+                              id="propertyExpensesTable"
+                            >
+                              <thead>
+                                <tr>
+                                  <th>Details</th>
+                                  <th>Amount</th>
+                                  <th>Attach File</th>
+                                  <th>Actions</th>
+                                </tr>
+                              </thead>
+                              <tbody id="propertyExpensesTableBody">
+                                <!-- Initial Row -->
+                                <tr>
+                                  <td>
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      name="propertyExpenseDetails[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="number"
+                                      class="form-control"
+                                      name="propertyExpenseAmount[0]"
+                                      placeholder="Enter amount"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="file"
+                                      class="form-control"
+                                      name="propertyExpenseAttachment[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <button
+                                      type="button"
+                                      class="remove-propertyExpenses btn btn-sm btn-danger"
+                                    >
+                                      Remove
+                                    </button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <button
+                            type="button"
+                            class="btn btn-sm ms-auto add-btn"
+                            id="addPropertyExpenses"
+                          >
+                            Add More
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Income from Other Sources -->
+                      <div class="form-check mb-1">
+                        <input
+                          type="checkbox"
+                          class="form-check-input toggle-fields"
+                          id="incomeOtherSourcesCheck"
+                          name="incomeOtherSourcesCheck"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="incomeOtherSourcesCheck"
+                          >Income from Other Sources</label
+                        >
+                        <div class="expense-fields mt-2" style="display: none">
+                          <div class="table-responsive">
+                            <table
+                              class="table table-bordered mt-3"
+                              id="incomeOtherSourcesTable"
+                            >
+                              <thead>
+                                <tr>
+                                  <th>Source</th>
+                                  <th>Amount</th>
+                                  <th>Attach File</th>
+                                  <th>Actions</th>
+                                </tr>
+                              </thead>
+                              <tbody id="incomeOtherSourcesTableBody">
+                                <!-- Initial Row -->
+                                <tr>
+                                  <td>
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      name="incomeOtherSources[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="number"
+                                      class="form-control"
+                                      name="incomeOtherSourcesAmount[0]"
+                                      placeholder="Enter amount"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="file"
+                                      class="form-control"
+                                      name="incomeOtherSourcesAttachment[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <button
+                                      type="button"
+                                      class="remove-incomeOtherSources btn btn-sm btn-danger"
+                                    >
+                                      Remove
+                                    </button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <button
+                            type="button"
+                            class="btn btn-sm ms-auto add-btn"
+                            id="addIncomeOtherSources"
+                          >
+                            Add More
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Investment Expenses -->
+                      <div class="form-check mb-1">
+                        <input
+                          type="checkbox"
+                          class="form-check-input toggle-fields"
+                          id="investmentExpensesCheck"
+                          name="investmentExpensesCheck"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="investmentExpensesCheck"
+                          >Investment Expenses</label
+                        >
+                        <div class="expense-fields mt-2" style="display: none">
+                          <div class="table-responsive">
+                            <table
+                              class="table table-bordered mt-3"
+                              id="investmentExpensesTable"
+                            >
+                              <thead>
+                                <tr>
+                                  <th>Details</th>
+                                  <th>Amount</th>
+                                  <th>Attach File</th>
+                                  <th>Actions</th>
+                                </tr>
+                              </thead>
+                              <tbody id="investmentExpensesTableBody">
+                                <!-- Initial Row -->
+                                <tr>
+                                  <td>
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      name="investmentExpenseDetails[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="number"
+                                      class="form-control"
+                                      name="investmentExpenseAmount[0]"
+                                      placeholder="Enter amount"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="file"
+                                      class="form-control"
+                                      name="investmentExpenseAttachment[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <button
+                                      type="button"
+                                      class="remove-investmentExpenses btn btn-sm btn-danger"
+                                    >
+                                      Remove
+                                    </button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <button
+                            type="button"
+                            class="btn btn-sm ms-auto add-btn"
+                            id="addInvestmentExpenses"
+                          >
+                            Add More
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Donations -->
+                      <div class="form-check mb-1">
+                        <input
+                          type="checkbox"
+                          class="form-check-input toggle-fields"
+                          id="donationsCheck"
+                          name="donationsCheck"
+                        />
+                        <label class="form-check-label" for="donationsCheck"
+                          >Donations</label
+                        >
+                        <div class="expense-fields mt-2" style="display: none">
+                          <div class="table-responsive">
+                            <table
+                              class="table table-bordered mt-3"
+                              id="donationsTable"
+                            >
+                              <thead>
+                                <tr>
+                                  <th>Details</th>
+                                  <th>Amount</th>
+                                  <th>Attach File</th>
+                                  <th>Actions</th>
+                                </tr>
+                              </thead>
+                              <tbody id="donationsTableBody">
+                                <!-- Initial Row -->
+                                <tr>
+                                  <td>
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      name="donationDetails[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="number"
+                                      class="form-control"
+                                      name="donationAmount[0]"
+                                      placeholder="Enter amount"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="file"
+                                      class="form-control"
+                                      name="donationAttachment[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <button
+                                      type="button"
+                                      class="remove-donations btn btn-sm btn-danger"
+                                    >
+                                      Remove
+                                    </button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <button
+                            type="button"
+                            class="btn btn-sm ms-auto add-btn"
+                            id="addDonations"
+                          >
+                            Add More
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+
                 </div>
+
               </div>
             </div>
           </div>

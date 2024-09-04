@@ -202,6 +202,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+// show hide based on gst yes and no
+document.querySelectorAll('input[name="soleTraderRegisterForGst"]').forEach(function (radio) {
+  radio.addEventListener("change", function () {
+    const gstContent = document.getElementById("soleTraderRegisterForGstContent");
+
+    if (this.value === "yes") {
+      gstContent.style.display = "block";
+    } else if (this.value === "no") {
+      gstContent.style.display = "none";
+    }
+  });
+});
+
+// show hide based on gst
+document.querySelectorAll('input[name="soleTraderRegisterForGst"]').forEach(function (radio) {
+  radio.addEventListener("change", function () {
+    const softwareDetailsExcelSummaryContent = document.getElementById("soleTraderRegisterForGstSoftwareDetailsExcelSummaryContent");
+    const myOwnNumberContent = document.getElementById("soleTraderRegisterForGstMyOwnNumberContent");
+
+    if (this.value === "soleTraderRegisterForGstSoftwareDetailsExcelSummary") {
+      softwareDetailsExcelSummaryContent.style.display = "block";
+      myOwnNumberContent.style.display = "none";
+    } else if (this.value === "soleTraderRegisterForGstMyOwnNumber") {
+      myOwnNumberContent.style.display = "block";
+      softwareDetailsExcelSummaryContent.style.display = "none";
+    }
+  });
+});
+// show hide based on gst end
+
+
 document.addEventListener("DOMContentLoaded", function () {
   // Initialize the index for other income rows
   let otherIncomeIndex = 1;
@@ -3207,49 +3238,60 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // Function to handle adding more Repairs and Maintenance (R & M) expenses
+    let repairsMaintenanceExpenseRowIndex = 0; // Initialize the row index counter
+
+    // Function to handle adding more Repairs and Maintenance (R & M) expenses
     function addRepairsMaintenanceExpenses(event) {
       event.preventDefault();
 
+      // Get the button that triggered the event and find the closest expense fields container
       const currentButton = event.target;
       const expenseFields = currentButton.closest('.expense-fields');
-      const rowCount = expenseFields.querySelectorAll('.row').length;
+      
+      // Extract the index of the investment property from the checkbox ID
       const invPropertyIndex = currentButton.closest('.form-check').querySelector('input[type="checkbox"]').id.match(/\d+/)[0];
 
       // Create a new row for the expense
       const newRow = document.createElement('div');
       newRow.className = 'row g-3 mt-0';
 
-      // Create and append amount input field
+      // Create and append the amount input field
       const amountCol = document.createElement('div');
       amountCol.className = 'col-12 col-md-6';
       const amountInput = document.createElement('input');
       amountInput.type = 'number';
       amountInput.className = 'form-control';
-      amountInput.name = `repairsMaintenanceAmount[${invPropertyIndex}][${rowCount}]`;
+      amountInput.name = `repairsMaintenanceAmount[${invPropertyIndex}][${repairsMaintenanceExpenseRowIndex}]`;
       amountInput.placeholder = 'Enter amount';
       amountCol.appendChild(amountInput);
 
-      // Create and append file input field
+      // Create and append the file input field
       const fileCol = document.createElement('div');
       fileCol.className = 'col-12 col-md-6';
       const fileInput = document.createElement('input');
       fileInput.type = 'file';
       fileInput.className = 'form-control';
-      fileInput.name = `repairsMaintenanceAttachment[${invPropertyIndex}][${rowCount}]`;
+      fileInput.name = `repairsMaintenanceAttachment[${invPropertyIndex}][${repairsMaintenanceExpenseRowIndex}]`;
       fileCol.appendChild(fileInput);
 
       // Append the new columns to the new row
       newRow.appendChild(amountCol);
       newRow.appendChild(fileCol);
 
-      // Append the new row to the expense fields container
+      // Insert the new row before the current "Add Expense" button
       expenseFields.insertBefore(newRow, currentButton);
+
+      // Increment the row index counter
+      repairsMaintenanceExpenseRowIndex++;
     }
 
     // Attach the add expense functionality to all "Add Expense" buttons
     document.querySelectorAll('.add-repairs-maintenance-expenses').forEach(button => {
       button.addEventListener('click', addRepairsMaintenanceExpenses);
     });
+
+
+
 
     // Function to handle adding more Sundry Rental Expenses
     function addSundryRentalExpenses(event) {
