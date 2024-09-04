@@ -1111,49 +1111,51 @@
               <!-- Log Book Method (hidden by default) -->
               <div id="logBookFields" class="d-none">
                 <label class="form-label">Expenses</label>
-                <table class="table table-bordered table-sm">
-                  <thead>
-                    <tr>
-                      <th>Expense</th>
-                      <th>Amount</th>
-                      <th>Attach File</th>
-                      <td></td>
-                    </tr>
-                  </thead>
-                  <tbody id="expensesTableBody">
-                    <tr>
-                      <td>
-                        <input
-                          type="text"
-                          class="form-control"
-                          name="expense[0]"
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="text"
-                          class="form-control"
-                          name="amount[0]"
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="file"
-                          class="form-control"
-                          name="file[0]"
-                        />
-                      </td>
-                      <td></td>
-                    </tr>
-                  </tbody>
-                </table>
-                <button
-                  id="add-expense-row"
-                  class="mb-3 ms-auto btn btn-sm add-btn"
-                  type="button"
-                >
-                  Add +
-                </button>
+                <div class="table-responsive">
+                  <table class="table table-bordered table-sm">
+                    <thead>
+                      <tr>
+                        <th>Details</th>
+                        <th>Amount</th>
+                        <th>Attach File</th>
+                        <td></td>
+                      </tr>
+                    </thead>
+                    <tbody id="logBookTableBody">
+                      <tr>
+                        <td>
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="logBookDetails[0]"
+                          />
+                        </td>
+                        <td>
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="logBookAmount[0]"
+                          />
+                        </td>
+                        <td>
+                          <input
+                            type="file"
+                            class="form-control"
+                            name="logBookFile[0]"
+                          />
+                        </td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <button
+                    id="add-logBook-expense-row"
+                    class="mb-3 ms-auto btn btn-sm add-btn"
+                    type="button"
+                  >
+                    Add +
+                  </button>
+                </div>
               </div>
 
               <!-- Kilometres Method (hidden by default) -->
@@ -1231,32 +1233,43 @@
               </div>
 
               <div id="uniformDetails" class="d-none">
-                <div class="row g-3">
-                  <!-- details -->
-                  <div class="col-12">
-                    <label class="form-label">
-                      Details
-                    </label>
-                    <textarea
-                      class="form-control"
-                      name="uniformDetails"
-                      id="uniformDetailsTextarea"
-                    ></textarea>
-                  </div>
-                  <!-- Amount -->
-                  <div class="col-12 col-md-6">
-                    <label class="form-label d-block" for="workUniformAmount">
-                      Amount
-                    </label>
-                    <input class="form-control" id="workUniformAmount" type="number" />
-                  </div>
-                  <!-- Attach File -->
-                  <div class="col-12 col-md-6">
-                    <label class="form-label d-block" for="workUniformAttachFile">
-                      Attach File
-                    </label>
-                    <input class="form-control" id="workUniformAttachFile" type="file" />
-                  </div>
+                <div class="table-responsive">
+                  <table class="table table-bordered table-sm">
+                    <thead>
+                      <tr>
+                        <th>Details</th>
+                        <th>Amount</th>
+                        <th>Attach File</th>
+                        <td></td>
+                      </tr>
+                    </thead>
+                    <tbody id="uniformTableBody">
+                      <tr>
+                        <td>
+                          <textarea
+                            rows="1"
+                            class="form-control mb-0"
+                            name="uniformDetails"
+                            id="uniformDetailsTextarea"
+                          ></textarea>
+                        </td>
+                        <td>
+                          <input class="form-control" id="workUniformAmount" type="number" />
+                        </td>
+                        <td>
+                          <input class="form-control" id="workUniformAttachFile" type="file" />
+                        </td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <button
+                    id="add-uniform-expense-row"
+                    class="mb-3 ms-auto btn btn-sm add-btn"
+                    type="button"
+                  >
+                    Add +
+                  </button>
                 </div>
               </div>
             </div>
@@ -1264,7 +1277,7 @@
 
           <!-- SELF EDUCATION (step 9) -->
           <div class="step">
-            <h3 class="d-block mb-3">SELF EDUCATION</h3>
+            <h3 class="d-block mb-3">Self Education</h3>
 
             <!-- Ask if the user has any self-education -->
             <div class="mb-4">
@@ -1294,44 +1307,60 @@
             </div>
 
             <!-- Container for Self-Education Entries -->
-            <div id="selfEducationFields"></div>
-
-            <!-- Button to Add Self-Education -->
-            <div id="addEducationContainer" style="display: none">
-              <button
-                type="button"
-                id="addSelfEducation"
-                class="btn mb-3 add-btn"
-              >
-                Add Self-Education
-              </button>
-            </div>
-          </div>
-
-          <!-- Template for self-education entry -->
-          <template id="selfEducationTemplate">
-            <div class="self-education-entry">
-              <h4 class="mb-3">Self-Education</h4>
-              <!-- course name -->
-              <div class="mb-2">
-                <label class="form-label">Name of Course:</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  name="courseName[__EDU_INDEX__]"
-                />
-              </div>
-              <!-- institution -->
-              <div class="mb-2">
-                <label class="form-label">Institution:</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  name="institution[__EDU_INDEX__]"
-                />
+            <div id="selfEducationFields" style="display: none;">
+              <!-- Self-Education Entries -->
+              <div id="selfEducationCourses" class="mb-3">
+                <div class="table-responsive">
+                  <table class="table table-bordered table-sm">
+                    <thead>
+                      <tr>
+                        <th>Name of Course</th>
+                        <th>Institution</th>
+                        <th>Fees</th>
+                        <th>Attach File</th>
+                        <td>Action</td>
+                      </tr>
+                    </thead>
+                    <tbody id="selfEducationCoursesTableBody">
+                      <tr>
+                        <!-- education course name -->
+                        <td>
+                          <input class="form-control" name="selfEducationCourseName[0]" type="text" />
+                        </td>
+                        <!-- education Institution -->
+                        <td>
+                          <input class="form-control" name="selfEducationCourseInstitution[0]" type="text" />
+                        </td>
+                        <!-- education Fees -->
+                        <td>
+                          <input class="form-control" name="selfEducationCourseFees[0]" type="number" />
+                        </td>
+                        <!-- education Attachment -->
+                        <td>
+                          <input class="form-control" name="selfEducationCourseAttachment[0]" type="file" />
+                        </td>
+                        <td>
+                          <button
+                            type="button"
+                            class="btn btn-danger btn-sm removeSelfEducationCourse"
+                          >
+                            Remove
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <button
+                    id="add-selfeducation-row"
+                    class="mb-3 ms-auto btn btn-sm add-btn"
+                    type="button"
+                  >
+                    Add +
+                  </button>
+                </div>
               </div>
               <!-- employment relation -->
-              <div class="mb-2">
+              <div class="mb-3">
                 <label class="form-label"
                   >How does it relate to your current
                   employment/employer?:</label
@@ -1340,11 +1369,6 @@
                   class="form-control"
                   name="employmentRelation[__EDU_INDEX__]"
                 ></textarea>
-              </div>
-              <!-- fees -->
-              <div class="mb-2">
-                <label class="form-label">Fees:</label>
-                <input class="form-control" name="fees[__EDU_INDEX__]" />
               </div>
               <!-- HECS/HELP debt -->
               <div class="mb-4 hecs-debt-container">
@@ -1357,13 +1381,13 @@
                     <input
                       class="form-check-input hecs-debt-radio"
                       type="radio"
-                      name="hecsDebt[__EDU_INDEX__]"
+                      name="haveHecsDebt"
                       value="yes"
-                      id="hecsDebtYes[__EDU_INDEX__]"
+                      id="haveHecsDebtYes"
                     />
                     <label
                       class="form-check-label"
-                      for="hecsDebtYes[__EDU_INDEX__]"
+                      for="haveHecsDebtYes"
                       >Yes</label
                     >
                   </div>
@@ -1371,13 +1395,13 @@
                     <input
                       class="form-check-input hecs-debt-radio"
                       type="radio"
-                      name="hecsDebt[__EDU_INDEX__]"
+                      name="haveHecsDebt"
                       value="no"
-                      id="hecsDebtNo[__EDU_INDEX__]"
+                      id="haveHecsDebtNo"
                     />
                     <label
                       class="form-check-label"
-                      for="hecsDebtNo[__EDU_INDEX__]"
+                      for="haveHecsDebtNo"
                       >No</label
                     >
                   </div>
@@ -1387,182 +1411,766 @@
                   <input
                     type="text"
                     class="form-control"
-                    name="hecsDebtAmount[__EDU_INDEX__]"
+                    name="hecsDebtAmount"
                   />
                 </div>
               </div>
-              <!-- expenses -->
-              <div class="mb-2">
+              <!-- self education expenses -->
+              <div class="mb-3">
                 <h5 class="mb-2">Other Self-Education Expenses</h5>
-                <table class="table table-bordered">
-                  <thead>
-                    <tr>
-                      <th>Expense</th>
-                      <th>Amount</th>
-                      <th>Attachment</th>
-                      <th>Actions</th>
-                    </tr>
-                  </thead>
-                  <tbody class="expenses-table-body"></tbody>
-                </table>
-                <button
-                  type="button"
-                  class="ms-auto btn add-btn btn-sm addSelfEducationExpense"
-                >
-                  Add Expense
-                </button>
-              </div>
-              <!-- Internet -->
-              <div class="mb-4 row g-3">
-                <h5 class="col-12">Internet</h5>
-                <div class="col-12 col-md-6">
-                  <label class="form-label">Amount per month:</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    name="internetAmount[__EDU_INDEX__]"
-                  />
-                </div>
-                <div class="col-12 col-md-6">
-                  <label class="form-label">Percentage used for work:</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    name="internetPercentage[__EDU_INDEX__]"
-                  />
+                <div id="selfEducationExpensesTable" class="table-responsive">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Details</th>
+                        <th>Amount</th>
+                        <th>Attachment</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody class="selfeducation-expenses-table-body">
+                      <tr>
+                        <td>
+                          <textarea
+                            rows="1"
+                            class="form-control mb-0"
+                            name="selfeducationExpenseDetails[0]"
+                          ></textarea>
+                        </td>
+                        <td>
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="selfeducationExpenseAmount[0]"
+                          />
+                        </td>
+                        <td>
+                          <input
+                            type="file"
+                            class="form-control"
+                            name="selfeducationExpenseFile[0]"
+                          />
+                        </td>
+                        <td>
+                          <button
+                            type="button"
+                            class="btn btn-danger btn-sm removeSelfEducationExpense"
+                          >
+                            Remove
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <button
+                    type="button"
+                    class="ms-auto btn add-btn btn-sm addSelfEducationExpense"
+                  >
+                    Add Expense
+                  </button>
                 </div>
               </div>
               <!-- Home Office -->
-              <div class="mb-2 row g-3">
-                <h5 class="col-12">Home Office Hour</h5>
-                <div class="col-12 col-md-6">
-                  <label class="form-label">Hours per week:</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    name="homeOfficeHours[__EDU_INDEX__]"
-                  />
-                </div>
-                <div class="col-12 col-md-6">
-                  <label class="form-label">How many weeks:</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    name="homeOfficeWeeks[__EDU_INDEX__]"
-                  />
-                </div>
-              </div>
-              <button
-                type="button"
-                class="d-block ms-auto mt-4 btn btn-danger removeSelfEducation"
-              >
-                Remove Self-Education
-              </button>
-              <hr class="my-5" />
-            </div>
-          </template>
+               <div class="mb-3">
+                <h5 class="mb-4">Home Office Expenses Related to Self-Education</h5>
+                <div>
+                  <div class="mt-1 mb-0">
+                    <label class="form-label mb-2"
+                      >Do you have home office expenses?</label
+                    >
+                  </div>
+                  <div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="homeOfficeExpensesSelfEducation"
+                        id="homeOfficeExpensesSelfEducationYes"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="homeOfficeExpensesSelfEducationYes"
+                        >Yes</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="homeOfficeExpensesSelfEducation"
+                        id="homeOfficeExpensesSelfEducationNo"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="homeOfficeExpensesSelfEducationNo"
+                        >No</label
+                      >
+                    </div>
+                  </div>
 
-          <!-- Template for expense row -->
-          <template id="expenseRowTemplate">
-            <tr>
-              <td>
-                <input
-                  type="text"
-                  class="form-control"
-                  name="expenseDescription[__EDU_INDEX__][__EXP_INDEX__]"
-                />
-              </td>
-              <td>
-                <input
-                  type="text"
-                  class="form-control"
-                  name="expenseAmount[__EDU_INDEX__][__EXP_INDEX__]"
-                />
-              </td>
-              <td>
-                <input
-                  type="file"
-                  class="form-control"
-                  name="expenseFile[__EDU_INDEX__][__EXP_INDEX__]"
-                />
-              </td>
-              <td>
-                <button
-                  type="button"
-                  class="btn btn-danger btn-sm removeSelfEducationExpense"
-                >
-                  Remove
-                </button>
-              </td>
-            </tr>
-          </template>
+                  <!-- methods -->
+                  <div
+                    id="selfEducationHomeOfficeOptions"
+                    class="col-12 mt-4"
+                    style="display: none"
+                  >
+                    <div class="mb-3">
+                      <label class="d-block mb-2"
+                        >If Yes, how would you like to claim home office
+                        expenses?</label
+                      >
+
+                      <div class="form-check form-check-inline">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="selfEducationHomeOfficeMethod"
+                          id="selfEducationFixedRateMethod"
+                          value="selfEducationFixedRate"
+                        />
+                        <label class="form-check-label" for="selfEducationFixedRateMethod"
+                          >Fixed Rate Method</label
+                        >
+                      </div>
+
+                      <div class="form-check form-check-inline">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="selfEducationHomeOfficeMethod"
+                          id="selfEducationActualCostMethod"
+                          value="selfEducationActualCost"
+                        />
+                        <label class="form-check-label" for="selfEducationActualCostMethod"
+                          >Actual Cost Method</label
+                        >
+                      </div>
+
+                      
+                    </div>
+
+                    <!-- Fixed Rate Method -->
+                    <div
+                      id="selfEducationFixedRateFields"
+                      class="col-12 mt-3"
+                      style="display: none"
+                    >
+                      <p>2024 Fixed Rate - 67 Cents per Hour</p>
+                      <div class="row g-3 mb-3">
+                        <div class="col-12 col-md-6">
+                          <label for="selfEducationFixedRatehoursPerDay" class="form-label"
+                            >Number of Hours per Day</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="selfEducationFixedRatehoursPerDay"
+                          />
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                          <label for="selfEducationFixedRatedaysPerYear" class="form-label"
+                            >Number of Days in the Year</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="selfEducationFixedRatedaysPerYear"
+                          />
+                        </div>
+                      </div>
+
+                      <div id="selfEducationFixedRateAdditionalDeduction" class="mb-3">
+                        <label class="form-label">Additional Deduction</label>
+
+                        <!-- Office Table -->
+                        <div class="form-check mb-1">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="selfEducationFixedRateofficeTableCheckbox"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="selfEducationFixedRateofficeTableCheckbox"
+                            >Office Table</label
+                          >
+                          <div id="selfEducationFixedRateofficeTableFields" style="display: none">
+                            <div class="row g-3 mb-3">
+                              <div class="col-md-6">
+                                <label for="selfEducationFixedRateofficeTableAmount" class="form-label"
+                                  >Amount</label
+                                >
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="selfEducationFixedRateofficeTableAmount"
+                                />
+                              </div>
+                              <div class="col-md-6">
+                                <label for="selfEducationFixedRateofficeTableFile" class="form-label"
+                                  >Attach File</label
+                                >
+                                <input
+                                  type="file"
+                                  class="form-control"
+                                  id="selfEducationFixedRateofficeTableFile"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Office Chair -->
+                        <div class="form-check mb-1">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="selfEducationFixedRateofficeChairCheckbox"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="selfEducationFixedRateofficeChairCheckbox"
+                            >Office Chair</label
+                          >
+                          <div id="selfEducationFixedRateofficeChairFields" style="display: none">
+                            <div class="row g-3 mb-3">
+                              <div class="col-md-6">
+                                <label for="selfEducationFixedRateofficeChairAmount" class="form-label"
+                                  >Amount</label
+                                >
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="selfEducationFixedRateofficeChairAmount"
+                                />
+                              </div>
+                              <div class="col-md-6">
+                                <label for="selfEducationFixedRateofficeChairFile" class="form-label"
+                                  >Attach File</label
+                                >
+                                <input
+                                  type="file"
+                                  class="form-control"
+                                  id="selfEducationFixedRateofficeChairFile"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Office Bookshelf -->
+                        <div class="form-check mb-1">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="selfEducationFixedRateofficeBookshelfCheckbox"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="selfEducationFixedRateofficeBookshelfCheckbox"
+                            >Office Bookshelf</label
+                          >
+                          <div id="selfEducationFixedRateofficeBookshelfFields" style="display: none">
+                            <div class="row g-3 mb-3">
+                              <div class="col-md-6">
+                                <label
+                                  for="selfEducationFixedRateofficeBookshelfAmount"
+                                  class="form-label"
+                                  >Amount</label
+                                >
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="selfEducationFixedRateofficeBookshelfAmount"
+                                />
+                              </div>
+                              <div class="col-md-6">
+                                <label
+                                  for="selfEducationFixedRateofficeBookshelfFile"
+                                  class="form-label"
+                                  >Attach File</label
+                                >
+                                <input
+                                  type="file"
+                                  class="form-control"
+                                  id="selfEducationFixedRateofficeBookshelfFile"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Computer / Laptop -->
+                        <div class="form-check mb-1">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="selfEducationFixedRatecomputerLaptopCheckbox"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="selfEducationFixedRatecomputerLaptopCheckbox"
+                            >Computer / Laptop</label
+                          >
+                          <div id="selfEducationFixedRatecomputerLaptopFields" style="display: none">
+                            <div class="row g-3 mb-3">
+                              <div class="col-md-6">
+                                <label
+                                  for="selfEducationFixedRatecomputerLaptopAmount"
+                                  class="form-label"
+                                  >Amount</label
+                                >
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="selfEducationFixedRatecomputerLaptopAmount"
+                                />
+                              </div>
+                              <div class="col-md-6">
+                                <label for="selfEducationFixedRatecomputerLaptopFile" class="form-label"
+                                  >Attach File</label
+                                >
+                                <input
+                                  type="file"
+                                  class="form-control"
+                                  id="selfEducationFixedRatecomputerLaptopFile"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Other -->
+                        <div class="form-check mb-1">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="selfEducationFixedRateotherCheckbox"
+                          />
+                          <label class="form-check-label" for="selfEducationFixedRateotherCheckbox"
+                            >Other</label
+                          >
+                          <div id="selfEducationFixedRateotherFields" style="display: none">
+                            <div class="row g-3 mb-3">
+                              <div class="col-md-6">
+                                <label for="selfEducationFixedRateotherAmount" class="form-label"
+                                  >Amount</label
+                                >
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="selfEducationFixedRateotherAmount"
+                                />
+                              </div>
+                              <div class="col-md-6">
+                                <label for="selfEducationFixedRateotherFile" class="form-label"
+                                  >Attach File</label
+                                >
+                                <input
+                                  type="file"
+                                  class="form-control"
+                                  id="selfEducationFixedRateotherFile"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Actual Cost Method -->
+                    <div
+                      id="selfEducationActualCostFields"
+                      class="col-12 mt-3"
+                      style="display: none"
+                    >
+                      <div class="mb-3">
+                        <label for="additionalCosts" class="form-label"
+                          >Additional Costs</label
+                        >
+                        <div class="row g-3">
+                          <!-- Internet -->
+                          <div class="col-md-6">
+                            <label for="selfEducationInternetAmount" class="form-label"
+                              >Internet</label
+                            >
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="selfEducationInternetAmount"
+                              name="selfEducationInternetAmount"
+                            />
+                          </div>
+
+                          <!-- Mobile -->
+                          <div class="col-md-6">
+                            <label for="selfEducationMobileAmount" class="form-label"
+                              >Mobile</label
+                            >
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="selfEducationMobileAmount"
+                              name="selfEducationMobileAmount"
+                            />
+                          </div>
+
+                          <!-- Electricity -->
+                          <div class="col-md-6">
+                            <label for="selfEducationElectricityAmount" class="form-label"
+                              >Electricity</label
+                            >
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="selfEducationElectricityAmount"
+                              name="selfEducationElectricityAmount"
+                            />
+                          </div>
+
+                          <!-- Gas -->
+                          <div class="col-md-6">
+                            <label for="selfEducationGasAmount" class="form-label">Gas</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="selfEducationGasAmount"
+                              name="selfEducationGasAmount"
+                            />
+                          </div>
+
+                          <!-- Stationery -->
+                          <div class="col-md-6">
+                            <label for="selfEducationStationeryAmount" class="form-label"
+                              >Stationery</label
+                            >
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="selfEducationStationeryAmount"
+                              name="selfEducationStationeryAmount"
+                            />
+                          </div>
+
+                          <!-- Computer Consumable -->
+                          <div class="col-md-6">
+                            <label
+                              for="selfEducationComputerConsumableAmount"
+                              class="form-label"
+                              >Computer Consumable</label
+                            >
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="selfEducationComputerConsumableAmount"
+                              name="selfEducationComputerConsumableAmount"
+                            />
+                          </div>
+
+                          <div class="col-12">
+                            <!-- Office Table -->
+                            <div class="form-check mb-1">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="selfEducationOfficeTableActualCheckbox"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="selfEducationOfficeTableActualCheckbox"
+                                >Office Table</label
+                              >
+                              <div
+                                id="selfEducationOfficeTableActualFields"
+                                class="fields"
+                                style="display: none"
+                              >
+                                <div class="row g-3 mb-3">
+                                  <div class="col-md-6">
+                                    <label
+                                      for="selfEducationOfficeTableActualAmount"
+                                      class="form-label"
+                                      >Amount</label
+                                    >
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="selfEducationOfficeTableActualAmount"
+                                    />
+                                  </div>
+                                  <div class="col-md-6">
+                                    <label
+                                      for="selfEducationOfficeTableActualFile"
+                                      class="form-label"
+                                      >Attach File</label
+                                    >
+                                    <input
+                                      type="file"
+                                      class="form-control"
+                                      id="selfEducationOfficeTableActualFile"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- Office Chair -->
+                            <div class="form-check mb-1">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="selfEducationOfficeChairActualCheckbox"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="selfEducationOfficeChairActualCheckbox"
+                                >Office Chair</label
+                              >
+                              <div
+                                id="selfEducationOfficeChairActualFields"
+                                class="fields"
+                                style="display: none"
+                              >
+                                <div class="row g-3 mb-3">
+                                  <div class="col-md-6">
+                                    <label
+                                      for="selfEducationOfficeChairActualAmount"
+                                      class="form-label"
+                                      >Amount</label
+                                    >
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="selfEducationOfficeChairActualAmount"
+                                    />
+                                  </div>
+                                  <div class="col-md-6">
+                                    <label
+                                      for="selfEducationOfficeChairActualFile"
+                                      class="form-label"
+                                      >Attach File</label
+                                    >
+                                    <input
+                                      type="file"
+                                      class="form-control"
+                                      id="selfEducationOfficeChairActualFile"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- Office Bookshelf -->
+                            <div class="form-check mb-1">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="selfEducationOfficeBookshelfActualCheckbox"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="selfEducationOfficeBookshelfActualCheckbox"
+                                >Office Bookshelf</label
+                              >
+                              <div
+                                id="selfEducationOfficeBookshelfActualFields"
+                                class="fields"
+                                style="display: none"
+                              >
+                                <div class="row g-3 mb-3">
+                                  <div class="col-md-6">
+                                    <label
+                                      for="selfEducationOfficeBookshelfActualAmount"
+                                      class="form-label"
+                                      >Amount</label
+                                    >
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="selfEducationOfficeBookshelfActualAmount"
+                                    />
+                                  </div>
+                                  <div class="col-md-6">
+                                    <label
+                                      for="selfEducationOfficeBookshelfActualFile"
+                                      class="form-label"
+                                      >Attach File</label
+                                    >
+                                    <input
+                                      type="file"
+                                      class="form-control"
+                                      id="selfEducationOfficeBookshelfActualFile"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- Computer / Laptop -->
+                            <div class="form-check mb-1">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="selfEducationComputerLaptopActualCheckbox"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="selfEducationComputerLaptopActualCheckbox"
+                                >Computer / Laptop</label
+                              >
+                              <div
+                                id="selfEducationComputerLaptopActualFields"
+                                class="fields"
+                                style="display: none"
+                              >
+                                <div class="row g-3 mb-3">
+                                  <div class="col-md-6">
+                                    <label
+                                      for="selfEducationComputerLaptopActualAmount"
+                                      class="form-label"
+                                      >Amount</label
+                                    >
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="selfEducationComputerLaptopActualAmount"
+                                    />
+                                  </div>
+                                  <div class="col-md-6">
+                                    <label
+                                      for="selfEducationComputerLaptopActualFile"
+                                      class="form-label"
+                                      >Attach File</label
+                                    >
+                                    <input
+                                      type="file"
+                                      class="form-control"
+                                      id="selfEducationComputerLaptopActualFile"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- Other -->
+                            <div class="form-check mb-1">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="selfEducationOtherActualCheckbox"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="selfEducationOtherActualCheckbox"
+                                >Other</label
+                              >
+                              <div
+                                id="selfEducationOtherActualFields"
+                                class="fields"
+                                style="display: none"
+                              >
+                                <div class="row g-3 mb-3">
+                                  <div class="col-md-6">
+                                    <label
+                                      for="selfEducationOtherActualAmount"
+                                      class="form-label"
+                                      >Amount</label
+                                    >
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="selfEducationOtherActualAmount"
+                                    />
+                                  </div>
+                                  <div class="col-md-6">
+                                    <label
+                                      for="selfEducationOtherActualFile"
+                                      class="form-label"
+                                      >Attach File</label
+                                    >
+                                    <input
+                                      type="file"
+                                      class="form-control"
+                                      id="selfEducationOtherActualFile"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               </div>
+            </div>
+
+          </div>
+
 
           <!-- OTHER WORK RELATION DEDUCTIONS (step 10) -->
           <div class="step">
-            <h4 class="mb-3">OTHER WORK RELATION DEDUCTIONS</h4>
-            <div class="row g-3">
+            <h4 class="mb-3">Other Work Relation Deductions</h4>
+            <div class="mt-3">
               <!-- Expenses Table -->
-              <div class="col-12 mt-3">
                 <h5 class="mb-2">Expenses</h5>
-                <table
-                  class="table table-bordered"
-                  id="otherWorkRelationExpensesTable"
-                >
-                  <thead>
-                    <tr>
-                      <th>Expense</th>
-                      <th>Amount</th>
-                      <th>Attachment</th>
-                      <th>Actions</th>
-                    </tr>
-                  </thead>
-                  <tbody id="otherWorkRelationExpensesTableBody">
-                    <!-- Initial Row -->
-                    <tr>
-                      <td>
-                        <input
-                          type="text"
-                          class="form-control"
-                          name="expenseName[0]"
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="text"
-                          class="form-control"
-                          name="expenseAmount[0]"
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="file"
-                          class="form-control"
-                          name="expenseAttachment[0]"
-                        />
-                      </td>
-                      <td>
-                        <button
-                          type="button"
-                          class="remove-expense btn btn-danger btn-sm"
-                        >
-                          Remove
-                        </button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <button
-                  type="button"
-                  class="ms-auto btn btn-sm add-btn"
-                  id="addOtherWorkRelationExpenseButton"
-                >
-                  Add Expense
-                </button>
-              </div>
-
-
-              <!-- Home Office Expenses Section -->
-              
+                <div class="table-responsive">
+                  <table
+                    class="table table-bordered"
+                    id="otherWorkRelationExpensesTable"
+                  >
+                    <thead>
+                      <tr>
+                        <th>Details</th>
+                        <th>Amount</th>
+                        <th>Attachment</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody id="otherWorkRelationExpensesTableBody">
+                      <!-- Initial Row -->
+                      <tr>
+                        <td>
+                          <textarea
+                            rows="1"
+                            type="text"
+                            class="form-control mb-0"
+                            name="expenseDetails[0]"
+                          ></textarea>
+                        </td>
+                        <td>
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="expenseAmount[0]"
+                          />
+                        </td>
+                        <td>
+                          <input
+                            type="file"
+                            class="form-control"
+                            name="expenseAttachment[0]"
+                          />
+                        </td>
+                        <td>
+                          <button
+                            type="button"
+                            class="remove-otherWorkRelationexpense btn btn-danger btn-sm"
+                          >
+                            Remove
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <button
+                    type="button"
+                    class="ms-auto btn btn-sm add-btn"
+                    id="addOtherWorkRelationExpenseButton"
+                  >
+                    Add Expense
+                  </button>
+                </div>
             </div>
           </div>
 
@@ -2370,57 +2978,60 @@
                 <!-- Expenses Table for OTHER -->
                 <div class="mt-4">
                   <h6 class="mb-2">Expenses</h6>
-                  <table class="table table-bordered" id="otherExpensesTable">
-                    <thead>
-                      <tr>
-                        <th>Expense</th>
-                        <th>Amount</th>
-                        <th>Attachment</th>
-                        <th>Actions</th>
-                      </tr>
-                    </thead>
-                    <tbody id="otherExpensesTableBody">
-                      <!-- Initial Row -->
-                      <tr>
-                        <td>
-                          <input
-                            type="text"
-                            class="form-control"
-                            name="otherExpenseName[0]"
-                          />
-                        </td>
-                        <td>
-                          <input
-                            type="text"
-                            class="form-control"
-                            name="otherExpenseAmount[0]"
-                          />
-                        </td>
-                        <td>
-                          <input
-                            type="file"
-                            class="form-control"
-                            name="otherExpenseAttachment[0]"
-                          />
-                        </td>
-                        <td>
-                          <button
-                            type="button"
-                            class="remove-other-expense btn btn-danger btn-sm"
-                          >
-                            Remove
-                          </button>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <button
-                    type="button"
-                    class="ms-auto btn btn-sm add-btn"
-                    id="addOtherExpenseButton"
-                  >
-                    Add Expense
-                  </button>
+                  <div class="table-responsive">
+                    <table class="table table-bordered" id="otherExpensesTable">
+                      <thead>
+                        <tr>
+                          <th>Details</th>
+                          <th>Amount</th>
+                          <th>Attachment</th>
+                          <th>Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody id="otherExpensesTableBody">
+                        <!-- Initial Row -->
+                        <tr>
+                          <td>
+                            <textarea
+                              rows="1"
+                              type="text"
+                              class="form-control mb-0"
+                              name="otherExpenseDetails[0]"
+                            ></textarea>
+                          </td>
+                          <td>
+                            <input
+                              type="text"
+                              class="form-control"
+                              name="otherExpenseAmount[0]"
+                            />
+                          </td>
+                          <td>
+                            <input
+                              type="file"
+                              class="form-control"
+                              name="otherExpenseAttachment[0]"
+                            />
+                          </td>
+                          <td>
+                            <button
+                              type="button"
+                              class="remove-other-expense btn btn-danger btn-sm"
+                            >
+                              Remove
+                            </button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <button
+                      type="button"
+                      class="ms-auto btn btn-sm add-btn"
+                      id="addOtherExpenseButton"
+                    >
+                      Add Expense
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -2475,60 +3086,63 @@
                 style="display: none"
               >
                 <h6 class="mb-2">Expenses</h6>
-                <table
-                  class="table table-bordered"
-                  id="giftsDonationsExpensesTable"
-                >
-                  <thead>
-                    <tr>
-                      <th>Expense</th>
-                      <th>Amount</th>
-                      <th>Attachment</th>
-                      <th>Actions</th>
-                    </tr>
-                  </thead>
-                  <tbody id="giftsDonationsExpensesTableBody">
-                    <!-- Initial Row -->
-                    <tr>
-                      <td>
-                        <input
-                          type="text"
-                          class="form-control"
-                          name="giftsDonationsExpenseName[0]"
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="text"
-                          class="form-control"
-                          name="giftsDonationsExpenseAmount[0]"
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="file"
-                          class="form-control"
-                          name="giftsDonationsExpenseAttachment[0]"
-                        />
-                      </td>
-                      <td>
-                        <button
-                          type="button"
-                          class="remove-gifts-donations-expense btn btn-danger btn-sm"
-                        >
-                          Remove
-                        </button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <button
-                  type="button"
-                  class="ms-auto btn btn-sm add-btn"
-                  id="addGiftsDonationsExpenseButton"
-                >
-                  Add Expense
-                </button>
+                <div class="table-responsive">
+                  <table
+                    class="table table-bordered"
+                    id="giftsDonationsExpensesTable"
+                  >
+                    <thead>
+                      <tr>
+                        <th>Details</th>
+                        <th>Amount</th>
+                        <th>Attachment</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody id="giftsDonationsExpensesTableBody">
+                      <!-- Initial Row -->
+                      <tr>
+                        <td>
+                          <textarea
+                          rows="1"
+                            type="text"
+                            class="form-control mb-0"
+                            name="giftsDonationsExpenseDetails[0]"
+                          ></textarea>
+                        </td>
+                        <td>
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="giftsDonationsExpenseAmount[0]"
+                          />
+                        </td>
+                        <td>
+                          <input
+                            type="file"
+                            class="form-control"
+                            name="giftsDonationsExpenseAttachment[0]"
+                          />
+                        </td>
+                        <td>
+                          <button
+                            type="button"
+                            class="remove-gifts-donations-expense btn btn-danger btn-sm"
+                          >
+                            Remove
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <button
+                    type="button"
+                    class="ms-auto btn btn-sm add-btn"
+                    id="addGiftsDonationsExpenseButton"
+                  >
+                    Add Expense
+                  </button>
+                </div>
               </div>
             </div>
 
@@ -2581,58 +3195,62 @@
                 style="display: none"
               >
                 <h6 class="mb-2">Expenses</h6>
-                <table class="table table-bordered" id="anyOtherExpensesTable">
-                  <thead>
-                    <tr>
-                      <th>Expense</th>
-                      <th>Amount</th>
-                      <th>Attachment</th>
-                      <th>Actions</th>
-                    </tr>
-                  </thead>
-                  <tbody id="anyOtherExpensesTableBody">
-                    <!-- Initial Row -->
-                    <tr>
-                      <td>
-                        <input
-                          type="text"
-                          class="form-control"
-                          name="anyOtherExpenseName[0]"
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="text"
-                          class="form-control"
-                          name="anyOtherExpenseAmount[0]"
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="file"
-                          class="form-control"
-                          name="anyOtherExpenseAttachment[0]"
-                        />
-                      </td>
-                      <td>
-                        <button
-                          type="button"
-                          class="remove-any-other-expense btn btn-danger btn-sm"
-                        >
-                          Remove
-                        </button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <button
-                  type="button"
-                  class="ms-auto btn btn-sm add-btn"
-                  id="addAnyOtherExpenseButton"
-                >
-                  Add Expense
-                </button>
+                <div class="table-responsive">
+                  <table class="table table-bordered" id="anyOtherExpensesTable">
+                    <thead>
+                      <tr>
+                        <th>Details</th>
+                        <th>Amount</th>
+                        <th>Attachment</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody id="anyOtherExpensesTableBody">
+                      <!-- Initial Row -->
+                      <tr>
+                        <td>
+                          <textarea
+                            rows="1"
+                            type="text"
+                            class="form-control mb-0"
+                            name="anyOtherExpenseDetails[0]"
+                          ></textarea>
+                        </td>
+                        <td>
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="anyOtherExpenseAmount[0]"
+                          />
+                        </td>
+                        <td>
+                          <input
+                            type="file"
+                            class="form-control"
+                            name="anyOtherExpenseAttachment[0]"
+                          />
+                        </td>
+                        <td>
+                          <button
+                            type="button"
+                            class="remove-any-other-expense btn btn-danger btn-sm"
+                          >
+                            Remove
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <button
+                    type="button"
+                    class="ms-auto btn btn-sm add-btn"
+                    id="addAnyOtherExpenseButton"
+                  >
+                    Add Expense
+                  </button>
+                </div>
               </div>
+
             </div>
           </div>
 

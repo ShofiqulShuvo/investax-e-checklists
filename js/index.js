@@ -553,6 +553,64 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // show and hide WORK UNIFORM fields end
 
+// add remove multiple work uniform
+let uniformExpensesRowIndex = 0;
+
+document
+  .getElementById("add-uniform-expense-row")
+  .addEventListener("click", function () {
+    let tableBody = document.getElementById("uniformTableBody");
+    uniformExpensesRowIndex++;
+
+    let newRow = document.createElement("tr");
+
+    let detailsCell = document.createElement("td");
+    let amountCell = document.createElement("td");
+    let fileCell = document.createElement("td");
+    let actionsCell = document.createElement("td");
+
+    let detailsTextarea = document.createElement("textarea");
+    let amountInput = document.createElement("input");
+    let fileInput = document.createElement("input");
+
+    detailsTextarea.rows = 1;
+    detailsTextarea.className = "form-control mb-0";
+    detailsTextarea.name = `uniformDetails[${uniformExpensesRowIndex}]`;
+
+    amountInput.type = "number";
+    amountInput.className = "form-control";
+    amountInput.name = `workUniformAmount[${uniformExpensesRowIndex}]`;
+
+    fileInput.type = "file";
+    fileInput.className = "form-control";
+    fileInput.name = `workUniformAttachFile[${uniformExpensesRowIndex}]`;
+
+    detailsCell.appendChild(detailsTextarea);
+    amountCell.appendChild(amountInput);
+    fileCell.appendChild(fileInput);
+
+    let removeButton = document.createElement("button");
+    removeButton.className = "remove-btn btn btn-sm btn-danger";
+    removeButton.type = "button";
+    removeButton.innerHTML = "Remove";
+
+    removeButton.addEventListener("click", function () {
+      newRow.remove();
+    });
+
+    actionsCell.appendChild(removeButton);
+
+    newRow.appendChild(detailsCell);
+    newRow.appendChild(amountCell);
+    newRow.appendChild(fileCell);
+    newRow.appendChild(actionsCell);
+
+    tableBody.appendChild(newRow);
+  });
+
+
+// add remove multiple work uniform end
+
 
 
 
@@ -968,16 +1026,15 @@ document.getElementById("add-dividend-row").addEventListener("click", function (
 // dividents end
 
 // add remove other work relation expenses
-// Initialize index for additional rows
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize index for additional rows
 let otherWorkRelationExpenseRowIndex = 0;
 
 // Function to add a new expense row
 document
   .getElementById("addOtherWorkRelationExpenseButton")
   ?.addEventListener("click", function () {
-    let tableBody = document.getElementById(
-      "otherWorkRelationExpensesTableBody"
-    );
+    let tableBody = document.getElementById("otherWorkRelationExpensesTableBody");
 
     // Increment the row index
     otherWorkRelationExpenseRowIndex++;
@@ -986,20 +1043,20 @@ document
     let newRow = document.createElement("tr");
 
     // Define the cells with input elements
-    let expenseCell = document.createElement("td");
+    let detailsCell = document.createElement("td");
     let amountCell = document.createElement("td");
     let attachmentCell = document.createElement("td");
-    let actionsCell = document.createElement("td"); // New cell for actions
+    let actionsCell = document.createElement("td");
 
     // Create input elements for each cell
-    let expenseInput = document.createElement("input");
+    let detailsInput = document.createElement("textarea");
     let amountInput = document.createElement("input");
     let attachmentInput = document.createElement("input");
 
     // Set attributes for each input element
-    expenseInput.type = "text";
-    expenseInput.className = "form-control";
-    expenseInput.name = `expenseName[${otherWorkRelationExpenseRowIndex}]`;
+    detailsInput.rows = 1;
+    detailsInput.className = "form-control mb-0";
+    detailsInput.name = `expenseDetails[${otherWorkRelationExpenseRowIndex}]`;
 
     amountInput.type = "text";
     amountInput.className = "form-control";
@@ -1010,13 +1067,13 @@ document
     attachmentInput.name = `expenseAttachment[${otherWorkRelationExpenseRowIndex}]`;
 
     // Append inputs to their respective cells
-    expenseCell.appendChild(expenseInput);
+    detailsCell.appendChild(detailsInput);
     amountCell.appendChild(amountInput);
     attachmentCell.appendChild(attachmentInput);
 
     // Create remove button
     let removeButton = document.createElement("button");
-    removeButton.className = "remove-expense btn btn-sm btn-danger";
+    removeButton.className = "remove-otherWorkRelationexpense btn btn-danger btn-sm";
     removeButton.type = "button";
     removeButton.innerHTML = "Remove";
 
@@ -1029,14 +1086,25 @@ document
     actionsCell.appendChild(removeButton);
 
     // Append cells to the new row
-    newRow.appendChild(expenseCell);
+    newRow.appendChild(detailsCell);
     newRow.appendChild(amountCell);
     newRow.appendChild(attachmentCell);
-    newRow.appendChild(actionsCell); // Append actions cell
+    newRow.appendChild(actionsCell);
 
     // Append the new row to the table body
     tableBody.appendChild(newRow);
   });
+
+// Function to handle the removal of an expense row
+document.getElementById("otherWorkRelationExpensesTableBody")?.addEventListener("click", function(event) {
+  if (event.target && event.target.classList.contains("remove-otherWorkRelationexpense")) {
+    event.target.closest("tr").remove();
+  }
+});
+
+})
+// add remove other work relation expenses end
+
 
 
 
@@ -1062,11 +1130,13 @@ document
 
 
 
-// Initialize indices for additional rows
-let otherExpenseRowIndex = 0;
-let giftsDonationsExpenseRowIndex = 0;
 
-// Function to add a new expense row for OTHER
+
+// Function to add a new expense row for OTHER expenses
+// Initialize index for additional rows
+let otherExpenseRowIndex = 0;
+
+// Function to add a new expense row
 document
   .getElementById("addOtherExpenseButton")
   ?.addEventListener("click", function () {
@@ -1079,20 +1149,20 @@ document
     let newRow = document.createElement("tr");
 
     // Define the cells with input elements
-    let expenseCell = document.createElement("td");
+    let detailsCell = document.createElement("td");
     let amountCell = document.createElement("td");
     let attachmentCell = document.createElement("td");
-    let actionsCell = document.createElement("td"); // New cell for actions
+    let actionsCell = document.createElement("td");
 
     // Create input elements for each cell
-    let expenseInput = document.createElement("input");
+    let detailsInput = document.createElement("textarea");
     let amountInput = document.createElement("input");
     let attachmentInput = document.createElement("input");
 
     // Set attributes for each input element
-    expenseInput.type = "text";
-    expenseInput.className = "form-control";
-    expenseInput.name = `otherExpenseName[${otherExpenseRowIndex}]`;
+    detailsInput.rows = "1";
+    detailsInput.className = "form-control mb-0";
+    detailsInput.name = `otherExpenseDetails[${otherExpenseRowIndex}]`;
 
     amountInput.type = "text";
     amountInput.className = "form-control";
@@ -1103,13 +1173,13 @@ document
     attachmentInput.name = `otherExpenseAttachment[${otherExpenseRowIndex}]`;
 
     // Append inputs to their respective cells
-    expenseCell.appendChild(expenseInput);
+    detailsCell.appendChild(detailsInput);
     amountCell.appendChild(amountInput);
     attachmentCell.appendChild(attachmentInput);
 
     // Create remove button
     let removeButton = document.createElement("button");
-    removeButton.className = "remove-other-expense btn btn-sm btn-danger";
+    removeButton.className = "remove-other-expense btn btn-danger btn-sm";
     removeButton.type = "button";
     removeButton.innerHTML = "Remove";
 
@@ -1122,16 +1192,29 @@ document
     actionsCell.appendChild(removeButton);
 
     // Append cells to the new row
-    newRow.appendChild(expenseCell);
+    newRow.appendChild(detailsCell);
     newRow.appendChild(amountCell);
     newRow.appendChild(attachmentCell);
-    newRow.appendChild(actionsCell); // Append actions cell
+    newRow.appendChild(actionsCell);
 
     // Append the new row to the table body
     tableBody.appendChild(newRow);
   });
 
+// Function to handle the removal of an expense row
+document.getElementById("otherExpensesTableBody")?.addEventListener("click", function(event) {
+  if (event.target && event.target.classList.contains("remove-other-expense")) {
+    event.target.closest("tr").remove();
+  }
+});
+// Function to add a new expense row for OTHER expenses end
+
+
 // Function to add a new expense row for GIFTS OR DONATIONS
+// Initialize index for additional rows
+let giftsDonationsExpenseRowIndex = 0;
+
+// Function to add a new expense row
 document
   .getElementById("addGiftsDonationsExpenseButton")
   ?.addEventListener("click", function () {
@@ -1144,20 +1227,20 @@ document
     let newRow = document.createElement("tr");
 
     // Define the cells with input elements
-    let expenseCell = document.createElement("td");
+    let detailsCell = document.createElement("td");
     let amountCell = document.createElement("td");
     let attachmentCell = document.createElement("td");
-    let actionsCell = document.createElement("td"); // New cell for actions
+    let actionsCell = document.createElement("td");
 
     // Create input elements for each cell
-    let expenseInput = document.createElement("input");
+    let detailsInput = document.createElement("textarea");
     let amountInput = document.createElement("input");
     let attachmentInput = document.createElement("input");
 
     // Set attributes for each input element
-    expenseInput.type = "text";
-    expenseInput.className = "form-control";
-    expenseInput.name = `giftsDonationsExpenseName[${giftsDonationsExpenseRowIndex}]`;
+    detailsInput.rows = "1";
+    detailsInput.className = "form-control mb-0";
+    detailsInput.name = `giftsDonationsExpenseDetails[${giftsDonationsExpenseRowIndex}]`;
 
     amountInput.type = "text";
     amountInput.className = "form-control";
@@ -1168,14 +1251,13 @@ document
     attachmentInput.name = `giftsDonationsExpenseAttachment[${giftsDonationsExpenseRowIndex}]`;
 
     // Append inputs to their respective cells
-    expenseCell.appendChild(expenseInput);
+    detailsCell.appendChild(detailsInput);
     amountCell.appendChild(amountInput);
     attachmentCell.appendChild(attachmentInput);
 
     // Create remove button
     let removeButton = document.createElement("button");
-    removeButton.className =
-      "remove-gifts-donations-expense btn btn-sm btn-danger";
+    removeButton.className = "remove-gifts-donations-expense btn btn-danger btn-sm";
     removeButton.type = "button";
     removeButton.innerHTML = "Remove";
 
@@ -1188,15 +1270,23 @@ document
     actionsCell.appendChild(removeButton);
 
     // Append cells to the new row
-    newRow.appendChild(expenseCell);
+    newRow.appendChild(detailsCell);
     newRow.appendChild(amountCell);
     newRow.appendChild(attachmentCell);
-    newRow.appendChild(actionsCell); // Append actions cell
+    newRow.appendChild(actionsCell);
 
     // Append the new row to the table body
     tableBody.appendChild(newRow);
   });
 
+// Function to handle the removal of an expense row
+document.getElementById("giftsDonationsExpensesTableBody")?.addEventListener("click", function(event) {
+  if (event.target && event.target.classList.contains("remove-gifts-donations-expense")) {
+    event.target.closest("tr").remove();
+  }
+});
+
+// Function to add a new expense row for GIFTS OR DONATIONS end
 
 
 
@@ -1213,26 +1303,31 @@ document.querySelectorAll('input[name="anyOtherExpensesRadio"]').forEach((elem) 
 });
 
 // add delete row for any other expenses
-document.getElementById("addAnyOtherExpenseButton").addEventListener("click", function () {
-  const tableBody = document.getElementById("anyOtherExpensesTableBody");
-  const rowCount = tableBody.rows.length;
+let anyOtherExpenseRowIndex = 0;
 
+document.getElementById("addAnyOtherExpenseButton")?.addEventListener("click", function () {
+  const tableBody = document.getElementById("anyOtherExpensesTableBody");
+
+  // Increment the row index
+  anyOtherExpenseRowIndex++;
+
+  // Create a new row
   const newRow = document.createElement("tr");
 
-  // Create the "Expense" input field
-  const expenseCell = document.createElement("td");
-  const expenseInput = document.createElement("input");
-  expenseInput.type = "text";
-  expenseInput.className = "form-control";
-  expenseInput.name = `anyOtherExpenseName[${rowCount}]`;
-  expenseCell.appendChild(expenseInput);
+  // Create the "Details" textarea
+  const detailsCell = document.createElement("td");
+  const detailsInput = document.createElement("textarea");
+  detailsInput.rows = 1;
+  detailsInput.className = "form-control mb-0";
+  detailsInput.name = `anyOtherExpenseDetails[${anyOtherExpenseRowIndex}]`;
+  detailsCell.appendChild(detailsInput);
 
   // Create the "Amount" input field
   const amountCell = document.createElement("td");
   const amountInput = document.createElement("input");
   amountInput.type = "text";
   amountInput.className = "form-control";
-  amountInput.name = `anyOtherExpenseAmount[${rowCount}]`;
+  amountInput.name = `anyOtherExpenseAmount[${anyOtherExpenseRowIndex}]`;
   amountCell.appendChild(amountInput);
 
   // Create the "Attachment" input field
@@ -1240,7 +1335,7 @@ document.getElementById("addAnyOtherExpenseButton").addEventListener("click", fu
   const attachmentInput = document.createElement("input");
   attachmentInput.type = "file";
   attachmentInput.className = "form-control";
-  attachmentInput.name = `anyOtherExpenseAttachment[${rowCount}]`;
+  attachmentInput.name = `anyOtherExpenseAttachment[${anyOtherExpenseRowIndex}]`;
   attachmentCell.appendChild(attachmentInput);
 
   // Create the "Remove" button
@@ -1249,13 +1344,10 @@ document.getElementById("addAnyOtherExpenseButton").addEventListener("click", fu
   removeButton.type = "button";
   removeButton.className = "remove-any-other-expense btn btn-danger btn-sm";
   removeButton.textContent = "Remove";
-  removeButton.addEventListener("click", function () {
-    tableBody.removeChild(newRow);
-  });
   actionCell.appendChild(removeButton);
 
   // Append all cells to the new row
-  newRow.appendChild(expenseCell);
+  newRow.appendChild(detailsCell);
   newRow.appendChild(amountCell);
   newRow.appendChild(attachmentCell);
   newRow.appendChild(actionCell);
@@ -1264,6 +1356,13 @@ document.getElementById("addAnyOtherExpenseButton").addEventListener("click", fu
   tableBody.appendChild(newRow);
 });
 
+// Use event delegation to handle the "Remove" button click
+document.getElementById("anyOtherExpensesTableBody")?.addEventListener("click", function (event) {
+  if (event.target && event.target.classList.contains("remove-any-other-expense")) {
+    event.target.closest("tr").remove();
+  }
+});
+// add delete row for any other expenses end
 
 
 
@@ -1707,59 +1806,70 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // Add additional expenses rows for Log Book Method
-let expensesRowIndex = 0;
+let logbookExpensesRowIndex = 0;
 
-document
-  .getElementById("add-expense-row")
-  .addEventListener("click", function () {
-    let tableBody = document.getElementById("expensesTableBody");
-    expensesRowIndex++;
+document.getElementById("add-logBook-expense-row").addEventListener("click", function () {
+    let tableBody = document.getElementById("logBookTableBody");
+    
+    // Increment the row index
+    logbookExpensesRowIndex++;
 
+    // Create a new row
     let newRow = document.createElement("tr");
 
-    let expenseCell = document.createElement("td");
+    // Define the cells with input elements
+    let detailsCell = document.createElement("td");
     let amountCell = document.createElement("td");
     let fileCell = document.createElement("td");
     let actionsCell = document.createElement("td");
 
-    let expenseInput = document.createElement("input");
+    // Create input elements for each cell
+    let detailsInput = document.createElement("input");
     let amountInput = document.createElement("input");
     let fileInput = document.createElement("input");
 
-    expenseInput.type = "text";
-    expenseInput.className = "form-control";
-    expenseInput.name = `expense[${expensesRowIndex}]`;
+    // Set attributes for each input element
+    detailsInput.type = "text";
+    detailsInput.className = "form-control";
+    detailsInput.name = `logBookDetails[${logbookExpensesRowIndex}]`;
 
     amountInput.type = "text";
     amountInput.className = "form-control";
-    amountInput.name = `amount[${expensesRowIndex}]`;
+    amountInput.name = `logBookAmount[${logbookExpensesRowIndex}]`;
 
     fileInput.type = "file";
     fileInput.className = "form-control";
-    fileInput.name = `file[${expensesRowIndex}]`;
+    fileInput.name = `logBookFile[${logbookExpensesRowIndex}]`;
 
-    expenseCell.appendChild(expenseInput);
+    // Append inputs to their respective cells
+    detailsCell.appendChild(detailsInput);
     amountCell.appendChild(amountInput);
     fileCell.appendChild(fileInput);
 
+    // Create remove button
     let removeButton = document.createElement("button");
-    removeButton.className = "remove-btn btn btn-sm btn-danger";
+    removeButton.className = "remove-logBook-btn btn btn-sm btn-danger";
     removeButton.type = "button";
     removeButton.innerHTML = "Remove";
 
+    // Add event listener to remove the row
     removeButton.addEventListener("click", function () {
-      newRow.remove();
+        newRow.remove();
     });
 
+    // Append remove button to actions cell
     actionsCell.appendChild(removeButton);
 
-    newRow.appendChild(expenseCell);
+    // Append cells to the new row
+    newRow.appendChild(detailsCell);
     newRow.appendChild(amountCell);
     newRow.appendChild(fileCell);
     newRow.appendChild(actionsCell);
 
+    // Append the new row to the table body
     tableBody.appendChild(newRow);
-  });
+});
+
 
 // client details
 // Initialize index for additional rows
@@ -2592,142 +2702,312 @@ document
 
 
 
+// self education start 
 
-
-
-
-// for add remove show  self education
+// show hide self education
 document.addEventListener("DOMContentLoaded", function () {
-  let educationIndex = 0;
+  const selfEducationYes = document.getElementById("selfEducationYes");
+  const selfEducationNo = document.getElementById("selfEducationNo");
+  const selfEducationFields = document.getElementById("selfEducationFields");
 
-  // Function to toggle the display of self-education fields
-  function toggleSelfEducationFields() {
-    const selfEducationYes = document.getElementById("selfEducationYes");
-    const addEducationContainer = document.getElementById(
-      "addEducationContainer"
-    );
-    const selfEducationFields = document.getElementById("selfEducationFields");
-
+  selfEducationYes.addEventListener("change", function () {
     if (selfEducationYes.checked) {
       selfEducationFields.style.display = "block";
-      addEducationContainer.style.display = "block";
-    } else {
+    }
+  });
+
+  selfEducationNo.addEventListener("change", function () {
+    if (selfEducationNo.checked) {
       selfEducationFields.style.display = "none";
-      addEducationContainer.style.display = "none";
-      selfEducationFields.innerHTML = ""; // Clear all self-education entries
     }
-  }
+  });
+});
+// show hide self education end
 
-  // Function to add a new self-education entry
-  function addSelfEducationEntry() {
-    const selfEducationFields = document.getElementById("selfEducationFields");
-    const template = document.getElementById("selfEducationTemplate").innerHTML;
+// add remove selfeducation row
+document.addEventListener("DOMContentLoaded", function () {
+  let selfEducationRowIndex = 0;
 
-    // Replace placeholders in the template with the current index
-    const entryHtml = template.replace(/__EDU_INDEX__/g, educationIndex);
-    const newEntry = document.createElement("div");
-    newEntry.innerHTML = entryHtml;
+  document.getElementById("add-selfeducation-row").addEventListener("click", function () {
+    let tableBody = document.getElementById("selfEducationCoursesTableBody");
 
-    selfEducationFields.appendChild(newEntry);
-    educationIndex++;
+    // Increment the row index for each new entry
+    selfEducationRowIndex++;
 
-    // Add event listener for HECS/HELP debt radio buttons
-    newEntry.querySelectorAll(".hecs-debt-radio").forEach((radio) => {
-      radio.addEventListener("change", function () {
-        toggleHeCSHelpDebtAmount(newEntry);
-      });
+    // Create a new row
+    let newRow = document.createElement("tr");
+
+    // Create cells for each input field
+    let courseNameCell = document.createElement("td");
+    let institutionCell = document.createElement("td");
+    let feesCell = document.createElement("td");
+    let fileCell = document.createElement("td");
+    let actionsCell = document.createElement("td");
+
+    // Create input elements for each cell
+    let courseNameInput = document.createElement("input");
+    let institutionInput = document.createElement("input");
+    let feesInput = document.createElement("input");
+    let fileInput = document.createElement("input");
+
+    // Set attributes for the course name input
+    courseNameInput.type = "text";
+    courseNameInput.className = "form-control";
+    courseNameInput.name = `selfEducationCourseName[${selfEducationRowIndex}]`;
+
+    // Set attributes for the institution input
+    institutionInput.type = "text";
+    institutionInput.className = "form-control";
+    institutionInput.name = `selfEducationCourseInstitution[${selfEducationRowIndex}]`;
+
+    // Set attributes for the fees input
+    feesInput.type = "number";
+    feesInput.className = "form-control";
+    feesInput.name = `selfEducationCourseFees[${selfEducationRowIndex}]`;
+
+    // Set attributes for the file input
+    fileInput.type = "file";
+    fileInput.className = "form-control";
+    fileInput.name = `selfEducationCourseAttachment[${selfEducationRowIndex}]`;
+
+    // Append input elements to their respective cells
+    courseNameCell.appendChild(courseNameInput);
+    institutionCell.appendChild(institutionInput);
+    feesCell.appendChild(feesInput);
+    fileCell.appendChild(fileInput);
+
+    // Create the remove button
+    let removeButton = document.createElement("button");
+    removeButton.className = "btn btn-danger btn-sm removeSelfEducationCourse";
+    removeButton.type = "button";
+    removeButton.innerHTML = "Remove";
+
+    // Add an event listener to the remove button
+    removeButton.addEventListener("click", function () {
+      newRow.remove();
     });
-  }
 
-  // Function to remove a self-education entry
-  function removeSelfEducationEntry(event) {
-    const selfEducationFields = document.getElementById("selfEducationFields");
+    // Append the remove button to the actions cell
+    actionsCell.appendChild(removeButton);
 
-    if (
-      selfEducationFields.querySelectorAll(".self-education-entry").length > 1
-    ) {
-      event.target.closest(".self-education-entry").remove();
-    } else {
-      event.target.closest(".self-education-entry").remove();
-      document.getElementById("selfEducationNo").checked = true;
-      toggleSelfEducationFields();
-    }
-  }
+    // Append all cells to the new row
+    newRow.appendChild(courseNameCell);
+    newRow.appendChild(institutionCell);
+    newRow.appendChild(feesCell);
+    newRow.appendChild(fileCell);
+    newRow.appendChild(actionsCell);
 
-  // Function to add a new expense row
-  function addSelfEducationExpenseRow(event) {
-    const selfEducationEntry = event.target.closest(".self-education-entry");
-    const expenseTableBody = selfEducationEntry.querySelector(
-      ".expenses-table-body"
-    );
-    const expenseRowTemplate =
-      document.getElementById("expenseRowTemplate").innerHTML;
-    const expenseIndex = expenseTableBody.children.length;
-
-    // Replace placeholders in the template with the current indexes
-    const rowHtml = expenseRowTemplate
-      .replace(
-        /__EDU_INDEX__/g,
-        selfEducationEntry
-          .querySelector("input[name^='courseName']")
-          .name.match(/\[(\d+)\]/)[1]
-      )
-      .replace(/__EXP_INDEX__/g, expenseIndex);
-    const newRow = document.createElement("tr");
-    newRow.innerHTML = rowHtml;
-
-    expenseTableBody.appendChild(newRow);
-  }
-
-  // Function to remove a expense row
-  function removeSelfEducationExpenseRow(event) {
-    const row = event.target.closest("tr");
-    if (row.closest("tbody").children.length > 1) {
-      row.remove();
-    }
-  }
-
-  // Function to toggle HECS/HELP Debt Amount visibility
-  function toggleHeCSHelpDebtAmount(entry) {
-    const hecsDebtYes = entry.querySelector(
-      "input[name^='hecsDebt'][value='yes']"
-    );
-    const hecsDebtAmount = entry.querySelector(".hecs-debt-amount");
-
-    if (hecsDebtYes.checked) {
-      hecsDebtAmount.style.display = "block";
-    } else {
-      hecsDebtAmount.style.display = "none";
-    }
-  }
-
-  document.querySelectorAll("input[name='selfEducation']").forEach((radio) => {
-    radio.addEventListener("change", toggleSelfEducationFields);
+    // Append the new row to the table body
+    tableBody.appendChild(newRow);
   });
 
-  document
-    .getElementById("addSelfEducation")
-    .addEventListener("click", addSelfEducationEntry);
-
-  document.body.addEventListener("click", function (event) {
-    if (event.target.classList.contains("removeSelfEducation")) {
-      removeSelfEducationEntry(event);
-    } else if (event.target.classList.contains("removeSelfEducationExpense")) {
-      removeSelfEducationExpenseRow(event);
-    }
+  // Initial setup for remove buttons on existing rows if any
+  document.querySelectorAll('.removeSelfEducationCourse').forEach(button => {
+    button.addEventListener('click', function () {
+      this.closest('tr').remove();
+    });
   });
-
-  document.body.addEventListener("click", function (event) {
-    if (event.target.classList.contains("addSelfEducationExpense")) {
-      addSelfEducationExpenseRow(event);
-    }
-  });
-
-  toggleSelfEducationFields();
 });
 
+// add remove selfeducation row end
 
 
+// show hide  hecs/help debt filed
+document.addEventListener('DOMContentLoaded', function() {
+  // Function to handle the toggle of the debt amount field
+  function toggleDebtAmount() {
+      const debtYes = document.getElementById('haveHecsDebtYes');
+      const debtNo = document.getElementById('haveHecsDebtNo');
+      const debtAmountField = document.querySelector('.hecs-debt-amount');
+
+      // Show or hide the debt amount field based on selected radio button
+      if (debtYes.checked) {
+          debtAmountField.style.display = 'block';
+      } else {
+          debtAmountField.style.display = 'none';
+      }
+  }
+
+  // Attach event listeners to radio buttons
+  document.querySelectorAll('.hecs-debt-radio').forEach(radio => {
+      radio.addEventListener('change', toggleDebtAmount);
+  });
+});
+// show hide  hecs/help debt filed end
+
+
+// add remove self education expenses
+document.addEventListener('DOMContentLoaded', function() {
+  let selfEducationExpenseIndex = 0;
+
+  // Function to add a new expense row
+  document.querySelector('.addSelfEducationExpense').addEventListener('click', function () {
+      let tableBody = document.querySelector('.selfeducation-expenses-table-body');
+      
+      // Increment the row index
+      selfEducationExpenseIndex++;
+      
+      // Create a new row
+      let newRow = document.createElement('tr');
+      
+      // Define the cells with input elements
+      let detailsCell = document.createElement('td');
+      let amountCell = document.createElement('td');
+      let attachmentCell = document.createElement('td');
+      let actionsCell = document.createElement('td');
+      
+      // Create input elements for each cell
+      let detailsInput = document.createElement('textarea');
+      detailsInput.rows = 1;
+      detailsInput.className = 'form-control mb-0';
+      detailsInput.name = `selfeducationExpenseDetails[${selfEducationExpenseIndex}]`;
+      
+      let amountInput = document.createElement('input');
+      amountInput.type = 'text';
+      amountInput.className = 'form-control';
+      amountInput.name = `selfeducationExpenseAmount[${selfEducationExpenseIndex}]`;
+      
+      let attachmentInput = document.createElement('input');
+      attachmentInput.type = 'file';
+      attachmentInput.className = 'form-control';
+      attachmentInput.name = `selfeducationExpenseFile[${selfEducationExpenseIndex}]`;
+      
+      // Append inputs to their respective cells
+      detailsCell.appendChild(detailsInput);
+      amountCell.appendChild(amountInput);
+      attachmentCell.appendChild(attachmentInput);
+      
+      // Create remove button
+      let removeButton = document.createElement('button');
+      removeButton.type = 'button';
+      removeButton.className = 'btn btn-danger btn-sm removeSelfEducationExpense';
+      removeButton.textContent = 'Remove';
+      
+      // Add event listener to remove the row
+      removeButton.addEventListener('click', function () {
+          newRow.remove();
+      });
+      
+      // Append remove button to actions cell
+      actionsCell.appendChild(removeButton);
+      
+      // Append cells to the new row
+      newRow.appendChild(detailsCell);
+      newRow.appendChild(amountCell);
+      newRow.appendChild(attachmentCell);
+      newRow.appendChild(actionsCell);
+      
+      // Append the new row to the table body
+      tableBody.appendChild(newRow);
+  });
+  
+  // Handle the removal of initial rows
+  document.querySelectorAll('.removeSelfEducationExpense').forEach(button => {
+      button.addEventListener('click', function () {
+          this.closest('tr').remove();
+      });
+  });
+  
+});
+// add remove self education expenses end
+
+//  home office expenses for self education show hide
+document.addEventListener("DOMContentLoaded", function () {
+  const homeOfficeYes = document.getElementById("homeOfficeExpensesSelfEducationYes");
+  const homeOfficeNo = document.getElementById("homeOfficeExpensesSelfEducationNo");
+  const homeOfficeOptions = document.getElementById("selfEducationHomeOfficeOptions");
+
+  homeOfficeYes.addEventListener("change", function () {
+    if (homeOfficeYes.checked) {
+      homeOfficeOptions.style.display = "block";
+    }
+  });
+
+  homeOfficeNo.addEventListener("change", function () {
+    if (homeOfficeNo.checked) {
+      homeOfficeOptions.style.display = "none";
+    }
+  });
+});
+//  home office expenses for self education show hide end
+
+
+// show hide actual cost or fixedrate method for self education
+document.addEventListener("DOMContentLoaded", function () {
+  const fixedRateMethod = document.getElementById("selfEducationFixedRateMethod");
+  const actualCostMethod = document.getElementById("selfEducationActualCostMethod");
+  const fixedRateFields = document.getElementById("selfEducationFixedRateFields");
+  const actualCostFields = document.getElementById("selfEducationActualCostFields");
+
+  fixedRateMethod.addEventListener("change", function () {
+    if (fixedRateMethod.checked) {
+      fixedRateFields.style.display = "block";
+      actualCostFields.style.display = "none";
+    }
+  });
+
+  actualCostMethod.addEventListener("change", function () {
+    if (actualCostMethod.checked) {
+      fixedRateFields.style.display = "none";
+      actualCostFields.style.display = "block";
+    }
+  });
+});
+// show hide actual cost or fixedrate method for self education end
+
+
+// show hide actual cost fields based on checkboxes self education
+document.addEventListener("DOMContentLoaded", function () {
+  // Function to handle checkbox change events
+  function handleCheckboxChange(event) {
+    const checkboxId = event.target.id;
+    const fieldsId = checkboxId.replace('Checkbox', 'Fields');
+    const fieldsContainer = document.getElementById(fieldsId);
+
+    if (event.target.checked) {
+      fieldsContainer.style.display = 'block';
+    } else {
+      fieldsContainer.style.display = 'none';
+    }
+  }
+
+  // Get all checkboxes in the Actual Cost Method section
+  const actualCostCheckboxes = document.querySelectorAll('#selfEducationActualCostFields .form-check-input');
+
+  // Add event listeners to all checkboxes
+  actualCostCheckboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', handleCheckboxChange);
+  });
+});
+// show hide actual cost fields based on checkboxes self education end
+
+// show hide fixed rate cost fields based on checkboxes self education
+document.addEventListener("DOMContentLoaded", function () {
+  // Function to handle checkbox change events
+  function handleFixedRateCheckboxChange(event) {
+    const checkboxId = event.target.id;
+    const fieldsId = checkboxId.replace('Checkbox', 'Fields');
+    const fieldsContainer = document.getElementById(fieldsId);
+
+    if (event.target.checked) {
+      fieldsContainer.style.display = 'block';
+    } else {
+      fieldsContainer.style.display = 'none';
+    }
+  }
+
+  // Get all checkboxes in the Fixed Rate Method section
+  const fixedRateCheckboxes = document.querySelectorAll('#selfEducationFixedRateAdditionalDeduction .form-check-input');
+
+  // Add event listeners to all checkboxes
+  fixedRateCheckboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', handleFixedRateCheckboxChange);
+  });
+});
+
+// show hide fixed rate cost fields based on checkboxes self education end
+
+// self education start end
 
 
 
