@@ -4151,52 +4151,15 @@
                   <table class="table table-bordered table-sm">
                     <thead>
                       <tr>
-                        <th>Investment Property ID</th>
                         <th>Bank Name</th>
+                        <th>Account Number</th>
                         <th>Loan Amount</th>
+                        <th>Annual Interest</th>
                         <th>Attachment</th>
                         <th>Actions</th>
                       </tr>
                     </thead>
                     <tbody id="interestOnLoansTableBody">
-                      <tr>
-                        <td>
-                          <input
-                            type="text"
-                            name="loanPropertyId[__INV_PROPERTY_INDEX__][__INTERESY_ON_LOAN_INDEX__]"
-                            class="form-control"
-                          />
-                        </td>
-                        <td>
-                          <input
-                            type="text"
-                            name="loanBankName[__INV_PROPERTY_INDEX__][__INTERESY_ON_LOAN_INDEX__]"
-                            class="form-control"
-                          />
-                        </td>
-                        <td>
-                          <input
-                            type="text"
-                            name="loanAmount[__INV_PROPERTY_INDEX__][__INTERESY_ON_LOAN_INDEX__]"
-                            class="form-control"
-                          />
-                        </td>
-                        <td>
-                          <input
-                            type="file"
-                            name="loanFile[__INV_PROPERTY_INDEX__][__INTERESY_ON_LOAN_INDEX__]"
-                            class="form-control"
-                          />
-                        </td>
-                        <td>
-                          <button
-                            type="button"
-                            class="remove-loan btn btn-sm btn-danger"
-                          >
-                            Remove
-                          </button>
-                        </td>
-                      </tr>
                     </tbody>
                   </table>
                 </div>
@@ -4661,26 +4624,21 @@
                   >
 
                   <div class="expense-fields mt-2 mb-3" style="display: none">
-                    <div class="row g-3">
-                      <div class="col-12 col-md-6">
-                        <input
-                          type="number"
-                          id="repairsMaintenanceAmount[__INV_PROPERTY_INDEX__]"
-                          name="repairsMaintenanceAmount[__INV_PROPERTY_INDEX__]"
-                          class="form-control"
-                          placeholder="Enter amount"
-                        />
-                      </div>
-                      <div class="col-12 col-md-6">
-                        <input
-                          type="file"
-                          id="repairsMaintenanceAttachment[__INV_PROPERTY_INDEX__]"
-                          name="repairsMaintenanceAttachment[__INV_PROPERTY_INDEX__]"
-                          class="form-control"
-                        />
-                      </div>
+                    <div class="table-responsive">
+                      <table class="table table-bordered table-sm repairsMaintenanceTable">
+                        <thead>
+                          <tr>
+                            <th>Details</th>
+                            <th>Amount</th>
+                            <th>Attachment</th>
+                            <th></th>
+                          </tr>
+                        </thead>
+                        <tbody  class="repairsMaintenanceTableBody">
+                        </tbody>
+                      </table>
+                      <button type="button" class="add-repairs-maintenance-expenses mt-3 ms-auto btn btn-sm add-btn">Add Expense</button>
                     </div>
-                    <button class="add-repairs-maintenance-expenses mt-3 ms-auto btn btn-sm add-btn">Add Expense</button>
                   </div>
                 </div>
 
@@ -4842,26 +4800,21 @@
                   >
 
                   <div class="expense-fields mt-2 mb-3" style="display: none">
-                    <div class="row g-3">
-                      <div class="col-12 col-md-6">
-                        <input
-                          type="number"
-                          id="sundryRentalExpensesAmount[__INV_PROPERTY_INDEX__]"
-                          name="sundryRentalExpensesAmount[__INV_PROPERTY_INDEX__]"
-                          class="form-control"
-                          placeholder="Enter amount"
-                        />
-                      </div>
-                      <div class="col-12 col-md-6">
-                        <input
-                          type="file"
-                          id="sundryRentalExpensesAttachment[__INV_PROPERTY_INDEX__]"
-                          name="sundryRentalExpensesAttachment[__INV_PROPERTY_INDEX__]"
-                          class="form-control"
-                        />
-                      </div>
+                    <div class="table-responsive">
+                      <table class="table table-bordered table-sm sundryRentalExpensesTable">
+                        <thead>
+                          <tr>
+                            <th>Details</th>
+                            <th>Amount</th>
+                            <th>Attachment</th>
+                            <th></th>
+                          </tr>
+                        </thead>
+                        <tbody  class="sundryRentalExpensesTableBody">
+                        </tbody>
+                      </table>
+                      <button type="button" class="add-sundry-rental-expenses mt-3 ms-auto btn btn-sm add-btn">Add Expense</button>
                     </div>
-                    <button class="add-sundry-rental-expenses mt-3 ms-auto btn btn-sm add-btn">Add Expense</button>
                   </div>
                 </div>
 
@@ -4942,32 +4895,19 @@
           <template id="interestOnLoansTableRowTemplate">
             <tr>
               <td>
-                <input
-                  type="text"
-                  name="loanPropertyId[__INV_PROPERTY_INDEX__][__INTERESY_ON_LOAN_INDEX__]"
-                  class="form-control"
-                />
+                <input type="text" name="loanBankName[__INV_PROPERTY_INDEX__][__INTERESY_ON_LOAN_INDEX__]" class="form-control">
               </td>
               <td>
-                <input
-                  type="text"
-                  name="loanBankName[__INV_PROPERTY_INDEX__][__INTERESY_ON_LOAN_INDEX__]"
-                  class="form-control"
-                />
+                <input type="text" name="loanAccountNumber[__INV_PROPERTY_INDEX__][__INTERESY_ON_LOAN_INDEX__]" class="form-control">
               </td>
               <td>
-                <input
-                  type="text"
-                  name="loanAmount[__INV_PROPERTY_INDEX__][__INTERESY_ON_LOAN_INDEX__]"
-                  class="form-control"
-                />
+                <input type="text" name="loanAmount[__INV_PROPERTY_INDEX__][__INTERESY_ON_LOAN_INDEX__]" class="form-control">
               </td>
               <td>
-                <input
-                  type="file"
-                  name="loanFile[__INV_PROPERTY_INDEX__][__INTERESY_ON_LOAN_INDEX__]"
-                  class="form-control"
-                />
+                <input type="number" name="loanAnnualInterest[__INV_PROPERTY_INDEX__][__INTERESY_ON_LOAN_INDEX__]" class="form-control">
+              </td>
+              <td>
+                <input type="file" name="loanFile[__INV_PROPERTY_INDEX__][__INTERESY_ON_LOAN_INDEX__]" class="form-control">
               </td>
               <td>
                 <button type="button" class="remove-loan btn btn-sm btn-danger">
@@ -4976,6 +4916,77 @@
               </td>
             </tr>
           </template>
+          
+          <!-- template for repair maintenance -->
+          <template id="repairsMaintenanceRowTemplate">
+            <tr>
+              <td>
+                <input
+                  type="number"
+                  id="repairsMaintenanceDetails[__INV_PROPERTY_INDEX__][__REPAIRS_MAINTENANCE_INDEX__]"
+                  name="repairsMaintenanceDetails[__INV_PROPERTY_INDEX__][__REPAIRS_MAINTENANCE_INDEX__]"
+                  class="form-control"
+                  placeholder="Enter amount"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  id="repairsMaintenanceAmount[__INV_PROPERTY_INDEX__][__REPAIRS_MAINTENANCE_INDEX__]"
+                  name="repairsMaintenanceAmount[__INV_PROPERTY_INDEX__][__REPAIRS_MAINTENANCE_INDEX__]"
+                  class="form-control"
+                  placeholder="Enter amount"
+                />
+              </td>
+              <td>
+                <input
+                  type="file"
+                  id="repairsMaintenanceAttachment[__INV_PROPERTY_INDEX__][__REPAIRS_MAINTENANCE_INDEX__]"
+                  name="repairsMaintenanceAttachment[__INV_PROPERTY_INDEX__][__REPAIRS_MAINTENANCE_INDEX__]"
+                  class="form-control"
+                />
+              </td>
+              <td>
+                <button type="button" class="remove-repairs-maintenance-expenses btn btn-sm btn-danger">remove</button>
+              </td>
+            </tr>
+          </template>
+          
+          <!-- template for sundry rental expenses -->
+          <template id="sundryRentalExpensesRowTemplate">
+            <tr>
+              <td>
+                <input
+                  type="number"
+                  id="sundryRentalDetails[__INV_PROPERTY_INDEX__][__SUNDRY_RENTAL_INDEX__]"
+                  name="sundryRentalDetails[__INV_PROPERTY_INDEX__][__SUNDRY_RENTAL_INDEX__]"
+                  class="form-control"
+                  placeholder="Enter amount"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  id="sundryRentalAmount[__INV_PROPERTY_INDEX__][__SUNDRY_RENTAL_INDEX__]"
+                  name="sundryRentalAmount[__INV_PROPERTY_INDEX__][__SUNDRY_RENTAL_INDEX__]"
+                  class="form-control"
+                  placeholder="Enter amount"
+                />
+              </td>
+              <td>
+                <input
+                  type="file"
+                  id="sundryRentalAttachment[__INV_PROPERTY_INDEX__][__SUNDRY_RENTAL_INDEX__]"
+                  name="sundryRentalAttachment[__INV_PROPERTY_INDEX__][__SUNDRY_RENTAL_INDEX__]"
+                  class="form-control"
+                />
+              </td>
+              <td>
+                <button type="button" class="remove-sundry-rental-expenses btn btn-sm btn-danger">remove</button>
+              </td>
+            </tr>
+          </template>
+          
 
           <!-- Sole Trader Section -->
           <div class="step">
