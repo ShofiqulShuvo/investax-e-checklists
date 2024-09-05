@@ -3897,13 +3897,13 @@
               </div>
 
               <!-- Investment Property Fields  -->
-              <div id="investmentPropertiesContainer">
+              <div id="investmentPropertiesContainer" class="accordion accordion-flush">
                 <!-- You can add fields for investment properties here -->
               </div>
               <button
                 id="addMoreProperties"
                 type="button"
-                class="addInvestmentProperty btn add-btn"
+                class="mt-4 addInvestmentProperty btn add-btn"
               >
                 Add Investment Property
               </button>
@@ -3912,955 +3912,977 @@
 
           <!-- Template for investmentProperty entry -->
           <template id="investmentPropertyTemplate">
-            <!-- investment property -->
-            <div class="investment-property-entry">
-              <h4 class="mb-4">Investment Property</h4>
-              <!-- Investment Property jointly own question -->
-              <div class="mb-3 investment-property">
-                <p class="d-block mb-2 lead">
-                  Do you jointly own the property?
-                </p>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="jointlyOwnInvestmentProperty[__INV_PROPERTY_INDEX__]"
-                    id="jointlyOwnInvestmentPropertyYes[__INV_PROPERTY_INDEX__]"
-                    value="yes"
-                  />
-                  <label
-                    class="form-check-label"
-                    for="jointlyOwnInvestmentPropertyYes[__INV_PROPERTY_INDEX__]"
-                  >
-                    Yes
-                  </label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="jointlyOwnInvestmentProperty[__INV_PROPERTY_INDEX__]"
-                    id="jointlyOwnInvestmentPropertyNo[__INV_PROPERTY_INDEX__]"
-                    value="no"
-                  />
-                  <label
-                    class="form-check-label"
-                    for="jointlyOwnInvestmentPropertyNo[__INV_PROPERTY_INDEX__]"
-                  >
-                    No
-                  </label>
-                </div>
-
-                <!-- Jointly own Investment Property Fields -->
-                <div
-                  class="table-responsive mt-2 mb-1"
-                  id="jointlyOwnInvestmentPropertyFields[__INV_PROPERTY_INDEX__]"
-                  style="display: none"
+            <div class="accordion-item mb-3">
+              <h2 class="accordion-header" id="heading[__INV_PROPERTY_INDEX__]">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse[__INV_PROPERTY_INDEX__]"
+                  aria-expanded="true"
+                  aria-controls="collapse[__INV_PROPERTY_INDEX__]"
                 >
-                  <div>
-                    <table
-                      class="table table-bordered"
-                      id="jointlyOwnInvestmentPropertyTable[__INV_PROPERTY_INDEX__]"
-                    >
-                      <thead>
-                        <tr>
-                          <th>Owner Name</th>
-                          <th>Ownership %</th>
-                          <th>Actions</th>
-                        </tr>
-                      </thead>
-                      <tbody
-                        id="jointlyOwnInvestmentPropertyTableBody[__INV_PROPERTY_INDEX__]"
-                      >
-                        <tr>
-                          <td>
-                            <input
-                              type="text"
-                              class="form-control"
-                              name="jointlyOwnerName[__INV_PROPERTY_INDEX__][__JOINTLY_OWN_PROPERTY_INDEX__]"
-                            />
-                          </td>
-                          <td>
-                            <input
-                              type="text"
-                              class="form-control"
-                              name="jointlyOwnerPercent[__INV_PROPERTY_INDEX__][__JOINTLY_OWN_PROPERTY_INDEX__]"
-                            />
-                          </td>
-                          <td>
+                  <span class="fw-semibold fs-5">Single Investment Property </span>
+                  <!-- [__INV_PROPERTY_INDEX__] -->
+                </button>
+              </h2>
+              <div
+                id="collapse[__INV_PROPERTY_INDEX__]"
+                class="accordion-collapse collapse show"
+                aria-labelledby="heading[__INV_PROPERTY_INDEX__]"
+              >
+                <div class="accordion-body">
+                    <!-- investment property -->
+                    <div class="investment-property-entry">
+                      <h4 class="mb-4">Investment Property</h4>
+                      <!-- Investment Property jointly own question -->
+                      <div class="mb-3 investment-property">
+                        <p class="d-block mb-2 lead">
+                          Do you jointly own the property?
+                        </p>
+                        <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="jointlyOwnInvestmentProperty[__INV_PROPERTY_INDEX__]"
+                            id="jointlyOwnInvestmentPropertyYes[__INV_PROPERTY_INDEX__]"
+                            value="yes"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="jointlyOwnInvestmentPropertyYes[__INV_PROPERTY_INDEX__]"
+                          >
+                            Yes
+                          </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="jointlyOwnInvestmentProperty[__INV_PROPERTY_INDEX__]"
+                            id="jointlyOwnInvestmentPropertyNo[__INV_PROPERTY_INDEX__]"
+                            value="no"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="jointlyOwnInvestmentPropertyNo[__INV_PROPERTY_INDEX__]"
+                          >
+                            No
+                          </label>
+                        </div>
+
+                        <!-- Jointly own Investment Property Fields -->
+                        <div
+                          class="table-responsive mt-2 mb-1"
+                          id="jointlyOwnInvestmentPropertyFields[__INV_PROPERTY_INDEX__]"
+                          style="display: none"
+                        >
+                          <div>
+                            <table
+                              class="table table-bordered"
+                              id="jointlyOwnInvestmentPropertyTable[__INV_PROPERTY_INDEX__]"
+                            >
+                              <thead>
+                                <tr>
+                                  <th>Owner Name</th>
+                                  <th>Ownership %</th>
+                                  <th>Actions</th>
+                                </tr>
+                              </thead>
+                              <tbody
+                                id="jointlyOwnInvestmentPropertyTableBody[__INV_PROPERTY_INDEX__]"
+                              >
+                                <tr>
+                                  <td>
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      name="jointlyOwnerName[__INV_PROPERTY_INDEX__][__JOINTLY_OWN_PROPERTY_INDEX__]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      name="jointlyOwnerPercent[__INV_PROPERTY_INDEX__][__JOINTLY_OWN_PROPERTY_INDEX__]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <button
+                                      type="button"
+                                      class="removeJointlyOwner btn btn-sm btn-danger"
+                                    >
+                                      Remove
+                                    </button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
                             <button
                               type="button"
-                              class="removeJointlyOwner btn btn-sm btn-danger"
+                              class="btn btn-sm ms-auto add-btn"
+                              id="addOwnerButton[__INV_PROPERTY_INDEX__]"
                             >
-                              Remove
+                              Add Owner
                             </button>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <button
-                      type="button"
-                      class="btn btn-sm ms-auto add-btn"
-                      id="addOwnerButton[__INV_PROPERTY_INDEX__]"
-                    >
-                      Add Owner
-                    </button>
-                  </div>
-                </div>
-              </div>
+                          </div>
+                        </div>
+                      </div>
 
-              <!-- property Information -->
-              <div class="mb-3">
-                <div class="mb-4 row g-3">
-                  <div class="col-12">
-                    <label
-                      for="addressRentalProperty[__INV_PROPERTY_INDEX__]"
-                      class="form-label"
-                      >Address of Rental Property:</label
-                    >
-                    <input
-                      type="number"
-                      class="form-control"
-                      id="addressRentalProperty[__INV_PROPERTY_INDEX__]"
-                    />
-                  </div>
-                  <div class="col-12 col-md-6">
-                    <label
-                      for="weeksPropertyRented[__INV_PROPERTY_INDEX__]"
-                      class="form-label"
-                      >Number of weeks property was rented this year:</label
-                    >
-                    <input
-                      type="number"
-                      class="form-control"
-                      id="weeksPropertyRented[__INV_PROPERTY_INDEX__]"
-                    />
-                  </div>
-                  <div class="col-12 col-md-6">
-                    <label
-                      for="weeksPropertyAvailable[__INV_PROPERTY_INDEX__]"
-                      class="form-label"
-                      >Number of weeks property was available for rent this
-                      year:</label
-                    >
-                    <input
-                      type="number"
-                      class="form-control"
-                      id="weeksPropertyAvailable[__INV_PROPERTY_INDEX__]"
-                    />
-                  </div>
-                </div>
-              </div>
+                      <!-- property Information -->
+                      <div class="mb-3">
+                        <div class="mb-4 row g-3">
+                          <div class="col-12">
+                            <label
+                              for="addressRentalProperty[__INV_PROPERTY_INDEX__]"
+                              class="form-label"
+                              >Address of Rental Property:</label
+                            >
+                            <input
+                              type="number"
+                              class="form-control"
+                              id="addressRentalProperty[__INV_PROPERTY_INDEX__]"
+                            />
+                          </div>
+                          <div class="col-12 col-md-6">
+                            <label
+                              for="weeksPropertyRented[__INV_PROPERTY_INDEX__]"
+                              class="form-label"
+                              >Number of weeks property was rented this year:</label
+                            >
+                            <input
+                              type="number"
+                              class="form-control"
+                              id="weeksPropertyRented[__INV_PROPERTY_INDEX__]"
+                            />
+                          </div>
+                          <div class="col-12 col-md-6">
+                            <label
+                              for="weeksPropertyAvailable[__INV_PROPERTY_INDEX__]"
+                              class="form-label"
+                              >Number of weeks property was available for rent this
+                              year:</label
+                            >
+                            <input
+                              type="number"
+                              class="form-control"
+                              id="weeksPropertyAvailable[__INV_PROPERTY_INDEX__]"
+                            />
+                          </div>
+                        </div>
+                      </div>
 
-              <!-- Income Section -->
-              <div class="mb-4">
-                <h5 class="mb-2">INCOME</h5>
+                      <!-- Income Section -->
+                      <div class="mb-4">
+                        <h5 class="mb-2">INCOME</h5>
 
-                <!-- Ask if user has Property Agent's Annual Statement -->
-                <div class="mt-2">
-                  <p class="d-block mb-2 lead">
-                    Do you have Property Agent's Annual Statement
-                  </p>
-                  <div class="form-check form-check-inline">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="propertyAgentsAnnualStatement[__INV_PROPERTY_INDEX__]"
-                      id="propertyAgentsAnnualStatementYes[__INV_PROPERTY_INDEX__]"
-                      value="yes"
-                    />
-                    <label
-                      class="form-check-label"
-                      for="propertyAgentsAnnualStatementYes[__INV_PROPERTY_INDEX__]"
-                    >
-                      Yes
-                    </label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="propertyAgentsAnnualStatement[__INV_PROPERTY_INDEX__]"
-                      id="propertyAgentsAnnualStatementNo[__INV_PROPERTY_INDEX__]"
-                      value="no"
-                    />
-                    <label
-                      class="form-check-label"
-                      for="propertyAgentsAnnualStatementNo[__INV_PROPERTY_INDEX__]"
-                    >
-                      No
-                    </label>
-                  </div>
-                </div>
+                        <!-- Ask if user has Property Agent's Annual Statement -->
+                        <div class="mt-2">
+                          <p class="d-block mb-2 lead">
+                            Do you have Property Agent's Annual Statement
+                          </p>
+                          <div class="form-check form-check-inline">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="propertyAgentsAnnualStatement[__INV_PROPERTY_INDEX__]"
+                              id="propertyAgentsAnnualStatementYes[__INV_PROPERTY_INDEX__]"
+                              value="yes"
+                            />
+                            <label
+                              class="form-check-label"
+                              for="propertyAgentsAnnualStatementYes[__INV_PROPERTY_INDEX__]"
+                            >
+                              Yes
+                            </label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="propertyAgentsAnnualStatement[__INV_PROPERTY_INDEX__]"
+                              id="propertyAgentsAnnualStatementNo[__INV_PROPERTY_INDEX__]"
+                              value="no"
+                            />
+                            <label
+                              class="form-check-label"
+                              for="propertyAgentsAnnualStatementNo[__INV_PROPERTY_INDEX__]"
+                            >
+                              No
+                            </label>
+                          </div>
+                        </div>
 
-                <!-- Agent's annual statement attachment -->
-                <div
-                  id="propertyAgentsAnnualStatementFields"
-                  class="mt-3 mb-3"
-                  style="display: none"
-                >
-                  <label
-                    for="annualStatementAttachment[__INV_PROPERTY_INDEX__]"
-                    class="mb-2"
-                    >Property Agent's Annual Statement</label
-                  >
-                  <input
-                    id="annualStatementAttachment[__INV_PROPERTY_INDEX__]"
-                    type="file"
-                    class="form-control"
-                  />
-                </div>
+                        <!-- Agent's annual statement attachment -->
+                        <div
+                          id="propertyAgentsAnnualStatementFields"
+                          class="mt-3 mb-3"
+                          style="display: none"
+                        >
+                          <label
+                            for="annualStatementAttachment[__INV_PROPERTY_INDEX__]"
+                            class="mb-2"
+                            >Property Agent's Annual Statement</label
+                          >
+                          <input
+                            id="annualStatementAttachment[__INV_PROPERTY_INDEX__]"
+                            type="file"
+                            class="form-control"
+                          />
+                        </div>
 
-                <!-- Rental income fields -->
-                <div id="annualIncomeFields" class="mt-3" style="display: none">
-                  <div class="mb-4 row g-3">
-                    <div class="col-12 col-md-6">
-                      <label
-                        for="grossRentalIncome[__INV_PROPERTY_INDEX__]"
-                        class="form-label"
-                        >Gross rental income</label
+                        <!-- Rental income fields -->
+                        <div id="annualIncomeFields" class="mt-3" style="display: none">
+                          <div class="mb-4 row g-3">
+                            <div class="col-12 col-md-6">
+                              <label
+                                for="grossRentalIncome[__INV_PROPERTY_INDEX__]"
+                                class="form-label"
+                                >Gross rental income</label
+                              >
+                              <input
+                                type="number"
+                                class="form-control"
+                                id="grossRentalIncome[__INV_PROPERTY_INDEX__]"
+                                name="grossRentalIncome[__INV_PROPERTY_INDEX__]"
+                              />
+                            </div>
+                            <div class="col-12 col-md-6">
+                              <label
+                                for="otherRentalRelatedIncome[__INV_PROPERTY_INDEX__]"
+                                class="form-label"
+                                >Other rental related income</label
+                              >
+                              <input
+                                type="number"
+                                class="form-control"
+                                id="otherRentalRelatedIncome[__INV_PROPERTY_INDEX__]"
+                                name="otherRentalRelatedIncome[__INV_PROPERTY_INDEX__]"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- INTEREST ON LOANS Section -->
+                      <div class="mb-3">
+                        <h5 class="mb-2">INTEREST ON LOANS</h5>
+                        <div class="table-responsive">
+                          <table class="table table-bordered table-sm">
+                            <thead>
+                              <tr>
+                                <th>Bank Name</th>
+                                <th>Account Number</th>
+                                <th>Loan Amount</th>
+                                <th>Annual Interest</th>
+                                <th>Attachment</th>
+                                <th>Actions</th>
+                              </tr>
+                            </thead>
+                            <tbody id="interestOnLoansTableBody">
+                            </tbody>
+                          </table>
+                        </div>
+                        <button
+                          type="button"
+                          id="addInvestmentPropertyLoanButton[__INV_PROPERTY_INDEX__]"
+                          class="ms-auto btn btn-sm add-btn"
+                        >
+                          Add Investment Property Loan
+                        </button>
+                      </div>
+
+                      <!-- Expenses Section -->
+                      <div class="mb-3 investment-property-expenses">
+                        <h5 class="mb-2">EXPENSES</h5>
+                      
+                        <!-- Advertising for tenants -->
+                        <div class="form-check mb-1">
+                          <input
+                            type="checkbox"
+                            class="form-check-input toggle-fields"
+                            id="advertisingCheck[__INV_PROPERTY_INDEX__]"
+                            name="advertisingCheck[__INV_PROPERTY_INDEX__]"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="advertisingCheck[__INV_PROPERTY_INDEX__]"
+                            >D Advertising for tenants</label
+                          >
+                      
+                          <div class="expense-fields mt-2 mb-3" style="display: none">
+                            <div class="row g-3">
+                              <div class="col-12 col-md-6">
+                                <input
+                                  type="number"
+                                  class="form-control"
+                                  name="advertisingAmount[__INV_PROPERTY_INDEX__]"
+                                  id="advertisingAmount[__INV_PROPERTY_INDEX__]"
+                                  placeholder="Enter amount"
+                                />
+                              </div>
+                              <div class="col-12 col-md-6">
+                                <input
+                                  type="file"
+                                  class="form-control"
+                                  name="advertisingAttachment[__INV_PROPERTY_INDEX__]"
+                                  id="advertisingAttachment[__INV_PROPERTY_INDEX__]"
+                                  class="form-control"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      
+                        <!-- Body corporate fees (Strata Levies) -->
+                        <div class="form-check mb-1">
+                          <input
+                            type="checkbox"
+                            class="form-check-input toggle-fields"
+                            id="strataLeviesCheck[__INV_PROPERTY_INDEX__]"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="strataLeviesCheck[__INV_PROPERTY_INDEX__]"
+                            >E Body corporate fees (Strata Levies)</label
+                          >
+                      
+                          <div class="expense-fields mt-2" style="display: none">
+                            <div class="row g-3">
+                              <div class="col-12 col-md-6">
+                                <input
+                                  type="number"
+                                  id="strataLeviesAmount[__INV_PROPERTY_INDEX__]"
+                                  name="strataLeviesAmount[__INV_PROPERTY_INDEX__]"
+                                  class="form-control mb-2"
+                                  placeholder="Enter amount"
+                                />
+                              </div>
+                              <div class="col-12 col-md-6">
+                                <input
+                                  type="file"
+                                  id="strataLeviesAttachment[__INV_PROPERTY_INDEX__]"
+                                  name="strataLeviesAttachment[__INV_PROPERTY_INDEX__]"
+                                  class="form-control"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      
+                        <!-- Borrowing expenses -->
+                        <div class="form-check mb-1">
+                          <input
+                            type="checkbox"
+                            class="form-check-input toggle-fields"
+                            id="borrowingExpensesCheck[__INV_PROPERTY_INDEX__]"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="borrowingExpensesCheck[__INV_PROPERTY_INDEX__]"
+                            >F Borrowing expenses</label
+                          >
+                      
+                          <div class="expense-fields mt-2 mb-3" style="display: none">
+                            <div class="row g-3">
+                              <div class="col-12 col-md-6">
+                                <input
+                                  type="number"
+                                  id="borrowingExpensesAmount[__INV_PROPERTY_INDEX__]"
+                                  name="borrowingExpensesAmount[__INV_PROPERTY_INDEX__]"
+                                  class="form-control"
+                                  placeholder="Enter amount"
+                                />
+                              </div>
+                              <div class="col-12 col-md-6">
+                                <input
+                                  type="file"
+                                  id="borrowingExpensesAttachment[__INV_PROPERTY_INDEX__]"
+                                  name="borrowingExpensesAttachment[__INV_PROPERTY_INDEX__]"
+                                  class="form-control"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      
+                        <!-- Cleaning -->
+                        <div class="form-check mb-1">
+                          <input
+                            type="checkbox"
+                            class="form-check-input toggle-fields"
+                            id="cleaningCheck[__INV_PROPERTY_INDEX__]"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="cleaningCheck[__INV_PROPERTY_INDEX__]"
+                            >G Cleaning</label
+                          >
+                      
+                          <div class="expense-fields mt-2 mb-3" style="display: none">
+                            <div class="row g-3">
+                              <div class="col-12 col-md-6">
+                                <input
+                                  type="number"
+                                  id="cleaningAmount[__INV_PROPERTY_INDEX__]"
+                                  name="cleaningAmount[__INV_PROPERTY_INDEX__]"
+                                  class="form-control"
+                                  placeholder="Enter amount"
+                                />
+                              </div>
+                              <div class="col-12 col-md-6">
+                                <input
+                                  type="file"
+                                  id="cleaningAttachment[__INV_PROPERTY_INDEX__]"
+                                  name="cleaningAttachment[__INV_PROPERTY_INDEX__]"
+                                  class="form-control"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      
+                        <!-- Council Rates -->
+                        <div class="form-check mb-1">
+                          <input
+                            type="checkbox"
+                            class="form-check-input toggle-fields"
+                            id="councilRatesCheck[__INV_PROPERTY_INDEX__]"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="councilRatesCheck[__INV_PROPERTY_INDEX__]"
+                            >H Council Rates</label
+                          >
+                      
+                          <div class="expense-fields mt-2 mb-3" style="display: none">
+                            <div class="row g-3">
+                              <div class="col-12 col-md-6">
+                                <input
+                                  type="number"
+                                  id="councilRatesAmount[__INV_PROPERTY_INDEX__]"
+                                  name="councilRatesAmount[__INV_PROPERTY_INDEX__]"
+                                  class="form-control"
+                                  placeholder="Enter amount"
+                                />
+                              </div>
+                              <div class="col-12 col-md-6">
+                                <input
+                                  type="file"
+                                  id="councilRatesAttachment[__INV_PROPERTY_INDEX__]"
+                                  name="councilRatesAttachment[__INV_PROPERTY_INDEX__]"
+                                  class="form-control"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      
+                        <!-- Capital allowances (depreciation) -->
+                        <div class="form-check mb-1">
+                          <input
+                            type="checkbox"
+                            class="form-check-input toggle-fields"
+                            id="capitalAllowancesCheck[__INV_PROPERTY_INDEX__]"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="capitalAllowancesCheck[__INV_PROPERTY_INDEX__]"
+                            >I Capital allowances (depreciation)</label
+                          >
+                      
+                          <div class="expense-fields mt-2 mb-3" style="display: none">
+                            <div class="row g-3">
+                              <div class="col-12 col-md-6">
+                                <input
+                                  type="number"
+                                  id="capitalAllowancesAmount[__INV_PROPERTY_INDEX__]"
+                                  name="capitalAllowancesAmount[__INV_PROPERTY_INDEX__]"
+                                  class="form-control"
+                                  placeholder="Enter amount"
+                                />
+                              </div>
+                              <div class="col-12 col-md-6">
+                                <input
+                                  type="file"
+                                  id="capitalAllowancesAttachment[__INV_PROPERTY_INDEX__]"
+                                  name="capitalAllowancesAttachment[__INV_PROPERTY_INDEX__]"
+                                  class="form-control"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      
+                        <!-- Gardening/lawn mowing -->
+                        <div class="form-check mb-1">
+                          <input
+                            type="checkbox"
+                            class="form-check-input toggle-fields"
+                            id="gardeningCheck[__INV_PROPERTY_INDEX__]"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="gardeningCheck[__INV_PROPERTY_INDEX__]"
+                            >J Gardening/lawn mowing</label
+                          >
+                      
+                          <div class="expense-fields mt-2 mb-3" style="display: none">
+                            <div class="row g-3">
+                              <div class="col-12 col-md-6">
+                                <input
+                                  type="number"
+                                  id="gardeningAmount[__INV_PROPERTY_INDEX__]"
+                                  name="gardeningAmount[__INV_PROPERTY_INDEX__]"
+                                  class="form-control"
+                                  placeholder="Enter amount"
+                                />
+                              </div>
+                              <div class="col-12 col-md-6">
+                                <input
+                                  type="file"
+                                  id="gardeningAttachment[__INV_PROPERTY_INDEX__]"
+                                  name="gardeningAttachment[__INV_PROPERTY_INDEX__]"
+                                  class="form-control"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      
+                        <!-- Insurance -->
+                        <div class="form-check mb-1">
+                          <input
+                            type="checkbox"
+                            class="form-check-input toggle-fields"
+                            id="insuranceCheck[__INV_PROPERTY_INDEX__]"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="insuranceCheck[__INV_PROPERTY_INDEX__]"
+                            >K Insurance</label
+                          >
+                      
+                          <div class="expense-fields mt-2 mb-3" style="display: none">
+                            <div class="row g-3">
+                              <div class="col-12 col-md-6">
+                                <input
+                                  type="number"
+                                  id="insuranceAmount[__INV_PROPERTY_INDEX__]"
+                                  name="insuranceAmount[__INV_PROPERTY_INDEX__]"
+                                  class="form-control"
+                                  placeholder="Enter amount"
+                                />
+                              </div>
+                              <div class="col-12 col-md-6">
+                                <input
+                                  type="file"
+                                  id="insuranceAttachment[__INV_PROPERTY_INDEX__]"
+                                  name="insuranceAttachment[__INV_PROPERTY_INDEX__]"
+                                  class="form-control"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      
+                        <!-- Land Tax -->
+                        <div class="form-check mb-1">
+                          <input
+                            type="checkbox"
+                            class="form-check-input toggle-fields"
+                            id="landTaxCheck[__INV_PROPERTY_INDEX__]"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="landTaxCheck[__INV_PROPERTY_INDEX__]"
+                            >M Land Tax</label
+                          >
+                      
+                          <div class="expense-fields mt-2 mb-3" style="display: none">
+                            <div class="row g-3">
+                              <div class="col-12 col-md-6">
+                                <input
+                                  type="number"
+                                  id="landTaxAmount[__INV_PROPERTY_INDEX__]"
+                                  name="landTaxAmount[__INV_PROPERTY_INDEX__]"
+                                  class="form-control"
+                                  placeholder="Enter amount"
+                                />
+                              </div>
+                              <div class="col-12 col-md-6">
+                                <input
+                                  type="file"
+                                  id="landTaxAttachment[__INV_PROPERTY_INDEX__]"
+                                  name="landTaxAttachment[__INV_PROPERTY_INDEX__]"
+                                  class="form-control"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      
+                        <!-- Legal fees -->
+                        <div class="form-check mb-1">
+                          <input
+                            type="checkbox"
+                            class="form-check-input toggle-fields"
+                            id="legalFeesCheck[__INV_PROPERTY_INDEX__]"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="legalFeesCheck[__INV_PROPERTY_INDEX__]"
+                            >N Legal fees</label
+                          >
+                      
+                          <div class="expense-fields mt-2 mb-3" style="display: none">
+                            <div class="row g-3">
+                              <div class="col-12 col-md-6">
+                                <input
+                                  type="number"
+                                  id="legalFeesAmount[__INV_PROPERTY_INDEX__]"
+                                  name="legalFeesAmount[__INV_PROPERTY_INDEX__]"
+                                  class="form-control"
+                                  placeholder="Enter amount"
+                                />
+                              </div>
+                              <div class="col-12 col-md-6">
+                                <input
+                                  type="file"
+                                  id="legalFeesAttachment[__INV_PROPERTY_INDEX__]"
+                                  name="legalFeesAttachment[__INV_PROPERTY_INDEX__]"
+                                  class="form-control"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      
+                        <!-- Pest control -->
+                        <div class="form-check mb-1">
+                          <input
+                            type="checkbox"
+                            class="form-check-input toggle-fields"
+                            id="pestControlCheck[__INV_PROPERTY_INDEX__]"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="pestControlCheck[__INV_PROPERTY_INDEX__]"
+                            >O Pest control</label
+                          >
+                      
+                          <div class="expense-fields mt-2 mb-3" style="display: none">
+                            <div class="row g-3">
+                              <div class="col-12 col-md-6">
+                                <input
+                                  type="number"
+                                  id="pestControlAmount[__INV_PROPERTY_INDEX__]"
+                                  name="pestControlAmount[__INV_PROPERTY_INDEX__]"
+                                  class="form-control"
+                                  placeholder="Enter amount"
+                                />
+                              </div>
+                              <div class="col-12 col-md-6">
+                                <input
+                                  type="file"
+                                  id="pestControlAttachment[__INV_PROPERTY_INDEX__]"
+                                  name="pestControlAttachment[__INV_PROPERTY_INDEX__]"
+                                  class="form-control"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      
+                        <!-- Property agent fees/commission -->
+                        <div class="form-check mb-1">
+                          <input
+                            type="checkbox"
+                            class="form-check-input toggle-fields"
+                            id="propertyAgentFeesCheck[__INV_PROPERTY_INDEX__]"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="propertyAgentFeesCheck[__INV_PROPERTY_INDEX__]"
+                            >P Property agent fees/commission</label
+                          >
+                      
+                          <div class="expense-fields mt-2 mb-3" style="display: none">
+                            <div class="row g-3">
+                              <div class="col-12 col-md-6">
+                                <input
+                                  type="number"
+                                  id="propertyAgentFeesAmount[__INV_PROPERTY_INDEX__]"
+                                  name="propertyAgentFeesAmount[__INV_PROPERTY_INDEX__]"
+                                  class="form-control"
+                                  placeholder="Enter amount"
+                                />
+                              </div>
+                              <div class="col-12 col-md-6">
+                                <input
+                                  type="file"
+                                  id="propertyAgentFeesAttachment[__INV_PROPERTY_INDEX__]"
+                                  name="propertyAgentFeesAttachment[__INV_PROPERTY_INDEX__]"
+                                  class="form-control"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      
+                        <!-- Repairs and maintenance (R & M) -->
+                        <div class="form-check mb-1">
+                          <input
+                            type="checkbox"
+                            class="form-check-input toggle-fields"
+                            id="repairsMaintenanceCheck[__INV_PROPERTY_INDEX__]"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="repairsMaintenanceCheck[__INV_PROPERTY_INDEX__]"
+                            >Q Repairs and maintenance (R & M)</label
+                          >
+                      
+                          <div class="expense-fields mt-2 mb-3" style="display: none">
+                            <div class="table-responsive">
+                              <table class="table table-bordered table-sm repairsMaintenanceTable">
+                                <thead>
+                                  <tr>
+                                    <th>Details</th>
+                                    <th>Amount</th>
+                                    <th>Attachment</th>
+                                    <th></th>
+                                  </tr>
+                                </thead>
+                                <tbody  class="repairsMaintenanceTableBody">
+                                </tbody>
+                              </table>
+                              <button type="button" class="add-repairs-maintenance-expenses mt-3 ms-auto btn btn-sm add-btn">Add Expense</button>
+                            </div>
+                          </div>
+                        </div>
+                      
+                        <!-- Capital Work's Deduction (Building) -->
+                        <div class="form-check mb-1">
+                          <input
+                            type="checkbox"
+                            class="form-check-input toggle-fields"
+                            id="capitalWorksDeductionCheck[__INV_PROPERTY_INDEX__]"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="capitalWorksDeductionCheck[__INV_PROPERTY_INDEX__]"
+                            >R Capital Work's Deduction (Building)</label
+                          >
+                      
+                          <div class="expense-fields mt-2 mb-3" style="display: none">
+                            <div class="row g-3">
+                              <div class="col-12 col-md-6">
+                                <input
+                                  type="number"
+                                  id="capitalWorksDeductionAmount[__INV_PROPERTY_INDEX__]"
+                                  name="capitalWorksDeductionAmount[__INV_PROPERTY_INDEX__]"
+                                  class="form-control"
+                                  placeholder="Enter amount"
+                                />
+                              </div>
+                              <div class="col-12 col-md-6">
+                                <input
+                                  type="file"
+                                  id="capitalWorksDeductionAttachment[__INV_PROPERTY_INDEX__]"
+                                  name="capitalWorksDeductionAttachment[__INV_PROPERTY_INDEX__]"
+                                  class="form-control"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      
+                        <!-- Stationery, telephone and postage -->
+                        <div class="form-check mb-1">
+                          <input
+                            type="checkbox"
+                            class="form-check-input toggle-fields"
+                            id="stationeryCheck[__INV_PROPERTY_INDEX__]"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="stationeryCheck[__INV_PROPERTY_INDEX__]"
+                            >S Stationery, telephone and postage</label
+                          >
+                      
+                          <div class="expense-fields mt-2 mb-3" style="display: none">
+                            <div class="row g-3">
+                              <div class="col-12 col-md-6">
+                                <input
+                                  type="number"
+                                  id="stationeryAmount[__INV_PROPERTY_INDEX__]"
+                                  name="stationeryAmount[__INV_PROPERTY_INDEX__]"
+                                  class="form-control"
+                                  placeholder="Enter amount"
+                                />
+                              </div>
+                              <div class="col-12 col-md-6">
+                                <input
+                                  type="file"
+                                  id="stationeryAttachment[__INV_PROPERTY_INDEX__]"
+                                  name="stationeryAttachment[__INV_PROPERTY_INDEX__]"
+                                  class="form-control"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      
+                        <!-- Travel expenses (For Residential property) -->
+                        <div class="form-check mb-1">
+                          <input
+                            type="checkbox"
+                            class="form-check-input toggle-fields"
+                            id="travelExpensesCheck[__INV_PROPERTY_INDEX__]"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="travelExpensesCheck[__INV_PROPERTY_INDEX__]"
+                            >T Travel expenses (For Residential property)</label
+                          >
+                      
+                          <div class="expense-fields mt-2 mb-3" style="display: none">
+                            <div class="row g-3">
+                              <div class="col-12 col-md-6">
+                                <input
+                                  type="number"
+                                  id="travelExpensesAmount[__INV_PROPERTY_INDEX__]"
+                                  name="travelExpensesAmount[__INV_PROPERTY_INDEX__]"
+                                  class="form-control"
+                                  placeholder="Enter amount"
+                                />
+                              </div>
+                              <div class="col-12 col-md-6">
+                                <input
+                                  type="file"
+                                  id="travelExpensesAttachment[__INV_PROPERTY_INDEX__]"
+                                  name="travelExpensesAttachment[__INV_PROPERTY_INDEX__]"
+                                  class="form-control"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      
+                        <!-- Water charges -->
+                        <div class="form-check mb-1">
+                          <input
+                            type="checkbox"
+                            class="form-check-input toggle-fields"
+                            id="waterChargesCheck[__INV_PROPERTY_INDEX__]"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="waterChargesCheck[__INV_PROPERTY_INDEX__]"
+                            >U Water charges</label
+                          >
+                      
+                          <div class="expense-fields mt-2 mb-3" style="display: none">
+                            <div class="row g-3">
+                              <div class="col-12 col-md-6">
+                                <input
+                                  type="number"
+                                  id="waterChargesAmount[__INV_PROPERTY_INDEX__]"
+                                  name="waterChargesAmount[__INV_PROPERTY_INDEX__]"
+                                  class="form-control"
+                                  placeholder="Enter amount"
+                                />
+                              </div>
+                              <div class="col-12 col-md-6">
+                                <input
+                                  type="file"
+                                  id="waterChargesAttachment[__INV_PROPERTY_INDEX__]"
+                                  name="waterChargesAttachment[__INV_PROPERTY_INDEX__]"
+                                  class="form-control"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      
+                        <!-- Sundry rental expenses -->
+                        <div class="form-check mb-1">
+                          <input
+                            type="checkbox"
+                            class="form-check-input toggle-fields"
+                            id="sundryRentalExpensesCheck[__INV_PROPERTY_INDEX__]"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="sundryRentalExpensesCheck[__INV_PROPERTY_INDEX__]"
+                            >V Sundry rental expenses</label
+                          >
+                      
+                          <div class="expense-fields mt-2 mb-3" style="display: none">
+                            <div class="table-responsive">
+                              <table class="table table-bordered table-sm sundryRentalExpensesTable">
+                                <thead>
+                                  <tr>
+                                    <th>Details</th>
+                                    <th>Amount</th>
+                                    <th>Attachment</th>
+                                    <th></th>
+                                  </tr>
+                                </thead>
+                                <tbody  class="sundryRentalExpensesTableBody">
+                                </tbody>
+                              </table>
+                              <button type="button" class="add-sundry-rental-expenses mt-3 ms-auto btn btn-sm add-btn">Add Expense</button>
+                            </div>
+                          </div>
+                        </div>
+                      
+                        <!-- Total Expenses -->
+                        <div class="mt-3">
+                          <label
+                            class="form-label"
+                            for="totalExpenses[__INV_PROPERTY_INDEX__]"
+                            >TOTAL EXPENSES</label
+                          >
+                      
+                          <input
+                            type="number"
+                            id="totalExpenses[__INV_PROPERTY_INDEX__]"
+                            name="totalExpenses[__INV_PROPERTY_INDEX__]"
+                            class="form-control"
+                            placeholder="Enter amount"
+                          />
+                        </div>
+                      </div>
+
+                      <!-- Net Rent Section -->
+                      <div class="mt-4 mb-3">
+                        <label
+                          for="investmentPropertyNetRent[__INV_PROPERTY_INDEX__]"
+                          class="mb-2"
+                          >NET RENT</label
+                        >
+                        <input
+                          id="investmentPropertyNetRent[__INV_PROPERTY_INDEX__]"
+                          name="investmentPropertyNetRent[__INV_PROPERTY_INDEX__]"
+                          type="number"
+                          class="form-control"
+                        />
+                      </div>
+
+                      <!-- Remove button for the investment property -->
+                      <button
+                        type="button"
+                        class="d-block mt-5 ms-auto btn btn-danger remove-investment-property"
                       >
-                      <input
-                        type="number"
-                        class="form-control"
-                        id="grossRentalIncome[__INV_PROPERTY_INDEX__]"
-                        name="grossRentalIncome[__INV_PROPERTY_INDEX__]"
-                      />
-                    </div>
-                    <div class="col-12 col-md-6">
-                      <label
-                        for="otherRentalRelatedIncome[__INV_PROPERTY_INDEX__]"
-                        class="form-label"
-                        >Other rental related income</label
-                      >
-                      <input
-                        type="number"
-                        class="form-control"
-                        id="otherRentalRelatedIncome[__INV_PROPERTY_INDEX__]"
-                        name="otherRentalRelatedIncome[__INV_PROPERTY_INDEX__]"
-                      />
+                        Remove Investment Property
+                      </button>
+
                     </div>
                   </div>
                 </div>
               </div>
-
-              <!-- INTEREST ON LOANS Section -->
-              <div class="mb-3">
-                <h5 class="mb-2">INTEREST ON LOANS</h5>
-                <div class="table-responsive">
-                  <table class="table table-bordered table-sm">
-                    <thead>
-                      <tr>
-                        <th>Bank Name</th>
-                        <th>Account Number</th>
-                        <th>Loan Amount</th>
-                        <th>Annual Interest</th>
-                        <th>Attachment</th>
-                        <th>Actions</th>
-                      </tr>
-                    </thead>
-                    <tbody id="interestOnLoansTableBody">
-                    </tbody>
-                  </table>
-                </div>
-                <button
-                  type="button"
-                  id="addInvestmentPropertyLoanButton[__INV_PROPERTY_INDEX__]"
-                  class="ms-auto btn btn-sm add-btn"
-                >
-                  Add Investment Property Loan
-                </button>
-              </div>
-
-              <!-- Expenses Section -->
-              <div class="mb-3 investment-property-expenses">
-                <h5 class="mb-2">EXPENSES</h5>
-
-                <!-- Advertising for tenants -->
-                <div class="form-check mb-1">
-                  <input
-                    type="checkbox"
-                    class="form-check-input toggle-fields"
-                    id="advertisingCheck[__INV_PROPERTY_INDEX__]"
-                    name="advertisingCheck[__INV_PROPERTY_INDEX__]"
-                  />
-                  <label
-                    class="form-check-label"
-                    for="advertisingCheck[__INV_PROPERTY_INDEX__]"
-                    >D Advertising for tenants</label
-                  >
-
-                  <div class="expense-fields mt-2 mb-3" style="display: none">
-                    <div class="row g-3">
-                      <div class="col-12 col-md-6">
-                        <input
-                          type="number"
-                          class="form-control"
-                          name="advertisingAmount[__INV_PROPERTY_INDEX__]"
-                          id="advertisingAmount[__INV_PROPERTY_INDEX__]"
-                          placeholder="Enter amount"
-                        />
-                      </div>
-                      <div class="col-12 col-md-6">
-                        <input
-                          type="file"
-                          class="form-control"
-                          name="advertisingAttachment[__INV_PROPERTY_INDEX__]"
-                          id="advertisingAttachment[__INV_PROPERTY_INDEX__]"
-                          class="form-control"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Body corporate fees (Strata Levies) -->
-                <div class="form-check mb-1">
-                  <input
-                    type="checkbox"
-                    class="form-check-input toggle-fields"
-                    id="strataLeviesCheck[__INV_PROPERTY_INDEX__]"
-                  />
-                  <label
-                    class="form-check-label"
-                    for="strataLeviesCheck[__INV_PROPERTY_INDEX__]"
-                    >E Body corporate fees (Strata Levies)</label
-                  >
-
-                  <div class="expense-fields mt-2" style="display: none">
-                    <div class="row g-3">
-                      <div class="col-12 col-md-6">
-                        <input
-                          type="number"
-                          id="strataLeviesAmount[__INV_PROPERTY_INDEX__]"
-                          name="strataLeviesAmount[__INV_PROPERTY_INDEX__]"
-                          class="form-control mb-2"
-                          placeholder="Enter amount"
-                        />
-                      </div>
-                      <div class="col-12 col-md-6">
-                        <input
-                          type="file"
-                          id="strataLeviesAttachment[__INV_PROPERTY_INDEX__]"
-                          name="strataLeviesAttachment[__INV_PROPERTY_INDEX__]"
-                          class="form-control"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Borrowing expenses -->
-                <div class="form-check mb-1">
-                  <input
-                    type="checkbox"
-                    class="form-check-input toggle-fields"
-                    id="borrowingExpensesCheck[__INV_PROPERTY_INDEX__]"
-                  />
-                  <label
-                    class="form-check-label"
-                    for="borrowingExpensesCheck[__INV_PROPERTY_INDEX__]"
-                    >F Borrowing expenses</label
-                  >
-
-                  <div class="expense-fields mt-2 mb-3" style="display: none">
-                    <div class="row g-3">
-                      <div class="col-12 col-md-6">
-                        <input
-                          type="number"
-                          id="borrowingExpensesAmount[__INV_PROPERTY_INDEX__]"
-                          name="borrowingExpensesAmount[__INV_PROPERTY_INDEX__]"
-                          class="form-control"
-                          placeholder="Enter amount"
-                        />
-                      </div>
-                      <div class="col-12 col-md-6">
-                        <input
-                          type="file"
-                          id="borrowingExpensesAttachment[__INV_PROPERTY_INDEX__]"
-                          name="borrowingExpensesAttachment[__INV_PROPERTY_INDEX__]"
-                          class="form-control"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Cleaning -->
-                <div class="form-check mb-1">
-                  <input
-                    type="checkbox"
-                    class="form-check-input toggle-fields"
-                    id="cleaningCheck[__INV_PROPERTY_INDEX__]"
-                  />
-                  <label
-                    class="form-check-label"
-                    for="cleaningCheck[__INV_PROPERTY_INDEX__]"
-                    >G Cleaning</label
-                  >
-
-                  <div class="expense-fields mt-2 mb-3" style="display: none">
-                    <div class="row g-3">
-                      <div class="col-12 col-md-6">
-                        <input
-                          type="number"
-                          id="cleaningAmount[__INV_PROPERTY_INDEX__]"
-                          name="cleaningAmount[__INV_PROPERTY_INDEX__]"
-                          class="form-control"
-                          placeholder="Enter amount"
-                        />
-                      </div>
-                      <div class="col-12 col-md-6">
-                        <input
-                          type="file"
-                          id="cleaningAttachment[__INV_PROPERTY_INDEX__]"
-                          name="cleaningAttachment[__INV_PROPERTY_INDEX__]"
-                          class="form-control"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Council Rates -->
-                <div class="form-check mb-1">
-                  <input
-                    type="checkbox"
-                    class="form-check-input toggle-fields"
-                    id="councilRatesCheck[__INV_PROPERTY_INDEX__]"
-                  />
-                  <label
-                    class="form-check-label"
-                    for="councilRatesCheck[__INV_PROPERTY_INDEX__]"
-                    >H Council Rates</label
-                  >
-
-                  <div class="expense-fields mt-2 mb-3" style="display: none">
-                    <div class="row g-3">
-                      <div class="col-12 col-md-6">
-                        <input
-                          type="number"
-                          id="councilRatesAmount[__INV_PROPERTY_INDEX__]"
-                          name="councilRatesAmount[__INV_PROPERTY_INDEX__]"
-                          class="form-control"
-                          placeholder="Enter amount"
-                        />
-                      </div>
-                      <div class="col-12 col-md-6">
-                        <input
-                          type="file"
-                          id="councilRatesAttachment[__INV_PROPERTY_INDEX__]"
-                          name="councilRatesAttachment[__INV_PROPERTY_INDEX__]"
-                          class="form-control"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Capital allowances (depreciation) -->
-                <div class="form-check mb-1">
-                  <input
-                    type="checkbox"
-                    class="form-check-input toggle-fields"
-                    id="capitalAllowancesCheck[__INV_PROPERTY_INDEX__]"
-                  />
-                  <label
-                    class="form-check-label"
-                    for="capitalAllowancesCheck[__INV_PROPERTY_INDEX__]"
-                    >I Capital allowances (depreciation)</label
-                  >
-
-                  <div class="expense-fields mt-2 mb-3" style="display: none">
-                    <div class="row g-3">
-                      <div class="col-12 col-md-6">
-                        <input
-                          type="number"
-                          id="capitalAllowancesAmount[__INV_PROPERTY_INDEX__]"
-                          name="capitalAllowancesAmount[__INV_PROPERTY_INDEX__]"
-                          class="form-control"
-                          placeholder="Enter amount"
-                        />
-                      </div>
-                      <div class="col-12 col-md-6">
-                        <input
-                          type="file"
-                          id="capitalAllowancesAttachment[__INV_PROPERTY_INDEX__]"
-                          name="capitalAllowancesAttachment[__INV_PROPERTY_INDEX__]"
-                          class="form-control"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Gardening/lawn mowing -->
-                <div class="form-check mb-1">
-                  <input
-                    type="checkbox"
-                    class="form-check-input toggle-fields"
-                    id="gardeningCheck[__INV_PROPERTY_INDEX__]"
-                  />
-                  <label
-                    class="form-check-label"
-                    for="gardeningCheck[__INV_PROPERTY_INDEX__]"
-                    >J Gardening/lawn mowing</label
-                  >
-
-                  <div class="expense-fields mt-2 mb-3" style="display: none">
-                    <div class="row g-3">
-                      <div class="col-12 col-md-6">
-                        <input
-                          type="number"
-                          id="gardeningAmount[__INV_PROPERTY_INDEX__]"
-                          name="gardeningAmount[__INV_PROPERTY_INDEX__]"
-                          class="form-control"
-                          placeholder="Enter amount"
-                        />
-                      </div>
-                      <div class="col-12 col-md-6">
-                        <input
-                          type="file"
-                          id="gardeningAttachment[__INV_PROPERTY_INDEX__]"
-                          name="gardeningAttachment[__INV_PROPERTY_INDEX__]"
-                          class="form-control"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Insurance -->
-                <div class="form-check mb-1">
-                  <input
-                    type="checkbox"
-                    class="form-check-input toggle-fields"
-                    id="insuranceCheck[__INV_PROPERTY_INDEX__]"
-                  />
-                  <label
-                    class="form-check-label"
-                    for="insuranceCheck[__INV_PROPERTY_INDEX__]"
-                    >K Insurance</label
-                  >
-
-                  <div class="expense-fields mt-2 mb-3" style="display: none">
-                    <div class="row g-3">
-                      <div class="col-12 col-md-6">
-                        <input
-                          type="number"
-                          id="insuranceAmount[__INV_PROPERTY_INDEX__]"
-                          name="insuranceAmount[__INV_PROPERTY_INDEX__]"
-                          class="form-control"
-                          placeholder="Enter amount"
-                        />
-                      </div>
-                      <div class="col-12 col-md-6">
-                        <input
-                          type="file"
-                          id="insuranceAttachment[__INV_PROPERTY_INDEX__]"
-                          name="insuranceAttachment[__INV_PROPERTY_INDEX__]"
-                          class="form-control"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Land Tax -->
-                <div class="form-check mb-1">
-                  <input
-                    type="checkbox"
-                    class="form-check-input toggle-fields"
-                    id="landTaxCheck[__INV_PROPERTY_INDEX__]"
-                  />
-                  <label
-                    class="form-check-label"
-                    for="landTaxCheck[__INV_PROPERTY_INDEX__]"
-                    >M Land Tax</label
-                  >
-
-                  <div class="expense-fields mt-2 mb-3" style="display: none">
-                    <div class="row g-3">
-                      <div class="col-12 col-md-6">
-                        <input
-                          type="number"
-                          id="landTaxAmount[__INV_PROPERTY_INDEX__]"
-                          name="landTaxAmount[__INV_PROPERTY_INDEX__]"
-                          class="form-control"
-                          placeholder="Enter amount"
-                        />
-                      </div>
-                      <div class="col-12 col-md-6">
-                        <input
-                          type="file"
-                          id="landTaxAttachment[__INV_PROPERTY_INDEX__]"
-                          name="landTaxAttachment[__INV_PROPERTY_INDEX__]"
-                          class="form-control"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Legal fees -->
-                <div class="form-check mb-1">
-                  <input
-                    type="checkbox"
-                    class="form-check-input toggle-fields"
-                    id="legalFeesCheck[__INV_PROPERTY_INDEX__]"
-                  />
-                  <label
-                    class="form-check-label"
-                    for="legalFeesCheck[__INV_PROPERTY_INDEX__]"
-                    >N Legal fees</label
-                  >
-
-                  <div class="expense-fields mt-2 mb-3" style="display: none">
-                    <div class="row g-3">
-                      <div class="col-12 col-md-6">
-                        <input
-                          type="number"
-                          id="legalFeesAmount[__INV_PROPERTY_INDEX__]"
-                          name="legalFeesAmount[__INV_PROPERTY_INDEX__]"
-                          class="form-control"
-                          placeholder="Enter amount"
-                        />
-                      </div>
-                      <div class="col-12 col-md-6">
-                        <input
-                          type="file"
-                          id="legalFeesAttachment[__INV_PROPERTY_INDEX__]"
-                          name="legalFeesAttachment[__INV_PROPERTY_INDEX__]"
-                          class="form-control"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Pest control -->
-                <div class="form-check mb-1">
-                  <input
-                    type="checkbox"
-                    class="form-check-input toggle-fields"
-                    id="pestControlCheck[__INV_PROPERTY_INDEX__]"
-                  />
-                  <label
-                    class="form-check-label"
-                    for="pestControlCheck[__INV_PROPERTY_INDEX__]"
-                    >O Pest control</label
-                  >
-
-                  <div class="expense-fields mt-2 mb-3" style="display: none">
-                    <div class="row g-3">
-                      <div class="col-12 col-md-6">
-                        <input
-                          type="number"
-                          id="pestControlAmount[__INV_PROPERTY_INDEX__]"
-                          name="pestControlAmount[__INV_PROPERTY_INDEX__]"
-                          class="form-control"
-                          placeholder="Enter amount"
-                        />
-                      </div>
-                      <div class="col-12 col-md-6">
-                        <input
-                          type="file"
-                          id="pestControlAttachment[__INV_PROPERTY_INDEX__]"
-                          name="pestControlAttachment[__INV_PROPERTY_INDEX__]"
-                          class="form-control"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Property agent fees/commission -->
-                <div class="form-check mb-1">
-                  <input
-                    type="checkbox"
-                    class="form-check-input toggle-fields"
-                    id="propertyAgentFeesCheck[__INV_PROPERTY_INDEX__]"
-                  />
-                  <label
-                    class="form-check-label"
-                    for="propertyAgentFeesCheck[__INV_PROPERTY_INDEX__]"
-                    >P Property agent fees/commission</label
-                  >
-
-                  <div class="expense-fields mt-2 mb-3" style="display: none">
-                    <div class="row g-3">
-                      <div class="col-12 col-md-6">
-                        <input
-                          type="number"
-                          id="propertyAgentFeesAmount[__INV_PROPERTY_INDEX__]"
-                          name="propertyAgentFeesAmount[__INV_PROPERTY_INDEX__]"
-                          class="form-control"
-                          placeholder="Enter amount"
-                        />
-                      </div>
-                      <div class="col-12 col-md-6">
-                        <input
-                          type="file"
-                          id="propertyAgentFeesAttachment[__INV_PROPERTY_INDEX__]"
-                          name="propertyAgentFeesAttachment[__INV_PROPERTY_INDEX__]"
-                          class="form-control"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Repairs and maintenance (R & M) -->
-                <div class="form-check mb-1">
-                  <input
-                    type="checkbox"
-                    class="form-check-input toggle-fields"
-                    id="repairsMaintenanceCheck[__INV_PROPERTY_INDEX__]"
-                  />
-                  <label
-                    class="form-check-label"
-                    for="repairsMaintenanceCheck[__INV_PROPERTY_INDEX__]"
-                    >Q Repairs and maintenance (R & M)</label
-                  >
-
-                  <div class="expense-fields mt-2 mb-3" style="display: none">
-                    <div class="table-responsive">
-                      <table class="table table-bordered table-sm repairsMaintenanceTable">
-                        <thead>
-                          <tr>
-                            <th>Details</th>
-                            <th>Amount</th>
-                            <th>Attachment</th>
-                            <th></th>
-                          </tr>
-                        </thead>
-                        <tbody  class="repairsMaintenanceTableBody">
-                        </tbody>
-                      </table>
-                      <button type="button" class="add-repairs-maintenance-expenses mt-3 ms-auto btn btn-sm add-btn">Add Expense</button>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Capital Work's Deduction (Building) -->
-                <div class="form-check mb-1">
-                  <input
-                    type="checkbox"
-                    class="form-check-input toggle-fields"
-                    id="capitalWorksDeductionCheck[__INV_PROPERTY_INDEX__]"
-                  />
-                  <label
-                    class="form-check-label"
-                    for="capitalWorksDeductionCheck[__INV_PROPERTY_INDEX__]"
-                    >R Capital Work's Deduction (Building)</label
-                  >
-
-                  <div class="expense-fields mt-2 mb-3" style="display: none">
-                    <div class="row g-3">
-                      <div class="col-12 col-md-6">
-                        <input
-                          type="number"
-                          id="capitalWorksDeductionAmount[__INV_PROPERTY_INDEX__]"
-                          name="capitalWorksDeductionAmount[__INV_PROPERTY_INDEX__]"
-                          class="form-control"
-                          placeholder="Enter amount"
-                        />
-                      </div>
-                      <div class="col-12 col-md-6">
-                        <input
-                          type="file"
-                          id="capitalWorksDeductionAttachment[__INV_PROPERTY_INDEX__]"
-                          name="capitalWorksDeductionAttachment[__INV_PROPERTY_INDEX__]"
-                          class="form-control"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Stationery, telephone and postage -->
-                <div class="form-check mb-1">
-                  <input
-                    type="checkbox"
-                    class="form-check-input toggle-fields"
-                    id="stationeryCheck[__INV_PROPERTY_INDEX__]"
-                  />
-                  <label
-                    class="form-check-label"
-                    for="stationeryCheck[__INV_PROPERTY_INDEX__]"
-                    >S Stationery, telephone and postage</label
-                  >
-
-                  <div class="expense-fields mt-2 mb-3" style="display: none">
-                    <div class="row g-3">
-                      <div class="col-12 col-md-6">
-                        <input
-                          type="number"
-                          id="stationeryAmount[__INV_PROPERTY_INDEX__]"
-                          name="stationeryAmount[__INV_PROPERTY_INDEX__]"
-                          class="form-control"
-                          placeholder="Enter amount"
-                        />
-                      </div>
-                      <div class="col-12 col-md-6">
-                        <input
-                          type="file"
-                          id="stationeryAttachment[__INV_PROPERTY_INDEX__]"
-                          name="stationeryAttachment[__INV_PROPERTY_INDEX__]"
-                          class="form-control"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Travel expenses (For Residential property) -->
-                <div class="form-check mb-1">
-                  <input
-                    type="checkbox"
-                    class="form-check-input toggle-fields"
-                    id="travelExpensesCheck[__INV_PROPERTY_INDEX__]"
-                  />
-                  <label
-                    class="form-check-label"
-                    for="travelExpensesCheck[__INV_PROPERTY_INDEX__]"
-                    >T Travel expenses (For Residential property)</label
-                  >
-
-                  <div class="expense-fields mt-2 mb-3" style="display: none">
-                    <div class="row g-3">
-                      <div class="col-12 col-md-6">
-                        <input
-                          type="number"
-                          id="travelExpensesAmount[__INV_PROPERTY_INDEX__]"
-                          name="travelExpensesAmount[__INV_PROPERTY_INDEX__]"
-                          class="form-control"
-                          placeholder="Enter amount"
-                        />
-                      </div>
-                      <div class="col-12 col-md-6">
-                        <input
-                          type="file"
-                          id="travelExpensesAttachment[__INV_PROPERTY_INDEX__]"
-                          name="travelExpensesAttachment[__INV_PROPERTY_INDEX__]"
-                          class="form-control"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Water charges -->
-                <div class="form-check mb-1">
-                  <input
-                    type="checkbox"
-                    class="form-check-input toggle-fields"
-                    id="waterChargesCheck[__INV_PROPERTY_INDEX__]"
-                  />
-                  <label
-                    class="form-check-label"
-                    for="waterChargesCheck[__INV_PROPERTY_INDEX__]"
-                    >U Water charges</label
-                  >
-
-                  <div class="expense-fields mt-2 mb-3" style="display: none">
-                    <div class="row g-3">
-                      <div class="col-12 col-md-6">
-                        <input
-                          type="number"
-                          id="waterChargesAmount[__INV_PROPERTY_INDEX__]"
-                          name="waterChargesAmount[__INV_PROPERTY_INDEX__]"
-                          class="form-control"
-                          placeholder="Enter amount"
-                        />
-                      </div>
-                      <div class="col-12 col-md-6">
-                        <input
-                          type="file"
-                          id="waterChargesAttachment[__INV_PROPERTY_INDEX__]"
-                          name="waterChargesAttachment[__INV_PROPERTY_INDEX__]"
-                          class="form-control"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Sundry rental expenses -->
-                <div class="form-check mb-1">
-                  <input
-                    type="checkbox"
-                    class="form-check-input toggle-fields"
-                    id="sundryRentalExpensesCheck[__INV_PROPERTY_INDEX__]"
-                  />
-                  <label
-                    class="form-check-label"
-                    for="sundryRentalExpensesCheck[__INV_PROPERTY_INDEX__]"
-                    >V Sundry rental expenses</label
-                  >
-
-                  <div class="expense-fields mt-2 mb-3" style="display: none">
-                    <div class="table-responsive">
-                      <table class="table table-bordered table-sm sundryRentalExpensesTable">
-                        <thead>
-                          <tr>
-                            <th>Details</th>
-                            <th>Amount</th>
-                            <th>Attachment</th>
-                            <th></th>
-                          </tr>
-                        </thead>
-                        <tbody  class="sundryRentalExpensesTableBody">
-                        </tbody>
-                      </table>
-                      <button type="button" class="add-sundry-rental-expenses mt-3 ms-auto btn btn-sm add-btn">Add Expense</button>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Total Expenses -->
-                <div class="mt-3">
-                  <label
-                    class="form-label"
-                    for="totalExpenses[__INV_PROPERTY_INDEX__]"
-                    >TOTAL EXPENSES</label
-                  >
-
-                  <input
-                    type="number"
-                    id="totalExpenses[__INV_PROPERTY_INDEX__]"
-                    name="totalExpenses[__INV_PROPERTY_INDEX__]"
-                    class="form-control"
-                    placeholder="Enter amount"
-                  />
-                </div>
-              </div>
-
-              <!-- Net Rent Section -->
-              <div class="mt-4 mb-3">
-                <label
-                  for="investmentPropertyNetRent[__INV_PROPERTY_INDEX__]"
-                  class="mb-2"
-                  >NET RENT</label
-                >
-                <input
-                  id="investmentPropertyNetRent[__INV_PROPERTY_INDEX__]"
-                  name="investmentPropertyNetRent[__INV_PROPERTY_INDEX__]"
-                  type="number"
-                  class="form-control"
-                />
-              </div>
-
-              <!-- Remove button for the investment property -->
-              <button
-                type="button"
-                class="d-block mt-5 ms-auto btn btn-danger remove-investment-property"
-              >
-                Remove Investment Property
-              </button>
-
-              <hr class="my-5" />
-            </div>
           </template>
 
           <!-- Template for jointlyOwnInvestmentProperty row -->
