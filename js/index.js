@@ -127,6 +127,11 @@ document.getElementById("urgent").addEventListener("change", function () {
   }
 });
 
+// Automatically select "4-6 Weeks" after the modal is closed.
+document.getElementById("urgentModal").addEventListener("hidden.bs.modal", function () {
+  document.getElementById("4-6-week").checked = true; // Select "4-6 Weeks" radio button.
+});
+
 // This script listens for changes in the address change radio buttons.
 // If "Yes" is selected, the address input field is shown. If "No" is selected, it is hidden.
 document.getElementById("addressYes").addEventListener("change", function () {
