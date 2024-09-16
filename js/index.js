@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function validateStep(step) {
     const currentStepFields = document.querySelectorAll(
-      `.step:nth-child(${step}) input[required]`
+      ".step.active input[required]"
     );
     let isValid = true;
     currentStepFields.forEach((field) => {
