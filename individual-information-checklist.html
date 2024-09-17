@@ -281,8 +281,24 @@
 
               <!-- Address Input Field (Initially Hidden) -->
               <div class="col-12" id="addressInput" style="display: none">
-                <label for="inputAddress" class="form-label">Address</label>
-                <input type="text" class="form-control" id="inputAddress" />
+                <div class="row g-3">
+                  <div class="col-12 col-md-6">
+                    <label for="inputAddress" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="inputAddress" />
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label for="inputSuburb" class="form-label">Suburb</label>
+                    <input type="text" class="form-control" id="inputSuburb" />
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label for="inputPostCode" class="form-label">Post Code</label>
+                    <input type="text" class="form-control" id="inputPostCode" />
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label for="inputCountry" class="form-label">Country (If Foreign)</label>
+                    <input type="text" class="form-control" id="inputCountry" />
+                  </div>
+                </div>
               </div>
 
               <!-- home phone -->
@@ -374,13 +390,6 @@
                 <input type="email" class="form-control" id="emailAddress" required />
               </div>
 
-              <!-- COMPULSORY -->
-              <div class="col-md-12">
-                <p class="text-danger">
-                  *COMPULSORY: Please supply spouse taxable income, include
-                  Reportable Fringe Benefits, Reportable Superannuation
-                </p>
-              </div>
             </div>
           </div>
 
@@ -1560,7 +1569,7 @@
                             >Number of Hours per Day</label
                           >
                           <input
-                            type="text"
+                            type="number"
                             class="form-control"
                             id="selfEducationFixedRatehoursPerDay"
                           />
@@ -1571,9 +1580,21 @@
                             >Number of Days in the Year</label
                           >
                           <input
-                            type="text"
+                            type="number"
                             class="form-control"
                             id="selfEducationFixedRatedaysPerYear"
+                          />
+                        </div>
+
+                        <div class="col-12">
+                          <label for="selfEducationFixedRateHomeOfficeTotalExpenses" class="form-label"
+                            >Home Office Expenses</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="selfEducationFixedRateHomeOfficeTotalExpenses"
+                            disabled
                           />
                         </div>
                       </div>
@@ -2398,7 +2419,7 @@
                         >Number of Hours per Day</label
                       >
                       <input
-                        type="text"
+                        type="number"
                         class="form-control"
                         id="hoursPerDay"
                       />
@@ -2409,9 +2430,21 @@
                         >Number of Days in the Year</label
                       >
                       <input
-                        type="text"
+                        type="number"
                         class="form-control"
                         id="daysPerYear"
+                      />
+                    </div>
+
+                    <div class="col-12">
+                      <label for="HomeOfficeTotalExpenses" class="form-label"
+                        >Home Office Expenses</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="HomeOfficeTotalExpenses"
+                        disabled
                       />
                     </div>
                   </div>
@@ -4213,6 +4246,11 @@
                           <div class="expense-fields mt-2 mb-3" style="display: none">
                             <div class="row g-3">
                               <div class="col-12 col-md-6">
+                                <label
+                                  class="form-label"
+                                  for="advertisingAmount[__INV_PROPERTY_INDEX__]"
+                                  >Amount</label
+                                >
                                 <input
                                   type="number"
                                   class="form-control"
@@ -4222,6 +4260,11 @@
                                 />
                               </div>
                               <div class="col-12 col-md-6">
+                                <label
+                                  class="form-label"
+                                  for="advertisingAttachment[__INV_PROPERTY_INDEX__]"
+                                  >Attachment</label
+                                >
                                 <input
                                   type="file"
                                   class="form-control"
@@ -4250,6 +4293,11 @@
                           <div class="expense-fields mt-2" style="display: none">
                             <div class="row g-3">
                               <div class="col-12 col-md-6">
+                                <label
+                                  class="form-label"
+                                  for="strataLeviesAmount[__INV_PROPERTY_INDEX__]"
+                                  >Amount</label
+                                >
                                 <input
                                   type="number"
                                   id="strataLeviesAmount[__INV_PROPERTY_INDEX__]"
@@ -4259,6 +4307,11 @@
                                 />
                               </div>
                               <div class="col-12 col-md-6">
+                                <label
+                                  class="form-label"
+                                  for="strataLeviesAttachment[__INV_PROPERTY_INDEX__]"
+                                  >Attachment</label
+                                >
                                 <input
                                   type="file"
                                   id="strataLeviesAttachment[__INV_PROPERTY_INDEX__]"
@@ -4286,6 +4339,11 @@
                           <div class="expense-fields mt-2 mb-3" style="display: none">
                             <div class="row g-3">
                               <div class="col-12 col-md-6">
+                                <label
+                                  class="form-label"
+                                  for="borrowingExpensesAmount[__INV_PROPERTY_INDEX__]"
+                                  >Amount</label
+                                >
                                 <input
                                   type="number"
                                   id="borrowingExpensesAmount[__INV_PROPERTY_INDEX__]"
@@ -4295,6 +4353,11 @@
                                 />
                               </div>
                               <div class="col-12 col-md-6">
+                                <label
+                                  class="form-label"
+                                  for="borrowingExpensesAttachment[__INV_PROPERTY_INDEX__]"
+                                  >Attachment</label
+                                >
                                 <input
                                   type="file"
                                   id="borrowingExpensesAttachment[__INV_PROPERTY_INDEX__]"
@@ -4322,6 +4385,11 @@
                           <div class="expense-fields mt-2 mb-3" style="display: none">
                             <div class="row g-3">
                               <div class="col-12 col-md-6">
+                                <label
+                                  class="form-label"
+                                  for="cleaningAmount[__INV_PROPERTY_INDEX__]"
+                                  >Amount</label
+                                >
                                 <input
                                   type="number"
                                   id="cleaningAmount[__INV_PROPERTY_INDEX__]"
@@ -4331,6 +4399,11 @@
                                 />
                               </div>
                               <div class="col-12 col-md-6">
+                                <label
+                                  class="form-label"
+                                  for="cleaningAttachment[__INV_PROPERTY_INDEX__]"
+                                  >Attachment</label
+                                >
                                 <input
                                   type="file"
                                   id="cleaningAttachment[__INV_PROPERTY_INDEX__]"
@@ -4358,6 +4431,11 @@
                           <div class="expense-fields mt-2 mb-3" style="display: none">
                             <div class="row g-3">
                               <div class="col-12 col-md-6">
+                                <label
+                                  class="form-label"
+                                  for="councilRatesAmount[__INV_PROPERTY_INDEX__]"
+                                  >Amount</label
+                                >
                                 <input
                                   type="number"
                                   id="councilRatesAmount[__INV_PROPERTY_INDEX__]"
@@ -4367,6 +4445,11 @@
                                 />
                               </div>
                               <div class="col-12 col-md-6">
+                                <label
+                                  class="form-label"
+                                  for="councilRatesAttachment[__INV_PROPERTY_INDEX__]"
+                                  >Attachment</label
+                                >
                                 <input
                                   type="file"
                                   id="councilRatesAttachment[__INV_PROPERTY_INDEX__]"
@@ -4394,6 +4477,11 @@
                           <div class="expense-fields mt-2 mb-3" style="display: none">
                             <div class="row g-3">
                               <div class="col-12 col-md-6">
+                                <label
+                                  class="form-label"
+                                  for="capitalAllowancesAmount[__INV_PROPERTY_INDEX__]"
+                                  >Amount</label
+                                >
                                 <input
                                   type="number"
                                   id="capitalAllowancesAmount[__INV_PROPERTY_INDEX__]"
@@ -4403,6 +4491,11 @@
                                 />
                               </div>
                               <div class="col-12 col-md-6">
+                                <label
+                                  class="form-label"
+                                  for="capitalAllowancesAttachment[__INV_PROPERTY_INDEX__]"
+                                  >Attachment</label
+                                >
                                 <input
                                   type="file"
                                   id="capitalAllowancesAttachment[__INV_PROPERTY_INDEX__]"
@@ -4430,6 +4523,11 @@
                           <div class="expense-fields mt-2 mb-3" style="display: none">
                             <div class="row g-3">
                               <div class="col-12 col-md-6">
+                                <label
+                                  class="form-label"
+                                  for="gardeningAmount[__INV_PROPERTY_INDEX__]"
+                                  >Amount</label
+                                >
                                 <input
                                   type="number"
                                   id="gardeningAmount[__INV_PROPERTY_INDEX__]"
@@ -4439,6 +4537,11 @@
                                 />
                               </div>
                               <div class="col-12 col-md-6">
+                                <label
+                                  class="form-label"
+                                  for="gardeningAttachment[__INV_PROPERTY_INDEX__]"
+                                  >Attachment</label
+                                >
                                 <input
                                   type="file"
                                   id="gardeningAttachment[__INV_PROPERTY_INDEX__]"
@@ -4466,6 +4569,11 @@
                           <div class="expense-fields mt-2 mb-3" style="display: none">
                             <div class="row g-3">
                               <div class="col-12 col-md-6">
+                                <label
+                                  class="form-label"
+                                  for="insuranceAmount[__INV_PROPERTY_INDEX__]"
+                                  >Amount</label
+                                >
                                 <input
                                   type="number"
                                   id="insuranceAmount[__INV_PROPERTY_INDEX__]"
@@ -4475,6 +4583,11 @@
                                 />
                               </div>
                               <div class="col-12 col-md-6">
+                                <label
+                                  class="form-label"
+                                  for="insuranceAttachment[__INV_PROPERTY_INDEX__]"
+                                  >Attachment</label
+                                >
                                 <input
                                   type="file"
                                   id="insuranceAttachment[__INV_PROPERTY_INDEX__]"
@@ -4502,6 +4615,11 @@
                           <div class="expense-fields mt-2 mb-3" style="display: none">
                             <div class="row g-3">
                               <div class="col-12 col-md-6">
+                                <label
+                                  class="form-label"
+                                  for="landTaxAmount[__INV_PROPERTY_INDEX__]"
+                                  >Amount</label
+                                >
                                 <input
                                   type="number"
                                   id="landTaxAmount[__INV_PROPERTY_INDEX__]"
@@ -4511,6 +4629,11 @@
                                 />
                               </div>
                               <div class="col-12 col-md-6">
+                                <label
+                                  class="form-label"
+                                  for="landTaxAttachment[__INV_PROPERTY_INDEX__]"
+                                  >Attachment</label
+                                >
                                 <input
                                   type="file"
                                   id="landTaxAttachment[__INV_PROPERTY_INDEX__]"
@@ -4538,6 +4661,11 @@
                           <div class="expense-fields mt-2 mb-3" style="display: none">
                             <div class="row g-3">
                               <div class="col-12 col-md-6">
+                                <label
+                                  class="form-label"
+                                  for="legalFeesAmount[__INV_PROPERTY_INDEX__]"
+                                  >Amount</label
+                                >
                                 <input
                                   type="number"
                                   id="legalFeesAmount[__INV_PROPERTY_INDEX__]"
@@ -4547,6 +4675,11 @@
                                 />
                               </div>
                               <div class="col-12 col-md-6">
+                                <label
+                                  class="form-label"
+                                  for="legalFeesAttachment[__INV_PROPERTY_INDEX__]"
+                                  >Attachment</label
+                                >
                                 <input
                                   type="file"
                                   id="legalFeesAttachment[__INV_PROPERTY_INDEX__]"
@@ -4574,6 +4707,11 @@
                           <div class="expense-fields mt-2 mb-3" style="display: none">
                             <div class="row g-3">
                               <div class="col-12 col-md-6">
+                                <label
+                                  class="form-label"
+                                  for="pestControlAmount[__INV_PROPERTY_INDEX__]"
+                                  >Amount</label
+                                >
                                 <input
                                   type="number"
                                   id="pestControlAmount[__INV_PROPERTY_INDEX__]"
@@ -4583,6 +4721,11 @@
                                 />
                               </div>
                               <div class="col-12 col-md-6">
+                                <label
+                                  class="form-label"
+                                  for="pestControlAttachment[__INV_PROPERTY_INDEX__]"
+                                  >Attachment</label
+                                >
                                 <input
                                   type="file"
                                   id="pestControlAttachment[__INV_PROPERTY_INDEX__]"
@@ -4610,6 +4753,11 @@
                           <div class="expense-fields mt-2 mb-3" style="display: none">
                             <div class="row g-3">
                               <div class="col-12 col-md-6">
+                                <label
+                                  class="form-label"
+                                  for="propertyAgentFeesAmount[__INV_PROPERTY_INDEX__]"
+                                  >Amount</label
+                                >
                                 <input
                                   type="number"
                                   id="propertyAgentFeesAmount[__INV_PROPERTY_INDEX__]"
@@ -4619,10 +4767,61 @@
                                 />
                               </div>
                               <div class="col-12 col-md-6">
+                                <label
+                                  class="form-label"
+                                  for="propertyAgentFeesAttachment[__INV_PROPERTY_INDEX__]"
+                                  >Attachment</label
+                                >
                                 <input
                                   type="file"
                                   id="propertyAgentFeesAttachment[__INV_PROPERTY_INDEX__]"
                                   name="propertyAgentFeesAttachment[__INV_PROPERTY_INDEX__]"
+                                  class="form-control"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      
+                        <!-- P Letting Fee -->
+                        <div class="form-check mb-1">
+                          <input
+                            type="checkbox"
+                            class="form-check-input toggle-fields"
+                            id="propertyLettingFeeCheck[__INV_PROPERTY_INDEX__]"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="propertyLettingFeeCheck[__INV_PROPERTY_INDEX__]"
+                            >P Letting Fee</label
+                          >
+                      
+                          <div class="expense-fields mt-2 mb-3" style="display: none">
+                            <div class="row g-3">
+                              <div class="col-12 col-md-6">
+                                <label
+                                  class="form-label"
+                                  for="propertyLettingFeeAmount[__INV_PROPERTY_INDEX__]"
+                                  >Amount</label
+                                >
+                                <input
+                                  type="number"
+                                  id="propertyLettingFeeAmount[__INV_PROPERTY_INDEX__]"
+                                  name="propertyLettingFeeAmount[__INV_PROPERTY_INDEX__]"
+                                  class="form-control"
+                                  placeholder="Enter amount"
+                                />
+                              </div>
+                              <div class="col-12 col-md-6">
+                                <label
+                                  class="form-label"
+                                  for="propertyLettingFeeAttachment[__INV_PROPERTY_INDEX__]"
+                                  >Attachment</label
+                                >
+                                <input
+                                  type="file"
+                                  id="propertyLettingFeeAttachment[__INV_PROPERTY_INDEX__]"
+                                  name="propertyLettingFeeAttachment[__INV_PROPERTY_INDEX__]"
                                   class="form-control"
                                 />
                               </div>
@@ -4678,6 +4877,11 @@
                           <div class="expense-fields mt-2 mb-3" style="display: none">
                             <div class="row g-3">
                               <div class="col-12 col-md-6">
+                                <label
+                                  class="form-label"
+                                  for="capitalWorksDeductionAmount[__INV_PROPERTY_INDEX__]"
+                                  >Amount</label
+                                >
                                 <input
                                   type="number"
                                   id="capitalWorksDeductionAmount[__INV_PROPERTY_INDEX__]"
@@ -4687,6 +4891,11 @@
                                 />
                               </div>
                               <div class="col-12 col-md-6">
+                                <label
+                                  class="form-label"
+                                  for="capitalWorksDeductionAttachment[__INV_PROPERTY_INDEX__]"
+                                  >Attachment</label
+                                >
                                 <input
                                   type="file"
                                   id="capitalWorksDeductionAttachment[__INV_PROPERTY_INDEX__]"
@@ -4714,6 +4923,11 @@
                           <div class="expense-fields mt-2 mb-3" style="display: none">
                             <div class="row g-3">
                               <div class="col-12 col-md-6">
+                                <label
+                                  class="form-label"
+                                  for="stationeryAmount[__INV_PROPERTY_INDEX__]"
+                                  >Amount</label
+                                >
                                 <input
                                   type="number"
                                   id="stationeryAmount[__INV_PROPERTY_INDEX__]"
@@ -4723,6 +4937,11 @@
                                 />
                               </div>
                               <div class="col-12 col-md-6">
+                                <label
+                                  class="form-label"
+                                  for="stationeryAttachment[__INV_PROPERTY_INDEX__]"
+                                  >Attachment</label
+                                >
                                 <input
                                   type="file"
                                   id="stationeryAttachment[__INV_PROPERTY_INDEX__]"
@@ -4750,6 +4969,11 @@
                           <div class="expense-fields mt-2 mb-3" style="display: none">
                             <div class="row g-3">
                               <div class="col-12 col-md-6">
+                                <label
+                                  class="form-label"
+                                  for="travelExpensesAmount[__INV_PROPERTY_INDEX__]"
+                                  >Amount</label
+                                >
                                 <input
                                   type="number"
                                   id="travelExpensesAmount[__INV_PROPERTY_INDEX__]"
@@ -4759,6 +4983,11 @@
                                 />
                               </div>
                               <div class="col-12 col-md-6">
+                                <label
+                                  class="form-label"
+                                  for="travelExpensesAttachment[__INV_PROPERTY_INDEX__]"
+                                  >Attachment</label
+                                >
                                 <input
                                   type="file"
                                   id="travelExpensesAttachment[__INV_PROPERTY_INDEX__]"
@@ -4786,6 +5015,11 @@
                           <div class="expense-fields mt-2 mb-3" style="display: none">
                             <div class="row g-3">
                               <div class="col-12 col-md-6">
+                                <label
+                                  class="form-label"
+                                  for="waterChargesAmount[__INV_PROPERTY_INDEX__]"
+                                  >Amount</label
+                                >
                                 <input
                                   type="number"
                                   id="waterChargesAmount[__INV_PROPERTY_INDEX__]"
@@ -4795,6 +5029,11 @@
                                 />
                               </div>
                               <div class="col-12 col-md-6">
+                                <label
+                                  class="form-label"
+                                  for="waterChargesAttachment[__INV_PROPERTY_INDEX__]"
+                                  >Attachment</label
+                                >
                                 <input
                                   type="file"
                                   id="waterChargesAttachment[__INV_PROPERTY_INDEX__]"
@@ -4854,21 +5093,6 @@
                             placeholder="Enter amount"
                           />
                         </div>
-                      </div>
-
-                      <!-- Net Rent Section -->
-                      <div class="mt-4 mb-3">
-                        <label
-                          for="investmentPropertyNetRent[__INV_PROPERTY_INDEX__]"
-                          class="mb-2"
-                          >NET RENT</label
-                        >
-                        <input
-                          id="investmentPropertyNetRent[__INV_PROPERTY_INDEX__]"
-                          name="investmentPropertyNetRent[__INV_PROPERTY_INDEX__]"
-                          type="number"
-                          class="form-control"
-                        />
                       </div>
 
                       <!-- Remove button for the investment property -->
@@ -5087,11 +5311,11 @@
  
                    <!-- registerd for gst content -->
                    <div id="soleTraderRegisterForGstContent" class="mt-3" style="display: none;">
-                     <label class="d-block mb-2">GST Number</label>
+                     <label class="d-block mb-2">ABN Number</label>
                      <input
                        type="text"
                        class="form-control"
-                       name="soleTraderGstNumber"
+                       name="soleTraderABNNumber"
                      />
                    </div>
                   </div>
@@ -5366,13 +5590,35 @@
                           >Business Mobile</label
                         >
                         <div class="expense-fields mt-2" style="display: none">
-                          <input
-                            type="number"
-                            class="form-control mb-3"
-                            name="businessMobile"
-                            id="businessMobile"
-                            placeholder="Enter amount"
-                          />
+                          <div class="row g-3">
+                            <div class="col-12 col-md-6">
+                              <label
+                                class="form-label"
+                                for="businessMobile"
+                                >Amount</label
+                              >
+                              <input
+                                type="number"
+                                class="form-control mb-3"
+                                name="businessMobile"
+                                id="businessMobile"
+                                placeholder="Enter amount"
+                              />
+                            </div>
+                            <div class="col-12 col-md-6">
+                              <label
+                                class="form-label"
+                                for="businessMobileAttachment"
+                                >Attachment</label
+                              >
+                              <input
+                                type="file"
+                                class="form-control mb-3"
+                                name="businessMobileAttachment"
+                                id="businessMobileAttachment"
+                              />
+                            </div>
+                          </div>
                         </div>
                       </div>
 
@@ -5388,12 +5634,35 @@
                           >Office Rent</label
                         >
                         <div class="expense-fields mt-2" style="display: none">
-                          <input
-                            type="number"
-                            class="form-control mb-3"
-                            name="officeRent"
-                            placeholder="Enter amount"
-                          />
+                          <div class="row g-3">
+                            <div class="col-12 col-md-6">
+                              <label
+                                class="form-label"
+                                for="officeRent"
+                                >Amount</label
+                              >
+                              <input
+                                type="number"
+                                class="form-control mb-3"
+                                name="officeRent"
+                                id="officeRent"
+                                placeholder="Enter amount"
+                              />
+                            </div>
+                            <div class="col-12 col-md-6">
+                              <label
+                                class="form-label"
+                                for="officeRentAttachment"
+                                >Attachment</label
+                              >
+                              <input
+                                type="file"
+                                class="form-control mb-3"
+                                name="officeRentAttachment"
+                                id="officeRentAttachment"
+                              />
+                            </div>
+                          </div>
                         </div>
                       </div>
 
@@ -5556,12 +5825,13 @@
                         <div class="expense-fields mt-2" style="display: none">
                           <div class="row g-3">
                             <!-- details -->
-                            <div class="col-md-6">
+                            <div class="col-12">
                               <label class="form-label">Details of the Service</label>
                               <textarea
                                 type="text"
                                 class="form-control"
                                 name="serviceFeeDetails"
+                                rows="1"
                               ></textarea>
                             </div>
                             <!-- Amount -->
@@ -5572,6 +5842,16 @@
                                 class="form-control"
                                 name="serviceFeeAmount"
                                 id="serviceFeeAmount"
+                              />
+                            </div>
+                            <!-- Attachment -->
+                            <div class="col-md-6">
+                              <label for="serviceFeeAttachment" class="form-label">Attachment</label>
+                              <input
+                                type="file"
+                                class="form-control"
+                                name="serviceFeeAttachment"
+                                id="serviceFeeAttachment"
                               />
                             </div>
                           </div>

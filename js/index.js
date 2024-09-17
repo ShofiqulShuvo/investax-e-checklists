@@ -752,6 +752,32 @@ document.addEventListener("DOMContentLoaded", function () {
   // Repeat for other checkboxes in the actual cost method
 });
 
+// calculate and update Home Office expenses on fixed rate method
+document.addEventListener('DOMContentLoaded', function() {
+  const hoursPerDayInput = document.getElementById('hoursPerDay');
+  const daysPerYearInput = document.getElementById('daysPerYear');
+  const homeOfficeExpensesInput = document.getElementById('HomeOfficeTotalExpenses');
+
+  function updateHomeOfficeExpenses() {
+    const hoursPerDay = parseFloat(hoursPerDayInput.value);
+    const daysPerYear = parseFloat(daysPerYearInput.value);
+    const ratePerHour = 0.67; // 67 cents per hour
+
+    // Check if both inputs have valid numbers
+    if (!isNaN(hoursPerDay) && !isNaN(daysPerYear)) {
+      const totalExpenses = hoursPerDay * daysPerYear * ratePerHour;
+      homeOfficeExpensesInput.value = `$${totalExpenses.toFixed(2)}`; // Add dollar sign and format to 2 decimal places
+    } else {
+      homeOfficeExpensesInput.value = ''; // Clear the field if inputs are empty or invalid
+    }
+  }
+
+  // Attach event listeners to both inputs
+  hoursPerDayInput.addEventListener('input', updateHomeOfficeExpenses);
+  daysPerYearInput.addEventListener('input', updateHomeOfficeExpenses);
+});
+
+
 // This script listens for changes in the radio buttons asking about bank interest
 // If "Yes" is selected, the interestReceivedDetails section is shown.
 // If "No" is selected, the interestReceivedDetails section is hidden.
@@ -3155,6 +3181,34 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // show hide fixed rate cost fields based on checkboxes self education end
+
+// update Home Office Expenses for self education
+document.addEventListener('DOMContentLoaded', function() {
+  const hoursPerDayInput = document.getElementById('selfEducationFixedRatehoursPerDay');
+  const daysPerYearInput = document.getElementById('selfEducationFixedRatedaysPerYear');
+  const homeOfficeExpensesInput = document.getElementById('selfEducationFixedRateHomeOfficeTotalExpenses');
+
+  function updateHomeOfficeExpenses() {
+    const hoursPerDay = parseFloat(hoursPerDayInput.value);
+    const daysPerYear = parseFloat(daysPerYearInput.value);
+    const ratePerHour = 0.67; // 67 cents per hour
+
+    // Check if both inputs have valid numbers
+    if (!isNaN(hoursPerDay) && !isNaN(daysPerYear)) {
+      const totalExpenses = hoursPerDay * daysPerYear * ratePerHour;
+      homeOfficeExpensesInput.value = `$${totalExpenses.toFixed(2)}`; // Add dollar sign and format to 2 decimal places
+    } else {
+      homeOfficeExpensesInput.value = ''; // Clear the field if inputs are empty or invalid
+    }
+  }
+
+  // Attach event listeners to both inputs
+  hoursPerDayInput.addEventListener('input', updateHomeOfficeExpenses);
+  daysPerYearInput.addEventListener('input', updateHomeOfficeExpenses);
+});
+
+// update Home Office Expenses for self education end
+
 
 // self education start end
 
