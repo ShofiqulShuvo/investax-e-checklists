@@ -69,22 +69,6 @@
                 </div>
               </div>
 
-              <!-- Date of Birth -->
-              <div class="col-12 col-md-6">
-                <div class="result-group">
-                  <div class="property">Date of Birth:</div>
-                  <div class="value">1990-01-01</div>
-                </div>
-              </div>
-
-              <!-- Tax File Number -->
-              <div class="col-12 col-md-6">
-                <div class="result-group">
-                  <div class="property">Tax File Number:</div>
-                  <div class="value">123-456-789</div>
-                </div>
-              </div>
-
               <!-- Occupation -->
               <div class="col-12 col-md-6">
                 <div class="result-group">
@@ -93,11 +77,43 @@
                 </div>
               </div>
 
-              <!-- Address -->
+              <!-- Address question -->
               <div class="col-12">
                 <div class="result-group">
+                  <div class="property">Have you changed your address?</div>
+                  <div class="value">Yes</div>
+                </div>
+              </div>
+
+              <!-- Address -->
+              <div class="col-12 col-md-6">
+                <div class="result-group">
                   <div class="property">Address:</div>
-                  <div class="value">123 Main St, Anytown, USA</div>
+                  <div class="value">123 Main St, , USA</div>
+                </div>
+              </div>
+
+              <!-- Suburb -->
+              <div class="col-12 col-md-6">
+                <div class="result-group">
+                  <div class="property">Suburb:</div>
+                  <div class="value">Anytown</div>
+                </div>
+              </div>
+
+              <!-- Post Code -->
+              <div class="col-12 col-md-6">
+                <div class="result-group">
+                  <div class="property">Post Code:</div>
+                  <div class="value">6666</div>
+                </div>
+              </div>
+
+              <!-- Country (If Foreign) -->
+              <div class="col-12 col-md-6">
+                <div class="result-group">
+                  <div class="property">Country (If Foreign):</div>
+                  <div class="value">Uganda</div>
                 </div>
               </div>
 
@@ -117,11 +133,21 @@
                 </div>
               </div>
 
+              <!-- Account question -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">
+                    Bank Account Details for Tax Refund, Same as Last Year?:
+                  </div>
+                  <div class="value">No</div>
+                </div>
+              </div>
+
               <!-- Account Name -->
               <div class="col-12">
                 <div class="result-group">
                   <div class="property">Account Name:</div>
-                  <div class="value">John Doe</div>
+                  <div class="value">Mofij</div>
                 </div>
               </div>
 
@@ -133,10 +159,10 @@
                 </div>
               </div>
 
-              <!-- Bank Account Number -->
+              <!-- Bank ACC Number -->
               <div class="col-12 col-md-6">
                 <div class="result-group">
-                  <div class="property">Bank Account Number:</div>
+                  <div class="property">Bank ACC Number:</div>
                   <div class="value">0011223344</div>
                 </div>
               </div>
@@ -148,26 +174,6 @@
                   <div class="value">john.doe@example.com</div>
                 </div>
               </div>
-
-              <!-- Names of Dependent Children & D.O.B -->
-              <div class="col-12 col-md-6">
-                <div class="result-group">
-                  <div class="property">
-                    Names of Dependent Children & D.O.B:
-                  </div>
-                  <div class="value">
-                    Jane Doe (2015-06-15), Jack Doe (2018-09-20)
-                  </div>
-                </div>
-              </div>
-
-              <!-- Name of Spouse or Partner & D.O.B -->
-              <div class="col-12 col-md-6">
-                <div class="result-group">
-                  <div class="property">Name of Spouse or Partner & D.O.B:</div>
-                  <div class="value">Jane Smith (1988-02-25)</div>
-                </div>
-              </div>
             </div>
           </fieldset>
 
@@ -176,479 +182,1208 @@
             <legend>Income</legend>
             <div class="row g-3">
               <!-- Are you an employee? -->
-              <div class="col-12 col-md-6">
+              <div class="col-12">
                 <div class="result-group">
                   <div class="property">Are you an employee?:</div>
                   <div class="value">Yes</div>
                 </div>
               </div>
 
-              <!-- Other Income -->
+              <!-- Did you have an EMPLOYEE SHARE/OPTION SCHEME? -->
               <div class="col-12">
                 <div class="result-group">
-                  <div class="property">Other Income:</div>
-                  <div class="value">$5000 from freelance work</div>
-                  <div class="value">$5000 from work</div>
+                  <div class="property">
+                    Did you have an EMPLOYEE SHARE/OPTION SCHEME?:
+                  </div>
+                  <div class="value">Yes</div>
                 </div>
+              </div>
+
+              <!-- Name of The Employer -->
+              <div class="col-12 col-md-6">
+                <div class="result-group">
+                  <div class="property">Name of The Employer:</div>
+                  <div class="value">Kuddus</div>
+                </div>
+              </div>
+
+              <!-- Include Amount -->
+              <div class="col-12 col-md-6">
+                <div class="result-group">
+                  <div class="property">Include Amount:</div>
+                  <div class="value">5465454</div>
+                </div>
+              </div>
+
+              <!-- Attachment  -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">Attachment:</div>
+                  <div class="value">
+                    <a href="#" download="">xyz.pdf</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Any Other Income -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">
+                    Did you receive any Other Income (i.e. Director Fee,
+                    Commissions, Income Protection insurance payment) ?
+                  </div>
+                  <div class="value">Yes</div>
+                </div>
+              </div>
+
+              <!-- Any Other list -->
+              <div class="col-12">
+                <div class="property mb-1">Other Income</div>
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th scope="col">Details</th>
+                      <th scope="col">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </fieldset>
 
           <!--  Interest Received -->
           <fieldset>
-            <legend>Interest Received</legend>
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th scope="col">NAME OF BANK</th>
-                  <th scope="col">ACCOUNT NUMBER</th>
-                  <th scope="col">TOTAL INTEREST RECEIVED $</th>
-                  <th scope="col">TFN WITHHOLDING $</th>
-                  <th scope="col">JOINT ACCOUNT?</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                </tr>
-              </tbody>
-            </table>
-          </fieldset>
-
-          <!--  Dividends -->
-          <fieldset>
-            <legend>Dividends</legend>
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th scope="col">NAME OF SHARES</th>
-                  <th scope="col">NUMBER OF SHARES HELD</th>
-                  <th scope="col">AMOUNT RECEIVED $</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                </tr>
-              </tbody>
-            </table>
-          </fieldset>
-
-          <!--   TRUST AND PARTNERSHIPS -->
-          <fieldset>
-            <legend>TRUST AND PARTNERSHIPS</legend>
-            <div class="result-group">
-              <div class="property">
-                Did you sell any assets such as shares or property which were
-                acquired after 20 September 1985?
-              </div>
-              <div class="value">Yes</div>
-            </div>
-          </fieldset>
-
-          <!--   EMPLOYEE SHARE/OPTION SCHEME -->
-          <fieldset>
-            <legend>EMPLOYEE SHARE/OPTION SCHEME</legend>
-            <div class="result-group">
-              <div class="property">
-                Did you receive bonus shares/options from your current employer
-                during 2023/2024?
-              </div>
-              <div class="value">Yes</div>
-            </div>
-          </fieldset>
-
-          <!--   ANY OTHER INCOME -->
-          <fieldset>
-            <legend>ANY OTHER INCOME</legend>
-
-            <!-- other income -->
-            <div class="result-group mb-3">
-              <div class="property">
-                (Any Income you have received in the financial year that does
-                not fit into any of the above categories. Please provide
-                details.) Eg. Interest on any overseas bank accounts or any
-                other foreign income received.
-              </div>
-              <div class="value">Gamming $5000</div>
-              <div class="value">Gifts $5000</div>
-              <div class="value">Other $5000</div>
-            </div>
-
-            <!-- any assets outside of Australia -->
-            <div class="result-group">
-              <div class="property">
-                Do you have any assets over $50,000AUD outside of Australia?
-              </div>
-              <div class="value">Yes</div>
-            </div>
-          </fieldset>
-
-          <!--    MOTOR VEHICLE -->
-          <fieldset>
-            <legend>MOTOR VEHICLE</legend>
-
+            <legend>Interest & Dividends</legend>
             <div class="row g-3">
-              <!-- own car -->
+              <!-- interest start -->
+
+              <!-- Did you earn any bank interest in this financial year? -->
               <div class="col-12">
-                <div class="result-group mb-3">
+                <div class="result-group">
                   <div class="property">
-                    Did you use your own car for business/work purposes through
-                    the year?
+                    Did you earn any bank interest in this financial year?:
                   </div>
                   <div class="value">Yes</div>
                 </div>
               </div>
 
-              <!-- Car Registration Number -->
-              <div class="col-12 col-md-6">
-                <div class="result-group mb-3">
-                  <div class="property">Car Registration Number:</div>
-                  <div class="value">JB009</div>
+              <!-- How would you like to provide your interest income details? -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">
+                    How would you like to provide your interest income details?:
+                  </div>
+                  <div class="value">I Will Use My Own Figures</div>
                 </div>
               </div>
 
-              <!-- Kilometres:  -->
-              <div class="col-12 col-md-6">
-                <div class="result-group mb-3">
-                  <div class="property">Kilometres:</div>
-                  <div class="value">500</div>
+              <!-- income Own Figures -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">Own Figures:</div>
+                  <table class="mt-1 table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Name of Bank</th>
+                        <th scope="col">Account Number</th>
+                        <th scope="col">Total Interest Received $</th>
+                        <th scope="col">TFN Withholding $</th>
+                        <th scope="col">Joint Account?</th>
+                        <th scope="col">Attachment</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- interest end -->
+
+              <!-- dividend start -->
+
+              <!-- Did you earn any dividents in this financial year? -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">
+                    Did you earn any Dividend in this financial year?:
+                  </div>
+                  <div class="value">Yes</div>
+                </div>
+              </div>
+
+              <!-- How would you like to provide your dividend income details? -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">
+                    How would you like to provide your dividend income details?:
+                  </div>
+                  <div class="value">I Will Use My Own Figures</div>
+                </div>
+              </div>
+
+              <!-- divident Own Figures -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">Own Figures:</div>
+                  <table class="mt-1 table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Name of Shares</th>
+                        <th scope="col">Franked Dividends $</th>
+                        <th scope="col">Unranked Dividends $</th>
+                        <th scope="col">Franking Credits $</th>
+                        <th scope="col">Attachment</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- dividend end -->
+            </div>
+          </fieldset>
+
+          <!--   TRUST AND PARTNERSHIPS  Capital Gain or Loss -->
+          <fieldset>
+            <legend>Funds, Trust and Partnerships, Capital Gain or Loss</legend>
+
+            <div class="row g-3">
+              <!-- Did you receive income from MANAGED FUNDS, TRUST AND PARTNERSHIPS? -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">
+                    Did you receive income from MANAGED FUNDS, TRUST AND
+                    PARTNERSHIPS?:
+                  </div>
+                  <div class="value">Yes</div>
+                </div>
+              </div>
+
+              <!-- Details of Fund: -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">Details of Fund:</div>
+                  <div class="value">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Amet, minima.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Attachment -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">Attachment:</div>
+                  <div class="value">
+                    <a href="#" download>lorem.pdf</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Did you sell any Assets and incurred a Capital Gain or Loss? -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">
+                    Did you sell any Assets and incurred a Capital Gain or
+                    Loss?:
+                  </div>
+                  <div class="value">Yes</div>
+                </div>
+              </div>
+
+              <!-- Attachment -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">Details of Asset::</div>
+                  <div class="value">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Itaque expedita perferendis voluptate quae minus ullam rem
+                    reiciendis, labore suscipit cumque eligendi nostrum saepe
+                    fuga, deleniti illo architecto debitis eius fugiat eveniet
+                    sint neque! Hic laboriosam non ab, sed mollitia impedit
+                    laudantium exercitationem sint, nihil delectus cupiditate
+                    animi quasi quas esse.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Attachment -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">Attachment:</div>
+                  <div class="value">
+                    <a href="#" download>lorem.pdf</a>
+                  </div>
                 </div>
               </div>
             </div>
           </fieldset>
 
-          <!--    WORK UNIFORM -->
+          <!--  Foreign Income -->
           <fieldset>
-            <legend>WORK UNIFORM</legend>
-
+            <legend>Foreign Income</legend>
             <div class="row g-3">
-              <!-- wear work uniform -->
+              <!-- Did you receive any Foreign income (i.e., Overseas Bank Interest, Overseas Dividends, Overseas Rental Income)? -->
               <div class="col-12">
                 <div class="result-group">
-                  <div class="property">Do you wear work uniform</div>
+                  <div class="property">
+                    Did you receive any Foreign income (i.e., Overseas Bank
+                    Interest, Overseas Dividends, Overseas Rental Income)?:
+                  </div>
                   <div class="value">Yes</div>
                 </div>
               </div>
 
-              <div class="result-group">
-                <div class="property">
-                  If yes, were you out of pocket through the year for purchasing
-                  any new items. (If so please provide details) Laundering and
-                  dry cleaning of clothing listed above are claimable.
+              <!-- Please include all the foreign Interest and Dividend related information below. -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">
+                    Please include all the foreign Interest and Dividend related
+                    information below.:
+                  </div>
+                  <div class="value">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Aliquam ipsam vel architecto asperiores, iste ab non quos,
+                    at voluptas, voluptate in quam quisquam. Nobis cum
+                    recusandae ipsum asperiores nihil cumque modi officiis natus
+                    debitis eaque. Assumenda molestias pariatur dolores suscipit
+                    reiciendis possimus iusto? Quaerat, fuga. Labore dolores
+                    iste rerum fugit!
+                  </div>
                 </div>
-                <div class="value">Laundery $5000</div>
-                <div class="value">Cleaning $50000</div>
+              </div>
+
+              <!-- Attachment -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">Attachment:</div>
+                  <div class="value">
+                    <a href="#" download>lorem.pdf</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Do you have any assets over $50,000AUD outside of Australia? -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">
+                    Do you have any assets over $50,000AUD outside of
+                    Australia?:
+                  </div>
+                  <div class="value">Yes</div>
+                </div>
+              </div>
+
+              <!-- Please provide details -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">Please provide details:</div>
+                  <div class="value">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Labore, quaerat veniam! Perspiciatis rem ea et cum
+                    consequuntur! Blanditiis ex, nulla repellat modi porro ullam
+                    id.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!--    MOTOR VEHICLE - WORK UNIFORM -->
+          <fieldset>
+            <h4>Deductions - Work Related</h4>
+
+            <!-- motor vehicle -->
+            <div class="mt-4">
+              <legend>Motor Vehicle</legend>
+
+              <div class="row g-3">
+                <!-- own car -->
+                <div class="col-12">
+                  <div class="result-group mb-3">
+                    <div class="property">
+                      Did you use your own car for business/work purposes
+                      through the year?
+                    </div>
+                    <div class="value">Yes</div>
+                  </div>
+                </div>
+
+                <!-- Which method did you use for calculating your motor vehicle expenses? -->
+                <div class="col-12">
+                  <div class="result-group mb-3">
+                    <div class="property">
+                      Which method did you use for calculating your motor
+                      vehicle expenses?:
+                    </div>
+                    <div class="value">Log Book Method</div>
+                  </div>
+                </div>
+
+                <!-- for log book method:  -->
+                <div class="col-12">
+                  <div class="result-group mb-3">
+                    <div class="property">Expenses:</div>
+                    <table class="mt-1 table table-bordered">
+                      <thead>
+                        <tr>
+                          <th scope="col">Details</th>
+                          <th scope="col">Amount</th>
+                          <th scope="col">Attachment</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>-</td>
+                          <td>-</td>
+                          <td>-</td>
+                        </tr>
+                        <tr>
+                          <td>-</td>
+                          <td>-</td>
+                          <td>-</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!-- for Kilometres Method -->
+                <div class="col-12">
+                  <div class="row">
+                    <!-- Purchase Price: -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group mb-3">
+                        <div class="property">Purchase Price:</div>
+                        <div class="value">12123213</div>
+                      </div>
+                    </div>
+                    <!-- Purchase Date -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group mb-3">
+                        <div class="property">Purchase Date:</div>
+                        <div class="value">25/12/2022</div>
+                      </div>
+                    </div>
+                    <!-- Car Registration Number: -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group mb-3">
+                        <div class="property">Car Registration Number:</div>
+                        <div class="value">Sat-666</div>
+                      </div>
+                    </div>
+                    <!-- Kilometres -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group mb-3">
+                        <div class="property">Kilometres:</div>
+                        <div class="value">954167</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Work Uniform -->
+            <div class="mt-4">
+              <legend>Work Uniform</legend>
+
+              <div class="row g-3">
+                <!-- own car -->
+                <div class="col-12">
+                  <div class="result-group mb-3">
+                    <div class="property">
+                      Do you wear: (Protective clothing, Uniform with a company
+                      logo, Occupation specific clothing)
+                    </div>
+                    <div class="value">Yes</div>
+                  </div>
+                </div>
+
+                <!-- for log book method:  -->
+                <div class="col-12">
+                  <div class="result-group mb-3">
+                    <div class="property">Expenses:</div>
+                    <table class="mt-1 table table-bordered">
+                      <thead>
+                        <tr>
+                          <th scope="col">Details</th>
+                          <th scope="col">Amount</th>
+                          <th scope="col">Attachment</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>-</td>
+                          <td>-</td>
+                          <td>-</td>
+                        </tr>
+                        <tr>
+                          <td>-</td>
+                          <td>-</td>
+                          <td>-</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
               </div>
             </div>
           </fieldset>
 
           <!--     SELF EDUCATION -->
           <fieldset>
-            <legend>SELF EDUCATION</legend>
+            <legend>Self Education</legend>
 
             <div class="row g-3">
-              <!-- Name of Course -->
-              <div class="col-12 col-md-6">
-                <div class="result-group">
-                  <div class="property">Name of Course</div>
-                  <div class="value">abcd</div>
-                </div>
-              </div>
-
-              <!-- Institution -->
-              <div class="col-12 col-md-6">
-                <div class="result-group">
-                  <div class="property">Institution</div>
-                  <div class="value">xyz</div>
-                </div>
-              </div>
-
-              <!-- relate to current employment/employer -->
+              <!-- Do you have any self-education expenses? -->
               <div class="col-12">
                 <div class="result-group">
                   <div class="property">
-                    How does it relate to your current employment/employer?
+                    Do you have any self-education expenses?
                   </div>
-                  <div class="value">nothing related</div>
-                </div>
-              </div>
-
-              <!--  Fees (Excluding HECS/HELP debt)  -->
-              <div class="col-12">
-                <div class="result-group">
-                  <div class="property">Fees (Excluding HECS/HELP debt)</div>
-                  <div class="value">5000$</div>
-                </div>
-              </div>
-
-              <!--   Books/Stationery/Consumables   -->
-              <div class="col-12">
-                <div class="result-group">
-                  <div class="property">Books/Stationery/Consumables</div>
-                  <div class="value">5000$</div>
-                </div>
-              </div>
-
-              <!--   Travel   -->
-              <div class="col-12">
-                <div class="result-group">
-                  <div class="property">Travel</div>
-                  <div class="value">5000$</div>
-                </div>
-              </div>
-
-              <!--   Internet Amount  -->
-              <div class="col-12 col-md-6">
-                <div class="result-group">
-                  <div class="property">Internet Amount per month</div>
-                  <div class="value">5000$</div>
-                </div>
-              </div>
-
-              <!--   Internet used  -->
-              <div class="col-12 col-md-6">
-                <div class="result-group">
-                  <div class="property">Internet Percentage used for work</div>
-                  <div class="value">5000$</div>
-                </div>
-              </div>
-
-              <!--   Home Office Hour per week  -->
-              <div class="col-12 col-md-6">
-                <div class="result-group">
-                  <div class="property">Home Office Hours per week</div>
-                  <div class="value">5000$</div>
-                </div>
-              </div>
-
-              <!--   Home Office Hour How many weeks  -->
-              <div class="col-12 col-md-6">
-                <div class="result-group">
-                  <div class="property">Home Office How many weeks</div>
-                  <div class="value">5000$</div>
-                </div>
-              </div>
-            </div>
-          </fieldset>
-
-          <!--    OTHER WORK RELATION DEDUCTIONS -->
-          <fieldset>
-            <legend>OTHER WORK RELATION DEDUCTIONS</legend>
-            <div class="row g-3">
-              <!-- Union fees/Professional bodies  -->
-              <div class="col-12">
-                <div class="result-group">
-                  <div class="property">
-                    Union fees/Professional bodies (List names and amounts)
-                  </div>
-                  <div class="value">$5000</div>
-                </div>
-              </div>
-
-              <!--  Diary/Printing/Postage/Stationery  -->
-              <div class="col-12">
-                <div class="result-group">
-                  <div class="property">Diary/Printing/Postage/Stationery</div>
-                  <div class="value">$5000</div>
-                </div>
-              </div>
-
-              <!-- Books and Journals  -->
-              <div class="col-12">
-                <div class="result-group">
-                  <div class="property">Books and Journals</div>
-                  <div class="value">$5000</div>
-                </div>
-              </div>
-
-              <!-- Seminar costs    -->
-              <div class="col-12">
-                <div class="result-group">
-                  <div class="property">Seminar costs</div>
-                  <div class="value">$5000</div>
-                </div>
-              </div>
-
-              <!-- Sickness & Accident  -->
-              <div class="col-12">
-                <div class="result-group">
-                  <div class="property">
-                    Sickness & Accident Insurance/ Income protection (Please
-                    supply a copy of the policy )
-                  </div>
-                  <div class="value">$5000</div>
-                </div>
-              </div>
-
-              <!--   Internet Amount  -->
-              <div class="col-12 col-md-6">
-                <div class="result-group">
-                  <div class="property">Internet Amount per month</div>
-                  <div class="value">5000$</div>
-                </div>
-              </div>
-
-              <!--   Internet used  -->
-              <div class="col-12 col-md-6">
-                <div class="result-group">
-                  <div class="property">Internet Percentage used for work</div>
-                  <div class="value">5000$</div>
-                </div>
-              </div>
-
-              <!--   Home Office Hours per week -->
-              <div class="col-12 col-md-6">
-                <div class="result-group">
-                  <div class="property">
-                    Home Office Hours from (01/07/2022 to 30/06/2023) Hours per
-                    week
-                  </div>
-                  <div class="value">5000$</div>
-                </div>
-              </div>
-
-              <!--   Home Office  How many weeks -->
-              <div class="col-12 col-md-6">
-                <div class="result-group">
-                  <div class="property">
-                    Home Office Hours from (01/07/2022 to 30/06/2023) Hours per
-                    week
-                  </div>
-                  <div class="value">52</div>
-                </div>
-              </div>
-
-              <!--   Mobile Phone  Amount  -->
-              <div class="col-12 col-md-6">
-                <div class="result-group">
-                  <div class="property">Mobile Phone Amount per month</div>
-                  <div class="value">5000$</div>
-                </div>
-              </div>
-
-              <!--   Mobile Phone  used  -->
-              <div class="col-12 col-md-6">
-                <div class="result-group">
-                  <div class="property">
-                    Mobile Phone Percentage used for work
-                  </div>
-                  <div class="value">50%</div>
-                </div>
-              </div>
-
-              <!--   Outdoor workers (Sunglasses/Sunscreen/Hats)  Amount  -->
-              <div class="col-12 col-md-6">
-                <div class="result-group">
-                  <div class="property">
-                    Outdoor workers (Sunglasses/Sunscreen/Hats) Amount
-                  </div>
-                  <div class="value">5000$</div>
-                </div>
-              </div>
-
-              <!--   Outdoor workers (Sunglasses/Sunscreen/Hats)  Amount   -->
-              <div class="col-12 col-md-6">
-                <div class="result-group">
-                  <div class="property">
-                    Mobile Phone Percentage used for work
-                  </div>
-                  <div class="value">50%</div>
-                </div>
-              </div>
-
-              <!--   Tools & Equipment-Over   -->
-              <div class="col-12 col-md-6">
-                <div class="result-group">
-                  <div class="property">
-                    Tools & Equipment-Over $300 (List dates & percentage used or
-                    work purpose)
-                  </div>
-                  <div class="value">0000</div>
-                </div>
-              </div>
-            </div>
-          </fieldset>
-
-          <!-- OTHER -->
-          <fieldset>
-            <legend>OTHER</legend>
-
-            <div class="row g-3">
-              <div class="col-12">
-                <div class="result-group">
-                  <div class="property">
-                    (Costs you incurred that was directly related to your job.)
-                    Please provide details
-                  </div>
-                  <div class="value">0000</div>
-                </div>
-              </div>
-
-              <!--  Income Protection Insurance -->
-              <div class="col-12 col-md-6">
-                <div class="result-group">
-                  <div class="property">Income Protection Insurance</div>
                   <div class="value">Yes</div>
                 </div>
               </div>
 
-              <!--   If yes, how much did you pay  -->
-              <div class="col-12 col-md-6">
+              <!-- course details -->
+              <div class="col-12">
+                <div class="result-group mb-3">
+                  <div class="property">Course Details:</div>
+                  <table class="mt-1 table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Name of Course</th>
+                        <th scope="col">Institution</th>
+                        <th scope="col">Fees</th>
+                        <th scope="col">Attachment</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                      <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- How does it relate to your current employment/employer?: -->
+              <div class="col-12">
                 <div class="result-group">
-                  <div class="property">If yes, how much did you pay</div>
-                  <div class="value">999999</div>
+                  <div class="property">
+                    How does it relate to your current employment/employer?:
+                  </div>
+                  <div class="value">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Commodi doloribus molestiae ex adipisci ipsam quaerat
+                    repudiandae. Nesciunt quas pariatur, voluptatibus harum
+                    voluptatum sit itaque assumenda quidem facilis corrupti
+                    reiciendis aliquid!
+                  </div>
+                </div>
+              </div>
+
+              <!--  Did you have any HECS/HELP debt related to the education?:  -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">
+                    Did you have any HECS/HELP debt related to the education?:
+                  </div>
+                  <div class="value">Yes</div>
+                </div>
+              </div>
+
+              <!--  HECS/HELP Debt Amount:  -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">HECS/HELP Debt Amount:</div>
+                  <div class="value">56565</div>
+                </div>
+              </div>
+
+              <!-- Other Self-Education Expenses -->
+              <div class="col-12">
+                <div class="result-group mb-3">
+                  <div class="property">Other Self-Education Expenses:</div>
+                  <table class="mt-1 table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Details</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Attachment</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                      <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!--  Home Office Expenses Related to Self-Education  -->
+              <div class="col-12">
+                <legend>Home Office Expenses Related to Self-Education</legend>
+
+                <div class="row g-3">
+                  <!--   Do you have home office expenses?   -->
+                  <div class="col-12">
+                    <div class="result-group">
+                      <div class="property">
+                        Do you have home office expenses?
+                      </div>
+                      <div class="value">Yes</div>
+                    </div>
+                  </div>
+
+                  <!--   If Yes, how would you like to claim home office expenses?   -->
+                  <div class="col-12">
+                    <div class="result-group">
+                      <div class="property">
+                        If Yes, how would you like to claim home office
+                        expenses?
+                      </div>
+                      <div class="value">Fixed Rate Method</div>
+                    </div>
+                  </div>
+
+                  <!--   for Fixed Rate Method   -->
+                  <div class="col-12">
+                    <div class="row g-3">
+                      <!-- Number of Hours per Day -->
+                      <div class="col-12 col-md-6">
+                        <div class="result-group">
+                          <div class="property">Number of Hours per Day</div>
+                          <div class="value">2154</div>
+                        </div>
+                      </div>
+
+                      <!-- Number of Days in the Year -->
+                      <div class="col-12 col-md-6">
+                        <div class="result-group">
+                          <div class="property">Number of Days in the Year</div>
+                          <div class="value">45</div>
+                        </div>
+                      </div>
+
+                      <!-- Home Office Expenses -->
+                      <div class="col-12 col-md-6">
+                        <div class="result-group">
+                          <div class="property">Home Office Expenses</div>
+                          <div class="value">46545</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--   for Actual Cost Method   -->
+                  <div class="col-12">
+                    <div class="row g-3">
+                      <!-- Internet -->
+                      <div class="col-12 col-md-6">
+                        <div class="result-group">
+                          <div class="property">Internet</div>
+                          <div class="value">2154</div>
+                        </div>
+                      </div>
+
+                      <!-- Mobile -->
+                      <div class="col-12 col-md-6">
+                        <div class="result-group">
+                          <div class="property">Mobile</div>
+                          <div class="value">45</div>
+                        </div>
+                      </div>
+
+                      <!-- Electricity -->
+                      <div class="col-12 col-md-6">
+                        <div class="result-group">
+                          <div class="property">Electricity</div>
+                          <div class="value">46545</div>
+                        </div>
+                      </div>
+
+                      <!-- Gas -->
+                      <div class="col-12 col-md-6">
+                        <div class="result-group">
+                          <div class="property">Gas</div>
+                          <div class="value">46545</div>
+                        </div>
+                      </div>
+
+                      <!-- Stationery -->
+                      <div class="col-12 col-md-6">
+                        <div class="result-group">
+                          <div class="property">Stationery</div>
+                          <div class="value">46545</div>
+                        </div>
+                      </div>
+
+                      <!-- Computer Consumable -->
+                      <div class="col-12 col-md-6">
+                        <div class="result-group">
+                          <div class="property">Computer Consumable</div>
+                          <div class="value">46545</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--   Additional Deduction   -->
+                  <div class="col-12">
+                    <div class="row g-3">
+                      <!-- Office Table -->
+                      <div class="col-12">
+                        <h6 class="fw-semibold mt-2">Office Table</h6>
+                        <div class="row g-3">
+                          <!-- amount -->
+                          <div class="col-12 col-md-6">
+                            <div class="result-group">
+                              <div class="property">Amount</div>
+                              <div class="value">545454</div>
+                            </div>
+                          </div>
+
+                          <!-- attachment -->
+                          <div class="col-12 col-md-6">
+                            <div class="result-group">
+                              <div class="property">Attachment</div>
+                              <div class="value">
+                                <a href="" download=""> asdas.pdf </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Office Chair -->
+                      <div class="col-12">
+                        <h6 class="fw-semibold mt-2">Office Chair</h6>
+                        <div class="row g-3">
+                          <!-- amount -->
+                          <div class="col-12 col-md-6">
+                            <div class="result-group">
+                              <div class="property">Amount</div>
+                              <div class="value">2154</div>
+                            </div>
+                          </div>
+
+                          <!-- attachment -->
+                          <div class="col-12 col-md-6">
+                            <div class="result-group">
+                              <div class="property">Attachment</div>
+                              <div class="value">
+                                <a href="" download=""> asdas.pdf </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Office Bookshelf -->
+                      <div class="col-12">
+                        <h6 class="fw-semibold mt-2">Office Bookshelf</h6>
+                        <div class="row g-3">
+                          <!-- amount -->
+                          <div class="col-12 col-md-6">
+                            <div class="result-group">
+                              <div class="property">Amount</div>
+                              <div class="value">2154</div>
+                            </div>
+                          </div>
+
+                          <!-- attachment -->
+                          <div class="col-12 col-md-6">
+                            <div class="result-group">
+                              <div class="property">Attachment</div>
+                              <div class="value">
+                                <a href="" download=""> asdas.pdf </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Computer / Laptop -->
+                      <div class="col-12">
+                        <h6 class="fw-semibold mt-2">Computer / Laptop</h6>
+                        <div class="row g-3">
+                          <!-- amount -->
+                          <div class="col-12 col-md-6">
+                            <div class="result-group">
+                              <div class="property">Amount</div>
+                              <div class="value">2154</div>
+                            </div>
+                          </div>
+
+                          <!-- attachment -->
+                          <div class="col-12 col-md-6">
+                            <div class="result-group">
+                              <div class="property">Attachment</div>
+                              <div class="value">
+                                <a href="" download=""> asdas.pdf </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Other -->
+                      <div class="col-12">
+                        <h6 class="fw-semibold mt-2">Other</h6>
+                        <div class="row g-3">
+                          <!-- amount -->
+                          <div class="col-12 col-md-6">
+                            <div class="result-group">
+                              <div class="property">Amount</div>
+                              <div class="value">2154</div>
+                            </div>
+                          </div>
+
+                          <!-- attachment -->
+                          <div class="col-12 col-md-6">
+                            <div class="result-group">
+                              <div class="property">Attachment</div>
+                              <div class="value">
+                                <a href="" download=""> asdas.pdf </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </fieldset>
 
-          <!--  GIFTS OR DONATIONS -->
+          <!--   Other Work Relation Deductions -->
           <fieldset>
-            <legend>GIFTS OR DONATIONS</legend>
+            <legend>Other Work Relation Deductions</legend>
+            <div class="result-group">
+              <div class="property">Expenses:</div>
+              <table class="mt-1 table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">Details</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Attachment</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </fieldset>
+
+          <!--  Home Office -->
+          <fieldset>
+            <legend>Home Office</legend>
 
             <div class="row g-3">
+              <!--   Do you have home office expenses?   -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">Do you have home office expenses?</div>
+                  <div class="value">Yes</div>
+                </div>
+              </div>
+
+              <!--   If Yes, how would you like to claim home office expenses?   -->
               <div class="col-12">
                 <div class="result-group">
                   <div class="property">
-                    Voluntary gifts of $2 of more made to a Deductible Gift
-                    Recipient (DGR) Status Organization, please list the name of
-                    the organistaion and the amount donated. (This includes
-                    School Building Fund donations)
+                    If Yes, how would you like to claim home office expenses?
                   </div>
-                  <div class="value">0000</div>
+                  <div class="value">Fixed Rate Method</div>
                 </div>
               </div>
+
+              <!--   for Fixed Rate Method   -->
+              <div class="col-12">
+                <div class="row g-3">
+                  <!-- Number of Hours per Day -->
+                  <div class="col-12 col-md-6">
+                    <div class="result-group">
+                      <div class="property">Number of Hours per Day</div>
+                      <div class="value">2154</div>
+                    </div>
+                  </div>
+
+                  <!-- Number of Days in the Year -->
+                  <div class="col-12 col-md-6">
+                    <div class="result-group">
+                      <div class="property">Number of Days in the Year</div>
+                      <div class="value">45</div>
+                    </div>
+                  </div>
+
+                  <!-- Home Office Expenses -->
+                  <div class="col-12 col-md-6">
+                    <div class="result-group">
+                      <div class="property">Home Office Expenses</div>
+                      <div class="value">46545</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--   for Actual Cost Method   -->
+              <div class="col-12">
+                <div class="row g-3">
+                  <!-- Internet -->
+                  <div class="col-12 col-md-6">
+                    <div class="result-group">
+                      <div class="property">Internet</div>
+                      <div class="value">2154</div>
+                    </div>
+                  </div>
+
+                  <!-- Mobile -->
+                  <div class="col-12 col-md-6">
+                    <div class="result-group">
+                      <div class="property">Mobile</div>
+                      <div class="value">45</div>
+                    </div>
+                  </div>
+
+                  <!-- Electricity -->
+                  <div class="col-12 col-md-6">
+                    <div class="result-group">
+                      <div class="property">Electricity</div>
+                      <div class="value">46545</div>
+                    </div>
+                  </div>
+
+                  <!-- Gas -->
+                  <div class="col-12 col-md-6">
+                    <div class="result-group">
+                      <div class="property">Gas</div>
+                      <div class="value">46545</div>
+                    </div>
+                  </div>
+
+                  <!-- Stationery -->
+                  <div class="col-12 col-md-6">
+                    <div class="result-group">
+                      <div class="property">Stationery</div>
+                      <div class="value">46545</div>
+                    </div>
+                  </div>
+
+                  <!-- Computer Consumable -->
+                  <div class="col-12 col-md-6">
+                    <div class="result-group">
+                      <div class="property">Computer Consumable</div>
+                      <div class="value">46545</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--   Additional Deduction   -->
+              <div class="col-12">
+                <div class="row g-3">
+                  <!-- Office Table -->
+                  <div class="col-12">
+                    <h6 class="fw-semibold mt-2">Office Table</h6>
+                    <div class="row g-3">
+                      <!-- amount -->
+                      <div class="col-12 col-md-6">
+                        <div class="result-group">
+                          <div class="property">Amount</div>
+                          <div class="value">545454</div>
+                        </div>
+                      </div>
+
+                      <!-- attachment -->
+                      <div class="col-12 col-md-6">
+                        <div class="result-group">
+                          <div class="property">Attachment</div>
+                          <div class="value">
+                            <a href="" download=""> asdas.pdf </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Office Chair -->
+                  <div class="col-12">
+                    <h6 class="fw-semibold mt-2">Office Chair</h6>
+                    <div class="row g-3">
+                      <!-- amount -->
+                      <div class="col-12 col-md-6">
+                        <div class="result-group">
+                          <div class="property">Amount</div>
+                          <div class="value">2154</div>
+                        </div>
+                      </div>
+
+                      <!-- attachment -->
+                      <div class="col-12 col-md-6">
+                        <div class="result-group">
+                          <div class="property">Attachment</div>
+                          <div class="value">
+                            <a href="" download=""> asdas.pdf </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Office Bookshelf -->
+                  <div class="col-12">
+                    <h6 class="fw-semibold mt-2">Office Bookshelf</h6>
+                    <div class="row g-3">
+                      <!-- amount -->
+                      <div class="col-12 col-md-6">
+                        <div class="result-group">
+                          <div class="property">Amount</div>
+                          <div class="value">2154</div>
+                        </div>
+                      </div>
+
+                      <!-- attachment -->
+                      <div class="col-12 col-md-6">
+                        <div class="result-group">
+                          <div class="property">Attachment</div>
+                          <div class="value">
+                            <a href="" download=""> asdas.pdf </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Computer / Laptop -->
+                  <div class="col-12">
+                    <h6 class="fw-semibold mt-2">Computer / Laptop</h6>
+                    <div class="row g-3">
+                      <!-- amount -->
+                      <div class="col-12 col-md-6">
+                        <div class="result-group">
+                          <div class="property">Amount</div>
+                          <div class="value">2154</div>
+                        </div>
+                      </div>
+
+                      <!-- attachment -->
+                      <div class="col-12 col-md-6">
+                        <div class="result-group">
+                          <div class="property">Attachment</div>
+                          <div class="value">
+                            <a href="" download=""> asdas.pdf </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Other -->
+                  <div class="col-12">
+                    <h6 class="fw-semibold mt-2">Other</h6>
+                    <div class="row g-3">
+                      <!-- amount -->
+                      <div class="col-12 col-md-6">
+                        <div class="result-group">
+                          <div class="property">Amount</div>
+                          <div class="value">2154</div>
+                        </div>
+                      </div>
+
+                      <!-- attachment -->
+                      <div class="col-12 col-md-6">
+                        <div class="result-group">
+                          <div class="property">Attachment</div>
+                          <div class="value">
+                            <a href="" download=""> asdas.pdf </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!--  Other Expenses -->
+          <fieldset>
+            <legend>Other Expenses</legend>
+            <div class="row g-3">
+
+              <!-- Income Protection Insurance  -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">
+                    Income Protection Insurance
+                  </div>
+                  <div class="value">Yes</div>
+                </div>
+              </div>
+
+              <!-- Income Protection Insurance Expenses  -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">Income Protection Insurance Expenses</div>
+                  <table class="mt-1 table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Details</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Attachment</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                      <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              
+              <!-- GIFTS OR DONATIONS-related expenses  -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">
+                    Do you have any Gifts or Donations-related expenses?
+                  </div>
+                  <div class="value">Yes</div>
+                </div>
+              </div>
+
+              <!-- Gifts or Donations-related Expenses  -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">Gifts or Donations-related Expenses</div>
+                  <table class="mt-1 table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Details</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Attachment</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                      <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              
+              <!-- GIFTS OR DONATIONS-related expenses  -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">
+                    Do you have any Other Expenses?
+                  </div>
+                  <div class="value">Yes</div>
+                </div>
+              </div>
+
+              <!-- Gany Other Expenses Expenses  -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">Other Expenses</div>
+                  <table class="mt-1 table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Details</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Attachment</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                      <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
             </div>
           </fieldset>
 
@@ -656,11 +1391,9 @@
           <fieldset>
             <legend>Tax Offsets</legend>
 
-            <!--  PRIVATE HEALTH INSURANCE -->
+
             <div class="row g-3">
-              <div class="col-12">
-                <p class="lead fs-5 mb-2 fw-bold">Private Health Insurance:</p>
-              </div>
+
               <!-- private health Insurance -->
               <div class="col-12">
                 <div class="result-group">
@@ -682,18 +1415,8 @@
                   <div class="value">Yes</div>
                 </div>
               </div>
-            </div>
 
-            <!--  SPOUSE OR PARTNERS TAXABLE INCOME* -->
-            <div class="row g-3 mb-3">
-              <div class="col-12">
-                <p class="lead fs-5 mb-2 fw-bold">
-                  SPOUSE OR PARTNERS TAXABLE INCOME* :
-                  <span class="fw-normal">(Includes same sex couples)</span>
-                </p>
-              </div>
-
-              <!-- spouse/partner for the full financial year -->
+              <!-- spouse/partner -->
               <div class="col-12">
                 <div class="result-group">
                   <div class="property">
@@ -703,228 +1426,1601 @@
                 </div>
               </div>
 
-              <!-- Does your spouse/partner receive any benefits from Centrelink? -->
+              <!-- if spouse/partner yes -->
+              <div class="col-12">
+                
+                <div class="row g-3">
+                  <!-- Name of the Spouse -->
+                  <div class="col-12 col-md-6">
+                    <div class="result-group">
+                      <div class="property">
+                        Name of the Spouse
+                      </div>
+                      <div class="value">Lorem, ipsum.</div>
+                    </div>
+                  </div>
+                  
+                  <!-- Date Of Birth -->
+                  <div class="col-12 col-md-6">
+                    <div class="result-group">
+                      <div class="property">
+                        Date Of Birth
+                      </div>
+                      <div class="value">23-01-2022</div>
+                    </div>
+                  </div>
+                  
+                </div>
+  
+              </div>
+
+              <!-- if spouse/partner no -->
+              <div class="col-12">
+                
+                <div class="row g-3">
+                  <!-- Did you have a spouse for only part of this financial year? -->
+                  <div class="col-12">
+                    <div class="result-group">
+                      <div class="property">
+                        Did you have a spouse for only part of this financial year?
+                      </div>
+                      <div class="value">Yes</div>
+                    </div>
+                  </div>
+                  
+                  <!-- From -->
+                  <div class="col-12 col-md-6">
+                    <div class="result-group">
+                      <div class="property">
+                        From
+                      </div>
+                      <div class="value">23-01-2022</div>
+                    </div>
+                  </div>
+                  
+                  <!-- From -->
+                  <div class="col-12 col-md-6">
+                    <div class="result-group">
+                      <div class="property">
+                        To
+                      </div>
+                      <div class="value">24-01-2022</div>
+                    </div>
+                  </div>
+                  
+                </div>
+  
+              </div>
+
+              <!-- Did your Spouse receive any Centrelink Benefit? -->
               <div class="col-12">
                 <div class="result-group">
                   <div class="property">
-                    Does your spouse/partner receive any benefits from
-                    Centrelink?
+                    Did your Spouse receive any Centrelink Benefit?
                   </div>
                   <div class="value">Yes</div>
                 </div>
               </div>
+
+              <!-- Please Provide Centrelink Benefit Details -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">
+                    Please Provide Centrelink Benefit Details
+                  </div>
+                  <div class="value">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt repellendus libero possimus pariatur quae, error aut quibusdam, ipsam ipsum, vel corporis! Molestiae, id laborum. Praesentium!
+                  </div>
+                </div>
+              </div>
+
+              <!-- Your Spouse's Taxable Income -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">
+                    Your Spouse's Taxable Income
+                  </div>
+                  <div class="value">545458</div>
+                </div>
+              </div>
+
+              <!-- Do you Have Dependent Children? -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">
+                    Do you Have Dependent Children?
+                  </div>
+                  <div class="value">Yes</div>
+                </div>
+              </div>
+
+              <!-- Names of Dependent Children & D.O.B -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">
+                    Names of Dependent Children & D.O.B
+                  </div>
+                  <table class="mt-1 table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Children Name</th>
+                        <th scope="col">Date of Birth</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                      <tr>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
             </div>
 
-            <div class="result-group">
-              <div class="property">
-                What was your spouse or partner's taxable income*:
-              </div>
-              <div class="value">56852$</div>
-            </div>
+
           </fieldset>
 
-          <!--  SUPERANNUATION -->
+          <!--  Superannuation -->
           <fieldset>
-            <legend>SUPERANNUATION</legend>
+            <legend>Superannuation</legend>
 
-            <!-- details of contribution -->
-            <div class="result-group mb-3">
+            <!-- superannuation fund -->
+            <div class="row g-3">
+              
+              <!--Have you made any concessional contributions to a superannuation fund?  -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">
+                    Have you made any concessional contributions to a superannuation fund?
+                  </div>
+                  <div class="value">
+                    yes
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <table class="mt-1 table table-bordered">
+                  <thead>
+                    <tr>
+                      <th scope="col">Superannuation Fund Name</th>
+                      <th scope="col">Date of Payment</th>
+                      <th scope="col">Contribution Amount</th>
+                      <th scope="col">Attachment</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+
+            <!-- superannuation fund -->
+            <div class="mt-4 row g-3">
+              
+              <!--Have you made superannuation contributions on behalf of your spouse?  -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">
+                    Have you made superannuation contributions on behalf of your spouse?
+                  </div>
+                  <div class="value">
+                    yes
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <table class="mt-1 table table-bordered">
+                  <thead>
+                    <tr>
+                      <th scope="col">Superannuation Fund Name</th>
+                      <th scope="col">Date of Payment</th>
+                      <th scope="col">Contribution Amount</th>
+                      <th scope="col">Attachment</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+
+          </fieldset>
+
+          <!--  Investment Property -->
+          <fieldset>
+            <legend class="mb-4">Investment Property</legend>
+
+            <div class="result-group mb-4">
               <div class="property">
-                a) Please provide details of contributions you made to your
-                superannuation for the financial year, if any.
+                Do you have any investment property?
               </div>
               <div class="value">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Veritatis nobis dolor suscipit.
+                Yes
               </div>
             </div>
 
-            <!-- superannuation contributions -->
-            <div class="result-group">
-              <div class="property">
-                b) Have you made superannuation contributions on behalf of your
-                spouse?
+              <!-- single property -->
+             <fieldset class="mb-4" style="border: 1px solid rgb(210, 208, 208); border-radius: 5px; padding: 1rem;">
+              <legend >Investment Property</legend>
+
+              <div class="row g-3">
+
+                <!-- Do you jointly own the property? -->
+                <div class="col-12">
+                  <div class="property">
+                    Do you jointly own the property?
+                  </div>
+                  <div class="value">
+                    Yes
+                  </div>
+                </div>
+
+                <!-- if jointly own yes -->
+                <div class="col-12">
+                  <table class="mt-1 table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Owner Name</th>
+                        <th scope="col">Ownership %</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                      <tr>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <!-- Address of Rental Property -->
+                <div class="col-12">
+                  <div class="property">
+                    Address of Rental Property:
+                  </div>
+                  <div class="value">
+                    Lorem, ipsum dolor.
+                  </div>
+                </div>
+
+                <!-- Number of weeks property was rented this year -->
+                <div class="col-12 col-md-6">
+                  <div class="property">
+                    Number of weeks property was rented this year:
+                  </div>
+                  <div class="value">
+                    564
+                  </div>
+                </div>
+
+                <!-- Number of weeks property was available for rent this year -->
+                <div class="col-12 col-md-6">
+                  <div class="property">
+                    Number of weeks property was available for rent this year:
+                  </div>
+                  <div class="value">
+                    52
+                  </div>
+                </div>
+
+                <!-- Number of weeks property was available for rent this year -->
+                <div class="col-12">
+                  <div class="property">
+                    Do you have Property Agent's Annual Statement
+                  </div>
+                  <div class="value">
+                    Yes
+                  </div>
+                </div>
+
+                <!-- Anual Statement if yes -->
+                <div class="col-12">
+                  <div class="property">
+                    Property Agent's Annual Statement
+                  </div>
+                  <div class="value">
+                    <a href="#" download="">lodsddad.pdf</a>
+                  </div>
+                </div>
+
+                <!-- Anual Statement if no -->
+                <div class="col-12">
+                  <div class="row g-3">
+                    <!-- Gross rental income -->
+                    <div class="col-12 col-md-6">
+                      <div class="property">
+                        Gross rental income
+                      </div>
+                      <div class="value">
+                        5465
+                      </div>
+                    </div>
+
+                    <!-- Other rental related income -->
+                    <div class="col-12 col-md-6">
+                      <div class="property">
+                        Other rental related income
+                      </div>
+                      <div class="value">
+                        5465414
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <!-- Interest on Loans -->
+                <div class="col-12">
+                  <div class="property">
+                    Interest on Loans
+                  </div>
+                  <table class="mt-2 table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Bank Name</th>
+                        <th scope="col">Account Number</th>
+                        <th scope="col">Loan Amount</th>
+                        <th scope="col">Annual Interest</th>
+                        <th scope="col">Attachment</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                      <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <!-- D Advertising for tenants -->
+                <div class="col-12">
+                  <h6 class="fw-semibold mt-2">D Advertising for tenants</h6>
+                  <div class="row g-3">
+                    <!-- amount -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group">
+                        <div class="property">Amount</div>
+                        <div class="value">545454</div>
+                      </div>
+                    </div>
+
+                    <!-- attachment -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group">
+                        <div class="property">Attachment</div>
+                        <div class="value">
+                          <a href="" download=""> asdas.pdf </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- E Body corporate fees (Strata Levies) -->
+                <div class="col-12">
+                  <h6 class="fw-semibold mt-2">E Body corporate fees (Strata Levies)</h6>
+                  <div class="row g-3">
+                    <!-- amount -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group">
+                        <div class="property">Amount</div>
+                        <div class="value">545454</div>
+                      </div>
+                    </div>
+
+                    <!-- attachment -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group">
+                        <div class="property">Attachment</div>
+                        <div class="value">
+                          <a href="" download=""> asdas.pdf </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- F Borrowing expenses -->
+                <div class="col-12">
+                  <h6 class="fw-semibold mt-2">F Borrowing expenses</h6>
+                  <div class="row g-3">
+                    <!-- amount -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group">
+                        <div class="property">Amount</div>
+                        <div class="value">545454</div>
+                      </div>
+                    </div>
+
+                    <!-- attachment -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group">
+                        <div class="property">Attachment</div>
+                        <div class="value">
+                          <a href="" download=""> asdas.pdf </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- G Cleaning -->
+                <div class="col-12">
+                  <h6 class="fw-semibold mt-2">G Cleaning</h6>
+                  <div class="row g-3">
+                    <!-- amount -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group">
+                        <div class="property">Amount</div>
+                        <div class="value">545454</div>
+                      </div>
+                    </div>
+
+                    <!-- attachment -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group">
+                        <div class="property">Attachment</div>
+                        <div class="value">
+                          <a href="" download=""> asdas.pdf </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- H Council Rates -->
+                <div class="col-12">
+                  <h6 class="fw-semibold mt-2">H Council Rates</h6>
+                  <div class="row g-3">
+                    <!-- amount -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group">
+                        <div class="property">Amount</div>
+                        <div class="value">545454</div>
+                      </div>
+                    </div>
+
+                    <!-- attachment -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group">
+                        <div class="property">Attachment</div>
+                        <div class="value">
+                          <a href="" download=""> asdas.pdf </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- I Capital allowances (depreciation) -->
+                <div class="col-12">
+                  <h6 class="fw-semibold mt-2">I Capital allowances (depreciation)</h6>
+                  <div class="row g-3">
+                    <!-- amount -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group">
+                        <div class="property">Amount</div>
+                        <div class="value">545454</div>
+                      </div>
+                    </div>
+
+                    <!-- attachment -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group">
+                        <div class="property">Attachment</div>
+                        <div class="value">
+                          <a href="" download=""> asdas.pdf </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- J Gardening/lawn mowing -->
+                <div class="col-12">
+                  <h6 class="fw-semibold mt-2">J Gardening/lawn mowing</h6>
+                  <div class="row g-3">
+                    <!-- amount -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group">
+                        <div class="property">Amount</div>
+                        <div class="value">545454</div>
+                      </div>
+                    </div>
+
+                    <!-- attachment -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group">
+                        <div class="property">Attachment</div>
+                        <div class="value">
+                          <a href="" download=""> asdas.pdf </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- K Insurance -->
+                <div class="col-12">
+                  <h6 class="fw-semibold mt-2">K Insurance</h6>
+                  <div class="row g-3">
+                    <!-- amount -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group">
+                        <div class="property">Amount</div>
+                        <div class="value">545454</div>
+                      </div>
+                    </div>
+
+                    <!-- attachment -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group">
+                        <div class="property">Attachment</div>
+                        <div class="value">
+                          <a href="" download=""> asdas.pdf </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- M Land Tax -->
+                <div class="col-12">
+                  <h6 class="fw-semibold mt-2">M Land Tax</h6>
+                  <div class="row g-3">
+                    <!-- amount -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group">
+                        <div class="property">Amount</div>
+                        <div class="value">545454</div>
+                      </div>
+                    </div>
+
+                    <!-- attachment -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group">
+                        <div class="property">Attachment</div>
+                        <div class="value">
+                          <a href="" download=""> asdas.pdf </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- N Legal fees -->
+                <div class="col-12">
+                  <h6 class="fw-semibold mt-2">N Legal fees</h6>
+                  <div class="row g-3">
+                    <!-- amount -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group">
+                        <div class="property">Amount</div>
+                        <div class="value">545454</div>
+                      </div>
+                    </div>
+
+                    <!-- attachment -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group">
+                        <div class="property">Attachment</div>
+                        <div class="value">
+                          <a href="" download=""> asdas.pdf </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- O Pest control -->
+                <div class="col-12">
+                  <h6 class="fw-semibold mt-2">O Pest control</h6>
+                  <div class="row g-3">
+                    <!-- amount -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group">
+                        <div class="property">Amount</div>
+                        <div class="value">545454</div>
+                      </div>
+                    </div>
+
+                    <!-- attachment -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group">
+                        <div class="property">Attachment</div>
+                        <div class="value">
+                          <a href="" download=""> asdas.pdf </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- P Property agent fees/commission -->
+                <div class="col-12">
+                  <h6 class="fw-semibold mt-2">P Property agent fees/commission</h6>
+                  <div class="row g-3">
+                    <!-- amount -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group">
+                        <div class="property">Amount</div>
+                        <div class="value">545454</div>
+                      </div>
+                    </div>
+
+                    <!-- attachment -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group">
+                        <div class="property">Attachment</div>
+                        <div class="value">
+                          <a href="" download=""> asdas.pdf </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- P Letting Fee -->
+                <div class="col-12">
+                  <h6 class="fw-semibold mt-2">P Letting Fee</h6>
+                  <div class="row g-3">
+                    <!-- amount -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group">
+                        <div class="property">Amount</div>
+                        <div class="value">545454</div>
+                      </div>
+                    </div>
+
+                    <!-- attachment -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group">
+                        <div class="property">Attachment</div>
+                        <div class="value">
+                          <a href="" download=""> asdas.pdf </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Q Repairs and maintenance (R & M) -->
+                <div class="col-12">
+                  <h6 class="fw-semibold mt-2">Q Repairs and maintenance (R & M)</h6>
+                  <table class="mt-1 table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Details</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Attachment</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                      <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <!-- R Capital Work's Deduction (Building) -->
+                <div class="col-12">
+                  <h6 class="fw-semibold mt-2">R Capital Work's Deduction (Building)</h6>
+                  <div class="row g-3">
+                    <!-- amount -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group">
+                        <div class="property">Amount</div>
+                        <div class="value">545454</div>
+                      </div>
+                    </div>
+
+                    <!-- attachment -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group">
+                        <div class="property">Attachment</div>
+                        <div class="value">
+                          <a href="" download=""> asdas.pdf </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- S Stationery, telephone and postage -->
+                <div class="col-12">
+                  <h6 class="fw-semibold mt-2">S Stationery, telephone and postage</h6>
+                  <div class="row g-3">
+                    <!-- amount -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group">
+                        <div class="property">Amount</div>
+                        <div class="value">545454</div>
+                      </div>
+                    </div>
+
+                    <!-- attachment -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group">
+                        <div class="property">Attachment</div>
+                        <div class="value">
+                          <a href="" download=""> asdas.pdf </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- T Travel expenses (For Residential property) -->
+                <div class="col-12">
+                  <h6 class="fw-semibold mt-2">T Travel expenses (For Residential property)</h6>
+                  <div class="row g-3">
+                    <!-- amount -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group">
+                        <div class="property">Amount</div>
+                        <div class="value">545454</div>
+                      </div>
+                    </div>
+
+                    <!-- attachment -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group">
+                        <div class="property">Attachment</div>
+                        <div class="value">
+                          <a href="" download=""> asdas.pdf </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- U Water charges -->
+                <div class="col-12">
+                  <h6 class="fw-semibold mt-2">U Water charges</h6>
+                  <div class="row g-3">
+                    <!-- amount -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group">
+                        <div class="property">Amount</div>
+                        <div class="value">545454</div>
+                      </div>
+                    </div>
+
+                    <!-- attachment -->
+                    <div class="col-12 col-md-6">
+                      <div class="result-group">
+                        <div class="property">Attachment</div>
+                        <div class="value">
+                          <a href="" download=""> asdas.pdf </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- V Sundry rental expenses -->
+                <div class="col-12">
+                  <h6 class="fw-semibold mt-2">V Sundry rental expenses</h6>
+                  <table class="mt-1 table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Details</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Attachment</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                      <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <!-- TOTAL EXPENSES -->
+                <div class="col-12">
+                  <div class="result-group">
+                    <div class="property">TOTAL EXPENSES</div>
+                    <div class="value">545454</div>
+                  </div>
+                </div>
+
               </div>
-              <div class="value">Lorem ipsum dolor sit amet.</div>
-            </div>
+             </fieldset>
+                
           </fieldset>
 
-          <!--  OTHER -->
+          <!--  Sole Trader -->
           <fieldset>
-            <legend>OTHER</legend>
-
-            <div class="result-group mb-3">
-              <div class="property">
-                Any other information that we should be aware of: i.e. you are
-                not entitled to Medicare Benefit, you are a student etc.
-              </div>
-              <div class="value">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Veritatis nobis dolor suscipit.
-              </div>
-            </div>
-          </fieldset>
-
-          <!--   Only rents received and expenses paid between 1 July 2022 and 30 June 2023 -->
-          <fieldset>
-            <p class="text-center fw-medium mb-3">
-              Only rents received and expenses paid between 1 July 2022 and 30
-              June 2023
-            </p>
+            <legend>Sole Trader</legend>
 
             <div class="row g-3">
+              
+              <!--   Do you operate as a Sole Trader, work as an independent contractor, or earn income from driving a Taxi or Uber?   -->
               <div class="col-12">
-                <table class="table table-bordered">
-                  <tbody>
-                    <tr>
-                      <th>
-                        Owner Names & Ownership %: Address of Rental Property:
-                      </th>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th>Number of weeks property was rented this year:</th>
-                      <td>-</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div class="result-group">
+                  <div class="property">Do you operate as a Sole Trader, work as an independent contractor, or earn income from driving a Taxi or Uber?</div>
+                  <div class="value">Yes</div>
+                </div>
               </div>
 
-              <!-- income -->
+              <!--   Are You Registered for GST?   -->
               <div class="col-12">
-                <div class="property mb-2">INCOME</div>
-                <table class="table table-bordered">
-                  <tbody>
-                    <tr>
-                      <th>
-                        Gross rental income
-                      </th>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th> Other rental related income</th>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th> Gross Rent</th>
-                      <td>-</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div class="result-group">
+                  <div class="property">
+                    Are You Registered for GST?
+                  </div>
+                  <div class="value">Yes</div>
+                </div>
               </div>
 
-              <!-- EXPENSES -->
+              <!--   Are You Registered for GST?   -->
               <div class="col-12">
-                <div class="property mb-2">EXPENSES</div>
-                <table class="table table-bordered">
-                  <tbody>
-                    <tr>
-                      <th>
-                        D Advertising for tenants
-                      </th>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th> E Body corporate fees (Strata Levies)</th>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th> F Borrowing expenses</th>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th>  G Cleaning</th>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th>H Council Rates</th>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th> I Capital allowances (depreciation)</th>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th>J Gardening/lawn mowing</th>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th>K Insurance</th>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th> L Interest on loans </th>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th>M Land Tax</th>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th> N Legal fees</th>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th> O Pest control</th>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th>P Property agent fees/commission</th>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th> Q Repairs and maintenance (R & M)</th>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th>  (for R & M purchases greater than $300 need details)</th>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th> R Capital Work’s Deduction (Building)</th>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th>S Stationery, telephone and postage</th>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th> T Travel expenses (Not allowed after 30/6/2017)</th>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th>U Water charges</th>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th> V Sundry rental expenses</th>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th>TOTAL EXPENSES</th>
-                      <td>-</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div class="result-group">
+                  <div class="property">
+                    ABN Number
+                  </div>
+                  <div class="value">5545454</div>
+                </div>
               </div>
 
-              <!-- EXPENSES -->
+              <!--   Provide Software details or Excel Summary / Or Use My Own Number   -->
               <div class="col-12">
-                <div class="property mb-2"> NET RENT</div>
-                <table class="table table-bordered">
-                  <tbody>
-                    <tr>
-                      <th>
-                        NET RENT
-                      </th>
-                      <td>-</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div class="result-group">
+                  <div class="property">
+                    Provide Software details or Excel Summary / Or Use My Own Number
+                  </div>
+                  <div class="value">Provide Software details or Excel Summary</div>
+                </div>
+              </div>
+
+              <!--   if Provide Software details or Excel Summary   -->
+              <div class="col-12">
+                <div class="result-group">
+                  <div class="property">
+                    Provide Software details or Excel Summary
+                  </div>
+                  <div class="value">
+                    <a href="#" download>asdjkaskd.pdf</a>
+                  </div>
+                </div>
+              </div>
+
+              <!--   if My Own Number   -->
+              <div class="col-12">
+                <div class="row g-3">
+
+                  <!-- income -->
+                  <div class="col-12">
+                    <div class="result-group">
+                      <div class="property">
+                        Income
+                      </div>
+                      <table class="mt-1 table table-bordered">
+                        <thead>
+                          <tr>
+                            <th scope="col">Type of Income</th>
+                            <th scope="col">Income Amount</th>
+                            <th scope="col">Attachment</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                          </tr>
+                          <tr>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <!-- expenses -->
+                  <div class="col-12">
+                    <legend>Expenses</legend>
+                    <div class="row g-3">
+
+                      <!-- Accounting Fee -->
+                      <div class="col-12">
+                        <h6 class="fw-semibold mt-2">Accounting Fee</h6>
+                        <table class="mt-1 table table-bordered">
+                          <thead>
+                            <tr>
+                              <th scope="col">Details</th>
+                              <th scope="col">Amount</th>
+                              <th scope="col">Attachment</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <!-- Bookkeeping Fee -->
+                      <div class="col-12">
+                        <h6 class="fw-semibold mt-2">Bookkeeping Fee</h6>
+                        <table class="mt-1 table table-bordered">
+                          <thead>
+                            <tr>
+                              <th scope="col">Details</th>
+                              <th scope="col">Amount</th>
+                              <th scope="col">Attachment</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <!-- Business Mobile -->
+                      <div class="col-12">
+                        <h6 class="fw-semibold mt-2">Business Mobile</h6>
+                        <div class="row g-3">
+                          <!-- amount -->
+                          <div class="col-12 col-md-6">
+                            <div class="result-group">
+                              <div class="property">Amount</div>
+                              <div class="value">545454</div>
+                            </div>
+                          </div>
+      
+                          <!-- attachment -->
+                          <div class="col-12 col-md-6">
+                            <div class="result-group">
+                              <div class="property">Attachment</div>
+                              <div class="value">
+                                <a href="" download=""> asdas.pdf </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Office Rent -->
+                      <div class="col-12">
+                        <h6 class="fw-semibold mt-2">Office Rent</h6>
+                        <div class="row g-3">
+                          <!-- amount -->
+                          <div class="col-12 col-md-6">
+                            <div class="result-group">
+                              <div class="property">Amount</div>
+                              <div class="value">545454</div>
+                            </div>
+                          </div>
+      
+                          <!-- attachment -->
+                          <div class="col-12 col-md-6">
+                            <div class="result-group">
+                              <div class="property">Attachment</div>
+                              <div class="value">
+                                <a href="" download=""> asdas.pdf </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Plant and Equipment -->
+                      <div class="col-12">
+                        <h6 class="fw-semibold mt-2">Plant and Equipment</h6>
+                        <table class="mt-1 table table-bordered">
+                          <thead>
+                            <tr>
+                              <th scope="col">Details</th>
+                              <th scope="col">Amount</th>
+                              <th scope="col">Attachment</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <!-- Equipment Lease -->
+                      <div class="col-12">
+                        <h6 class="fw-semibold mt-2">Equipment Lease</h6>
+                        <table class="mt-1 table table-bordered">
+                          <thead>
+                            <tr>
+                              <th scope="col">Details</th>
+                              <th scope="col">Amount</th>
+                              <th scope="col">Attachment</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <!-- Service Fee -->
+                      <div class="col-12">
+                        <h6 class="fw-semibold mt-2">Service Fee</h6>
+                        <div class="row g-3">
+                          <!-- details -->
+                          <div class="col-12">
+                            <div class="result-group">
+                              <div class="property">Details of the Service</div>
+                              <div class="value">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur repudiandae placeat molestiae beatae voluptatem. Ut autem odio atque labore cum. Accusamus, porro?
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- amount -->
+                          <div class="col-12 col-md-6">
+                            <div class="result-group">
+                              <div class="property">Amount</div>
+                              <div class="value">545454</div>
+                            </div>
+                          </div>
+      
+                          <!-- attachment -->
+                          <div class="col-12 col-md-6">
+                            <div class="result-group">
+                              <div class="property">Attachment</div>
+                              <div class="value">
+                                <a href="" download=""> asdas.pdf </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Medical Centre Fee -->
+                      <div class="col-12">
+                        <h6 class="fw-semibold mt-2">Medical Centre Fee</h6>
+                        <div class="row g-3">
+
+                          <!-- amount -->
+                          <div class="col-12 col-md-6">
+                            <div class="result-group">
+                              <div class="property">Amount</div>
+                              <div class="value">545454</div>
+                            </div>
+                          </div>
+      
+                          <!-- attachment -->
+                          <div class="col-12 col-md-6">
+                            <div class="result-group">
+                              <div class="property">Attachment</div>
+                              <div class="value">
+                                <a href="" download=""> asdas.pdf </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Professional Membership Fee -->
+                      <div class="col-12">
+                        <h6 class="fw-semibold mt-2">Professional Membership Fee</h6>
+                        <table class="mt-1 table table-bordered">
+                          <thead>
+                            <tr>
+                              <th scope="col">Details</th>
+                              <th scope="col">Amount</th>
+                              <th scope="col">Attachment</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <!-- Public Liability Insurance -->
+                      <div class="col-12">
+                        <h6 class="fw-semibold mt-2">Public Liability Insurance</h6>
+                        <table class="mt-1 table table-bordered">
+                          <thead>
+                            <tr>
+                              <th scope="col">Details</th>
+                              <th scope="col">Amount</th>
+                              <th scope="col">Attachment</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <!-- Professional Indemnity Insurance -->
+                      <div class="col-12">
+                        <h6 class="fw-semibold mt-2">Professional Indemnity Insurance</h6>
+                        <table class="mt-1 table table-bordered">
+                          <thead>
+                            <tr>
+                              <th scope="col">Details</th>
+                              <th scope="col">Amount</th>
+                              <th scope="col">Attachment</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <!-- Income Protection Insurance -->
+                      <div class="col-12">
+                        <h6 class="fw-semibold mt-2">Income Protection Insurance</h6>
+                        <table class="mt-1 table table-bordered">
+                          <thead>
+                            <tr>
+                              <th scope="col">Details</th>
+                              <th scope="col">Amount</th>
+                              <th scope="col">Attachment</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <!-- Protective Items/ Clothes -->
+                      <div class="col-12">
+                        <h6 class="fw-semibold mt-2">Protective Items/ Clothes</h6>
+                        <table class="mt-1 table table-bordered">
+                          <thead>
+                            <tr>
+                              <th scope="col">Details</th>
+                              <th scope="col">Amount</th>
+                              <th scope="col">Attachment</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <!-- National Travel Expenses -->
+                      <div class="col-12">
+                        <h6 class="fw-semibold mt-2">National Travel Expenses</h6>
+                        <table class="mt-1 table table-bordered">
+                          <thead>
+                            <tr>
+                              <th scope="col">Details</th>
+                              <th scope="col">Reason for Travel</th>
+                              <th scope="col">Amount</th>
+                              <th scope="col">Attachment</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <!-- International Travel -->
+                      <div class="col-12">
+                        <h6 class="fw-semibold mt-2">International Travel</h6>
+                        <table class="mt-1 table table-bordered">
+                          <thead>
+                            <tr>
+                              <th scope="col">Details</th>
+                              <th scope="col">Reason for Travel</th>
+                              <th scope="col">Amount</th>
+                              <th scope="col">Attachment</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <!-- Training, Self-Education and Travel -->
+                      <div class="col-12">
+                        <h6 class="fw-semibold mt-2">Training, Self-Education and Travel</h6>
+                        <table class="mt-1 table table-bordered">
+                          <thead>
+                            <tr>
+                              <th scope="col">Name of the Institute or Seminar</th>
+                              <th scope="col">Amount</th>
+                              <th scope="col">Date</th>
+                              <th scope="col">Attachment</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <!-- Contractor Fees -->
+                      <div class="col-12">
+                        <h6 class="fw-semibold mt-2">Contractor Fees</h6>
+                        <table class="mt-1 table table-bordered">
+                          <thead>
+                            <tr>
+                              <th scope="col">Name of Contractor</th>
+                              <th scope="col">Amount</th>
+                              <th scope="col">Attachment</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <!-- Material Expenses -->
+                      <div class="col-12">
+                        <h6 class="fw-semibold mt-2">Material Expenses</h6>
+                        <table class="mt-1 table table-bordered">
+                          <thead>
+                            <tr>
+                              <th scope="col">
+                                Details
+                              </th>
+                              <th scope="col">Amount</th>
+                              <th scope="col">Attachment</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <!-- Loan Interest -->
+                      <div class="col-12">
+                        <h6 class="fw-semibold mt-2">Loan Interest</h6>
+                        <table class="mt-1 table table-bordered">
+                          <thead>
+                            <tr>
+                              <th scope="col">
+                                Details
+                              </th>
+                              <th scope="col">Amount</th>
+                              <th scope="col">Attachment</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <!-- Property Expenses -->
+                      <div class="col-12">
+                        <h6 class="fw-semibold mt-2">Property Expenses</h6>
+                        <table class="mt-1 table table-bordered">
+                          <thead>
+                            <tr>
+                              <th scope="col">
+                                Details
+                              </th>
+                              <th scope="col">Amount</th>
+                              <th scope="col">Attachment</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <!-- Income from Other Sources -->
+                      <div class="col-12">
+                        <h6 class="fw-semibold mt-2">Income from Other Sources</h6>
+                        <table class="mt-1 table table-bordered">
+                          <thead>
+                            <tr>
+                              <th scope="col">
+                                Source
+                              </th>
+                              <th scope="col">Amount</th>
+                              <th scope="col">Attachment</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <!-- Investment Expenses -->
+                      <div class="col-12">
+                        <h6 class="fw-semibold mt-2">Investment Expenses</h6>
+                        <table class="mt-1 table table-bordered">
+                          <thead>
+                            <tr>
+                              <th scope="col">
+                                Details
+                              </th>
+                              <th scope="col">Amount</th>
+                              <th scope="col">Attachment</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <!-- Donations -->
+                      <div class="col-12">
+                        <h6 class="fw-semibold mt-2">Donations</h6>
+                        <table class="mt-1 table table-bordered">
+                          <thead>
+                            <tr>
+                              <th scope="col">
+                                Details
+                              </th>
+                              <th scope="col">Amount</th>
+                              <th scope="col">Attachment</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                            <tr>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </div>
               </div>
 
             </div>
           </fieldset>
+
+
         </div>
       </div>
     </div>

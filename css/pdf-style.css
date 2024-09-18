@@ -33,13 +33,15 @@ h1 {
 }
 
 .property {
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1rem;
+    color: #000;
 }
 
 .value {
-    font-weight: 500;
-    font-size: 1.1rem;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #222;
 }
 
 .responsive-table {
@@ -75,8 +77,8 @@ fieldset {
 }
 
 legend {
-    font-weight: 700;
+    font-weight: 600;
     color: #000;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 }
 
