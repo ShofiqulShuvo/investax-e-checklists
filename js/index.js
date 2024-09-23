@@ -4852,6 +4852,80 @@ document.querySelectorAll(".remove-investmentExpenses").forEach((button) => {
   });
 });
 
+
+
+
+
+// Function to handle adding rows in the business Mobile Fee table
+function addbusinessMobileRow() {
+  const tableBody = document.getElementById("businessMobileFeeTableBody");
+  const rowCount = tableBody.children.length;
+
+  // Create a new row
+  const newRow = document.createElement("tr");
+
+  // Create and append each cell
+  const detailsCell = document.createElement("td");
+  const detailsInput = document.createElement("input");
+  detailsInput.type = "text";
+  detailsInput.className = "form-control";
+  detailsInput.name = `businessMobileFeeDetails[${rowCount}]`;
+  detailsCell.appendChild(detailsInput);
+
+  const amountCell = document.createElement("td");
+  const amountInput = document.createElement("input");
+  amountInput.type = "number";
+  amountInput.className = "form-control";
+  amountInput.name = `businessMobileFeeAmount[${rowCount}]`;
+  amountInput.placeholder = "Enter amount";
+  amountCell.appendChild(amountInput);
+
+  const attachmentCell = document.createElement("td");
+  const attachmentInput = document.createElement("input");
+  attachmentInput.type = "file";
+  attachmentInput.className = "form-control";
+  attachmentInput.name = `businessMobileFeeAttachment[${rowCount}]`;
+  attachmentCell.appendChild(attachmentInput);
+
+  const actionsCell = document.createElement("td");
+  const removeButton = document.createElement("button");
+  removeButton.type = "button";
+  removeButton.className = "remove-businessMobileFee btn btn-sm btn-danger";
+  removeButton.textContent = "Remove";
+  actionsCell.appendChild(removeButton);
+
+  // Append cells to the new row
+  newRow.appendChild(detailsCell);
+  newRow.appendChild(amountCell);
+  newRow.appendChild(attachmentCell);
+  newRow.appendChild(actionsCell);
+
+  // Append the new row to the table body
+  tableBody.appendChild(newRow);
+
+  // Add event listener for the new remove button
+  removeButton.addEventListener("click", function () {
+    tableBody.removeChild(newRow);
+  });
+}
+
+// Function to handle the click event of the "Add More" button
+document
+  .getElementById("addbusinessMobile")
+  .addEventListener("click", addbusinessMobileRow);
+
+// Add event listeners for existing remove buttons on page load
+document.querySelectorAll(".remove-businessMobileFee").forEach((button) => {
+  button.addEventListener("click", function () {
+    const row = this.closest("tr");
+    row.parentNode.removeChild(row);
+  });
+});
+
+
+
+
+
 // Function to handle adding rows in the Donations table
 function addDonationsRow() {
   const tableBody = document.getElementById("donationsTableBody");
@@ -4912,6 +4986,216 @@ document
 
 // Add event listeners for existing remove buttons on page load
 document.querySelectorAll(".remove-donations").forEach((button) => {
+  button.addEventListener("click", function () {
+    const row = this.closest("tr");
+    row.parentNode.removeChild(row);
+  });
+});
+
+
+
+
+
+// Function to handle adding rows in the officeRentTableBody table
+function addOfficeRentRow() {
+  const tableBody = document.getElementById("officeRentTableBody");
+  const rowCount = tableBody.children.length;
+
+  // Create a new row
+  const newRow = document.createElement("tr");
+
+  // Create and append each cell
+  const detailsCell = document.createElement("td");
+  const detailsInput = document.createElement("input");
+  detailsInput.type = "text";
+  detailsInput.className = "form-control";
+  detailsInput.name = `officeRentFeeDetails[${rowCount}]`;
+  detailsCell.appendChild(detailsInput);
+
+  const amountCell = document.createElement("td");
+  const amountInput = document.createElement("input");
+  amountInput.type = "number";
+  amountInput.className = "form-control";
+  amountInput.name = `officeRentFeeAmount[${rowCount}]`;
+  amountInput.placeholder = "Enter amount";
+  amountCell.appendChild(amountInput);
+
+  const attachmentCell = document.createElement("td");
+  const attachmentInput = document.createElement("input");
+  attachmentInput.type = "file";
+  attachmentInput.className = "form-control";
+  attachmentInput.name = `officeRentFeeAttachment[${rowCount}]`;
+  attachmentCell.appendChild(attachmentInput);
+
+  const actionsCell = document.createElement("td");
+  const removeButton = document.createElement("button");
+  removeButton.type = "button";
+  removeButton.className = "remove-officeRentFee btn btn-sm btn-danger";
+  removeButton.textContent = "Remove";
+  actionsCell.appendChild(removeButton);
+
+  // Append cells to the new row
+  newRow.appendChild(detailsCell);
+  newRow.appendChild(amountCell);
+  newRow.appendChild(attachmentCell);
+  newRow.appendChild(actionsCell);
+
+  // Append the new row to the table body
+  tableBody.appendChild(newRow);
+
+  // Add event listener for the new remove button
+  removeButton.addEventListener("click", function () {
+    tableBody.removeChild(newRow);
+  });
+}
+
+// Function to handle the click event of the "Add More" button
+document
+  .getElementById("addOfficeRentFee")
+  .addEventListener("click", addOfficeRentRow);
+
+// Add event listeners for existing remove buttons on page load
+document.querySelectorAll(".remove-officeRentFee").forEach((button) => {
+  button.addEventListener("click", function () {
+    const row = this.closest("tr");
+    row.parentNode.removeChild(row);
+  });
+});
+
+
+
+
+
+// Function to handle adding rows in the serviceFeeTableBody table
+function addServiceFeeRow() {
+  const tableBody = document.getElementById("serviceFeeTableBody");
+  const rowCount = tableBody.children.length;
+
+  // Create a new row
+  const newRow = document.createElement("tr");
+
+  // Create and append each cell
+  const detailsCell = document.createElement("td");
+  const detailsInput = document.createElement("input");
+  detailsInput.type = "text";
+  detailsInput.className = "form-control";
+  detailsInput.name = `serviceFeeDetails[${rowCount}]`;
+  detailsCell.appendChild(detailsInput);
+
+  const amountCell = document.createElement("td");
+  const amountInput = document.createElement("input");
+  amountInput.type = "number";
+  amountInput.className = "form-control";
+  amountInput.name = `serviceFeeAmount[${rowCount}]`;
+  amountInput.placeholder = "Enter amount";
+  amountCell.appendChild(amountInput);
+
+  const attachmentCell = document.createElement("td");
+  const attachmentInput = document.createElement("input");
+  attachmentInput.type = "file";
+  attachmentInput.className = "form-control";
+  attachmentInput.name = `serviceFeeAttachment[${rowCount}]`;
+  attachmentCell.appendChild(attachmentInput);
+
+  const actionsCell = document.createElement("td");
+  const removeButton = document.createElement("button");
+  removeButton.type = "button";
+  removeButton.className = "remove-serviceFee btn btn-sm btn-danger";
+  removeButton.textContent = "Remove";
+  actionsCell.appendChild(removeButton);
+
+  // Append cells to the new row
+  newRow.appendChild(detailsCell);
+  newRow.appendChild(amountCell);
+  newRow.appendChild(attachmentCell);
+  newRow.appendChild(actionsCell);
+
+  // Append the new row to the table body
+  tableBody.appendChild(newRow);
+
+  // Add event listener for the new remove button
+  removeButton.addEventListener("click", function () {
+    tableBody.removeChild(newRow);
+  });
+}
+
+// Function to handle the click event of the "Add More" button
+document
+  .getElementById("addserviceFee")
+  .addEventListener("click", addServiceFeeRow);
+
+// Add event listeners for existing remove buttons on page load
+document.querySelectorAll(".remove-serviceFee").forEach((button) => {
+  button.addEventListener("click", function () {
+    const row = this.closest("tr");
+    row.parentNode.removeChild(row);
+  });
+});
+
+
+
+
+
+// Function to handle adding rows in the medicalCentreFee table
+function addmedicalCentreFeeRow() {
+  const tableBody = document.getElementById("medicalCentreFeeTableBody");
+  const rowCount = tableBody.children.length;
+
+  // Create a new row
+  const newRow = document.createElement("tr");
+
+  // Create and append each cell
+  const detailsCell = document.createElement("td");
+  const detailsInput = document.createElement("input");
+  detailsInput.type = "text";
+  detailsInput.className = "form-control";
+  detailsInput.name = `medicalCentreFeeDetails[${rowCount}]`;
+  detailsCell.appendChild(detailsInput);
+
+  const amountCell = document.createElement("td");
+  const amountInput = document.createElement("input");
+  amountInput.type = "number";
+  amountInput.className = "form-control";
+  amountInput.name = `medicalCentreFeeAmount[${rowCount}]`;
+  amountInput.placeholder = "Enter amount";
+  amountCell.appendChild(amountInput);
+
+  const attachmentCell = document.createElement("td");
+  const attachmentInput = document.createElement("input");
+  attachmentInput.type = "file";
+  attachmentInput.className = "form-control";
+  attachmentInput.name = `medicalCentreFeeAttachment[${rowCount}]`;
+  attachmentCell.appendChild(attachmentInput);
+
+  const actionsCell = document.createElement("td");
+  const removeButton = document.createElement("button");
+  removeButton.type = "button";
+  removeButton.className = "remove-medicalCentreFee btn btn-sm btn-danger";
+  removeButton.textContent = "Remove";
+  actionsCell.appendChild(removeButton);
+
+  // Append cells to the new row
+  newRow.appendChild(detailsCell);
+  newRow.appendChild(amountCell);
+  newRow.appendChild(attachmentCell);
+  newRow.appendChild(actionsCell);
+
+  // Append the new row to the table body
+  tableBody.appendChild(newRow);
+
+  // Add event listener for the new remove button
+  removeButton.addEventListener("click", function () {
+    tableBody.removeChild(newRow);
+  });
+}
+
+// Function to handle the click event of the "Add More" button
+document
+  .getElementById("addmedicalCentreFee")
+  .addEventListener("click", addmedicalCentreFeeRow);
+
+// Add event listeners for existing remove buttons on page load
+document.querySelectorAll(".remove-medicalCentreFee").forEach((button) => {
   button.addEventListener("click", function () {
     const row = this.closest("tr");
     row.parentNode.removeChild(row);

@@ -5590,35 +5590,64 @@
                           >Business Mobile</label
                         >
                         <div class="expense-fields mt-2" style="display: none">
-                          <div class="row g-3">
-                            <div class="col-12 col-md-6">
-                              <label
-                                class="form-label"
-                                for="businessMobile"
-                                >Amount</label
-                              >
-                              <input
-                                type="number"
-                                class="form-control mb-3"
-                                name="businessMobile"
-                                id="businessMobile"
-                                placeholder="Enter amount"
-                              />
-                            </div>
-                            <div class="col-12 col-md-6">
-                              <label
-                                class="form-label"
-                                for="businessMobileAttachment"
-                                >Attachment</label
-                              >
-                              <input
-                                type="file"
-                                class="form-control mb-3"
-                                name="businessMobileAttachment"
-                                id="businessMobileAttachment"
-                              />
-                            </div>
+                          
+                          <div class="table-responsive">
+                            <table
+                              class="table table-bordered mt-3"
+                              id="businessMobileFeeTable"
+                            >
+                              <thead>
+                                <tr>
+                                  <th>Details</th>
+                                  <th>Amount</th>
+                                  <th>Attach File</th>
+                                  <th>Actions</th>
+                                </tr>
+                              </thead>
+                              <tbody id="businessMobileFeeTableBody">
+                                <!-- Initial Row -->
+                                <tr>
+                                  <td>
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      name="businessMobileFeeDetails[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="number"
+                                      class="form-control"
+                                      name="businessMobileFeeAmount[0]"
+                                      placeholder="Enter amount"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="file"
+                                      class="form-control"
+                                      name="businessMobileFeeAttachment[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <button
+                                      type="button"
+                                      class="remove-businessMobileFee btn btn-sm btn-danger"
+                                    >
+                                      Remove
+                                    </button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
                           </div>
+                          <button
+                            type="button"
+                            class="btn btn-sm ms-auto add-btn"
+                            id="addbusinessMobile"
+                          >
+                            Add More
+                          </button>
                         </div>
                       </div>
 
@@ -5634,35 +5663,64 @@
                           >Office Rent</label
                         >
                         <div class="expense-fields mt-2" style="display: none">
-                          <div class="row g-3">
-                            <div class="col-12 col-md-6">
-                              <label
-                                class="form-label"
-                                for="officeRent"
-                                >Amount</label
-                              >
-                              <input
-                                type="number"
-                                class="form-control mb-3"
-                                name="officeRent"
-                                id="officeRent"
-                                placeholder="Enter amount"
-                              />
-                            </div>
-                            <div class="col-12 col-md-6">
-                              <label
-                                class="form-label"
-                                for="officeRentAttachment"
-                                >Attachment</label
-                              >
-                              <input
-                                type="file"
-                                class="form-control mb-3"
-                                name="officeRentAttachment"
-                                id="officeRentAttachment"
-                              />
-                            </div>
+                          
+                          <div class="table-responsive">
+                            <table
+                              class="table table-bordered mt-3"
+                              id="officeRentTable"
+                            >
+                              <thead>
+                                <tr>
+                                  <th>Details</th>
+                                  <th>Amount</th>
+                                  <th>Attach File</th>
+                                  <th>Actions</th>
+                                </tr>
+                              </thead>
+                              <tbody id="officeRentTableBody">
+                                <!-- Initial Row -->
+                                <tr>
+                                  <td>
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      name="officeRentFeeDetails[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="number"
+                                      class="form-control"
+                                      name="officeRentFeeAmount[0]"
+                                      placeholder="Enter amount"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="file"
+                                      class="form-control"
+                                      name="officeRentFeeAttachment[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <button
+                                      type="button"
+                                      class="remove-officeRentFee btn btn-sm btn-danger"
+                                    >
+                                      Remove
+                                    </button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
                           </div>
+                          <button
+                            type="button"
+                            class="btn btn-sm ms-auto add-btn"
+                            id="addOfficeRentFee"
+                          >
+                            Add More
+                          </button>
                         </div>
                       </div>
 
@@ -5823,39 +5881,63 @@
                         >
 
                         <div class="expense-fields mt-2" style="display: none">
-                          <div class="row g-3">
-                            <!-- details -->
-                            <div class="col-12">
-                              <label class="form-label">Details of the Service</label>
-                              <textarea
-                                type="text"
-                                class="form-control"
-                                name="serviceFeeDetails"
-                                rows="1"
-                              ></textarea>
-                            </div>
-                            <!-- Amount -->
-                            <div class="col-md-6">
-                              <label for="serviceFeeAmount" class="form-label">Amount</label>
-                              <input
-                                type="text"
-                                class="form-control"
-                                name="serviceFeeAmount"
-                                id="serviceFeeAmount"
-                              />
-                            </div>
-                            <!-- Attachment -->
-                            <div class="col-md-6">
-                              <label for="serviceFeeAttachment" class="form-label">Attachment</label>
-                              <input
-                                type="file"
-                                class="form-control"
-                                name="serviceFeeAttachment"
-                                id="serviceFeeAttachment"
-                              />
-                            </div>
+                          <div class="table-responsive">
+                            <table
+                              class="table table-bordered mt-3"
+                              id="serviceFeeTable"
+                            >
+                              <thead>
+                                <tr>
+                                  <th>Details</th>
+                                  <th>Amount</th>
+                                  <th>Attach File</th>
+                                  <th>Actions</th>
+                                </tr>
+                              </thead>
+                              <tbody id="serviceFeeTableBody">
+                                <!-- Initial Row -->
+                                <tr>
+                                  <td>
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      name="serviceFeeDetails[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="number"
+                                      class="form-control"
+                                      name="serviceFeeAmount[0]"
+                                      placeholder="Enter amount"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="file"
+                                      class="form-control"
+                                      name="serviceFeeAttachment[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <button
+                                      type="button"
+                                      class="remove-serviceFee btn btn-sm btn-danger"
+                                    >
+                                      Remove
+                                    </button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
                           </div>
-
+                          <button
+                            type="button"
+                            class="btn btn-sm ms-auto add-btn"
+                            id="addserviceFee"
+                          >
+                            Add More
+                          </button>
                         </div>
                       </div>
 
@@ -5871,26 +5953,63 @@
                           >Medical Centre Fee</label
                         >
                         <div class="expense-fields mt-2" style="display: none">
-                          <div class="row g-3">
-                            <div class="col-12 col-md-6">
-                              <label for="medicalCentreFee" class="d-block mb-2">Fee</label>
-                              <input
-                                type="number"
-                                class="form-control"
-                                name="medicalCentreFee"
-                                id="medicalCentreFee"
-                                placeholder="Enter amount"
-                              />
-                            </div>
-                            <div class="col-12 col-md-6">
-                              <label for="medicalCentreFeeAttachment" class="d-block mb-2">Attachment</label>
-                              <input
-                                type="file"
-                                class="form-control mt-2"
-                                name="medicalCentreFeeAttachment"
-                              />
-                            </div>
+                          <div class="table-responsive">
+                            <table
+                              class="table table-bordered mt-3"
+                              id="medicalCentreFeeTable"
+                            >
+                              <thead>
+                                <tr>
+                                  <th>Details</th>
+                                  <th>Amount</th>
+                                  <th>Attach File</th>
+                                  <th>Actions</th>
+                                </tr>
+                              </thead>
+                              <tbody id="medicalCentreFeeTableBody">
+                                <!-- Initial Row -->
+                                <tr>
+                                  <td>
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      name="medicalCentreFeeDetails[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="number"
+                                      class="form-control"
+                                      name="medicalCentreFeeAmount[0]"
+                                      placeholder="Enter amount"
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="file"
+                                      class="form-control"
+                                      name="medicalCentreFeeAttachment[0]"
+                                    />
+                                  </td>
+                                  <td>
+                                    <button
+                                      type="button"
+                                      class="remove-medicalCentreFee btn btn-sm btn-danger"
+                                    >
+                                      Remove
+                                    </button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
                           </div>
+                          <button
+                            type="button"
+                            class="btn btn-sm ms-auto add-btn"
+                            id="addmedicalCentreFee"
+                          >
+                            Add More
+                          </button>
                         </div>
                       </div>
 
