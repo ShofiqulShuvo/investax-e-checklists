@@ -82,24 +82,9 @@ document.getElementById("urgent").addEventListener("change", function () {
     toggleEmployeeMessage();
   });
   
-  // show hide based on gst yes and no
-  document
-    .querySelectorAll('input[name="soleTraderRegisterForGst"]')
-    .forEach(function (radio) {
-      radio.addEventListener("change", function () {
-        const gstContent = document.getElementById(
-          "soleTraderRegisterForGstContent"
-        );
   
-        if (this.value === "yes") {
-          gstContent.style.display = "block";
-        } else if (this.value === "no") {
-          gstContent.style.display = "none";
-        }
-      });
-    });
-  
-  // show hide based on gst
+  // show hide based on Provide Software details or Excel Summary / Or Use My Own Number
+
   document
     .querySelectorAll('input[name="soleTraderRegisterForGst"]')
     .forEach(function (radio) {
@@ -122,8 +107,10 @@ document.getElementById("urgent").addEventListener("change", function () {
         }
       });
     });
-  // show hide based on gst end
+  // show hide based on Provide Software details or Excel Summary / Or Use My Own Number end
   
+
+  // for other income
   document.addEventListener("DOMContentLoaded", function () {
     // Initialize the index for other income rows
     let otherIncomeIndex = 1;
@@ -148,6 +135,9 @@ document.getElementById("urgent").addEventListener("change", function () {
         </td>
         <td>
           <input id="otherIncomeAmount" type="number" name="otherIncomeAmount[${otherIncomeIndex}]" class="form-control">
+        </td>
+        <td>
+          <input id="otherIncomeAttachment" type="file" name="otherIncomeAttachment[${otherIncomeIndex}]" class="form-control">
         </td>
         <td>
           <button class="my-auto remove-other-income btn btn-sm btn-danger">remove</button>
@@ -187,6 +177,77 @@ document.getElementById("urgent").addEventListener("change", function () {
       });
     });
   });
+  
+
+  // for otherIncomeAmount
+  document.addEventListener("DOMContentLoaded", function () {
+    // Initialize the index for other income rows
+    let otherIncomeAmountIndex = 1;
+  
+    // Get the table body element where rows will be added/removed
+    const otherIncomeAmountTableBody = document.getElementById("otherIncomeAmountTableBody");
+  
+    // Get the button element that adds a new row
+    const addotherIncomeAmountRowButton = document.getElementById(
+      "add-otherIncomeAmount"
+    );
+  
+    // Function to add a new row to the table
+    function addotherIncomeAmountRow() {
+      // Create a new table row element
+      const newRow = document.createElement("tr");
+  
+      // Set the inner HTML of the new row with the correct index values for name attributes
+      newRow.innerHTML = `
+        <td>
+          <textarea rows="1" class="form-control mb-0" name="otherIncomeAmountDetails[${otherIncomeAmountIndex}]"></textarea>
+        </td>
+        <td>
+          <input id="otherIncomeAmountAmount" type="number" name="otherIncomeAmountAmount[${otherIncomeAmountIndex}]" class="form-control">
+        </td>
+        <td>
+          <input id="otherIncomeAmountAttachment" type="file" name="otherIncomeAmountAttachment[${otherIncomeAmountIndex}]" class="form-control">
+        </td>
+        <td>
+          <button class="my-auto remove-otherIncomeAmount btn btn-sm btn-danger">remove</button>
+        </td>
+      `;
+  
+      // Append the new row to the table body
+      otherIncomeAmountTableBody.appendChild(newRow);
+  
+      // Add event listener for the remove button in the new row
+      newRow
+        .querySelector(".remove-otherIncomeAmount")
+        .addEventListener("click", function () {
+          removeotherIncomeAmountRow(newRow);
+        });
+  
+      // Increment the index for the next row
+      otherIncomeAmountIndex++;
+    }
+  
+    // Function to remove a row from the table
+    function removeotherIncomeAmountRow(row) {
+      // Remove the specified row from the table body
+      otherIncomeAmountTableBody.removeChild(row);
+  
+      // Optionally, you can update the otherIncomeAmountIndex or leave it as is to avoid re-indexing
+      // updateRowIndexes();
+    }
+  
+    // Add event listener to the "Add" button to add a new row when clicked
+    addotherIncomeAmountRowButton.addEventListener("click", addotherIncomeAmountRow);
+  
+    // Initialize event listeners for existing remove buttons
+    document.querySelectorAll(".remove-otherIncomeAmount").forEach((button) => {
+      button.addEventListener("click", function () {
+        removeotherIncomeAmountRow(button.closest("tr"));
+      });
+    });
+  });
+
+
   
   // This script listens for changes in the radio buttons asking if the user had an Employee Share/Option Scheme.
   // If "Yes" is selected, the fields for employer name, amount, and attachment are shown.
@@ -633,7 +694,163 @@ document.getElementById("urgent").addEventListener("change", function () {
     toggleFields("officeTableActualCheckbox", "officeTableActualFields");
     // Repeat for other checkboxes in the actual cost method
   });
+
+
+  // for home office fixed rate additional deduction other fields
+// Initialize index for additional rows
+let fixedRateOtherExpensesRowIndex = 0; // Start index at 0 for the initial row
+
+// Function to handle removing a row
+  function removeRow(event) {
+    const row = event.target.closest('tr'); // Get the closest <tr> element
+    if (row) {
+      row.remove(); // Remove the row
+    }
+  }
+
+  // Set up the initial row's remove button
+  document.querySelectorAll(".remove-fixedRateOtherExpenses").forEach(button => {
+    button.addEventListener("click", removeRow);
+  });
+
+  // Function to handle adding new rows
+  document.getElementById("add-fixedRateOtherExpenses").addEventListener("click", function () {
+    let tableBody = document.getElementById("fixedRateOtherExpensesTableBody");
+
+    // Increment the row index
+    fixedRateOtherExpensesRowIndex++;
+
+    // Create a new row
+    let newRow = document.createElement("tr");
+
+    // Define the cells with input elements
+    let detailsCell = document.createElement("td");
+    let amountCell = document.createElement("td");
+    let attachmentCell = document.createElement("td");
+    let actionsCell = document.createElement("td");
+
+    // Create input elements for each cell
+    let detailsInput = document.createElement("textarea");
+    detailsInput.rows = 1;
+    detailsInput.className = "form-control mb-0";
+    detailsInput.name = `fixedRateOtherExpensesDetails[${fixedRateOtherExpensesRowIndex}]`;
+
+    let amountInput = document.createElement("input");
+    amountInput.type = "number";
+    amountInput.className = "form-control";
+    amountInput.name = `fixedRateOtherExpensesAmount[${fixedRateOtherExpensesRowIndex}]`;
+
+    let attachmentInput = document.createElement("input");
+    attachmentInput.type = "file";
+    attachmentInput.className = "form-control";
+    attachmentInput.name = `fixedRateOtherExpensesAttachment[${fixedRateOtherExpensesRowIndex}]`;
+
+    // Create remove button for the new row
+    let removeButton = document.createElement("button");
+    removeButton.type = "button";
+    removeButton.className = "remove-fixedRateOtherExpenses btn btn-danger btn-sm";
+    removeButton.innerText = "Remove";
+
+    // Add event listener to remove the row
+    removeButton.addEventListener("click", removeRow);
+
+    // Append inputs to their respective cells
+    detailsCell.appendChild(detailsInput);
+    amountCell.appendChild(amountInput);
+    attachmentCell.appendChild(attachmentInput);
+    actionsCell.appendChild(removeButton);
+
+    // Append cells to the new row
+    newRow.appendChild(detailsCell);
+    newRow.appendChild(amountCell);
+    newRow.appendChild(attachmentCell);
+    newRow.appendChild(actionsCell);
+
+    // Append the new row to the table body
+    tableBody.appendChild(newRow);
+  });
+
+  // for home office fixed rate additional deduction other fields end
+
+
+
+  // for home office Actual Cost Method additional deduction other fields
+  // Initialize index for additional rows
+let actualCostOtherExpensesRowIndex = 0; // Start index at 0 for the initial row
+
+// Function to handle removing a row
+function removeRow(event) {
+  const row = event.target.closest('tr'); // Get the closest <tr> element
+  if (row) {
+    row.remove(); // Remove the row
+  }
+}
+
+// Set up the initial row's remove button
+document.querySelectorAll(".remove-actualCostOtherExpenses").forEach(button => {
+  button.addEventListener("click", removeRow);
+});
+
+// Function to handle adding new rows
+document.getElementById("add-actualCostOtherExpenses").addEventListener("click", function () {
+  let tableBody = document.getElementById("actualCostOtherExpensesTableBody");
+
+  // Increment the row index
+  actualCostOtherExpensesRowIndex++;
+
+  // Create a new row
+  let newRow = document.createElement("tr");
+
+  // Define the cells with input elements
+  let detailsCell = document.createElement("td");
+  let amountCell = document.createElement("td");
+  let attachmentCell = document.createElement("td");
+  let actionsCell = document.createElement("td");
+
+  // Create input elements for each cell
+  let detailsInput = document.createElement("textarea");
+  detailsInput.rows = 1;
+  detailsInput.className = "form-control mb-0";
+  detailsInput.name = `actualCostOtherExpensesDetails[${actualCostOtherExpensesRowIndex}]`;
+
+  let amountInput = document.createElement("input");
+  amountInput.type = "number";
+  amountInput.className = "form-control";
+  amountInput.name = `actualCostOtherExpensesAmount[${actualCostOtherExpensesRowIndex}]`;
+
+  let attachmentInput = document.createElement("input");
+  attachmentInput.type = "file";
+  attachmentInput.className = "form-control";
+  attachmentInput.name = `actualCostOtherExpensesAttachment[${actualCostOtherExpensesRowIndex}]`;
+
+  // Create remove button for the new row
+  let removeButton = document.createElement("button");
+  removeButton.type = "button";
+  removeButton.className = "remove-actualCostOtherExpenses btn btn-danger btn-sm";
+  removeButton.innerText = "Remove";
+
+  // Add event listener to remove the row
+  removeButton.addEventListener("click", removeRow);
+
+  // Append inputs to their respective cells
+  detailsCell.appendChild(detailsInput);
+  amountCell.appendChild(amountInput);
+  attachmentCell.appendChild(attachmentInput);
+  actionsCell.appendChild(removeButton);
+
+  // Append cells to the new row
+  newRow.appendChild(detailsCell);
+  newRow.appendChild(amountCell);
+  newRow.appendChild(attachmentCell);
+  newRow.appendChild(actionsCell);
+
+  // Append the new row to the table body
+  tableBody.appendChild(newRow);
+});
+  // for home office Actual Cost Method additional deduction other fields end
   
+
+
   // calculate and update Home Office expenses on fixed rate method
   document.addEventListener('DOMContentLoaded', function() {
     const hoursPerDayInput = document.getElementById('hoursPerDay');
@@ -725,112 +942,162 @@ document.getElementById("urgent").addEventListener("change", function () {
     );
   });
   
+
+  
   // interest receiverd
-  // Initialize index for additional rows
-  let interestReceivedRowIndex = 1; // Start index at 1 since there's already one row
+// Initialize index for additional rows
+let interestReceivedRowIndex = 1; // Start index at 1 since there's already one row
+
+// Function to handle joint account checkbox toggle
+function handleJointAccountToggle(checkbox, jointAccountHolderInfo) {
+  checkbox.addEventListener("change", function () {
+    if (checkbox.checked) {
+      jointAccountHolderInfo.style.display = "block";
+    } else {
+      jointAccountHolderInfo.style.display = "none";
+    }
+  });
+}
+
+// Apply joint account toggle functionality to the initial row
+window.onload = function() {
+  // Get all joint account checkboxes
+  const jointAccountInputs = document.querySelectorAll('input[name^="interestReceivedJointAccount"]');
   
-  document
-    .getElementById("add-interest-row")
-    .addEventListener("click", function () {
-      let tableBody = document.getElementById("interestReceivedTableBody");
-  
-      // Increment the row index
-      interestReceivedRowIndex++;
-  
-      // Create a new row
-      let newRow = document.createElement("tr");
-  
-      // Define the cells with input elements
-      let bankNameCell = document.createElement("td");
-      let accountNumberCell = document.createElement("td");
-      let totalInterestCell = document.createElement("td");
-      let tfnWithholdingCell = document.createElement("td");
-      let jointAccountCell = document.createElement("td");
-      let attachmentCell = document.createElement("td");
-      let actionsCell = document.createElement("td"); // Cell for actions
-  
-      // Create input elements for each cell
-      let bankNameInput = document.createElement("input");
-      let accountNumberInput = document.createElement("input");
-      let totalInterestInput = document.createElement("input");
-      let tfnWithholdingInput = document.createElement("input");
-      let jointAccountInput = document.createElement("input");
-      let jointAccountLabel = document.createElement("label");
-      let attachmentInput = document.createElement("input");
-  
-      // Set attributes for each input element
-      bankNameInput.type = "text";
-      bankNameInput.className = "form-control";
-      bankNameInput.name = `interestReceivedBankName[${interestReceivedRowIndex}]`;
-  
-      accountNumberInput.type = "text";
-      accountNumberInput.className = "form-control";
-      accountNumberInput.name = `interestReceivedAccountNumber[${interestReceivedRowIndex}]`;
-  
-      totalInterestInput.type = "text";
-      totalInterestInput.className = "form-control";
-      totalInterestInput.name = `interestReceivedTotalInterest[${interestReceivedRowIndex}]`;
-  
-      tfnWithholdingInput.type = "text";
-      tfnWithholdingInput.className = "form-control";
-      tfnWithholdingInput.name = `interestReceivedTfnWithholding[${interestReceivedRowIndex}]`;
-  
-      jointAccountInput.type = "checkbox";
-      jointAccountInput.className = "form-check-input";
-      jointAccountInput.name = `interestReceivedJointAccount[${interestReceivedRowIndex}]`;
-      jointAccountInput.id = `interestReceivedJointAccount[${interestReceivedRowIndex}]`;
-  
-      jointAccountLabel.setAttribute("for", jointAccountInput.id);
-      jointAccountLabel.innerText = "Yes";
-  
-      attachmentInput.type = "file";
-      attachmentInput.className = "form-control";
-      attachmentInput.name = `interestReceivedAttachment[${interestReceivedRowIndex}]`;
-      attachmentInput.id = `interestReceivedAttachment[${interestReceivedRowIndex}]`;
-  
-      // Create a flex container for the checkbox and label
-      let flexContainer = document.createElement("div");
-      flexContainer.className =
-        "d-flex justify-content-center align-items-center gap-1";
-      flexContainer.appendChild(jointAccountInput);
-      flexContainer.appendChild(jointAccountLabel);
-  
-      // Append inputs to their respective cells
-      bankNameCell.appendChild(bankNameInput);
-      accountNumberCell.appendChild(accountNumberInput);
-      totalInterestCell.appendChild(totalInterestInput);
-      tfnWithholdingCell.appendChild(tfnWithholdingInput);
-      jointAccountCell.appendChild(flexContainer);
-      attachmentCell.appendChild(attachmentInput);
-  
-      // Create remove button
-      let removeButton = document.createElement("button");
-      removeButton.className = "remove-btn btn btn-sm btn-danger";
-      removeButton.type = "button";
-      removeButton.innerHTML = "remove";
-  
-      // Add event listener to remove the row
-      removeButton.addEventListener("click", function () {
-        newRow.remove();
-      });
-  
-      // Append remove button to actions cell
-      actionsCell.appendChild(removeButton);
-  
-      // Append cells to the new row
-      newRow.appendChild(bankNameCell);
-      newRow.appendChild(accountNumberCell);
-      newRow.appendChild(totalInterestCell);
-      newRow.appendChild(tfnWithholdingCell);
-      newRow.appendChild(jointAccountCell);
-      newRow.appendChild(attachmentCell);
-      newRow.appendChild(actionsCell); // Append actions cell
-  
-      // Append the new row to the table body
-      tableBody.appendChild(newRow);
-    });
-  
-  // interest receiverd end
+  // Loop through each checkbox and its associated joint account holder info
+  jointAccountInputs.forEach((checkbox, index) => {
+    // Get the corresponding joint account holder info based on the structure of your HTML
+    const jointAccountHolderInfo = checkbox.closest('td').querySelector('#jointAccountHolderInfo');
+    
+    // Apply the toggle function to each row
+    handleJointAccountToggle(checkbox, jointAccountHolderInfo);
+  });
+};
+
+
+// Function to add a new row
+document.getElementById("add-interest-row").addEventListener("click", function () {
+  let tableBody = document.getElementById("interestReceivedTableBody");
+
+  // Increment the row index
+  interestReceivedRowIndex++;
+
+  // Create a new row
+  let newRow = document.createElement("tr");
+
+  // Define the cells with input elements
+  let bankNameCell = document.createElement("td");
+  let accountNumberCell = document.createElement("td");
+  let totalInterestCell = document.createElement("td");
+  let tfnWithholdingCell = document.createElement("td");
+  let jointAccountCell = document.createElement("td");
+  let attachmentCell = document.createElement("td");
+  let actionsCell = document.createElement("td"); // Cell for actions
+
+  // Create input elements for each cell
+  let bankNameInput = document.createElement("input");
+  let accountNumberInput = document.createElement("input");
+  let totalInterestInput = document.createElement("input");
+  let tfnWithholdingInput = document.createElement("input");
+  let jointAccountInput = document.createElement("input");
+  let jointAccountLabel = document.createElement("label");
+  let attachmentInput = document.createElement("input");
+
+  // Set attributes for each input element
+  bankNameInput.type = "text";
+  bankNameInput.className = "form-control";
+  bankNameInput.name = `interestReceivedBankName[${interestReceivedRowIndex}]`;
+
+  accountNumberInput.type = "text";
+  accountNumberInput.className = "form-control";
+  accountNumberInput.name = `interestReceivedAccountNumber[${interestReceivedRowIndex}]`;
+
+  totalInterestInput.type = "text";
+  totalInterestInput.className = "form-control";
+  totalInterestInput.name = `interestReceivedTotalInterest[${interestReceivedRowIndex}]`;
+
+  tfnWithholdingInput.type = "text";
+  tfnWithholdingInput.className = "form-control";
+  tfnWithholdingInput.name = `interestReceivedTfnWithholding[${interestReceivedRowIndex}]`;
+
+  jointAccountInput.type = "checkbox";
+  jointAccountInput.className = "form-check-input";
+  jointAccountInput.name = `interestReceivedJointAccount[${interestReceivedRowIndex}]`;
+  jointAccountInput.id = `interestReceivedJointAccount[${interestReceivedRowIndex}]`;
+
+  jointAccountLabel.setAttribute("for", jointAccountInput.id);
+  jointAccountLabel.innerText = "Yes";
+
+  attachmentInput.type = "file";
+  attachmentInput.className = "form-control";
+  attachmentInput.name = `interestReceivedAttachment[${interestReceivedRowIndex}]`;
+  attachmentInput.id = `interestReceivedAttachment[${interestReceivedRowIndex}]`;
+
+  // Create a flex container for the checkbox and label
+  let flexContainer = document.createElement("div");
+  flexContainer.className = "d-flex justify-content-start align-items-center gap-1";
+  flexContainer.appendChild(jointAccountInput);
+  flexContainer.appendChild(jointAccountLabel);
+
+  // Create the joint account holder info section (hidden by default)
+  let jointAccountHolderInfo = document.createElement("div");
+  jointAccountHolderInfo.className = "mt-2";
+  jointAccountHolderInfo.style.display = "none";
+  jointAccountHolderInfo.innerHTML = `
+    <label class="mb-2 d-block" style="font-size: .85rem;">
+      Please Provide Joint Account Holder name, Percentage and the Total Interest Received
+    </label>
+    <textarea class="form-control mb-0" name="joint-account-details[${interestReceivedRowIndex}]" rows="1" ></textarea>
+  `;
+
+  // Apply toggle functionality to the new checkbox
+  handleJointAccountToggle(jointAccountInput, jointAccountHolderInfo);
+
+  // Append inputs to their respective cells
+  bankNameCell.appendChild(bankNameInput);
+  accountNumberCell.appendChild(accountNumberInput);
+  totalInterestCell.appendChild(totalInterestInput);
+  tfnWithholdingCell.appendChild(tfnWithholdingInput);
+  jointAccountCell.appendChild(flexContainer);
+  jointAccountCell.appendChild(jointAccountHolderInfo);
+  attachmentCell.appendChild(attachmentInput);
+
+  // Create remove button
+  let removeButton = document.createElement("button");
+  removeButton.className = "remove-interest-row remove-btn btn btn-sm btn-danger";
+  removeButton.type = "button";
+  removeButton.innerHTML = "remove";
+
+  // Add event listener to remove the row
+  removeButton.addEventListener("click", function () {
+    newRow.remove();
+  });
+
+  // Append remove button to actions cell
+  actionsCell.appendChild(removeButton);
+
+  // Append cells to the new row
+  newRow.appendChild(bankNameCell);
+  newRow.appendChild(accountNumberCell);
+  newRow.appendChild(totalInterestCell);
+  newRow.appendChild(tfnWithholdingCell);
+  newRow.appendChild(jointAccountCell);
+  newRow.appendChild(attachmentCell);
+  newRow.appendChild(actionsCell); // Append actions cell
+
+  // Append the new row to the table body
+  tableBody.appendChild(newRow);
+});
+
+// Add functionality to remove existing rows
+document.querySelectorAll(".remove-interest-row").forEach(function (button) {
+  button.addEventListener("click", function () {
+    button.closest("tr").remove();
+  });
+});
+
+// interest receiverd end
+
   
   // dividents
   
@@ -900,6 +1167,9 @@ document.getElementById("urgent").addEventListener("change", function () {
       toggleDividendRecievedOwnFigures
     );
   });
+
+
+
   
   // Initialize index for additional rows
   let dividendsRowIndex = 0;
@@ -984,6 +1254,7 @@ document.getElementById("urgent").addEventListener("change", function () {
       // Append the new row to the table body
       tableBody.appendChild(newRow);
     });
+
   
   // dividents end
   
@@ -1073,6 +1344,93 @@ document.getElementById("urgent").addEventListener("change", function () {
       });
   });
   // add remove other work relation expenses end
+  
+  // add remove other  expenses
+  document.addEventListener("DOMContentLoaded", function () {
+    // Initialize index for additional rows
+    let otherWorkOtherExpensesRowIndex = 0;
+  
+    // Function to add a new expense row
+    document
+      .getElementById("add-otherWorkOtherExpenses")
+      ?.addEventListener("click", function () {
+        let tableBody = document.getElementById(
+          "otherWorkOtherExpensesTableBody"
+        );
+  
+        // Increment the row index
+        otherWorkOtherExpensesRowIndex++;
+  
+        // Create a new row
+        let newRow = document.createElement("tr");
+  
+        // Define the cells with input elements
+        let detailsCell = document.createElement("td");
+        let amountCell = document.createElement("td");
+        let attachmentCell = document.createElement("td");
+        let actionsCell = document.createElement("td");
+  
+        // Create input elements for each cell
+        let detailsInput = document.createElement("textarea");
+        let amountInput = document.createElement("input");
+        let attachmentInput = document.createElement("input");
+  
+        // Set attributes for each input element
+        detailsInput.rows = 1;
+        detailsInput.className = "form-control mb-0";
+        detailsInput.name = `otherWorkOtherExpensesDetails[${otherWorkOtherExpensesRowIndex}]`;
+  
+        amountInput.type = "text";
+        amountInput.className = "form-control";
+        amountInput.name = `otherWorkOtherExpensesAmount[${otherWorkOtherExpensesRowIndex}]`;
+  
+        attachmentInput.type = "file";
+        attachmentInput.className = "form-control";
+        attachmentInput.name = `otherWorkOtherExpensesAttachment[${otherWorkOtherExpensesRowIndex}]`;
+  
+        // Append inputs to their respective cells
+        detailsCell.appendChild(detailsInput);
+        amountCell.appendChild(amountInput);
+        attachmentCell.appendChild(attachmentInput);
+  
+        // Create remove button
+        let removeButton = document.createElement("button");
+        removeButton.className =
+          "remove-otherWorkOtherExpenses btn btn-danger btn-sm";
+        removeButton.type = "button";
+        removeButton.innerHTML = "Remove";
+  
+        // Add event listener to remove the row
+        removeButton.addEventListener("click", function () {
+          newRow.remove();
+        });
+  
+        // Append remove button to actions cell
+        actionsCell.appendChild(removeButton);
+  
+        // Append cells to the new row
+        newRow.appendChild(detailsCell);
+        newRow.appendChild(amountCell);
+        newRow.appendChild(attachmentCell);
+        newRow.appendChild(actionsCell);
+  
+        // Append the new row to the table body
+        tableBody.appendChild(newRow);
+      });
+  
+    // Function to handle the removal of an expense row
+    document
+      .getElementById("otherWorkOtherExpensesTable")
+      ?.addEventListener("click", function (event) {
+        if (
+          event.target &&
+          event.target.classList.contains("remove-otherWorkOtherExpenses")
+        ) {
+          event.target.closest("tr").remove();
+        }
+      });
+  });
+  // add remove other expenses end
   
   // show hide gift and donations
   document.addEventListener("DOMContentLoaded", function () {
@@ -1345,6 +1703,84 @@ document.getElementById("urgent").addEventListener("change", function () {
       }
     });
   // add delete row for any other expenses end
+  
+  // add delete row for other in  any other expenses
+   // Initialize index for additional rows
+   let anyOtherExpensesRowIndex = 0; // Start index at 0 for the initial row
+
+   // Function to handle removing a row
+   function removeRow(event) {
+     const row = event.target.closest('tr'); // Get the closest <tr> element
+     if (row) {
+       row.remove(); // Remove the row
+     }
+   }
+ 
+   // Set up the initial row's remove button
+   document.querySelectorAll(".remove-anyOtherExpensesOtherExpenses").forEach(button => {
+     button.addEventListener("click", removeRow);
+   });
+ 
+   // Function to handle adding new rows
+   document.getElementById("add-anyOtherExpensesOtherExpenses").addEventListener("click", function () {
+     let tableBody = document.getElementById("anyOtherExpensesOtherExpensesTableBody");
+ 
+     // Increment the row index
+     anyOtherExpensesRowIndex++;
+ 
+     // Create a new row
+     let newRow = document.createElement("tr");
+ 
+     // Define the cells with input elements
+     let detailsCell = document.createElement("td");
+     let amountCell = document.createElement("td");
+     let attachmentCell = document.createElement("td");
+     let actionsCell = document.createElement("td");
+ 
+     // Create input elements for each cell
+     let detailsInput = document.createElement("input");
+     detailsInput.type = "text";
+     detailsInput.className = "form-control";
+     detailsInput.name = `anyOtherExpensesOtherExpensesDetails[${anyOtherExpensesRowIndex}]`;
+ 
+     let amountInput = document.createElement("input");
+     amountInput.type = "number";
+     amountInput.className = "form-control";
+     amountInput.name = `anyOtherExpensesOtherExpensesAmount[${anyOtherExpensesRowIndex}]`;
+     amountInput.placeholder = "Enter amount";
+ 
+     let attachmentInput = document.createElement("input");
+     attachmentInput.type = "file";
+     attachmentInput.className = "form-control";
+     attachmentInput.name = `anyOtherExpensesOtherExpensesAttachment[${anyOtherExpensesRowIndex}]`;
+ 
+     // Create remove button for the new row
+     let removeButton = document.createElement("button");
+     removeButton.type = "button";
+     removeButton.className = "my-auto remove-anyOtherExpensesOtherExpenses btn btn-sm btn-danger";
+     removeButton.innerText = "Remove";
+ 
+     // Add event listener to remove the row
+     removeButton.addEventListener("click", removeRow);
+ 
+     // Append inputs to their respective cells
+     detailsCell.appendChild(detailsInput);
+     amountCell.appendChild(amountInput);
+     attachmentCell.appendChild(attachmentInput);
+     actionsCell.appendChild(removeButton);
+ 
+     // Append cells to the new row
+     newRow.appendChild(detailsCell);
+     newRow.appendChild(amountCell);
+     newRow.appendChild(attachmentCell);
+     newRow.appendChild(actionsCell);
+ 
+     // Append the new row to the table body
+     tableBody.appendChild(newRow);
+   });
+  // add delete row for other in any other expenses end
+
+
   
   // Function to toggle the display of the attachment field based on radio button selection
   document.addEventListener("DOMContentLoaded", function () {
