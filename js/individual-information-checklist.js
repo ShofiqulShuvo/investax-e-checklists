@@ -616,6 +616,7 @@ document.getElementById("urgent").addEventListener("change", function () {
     const actualCostMethod = document.getElementById("actualCostMethod");
     const fixedRateFields = document.getElementById("fixedRateFields");
     const actualCostFields = document.getElementById("actualCostFields");
+    const aditionalDeductionFields = document.getElementById("home-aditional-deduction")
   
     homeOfficeExpensesYes.addEventListener("change", function () {
       if (this.checked) {
@@ -639,6 +640,7 @@ document.getElementById("urgent").addEventListener("change", function () {
       if (this.checked) {
         fixedRateFields.style.display = "block";
         actualCostFields.style.display = "none";
+        aditionalDeductionFields.style.display = "block";
       }
     });
   
@@ -646,6 +648,7 @@ document.getElementById("urgent").addEventListener("change", function () {
       if (this.checked) {
         fixedRateFields.style.display = "none";
         actualCostFields.style.display = "block";
+        aditionalDeductionFields.style.display = "block";
         const actualCostModal = new bootstrap.Modal(
           document.getElementById("actualCostModal")
         );
@@ -657,7 +660,7 @@ document.getElementById("urgent").addEventListener("change", function () {
       const checkbox = document.getElementById(checkboxId);
       const fields = document.getElementById(fieldsId);
   
-      checkbox.addEventListener("change", function () {
+      checkbox?.addEventListener("change", function () {
         if (this.checked) {
           fields.style.display = "block";
         } else {
@@ -792,7 +795,7 @@ document.querySelectorAll(".remove-actualCostOtherExpenses").forEach(button => {
 });
 
 // Function to handle adding new rows
-document.getElementById("add-actualCostOtherExpenses").addEventListener("click", function () {
+document.getElementById("add-actualCostOtherExpenses")?.addEventListener("click", function () {
   let tableBody = document.getElementById("actualCostOtherExpensesTableBody");
 
   // Increment the row index
@@ -3428,11 +3431,16 @@ document.querySelectorAll(".remove-interest-row").forEach(function (button) {
     const actualCostFields = document.getElementById(
       "selfEducationActualCostFields"
     );
+
+    const selfEducationHomeOfficeAditionalDeduction = document.getElementById(
+      "selfEducationAdditionalDeduction"
+    );
   
     fixedRateMethod.addEventListener("change", function () {
       if (fixedRateMethod.checked) {
         fixedRateFields.style.display = "block";
         actualCostFields.style.display = "none";
+        selfEducationHomeOfficeAditionalDeduction.style.display = "block";
       }
     });
   
@@ -3440,6 +3448,7 @@ document.querySelectorAll(".remove-interest-row").forEach(function (button) {
       if (actualCostMethod.checked) {
         fixedRateFields.style.display = "none";
         actualCostFields.style.display = "block";
+        selfEducationHomeOfficeAditionalDeduction.style.display = "block";
       }
     });
   });
