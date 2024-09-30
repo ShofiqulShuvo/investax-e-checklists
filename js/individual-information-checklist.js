@@ -4351,76 +4351,75 @@ document.querySelectorAll(".remove-interest-row").forEach(function (button) {
       });
     });
   
-  // Function to handle adding rows in the Income Protection Insurance table
-  function addIncomeProtectionInsuranceRow() {
-    const tableBody = document.getElementById(
-      "incomeProtectionInsuranceTableBody"
-    );
-    const rowCount = tableBody.children.length;
-  
-    // Create a new row
-    const newRow = document.createElement("tr");
-  
-    // Create and append each cell
-    const detailsCell = document.createElement("td");
-    const detailsInput = document.createElement("input");
-    detailsInput.type = "text";
-    detailsInput.className = "form-control";
-    detailsInput.name = `incomeProtectionInsuranceDetails[${rowCount}]`;
-    detailsCell.appendChild(detailsInput);
-  
-    const amountCell = document.createElement("td");
-    const amountInput = document.createElement("input");
-    amountInput.type = "number";
-    amountInput.className = "form-control";
-    amountInput.name = `incomeProtectionInsuranceAmount[${rowCount}]`;
-    amountInput.placeholder = "Enter amount";
-    amountCell.appendChild(amountInput);
-  
-    const attachmentCell = document.createElement("td");
-    const attachmentInput = document.createElement("input");
-    attachmentInput.type = "file";
-    attachmentInput.className = "form-control";
-    attachmentInput.name = `incomeProtectionInsuranceAttachment[${rowCount}]`;
-    attachmentCell.appendChild(attachmentInput);
-  
-    const actionsCell = document.createElement("td");
-    const removeButton = document.createElement("button");
-    removeButton.type = "button";
-    removeButton.className =
-      "remove-incomeProtectionInsurance btn btn-sm btn-danger";
-    removeButton.textContent = "Remove";
-    actionsCell.appendChild(removeButton);
-  
-    // Append cells to the new row
-    newRow.appendChild(detailsCell);
-    newRow.appendChild(amountCell);
-    newRow.appendChild(attachmentCell);
-    newRow.appendChild(actionsCell);
-  
-    // Append the new row to the table body
-    tableBody.appendChild(newRow);
-  
-    // Add event listener for the new remove button
-    removeButton.addEventListener("click", function () {
+
+// Function to handle adding rows in the Income Protection Insurance table
+function addIncomeProtectionInsuranceRow() {
+  const tableBody = document.getElementById("incomeProtectionInsuranceSoleTraderTableBody");
+  const rowCount = tableBody.children.length;
+
+  // Create a new row
+  const newRow = document.createElement("tr");
+
+  // Create and append each cell
+  const detailsCell = document.createElement("td");
+  const detailsInput = document.createElement("input");
+  detailsInput.type = "text";
+  detailsInput.className = "form-control";
+  detailsInput.name = `incomeProtectionInsuranceDetails[${rowCount}]`;
+  detailsCell.appendChild(detailsInput);
+
+  const amountCell = document.createElement("td");
+  const amountInput = document.createElement("input");
+  amountInput.type = "number";
+  amountInput.className = "form-control";
+  amountInput.name = `incomeProtectionInsuranceAmount[${rowCount}]`;
+  amountInput.placeholder = "Enter amount";
+  amountCell.appendChild(amountInput);
+
+  const attachmentCell = document.createElement("td");
+  const attachmentInput = document.createElement("input");
+  attachmentInput.type = "file";
+  attachmentInput.className = "form-control";
+  attachmentInput.name = `incomeProtectionInsuranceAttachment[${rowCount}]`;
+  attachmentCell.appendChild(attachmentInput);
+
+  const actionsCell = document.createElement("td");
+  const removeButton = document.createElement("button");
+  removeButton.type = "button";
+  removeButton.className = "remove-incomeProtectionInsurance btn btn-sm btn-danger";
+  removeButton.textContent = "Remove";
+  actionsCell.appendChild(removeButton);
+
+  // Append cells to the new row
+  newRow.appendChild(detailsCell);
+  newRow.appendChild(amountCell);
+  newRow.appendChild(attachmentCell);
+  newRow.appendChild(actionsCell);
+
+  // Append the new row to the table body
+  tableBody.appendChild(newRow);
+
+  // Add event listener for the new remove button
+  removeButton.addEventListener("click", function () {
       tableBody.removeChild(newRow);
-    });
-  }
-  
-  // Function to handle the click event of "Add More" button
-  document
-    .getElementById("addIncomeProtectionInsurance")
-    .addEventListener("click", addIncomeProtectionInsuranceRow);
-  
-  // Add event listeners for existing remove buttons on page load
-  document
-    .querySelectorAll(".remove-incomeProtectionInsurance")
-    .forEach((button) => {
+  });
+}
+
+// Function to handle the click event of "Add More" button
+document
+  .getElementById("addIncomeProtectionInsuranceInSoleTrader") // Corrected ID
+  .addEventListener("click", addIncomeProtectionInsuranceRow);
+
+// Add event listeners for existing remove buttons on page load
+document
+  .querySelectorAll(".remove-incomeProtectionInsurance")
+  .forEach((button) => {
       button.addEventListener("click", function () {
-        const row = this.closest("tr");
-        row.parentNode.removeChild(row);
+          const row = this.closest("tr");
+          row.parentNode.removeChild(row);
       });
-    });
+  });
+
   
   // Function to handle adding rows in the Protective Items table
   function addProtectiveItemsRow() {
