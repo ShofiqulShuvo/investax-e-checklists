@@ -32,29 +32,70 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function validateStep(step) {
-    const currentStepFields = document.querySelectorAll(
-      ".step.active input[required]"
-    );
+    const currentStepFields = document.querySelectorAll(".step.active input[required]");
+    const currentStepRadios = document.querySelectorAll(".step.active input[type='radio']");
     let isValid = true;
+
+    // Validate text inputs
     currentStepFields.forEach((field) => {
       if (!field.value.trim()) {
         isValid = false;
         const errorMessage = document.createElement("div");
         errorMessage.className = "text-danger";
         errorMessage.textContent = "Please fill out this field.";
-        const existingErrorMessage =
-          field.parentElement.querySelector(".text-danger");
+        const existingErrorMessage = field.parentElement.querySelector(".text-danger");
         if (!existingErrorMessage) {
           field.parentElement.appendChild(errorMessage);
         }
       } else {
-        const existingErrorMessage =
-          field.parentElement.querySelector(".text-danger");
+        const existingErrorMessage = field.parentElement.querySelector(".text-danger");
         if (existingErrorMessage) {
           existingErrorMessage.remove();
         }
       }
     });
+
+    // Validate radio buttons with visibility condition
+    const radioGroups = {};
+    currentStepRadios.forEach((radio) => {
+      const radioGroupName = radio.name;
+      const container = radio.closest(".form-check-inline").parentElement;
+
+      // Only validate if the container is visible
+      if (container.offsetParent !== null) {
+        if (!radioGroups[radioGroupName]) {
+          radioGroups[radioGroupName] = {
+            radios: [],
+            container: container
+          };
+        }
+        radioGroups[radioGroupName].radios.push(radio);
+      }
+    });
+
+    // Check each visible radio group
+    Object.keys(radioGroups).forEach((groupName) => {
+      const group = radioGroups[groupName];
+      const isChecked = group.radios.some((r) => r.checked);
+
+      if (!isChecked) {
+        isValid = false;
+        let errorMessage = group.container.querySelector(".text-danger");
+
+        if (!errorMessage) {
+          errorMessage = document.createElement("div");
+          errorMessage.className = "text-danger";
+          errorMessage.textContent = "Please select an option.";
+          group.container.appendChild(errorMessage);
+        }
+      } else {
+        const errorMessage = group.container.querySelector(".text-danger");
+        if (errorMessage) {
+          errorMessage.remove();
+        }
+      }
+    });
+
     return isValid;
   }
 
@@ -70,6 +111,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   showStep(currentStep);
 });
+
+
+
 
 // for otp modal
 document?.addEventListener("DOMContentLoaded", (event) => {
