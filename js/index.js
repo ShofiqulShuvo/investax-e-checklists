@@ -28,6 +28,10 @@ document.addEventListener("DOMContentLoaded", function () {
     if (validateStep(currentStep)) {
       currentStep++;
       showStep(currentStep);
+      window.scrollTo({
+        top: 0, 
+        behavior: 'smooth' // Smooth scroll effect when next button is clicked
+      });
     }
   }
 
@@ -103,6 +107,10 @@ document.addEventListener("DOMContentLoaded", function () {
     if (currentStep > 1) {
       currentStep--;
       showStep(currentStep);
+      window.scrollTo({
+        top: 0, 
+        behavior: 'smooth' // Smooth scroll effect when next button is clicked
+      });
     }
   }
 
