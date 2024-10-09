@@ -437,3 +437,32 @@ footer a {
 .otp-page .otp-field input::-webkit-outer-spin-button {
   display: none;
 }
+
+
+
+
+
+
+
+/* 
+Strategic
+Consultation
+Form
+*/
+
+#strategic-consultation-form table th {
+  font-size: .95rem;
+  font-weight: 500;
+}
+
+#strategic-consultation-form table td {
+  min-width: 110px;
+}
+
+#strategic-consultation-form table select {
+  -webkit-appearance: auto !important;
+  -moz-appearance: auto !important;
+  appearance: auto !important;
+  padding: .375rem .75rem .375rem .75rem !important;
+  background: no-repeat !important;
+}
