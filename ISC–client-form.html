@@ -872,7 +872,7 @@
                       <table id="employment-table" class="table table-bordered table-sm align-middle">
                         <thead>
                           <tr>
-                            <th class="align-middle">Client Name</th>
+                            <th class="align-middle">Buisness Name</th>
                             <th class="align-middle">Job Description</th>
                             <th class="align-middle">Salary</th>
                             <th class="align-middle">Bonuses</th>
@@ -885,7 +885,7 @@
                           <!-- Initial row -->
                           <tr>
                             <td>
-                              <input type="text" class="form-control" name="clientName[0]" />
+                              <input type="text" class="form-control" name="buisnessName[0]" />
                             </td>
                             <td>
                               <input type="text" class="form-control" name="jobDescription[0]" />
@@ -965,7 +965,7 @@
                             <td><input type="text" class="form-control" name="businessAssets[0]" /></td>
                             <td><input type="text" class="form-control" name="valueOfBusinessAssets[0]" placeholder="$000" /></td>
                             <td><input type="text" class="form-control" name="numOfEmployees[0]" /></td>
-                            <td><input type="text" class="form-control" name="dateStarted[0]" /></td>
+                            <td><input type="date" class="form-control" name="dateStarted[0]" /></td>
                             <td>
                               <button class="remove-business-row-btn btn btn-sm btn-danger" type="button">remove</button>
                             </td>
@@ -1056,7 +1056,7 @@
                                 <option value="Other">Other</option>
                               </select>
                             </td>
-                            <td><input type="text" class="form-control" name="dateOfPurchase[0]" /></td>
+                            <td><input type="date" class="form-control" name="dateOfPurchase[0]" /></td>
                             <td><input type="text" class="form-control" name="purchasePrice[0]" /></td>
                             <td><input type="text" class="form-control" name="currentMarketValue[0]" /></td>
                             <td><input type="text" class="form-control" name="debt[0]" /></td>
@@ -1167,18 +1167,12 @@
                                   class="form-select"
                                   name="PropertyType[0]"
                                 >
-                                  <option value="DiscretionaryTrust">
-                                    Discretionary Trust
-                                  </option>
-                                  <option value="UnitTrust">
-                                    Unit Trust
-                                  </option>
-                                  <option value="HybridTrust">
-                                    Hybrid Trust
-                                  </option>
-                                  <option value="SelfManagedSuperfund">
-                                    Self-Managed Superfund
-                                  </option>
+                                  <option value="House">House</option>
+                                  <option value="Apartment">Apartment</option>
+                                  <option value="Town-House">Town House</option>
+                                  <option value="Land">Land</option>
+                                  <option value="Commercial-Property">Commercial Property</option>
+                                  <option value="Other">Other</option>
                                 </select>
                               </td>
                               <td>
@@ -1344,7 +1338,7 @@
                           </td>
                           <td>
                             <input
-                              type="text"
+                              type="date"
                               class="form-control"
                               name="dateOfPurchase[0]"
                             />
@@ -1909,11 +1903,11 @@
 
               <!-- achieve over the timeframes -->
               <div class="mb-3">
-                <p class="lead mb-2">
+                <h4 class=" mb-2">
                   Please describe what you would like to achieve over the
                   following timeframes:
-                </p>
-                <textarea class="form-control" name="" id=""></textarea>
+                </h4>
+                <textarea class="form-control" rows="5" name="" id=""></textarea>
               </div>
 
               <!-- Short Term -->
@@ -2223,13 +2217,38 @@
 
               </div>
 
-              <!-- Notes and Diagrams -->
-              <div class="mb-3">
-                <p class="lead mb-2">Notes and Diagrams</p>
-                <textarea class="form-control" name="" id="" rows="5"></textarea>
-              </div>
               
             </div>
+            
+          </div>
+
+          <!-- Other Information -->
+          <div class="step">
+            <!-- heading -->
+            <div class="info-heading mb-5">
+              <h2 class="text-center mb-4">Strategic Consultation</h2>
+              <p class="lead text-center">
+                Other Information
+              </p>
+            </div>
+
+            <!-- form element -->
+            <div class="form-element border border-secondary-subtle rounded-3 p-5">
+              
+              <!-- relevent information -->
+              <div class="mb-3">
+                  <label for="releventInformation" class="form-label d-block">Please provide any additional information you believe is relevant to this conversation</label>
+                  <textarea class="form-control" rows="7" name="releventInformation" id="releventInformation"></textarea>
+              </div>
+              
+              <!-- Notes and Diagrams -->
+              <div class="mb-3">
+                  <label for="notesAndDiagrams" class="form-label d-block">Notes and Diagrams</label>
+                  <input id="notesAndDiagrams" type="file" class="form-control">
+              </div>
+
+            </div>
+
             
           </div>
 

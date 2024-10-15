@@ -371,7 +371,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const newRow = document.createElement('tr');
       newRow.innerHTML = `
           <td>
-              <input type="text" class="form-control" name="clientName[${employmentIndex}]" />
+              <input type="text" class="form-control" name="buisnessName[${employmentIndex}]" />
           </td>
           <td>
               <input type="text" class="form-control" name="jobDescription[${employmentIndex}]" />
@@ -452,7 +452,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <td><input type="text" class="form-control" name="businessAssets[${businessIndex}]" /></td>
       <td><input type="text" class="form-control" name="valueOfBusinessAssets[${businessIndex}]" placeholder="$000" /></td>
       <td><input type="text" class="form-control" name="numOfEmployees[${businessIndex}]" /></td>
-      <td><input type="text" class="form-control" name="dateStarted[${businessIndex}]" /></td>
+      <td><input type="date" class="form-control" name="dateStarted[${businessIndex}]" /></td>
       <td><button class="remove-business-row-btn btn btn-sm btn-danger" type="button">remove</button></td>
     `;
     document.getElementById('about-business').appendChild(newRow);
@@ -524,7 +524,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <option value="Other">Other</option>
         </select>
       </td>
-      <td><input type="text" class="form-control" name="dateOfPurchase[${propertyIndex}]" /></td>
+      <td><input type="date" class="form-control" name="dateOfPurchase[${propertyIndex}]" /></td>
       <td><input type="text" class="form-control" name="purchasePrice[${propertyIndex}]" /></td>
       <td><input type="text" class="form-control" name="currentMarketValue[${propertyIndex}]" /></td>
       <td><input type="text" class="form-control" name="debt[${propertyIndex}]" /></td>
@@ -717,7 +717,7 @@ document.addEventListener("DOMContentLoaded", function () {
               </select>
           </td>
           <td>
-              <input type="text" class="form-control" name="dateOfPurchase[${sharesFundsIndex}]" />
+              <input type="date" class="form-control" name="dateOfPurchase[${sharesFundsIndex}]" />
           </td>
           <td>
               <input type="text" class="form-control" name="totalValueOfPurchase[${sharesFundsIndex}]" />
