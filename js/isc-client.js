@@ -15,7 +15,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // Add input fields to the new row (using template literals for each column)
     newRow.innerHTML = `
       <td>
-        <input type="text" class="form-control" name="title[${clientIndex}]" />
+        <select class="form-control" name="title[${clientIndex}]">
+          <option value="Mr">Mr </option>
+          <option value="Ms">Ms</option>
+          <option value="Mrs">Mrs</option>
+        </select>
       </td>
       <td>
         <input type="text" class="form-control" name="firstName[${clientIndex}]" />
@@ -33,7 +37,15 @@ document.addEventListener("DOMContentLoaded", function () {
         </select>
       </td>
       <td>
-        <input type="text" class="form-control" name="relationship[${clientIndex}]" />
+        <select class="form-control" name="relationship[${clientIndex}]">
+          <option value="spouse">Spouse</option>
+          <option value="partner">Partner</option>
+          <option value="husband">Husband</option>
+          <option value="wife">Wife</option>
+          <option value="friend">Friend</option>
+          <option value="parents">Parents</option>
+          <option value="child">Child</option>
+        </select>
       </td>
       <td>
         <button
@@ -87,6 +99,15 @@ document.addEventListener("DOMContentLoaded", function () {
     newRow.innerHTML = `
       <td>
         <input type="text" class="form-control" name="address[${addressIndex}]" />
+      </td>
+      <td>
+        <input type="text" class="form-control" name="suburb[${addressIndex}]" />
+      </td>
+      <td>
+        <input type="text" class="form-control" name="postalCode[${addressIndex}]" />
+      </td>
+      <td>
+        <input type="text" class="form-control" name="state[${addressIndex}]" />
       </td>
       <td>
         <button class="remove-address-row-btn btn btn-sm btn-danger" type="button">Remove</button>
@@ -183,6 +204,29 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 // for contact details end
+
+
+// show hide Dependant Child’s Details
+document.addEventListener("DOMContentLoaded", function () {
+  const dependantChildDetails = document.getElementById("dependantChildDetails");
+  const dependantChildrenYes = document.getElementById("dependentChildrenYes");
+  const dependantChildrenNo = document.getElementById("dependentChildrenNo");
+
+  // Show dependant child details if "Yes" is selected
+  dependantChildrenYes.addEventListener("change", function () {
+    if (this.checked) {
+      dependantChildDetails.style.display = "block";
+    }
+  });
+
+  // Hide dependant child details if "No" is selected
+  dependantChildrenNo.addEventListener("change", function () {
+    if (this.checked) {
+      dependantChildDetails.style.display = "none";
+    }
+  });
+});
+// show hide Dependant Child’s Details end
 
 
 // for Dependant Child’s Details

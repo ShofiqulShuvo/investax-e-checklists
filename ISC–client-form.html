@@ -402,32 +402,15 @@
             <!-- heading -->
             <div class="info-heading mb-5">
               <h2 class="text-center mb-4">Strategic Consultation</h2>
-              <p class="lead text-center">
-                Client Information Form
-              </p>
+              <h4 class=" text-center">
+                What information and knowledge do you hope to gain from your consultation?
+              </h4>
             </div>
 
             <!-- form element -->
              <div class="form-element border border-secondary-subtle rounded-3 p-5">
-                <!-- Name of  Client -->
-                <div class="mb-5 d-block w-full ">
-                  <label class="form-check-label mb-1" for="client-name" >
-                    Name*
-                  </label>
-                  <input
-                    type="text"
-                    class="form-control w-full"
-                    id="client-name"
-                    placeholder="eg: John Doe"
-                    required
-                  />
-                </div>
-
                 <!-- desclaimer -->
                  <div>
-                  <h4 class="mb-3">
-                    What information and knowledge do you hope to gain from your consultation?
-                  </h4>
 
                     <!-- desclaimer group -->
                    <div class="lh-lg text-black mb-2">
@@ -517,7 +500,11 @@
                       <tbody id="clientDetailsTableBody">
                         <tr>
                           <td>
-                            <input type="text" class="form-control" name="title[0]" />
+                            <select class="form-control" name="title[0]">
+                              <option value="Mr">Mr </option>
+                              <option value="Ms">Ms</option>
+                              <option value="Mrs">Mrs</option>
+                            </select>
                           </td>
                           <td>
                             <input type="text" class="form-control" name="firstName[0]" />
@@ -535,7 +522,15 @@
                             </select>
                           </td>
                           <td>
-                            <input type="text" class="form-control" name="relationship[0]" />
+                            <select class="form-control" name="relationship[0]">
+                              <option value="spouse">Spouse</option>
+                              <option value="partner">Partner</option>
+                              <option value="husband">Husband</option>
+                              <option value="wife">Wife</option>
+                              <option value="friend">Friend</option>
+                              <option value="parents">Parents</option>
+                              <option value="child">Child</option>
+                            </select>
                           </td>
                           <td>
                             <button
@@ -560,51 +555,7 @@
                 
 
               </div>
-
-              <!-- ADDRESS -->
-              <div class="mb-3">
-                
-                <h5 class="mb-3">Address</h5>
-
-                <div>
-                  <div class="table-responsive">
-                    <table class="table table-bordered table-sm align-middle">
-                      <thead>
-                        <tr>
-                          <th>Address</th>
-                          <th>Action</th>
-                        </tr>
-                      </thead>
-                      <tbody id="addressDetailsTableBody">
-                        <!-- Address 1 -->
-                        <tr>
-                          <td>
-                            <input type="text" class="form-control" name="address[0]" />
-                          </td>
-                          <td>
-                            <button
-                              class="remove-address-row-btn btn btn-sm btn-danger"
-                              type="button"
-                            >
-                              Remove
-                            </button>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <button
-                    id="add-address-row"
-                    class="mb-3 add-btn ms-auto d-block btn btn-sm"
-                    type="button"
-                  >
-                    Add +
-                  </button>
-                </div>
-                
-
-              </div>
-
+              
               <!-- CONTACT DETAILS  -->
               <div class="mb-3">
 
@@ -654,11 +605,90 @@
 
               </div>
 
-              <!-- DEPENDANT CHILD'S DETAILS -->
+              <!-- ADDRESS -->
               <div class="mb-3">
-                <h5 class="mb-3">Dependant Child's Details</h5>
+                
+                <h5 class="mb-3">Address</h5>
 
                 <div>
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-sm align-middle">
+                      <thead>
+                        <tr>
+                          <th>Address</th>
+                          <th>Suburb</th>
+                          <th>Post Code</th>
+                          <th>State</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody id="addressDetailsTableBody">
+                        <!-- Address 1 -->
+                        <tr>
+                          <td>
+                            <input type="text" class="form-control" name="address[0]" />
+                          </td>
+                          <td>
+                            <input type="text" class="form-control" name="suburb[0]" />
+                          </td>
+                          <td>
+                            <input type="text" class="form-control" name="postalCode[0]" />
+                          </td>
+                          <td>
+                            <input type="text" class="form-control" name="state[0]" />
+                          </td>
+                          <td>
+                            <button
+                              class="remove-address-row-btn btn btn-sm btn-danger"
+                              type="button"
+                            >
+                              Remove
+                            </button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <button
+                    id="add-address-row"
+                    class="mb-3 add-btn ms-auto d-block btn btn-sm"
+                    type="button"
+                  >
+                    Add +
+                  </button>
+                </div>
+                
+
+              </div>
+
+              <!-- DEPENDANT CHILD'S DETAILS -->
+              <div class="mb-3">
+
+                <!-- DEPENDANT CHILD'S ques -->
+                <div class="mb-3">
+                  <label class="form-label d-block">
+                    Do you Have Dependent Children?
+                  </label>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="dependentChildren" id="dependentChildrenYes">
+                    <label class="form-check-label" for="dependentChildrenYes">
+                      yes
+                    </label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="dependentChildren" id="dependentChildrenNo">
+                    <label class="form-check-label" for="dependentChildrenNo">
+                      No
+                    </label>
+                  </div>
+
+                </div>
+
+                <!-- DEPENDANT CHILD'S details -->
+                <div id="dependantChildDetails" style="display: none;">
+                  <h5 class="mb-3">Dependant Child's Details</h5>
                   <div class="table-responsive">
                     <table class="table table-bordered table-sm align-middle">
                       <thead>
