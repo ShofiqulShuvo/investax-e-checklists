@@ -22,946 +22,746 @@
     />
 
     <link rel="stylesheet" href="./css/pdf-style.css" />
+
+    <style>
+      /* table th, table td {
+        font-size: 12px;
+      } */
+
+      .content {
+        max-width: unset;
+      }
+    </style>
   </head>
   <body>
-    <div class="container">
+    <div class="container-fluid">
       <div class="content">
         <h1>Client Information Form</h1>
         <div class="results">
-          <!-- Services -->
-          <fieldset>
-            <legend>Services</legend>
-            <div class="row g-3">
+
+
+          <!-- Client Information -->
+          <fieldset class="px-4">
+            <legend class="mb-4">Client Information</legend>
+
+            <!-- Client Details -->
+            <div class="mb-3">
+              <div class="property mb-1">Client Details</div>
+              <div class="row g-3">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th scope="col">Name</th>
+                      <th scope="col">Age</th>
+                      <th scope="col">Sex</th>
+                      <th scope="col">Relationship</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Mr Mofij Uddin</td>
+                      <td>99</td>
+                      <td>Man</td>
+                      <td>Child</td>
+                    </tr>
+                    <tr>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Contact Details -->
+            <div class="mb-3">
+              <div class="property mb-1">Contact Details</div>
+              <div class="row g-3">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th scope="col">Name</th>
+                      <th scope="col">Mobile</th>
+                      <th scope="col">Email</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Mr Mofij Uddin</td>
+                      <td>99safsd</td>
+                      <td>mofij@revinr.com</td>
+                    </tr>
+                    <tr>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Address -->
+            <div class="mb-3">
+              <div class="property mb-1">Address</div>
+              <div class="row g-3">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th scope="col">Address</th>
+                      <th scope="col">Suburb</th>
+                      <th scope="col">Post Code</th>
+                      <th scope="col">State</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!--  Dependant Child -->
+            <div class="mb-3">
+              <div class="property mb-3">Dependant Child</div>
+              
+              <div class="row g-3">
+
+                <!-- question -->
+                <div class="col-12">
+                  <div class="property">Do you Have Dependent Children?</div>
+                  <div class="value">Yes</div>
+                </div>
+
+                <!-- child list -->
+                <div class="col-12">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Child’s Name</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Sex</th>
+                        <th scope="col">Living at Home</th>
+                        <th scope="col">Salary</th>
+                        <th scope="col">Comments</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                      <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!--   hear about Investax -->
+            <div class="mb-3">
+              <div class="property mb-3">Dependant Child</div>
+              
+              <div class="row g-3">
+
+                <!-- question -->
+                <div class="col-12">
+                  <div class="property">How did you hear about Investax? :</div>
+                  <div class="value">Referred</div>
+                </div>
+
+                <!-- details who referred -->
+                <div class="col-12">
+                  <div class="property">Please provide the details of the person who referred you :</div>
+                  <div class="value">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores, quo sunt. Nihil soluta delectus illo minus unde ab! Hic laboriosam mollitia doloremque suscipit provident quaerat non cumque minima! Possimus minima blanditiis fugiat accusantium rem quam odit alias necessitatibus aperiam ullam optio, cum sequi vitae et nihil facilis officia nam nulla!
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+
+          </fieldset>
+
+          
+          <!-- Income Details -->
+          <fieldset class="px-4">
+            <legend class="mb-4">Income Details</legend>
+
+            <!-- employment -->
+            <div class="mb-3">
+              <div class="row g-3">
+                <!-- question -->
+                <div class="col-12">
+                  <div class="property">Are you or your partner currently employed?</div>
+                  <div class="value">Yes</div>
+                </div>
+
+                <!-- Tell us about your employment -->
+                <div class="col-12">
+                  <div class="property mb-2">
+                    Tell us about your employment
+                  </div>
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Buisness Name</th>
+                        <th scope="col">Job Description</th>
+                        <th scope="col">Salary</th>
+                        <th scope="col">Bonuses</th>
+                        <th scope="col">Additional Super Contributions</th>
+                        <th scope="col">Comments</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                      <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- Business -->
+            <div class="mb-3">
+              <div class="row g-3">
+                <!-- question -->
+                <div class="col-12">
+                  <div class="property">
+                    Do You Operate a Business?
+                  </div>
+                  <div class="value">Yes</div>
+                </div>
+
+                <!-- Tell us about your employment -->
+                <div class="col-12">
+                  <div class="property mb-1">
+                    Tell us about your business
+                  </div>
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">
+                          Business Name
+                        </th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Corporate Structure</th>
+                        <th scope="col">Ownership Details</th>
+                        <th scope="col">Turnover</th>
+                        <th scope="col">Business Assets</th>
+                        <th scope="col">Value of Business Assets</th>
+                        <th scope="col">No. of Employees</th>
+                        <th scope="col">Date Started</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                      <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+          </fieldset>
+
+          
+          <!-- Property Investment Details -->
+          <fieldset class="px-4">
+            <legend class="mb-4">Property Investment Details</legend>
+
+            <!-- Property  -->
+            <div class="mb-3">
+              <div class="row g-3">
+                <!-- question -->
+                <div class="col-12">
+                  <div class="property">Do You have any Property (Including your Principal Place of Residence)?</div>
+                  <div class="value">Yes</div>
+                </div>
+
+                <!-- Property Details -->
+                <div class="col-12">
+                  <div class="property mb-2">
+                    Property Details
+                  </div>
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Suburb</th>
+                        <th scope="col">State</th>
+                        <th scope="col">Ownership Details</th>
+                        <th scope="col">Property Type</th>
+                        <th scope="col">Purchase Price</th>
+                        <th scope="col">Current Market Value</th>
+                        <th scope="col">Debt</th>
+                        <th scope="col">Lender Name</th>
+                        <th scope="col">Weekly Rental Income</th>
+                        <th scope="col">Depreciation Report Available</th>
+                        <th scope="col">Have you lived in this property?</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                      <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- property owned by a Trust -->
+            <div class="mb-3">
+              <div class="row g-3">
+                <!-- question -->
+                <div class="col-12">
+                  <div class="property">
+                    Do you have a property owned by a Trust Structure?
+                  </div>
+                  <div class="value">Yes</div>
+                </div>
+
+                <!-- Tell us about your employment -->
+                <div class="col-12">
+                  <div class="property mb-1">
+                    Details of property owned by a Trust Structure
+                  </div>
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">
+                          Name of The Trust
+                        </th>
+                        <th scope="col">Type of Trust</th>
+                        <th scope="col">Property Type</th>
+                        <th scope="col">State</th>
+                        <th scope="col">Date of Purchase</th>
+                        <th scope="col">Purchase Price</th>
+                        <th scope="col">Current Market Value</th>
+                        <th scope="col">Debt </th>
+                        <th scope="col">Lender Name</th>
+                        <th scope="col">Name	Weekly Rental Income</th>
+                        <th scope="col">Depreciation Report Available</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                      <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- future plans for property investment -->
+            <div class="col-12">
+              <div class="property">
+                What are your future plans for property investment?
+              </div>
+              <div class="value">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo perferendis provident magni distinctio sit debitis, eligendi maiores! Dolorum, praesentium tempore.
+              </div>
+            </div>
+
+          </fieldset>
+
+          
+          <!-- Shares and Managed Funds Details -->
+          <fieldset class="px-4">
+            <legend class="mb-4">Shares and Managed Funds Details</legend>
+
+            <!-- Shares or Managed Fund  -->
+            <div class="mb-3">
+              <div class="row g-3">
+                <!-- question -->
+                <div class="col-12">
+                  <div class="property">Do you own any Shares or Managed Funds?</div>
+                  <div class="value">Yes</div>
+                </div>
+
+                <!-- Share/Managed Funds Details -->
+                <div class="col-12">
+                  <div class="property mb-2">
+                    Share/Managed Funds Details
+                  </div>
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Ownership Details</th>
+                        <th scope="col">Date of Purchase</th>
+                        <th scope="col">Total Value of Purchase</th>
+                        <th scope="col">Current Market Value</th>
+                        <th scope="col">Debt</th>
+                        <th scope="col">Loan Type</th>
+                        <th scope="col">Equity</th>
+                        <th scope="col">Holding or selling?</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                      <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                
+              </div>
+            </div>
+
+            <!-- What are your future shares or managed funds investment plans? -->
+            <div class="mb-3">
+              <div class="property">What are your future shares or managed funds investment plans?</div>
+              <div class="value">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere voluptate recusandae maxime nesciunt dolor a consectetur iure laborum fugiat odio?</div>
+            </div>
+
+            <!-- Would you like an analysis of your future shares and managed funds plans by a Financial Planner?: -->
+            <div class="mb-3">
+              <div class="property">Would you like an analysis of your future shares and managed funds plans by a Financial Planner?:</div>
+              <div class="value">Never</div>
+            </div>
+
+
+            <!-- Comments -->
+            <div class="mb-3">
+              <div class="property">Comments</div>
+              <div class="value">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere voluptate recusandae maxime nesciunt dolor a consectetur iure laborum fugiat odio?</div>
+            </div>
+
+
+          </fieldset>
+
+          
+          <!-- Other Assets and Liabilities Details -->
+          <fieldset class="px-4">
+            <legend class="mb-4">Other Assets and Liabilities Details</legend>
+
+            <!-- Lifestyle Assets -->
+            <div class="mb-4">
+              <div class="property mb-2">
+                Lifestyle Assets
+              </div>
               <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">Lifestyle Assets</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Value </th>
+                    <th scope="col">Owner</th>
+                  </tr>
+                </thead>
                 <tbody>
                   <tr>
-                    <th scope="col">Strategic Consultation</th>
+                    <th>Home Contents</th>
+                    <td>-</td>
+                    <td>-</td>
                     <td>-</td>
                   </tr>
                   <tr>
-                    <th scope="col">Advanced Strategic Consultation</th>
+                    <th>Motor Vehicle(s)</th>
+                    <td>-</td>
+                    <td>-</td>
                     <td>-</td>
                   </tr>
                   <tr>
-                    <th scope="col">Total (Inc GST)</th>
+                    <th>Other Vehicle(s)</th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <th>Collectibles/Antiques</th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <th>Other</th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <th>-</th>
+                    <td>-</td>
+                    <td>-</td>
                     <td>-</td>
                   </tr>
                 </tbody>
               </table>
             </div>
-          </fieldset>
 
-          <!--    Payment Details -->
-          <fieldset>
-            <legend>Payment Details</legend>
-            <div class="row g-3">
-              <!-- Card -->
-              <div class="col-12 col-md-6">
-                <div class="result-group">
-                  <div class="property">Card</div>
-                  <div class="value">Credit Card</div>
-                </div>
+            <!-- Superannuation Assets -->
+            <div class="mb-4">
+              <div class="property mb-2">
+                Superannuation Assets
               </div>
-
-              <!-- Card Number -->
-              <div class="col-12 col-md-6">
-                <div class="result-group">
-                  <div class="property">Card Number</div>
-                  <div class="value">6542143</div>
-                </div>
-              </div>
-
-              <!-- Expiry -->
-              <div class="col-12 col-md-6">
-                <div class="result-group">
-                  <div class="property">Expiry</div>
-                  <div class="value">6542143</div>
-                </div>
-              </div>
-
-              <!-- Name on Card -->
-              <div class="col-12 col-md-6">
-                <div class="result-group">
-                  <div class="property">Name on Card</div>
-                  <div class="value">6542143</div>
-                </div>
-              </div>
-
-              <!-- Amount($) -->
-              <div class="col-12 col-md-6">
-                <div class="result-group">
-                  <div class="property">Amount($)</div>
-                  <div class="value">6542143</div>
-                </div>
-              </div>
-
-              <!-- CVV -->
-              <div class="col-12 col-md-6">
-                <div class="result-group">
-                  <div class="property">CVV</div>
-                  <div class="value">6542143</div>
-                </div>
-              </div>
-            </div>
-          </fieldset>
-
-          <!--    Cheque Direct Deposit -->
-          <fieldset>
-            <legend>Cheque Direct Deposit</legend>
-            <div class="row g-3">
-              <!-- BSB: -->
-              <div class="col-12 col-md-6">
-                <div class="result-group">
-                  <div class="property">BSB</div>
-                  <div class="value">6542143</div>
-                </div>
-              </div>
-
-              <!-- Account Number -->
-              <div class="col-12 col-md-6">
-                <div class="result-group">
-                  <div class="property">Account Number</div>
-                  <div class="value">6542143</div>
-                </div>
-              </div>
-
-              <!-- Account Name -->
-              <div class="col-12 col-md-6">
-                <div class="result-group">
-                  <div class="property">Account Name</div>
-                  <div class="value">6542143</div>
-                </div>
-              </div>
-
-              <!-- Reference -->
-              <div class="col-12 col-md-6">
-                <div class="result-group">
-                  <div class="property">Reference</div>
-                  <div class="value">6542143</div>
-                </div>
-              </div>
-            </div>
-          </fieldset>
-
-          <!--   Client Details -->
-          <fieldset>
-            <legend>Client Details</legend>
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th scope="col">Title</th>
-                  <th scope="col">First Name</th>
-                  <th scope="col">Surname</th>
-                  <th scope="col">D.O.B</th>
-                  <th scope="col">Age</th>
-                  <th scope="col">Sex (M/F)</th>
-                  <th scope="col">Relationship</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                </tr>
-              </tbody>
-            </table>
-          </fieldset>
-
-          <!--  Address(Home, Postal) -->
-          <fieldset>
-            <legend>Address(Home, Postal)</legend>
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th scope="col">Address</th>
-                  <th scope="col">Suburb</th>
-                  <th scope="col">State</th>
-                  <th scope="col">Post Code</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                </tr>
-              </tbody>
-            </table>
-          </fieldset>
-
-          <!--  Address Details -->
-          <fieldset>
-            <legend>Address Details</legend>
-            <table class="table table-bordered">
-              <tbody>
-                <tr>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <td>-</td>
-                </tr>
-              </tbody>
-            </table>
-          </fieldset>
-
-          <!--  Contact Details -->
-          <fieldset>
-            <legend>Contact Details</legend>
-            <table class="table table-bordered">
-              <thead>
-                <th>Phone</th>
-                <th>Work</th>
-                <th>Mobile</th>
-                <th>Email Address</th>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                </tr>
-              </tbody>
-            </table>
-          </fieldset>
-
-          <!--  Dependant Child’s Details -->
-          <fieldset>
-            <legend>Dependant Child's Details</legend>
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th>Child's Name</th>
-                  <th>Age</th>
-                  <th>Sex</th>
-                  <th>Living at home (Y/N)</th>
-                  <th>Salary</th>
-                  <th>Comments</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                </tr>
-              </tbody>
-            </table>
-          </fieldset>
-
-          <!--   How did you hear about Investax -->
-          <fieldset>
-            <div class="row g-3">
-              <div class="col-12">
-                <div class="result-group">
-                  <div class="property">How did you hear about Investax?</div>
-                  <div class="value">Website</div>
-                </div>
-              </div>
-
-              <div class="col-12">
-                <div class="result-group">
-                  <div class="property">
-                    If Friend /Family, have they had a Financial Strategic
-                    Consultation?
-                  </div>
-                  <div class="value">Yes</div>
-                </div>
-              </div>
-
-              <div class="col-12">
-                <div class="result-group">
-                  <div class="property">Other</div>
-                  <div class="value">Website</div>
-                </div>
-              </div>
-            </div>
-          </fieldset>
-
-          <!-- Income Details -->
-          <fieldset>
-            <legend>Income Details</legend>
-
-            <!--  Tell us about your business -->
-            <div class="row g-3">
-              <div class="col-12">
-                <p class="lead fs-5 mb-2 fw-bold">
-                  Tell us about your business
-                </p>
-              </div>
-              <div class="responsive-table">
-                <table class="table table-bordered">
-                  <thead>
-                    <tr>
-                      <th>Business Name</th>
-                      <th>Description</th>
-                      <th>Corporate Structure</th>
-                      <th>Ownership Details</th>
-                      <th>Turnover</th>
-                      <th>Business Assets</th>
-                      <th>Value of Business Assets</th>
-                      <th>No. of Employees</th>
-                      <th>Date Started</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">Superannuation Assets</th>
+                    <th scope="col">Superannuation Provider (SMSF, Industry, Retail, etc)</th>
+                    <th scope="col">Insurance Yes / No </th>
+                    <th scope="col">Current Value</th>
+                    <th scope="col">Owner</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>Superannuation 1</th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <th>Superannuation 2</th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <th>Superannuation 3</th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <th>Superannuation 4</th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <th>Total</th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
 
-            <!--  Tell us about your employment -->
-            <div class="row g-3">
-              <div class="col-12">
-                <p class="lead fs-5 mb-2 fw-bold">
-                  Tell us about your employment
-                </p>
+            <!-- Liabilities -->
+            <div class="mb-4">
+              <div class="property mb-2">
+                Liabilities
               </div>
-              <div class="responsive-table">
-                <table class="table table-bordered">
-                  <thead>
-                    <tr>
-                      <th>Client Name</th>
-                      <th>Job Description</th>
-                      <th>Date Started</th>
-                      <th>Salary</th>
-                      <th>Bonuses</th>
-                      <th>Qualifications</th>
-                      <th>Additional Super Contributions</th>
-                      <th>Comments</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">Liabilities</th>
+                    <th scope="col">Balance Owing</th>
+                    <th scope="col">Lender </th>
+                    <th scope="col">Interest Rate</th>
+                    <th scope="col">Repayment Amount</th>
+                    <th scope="col">Repayment (P&I-I/O)</th>
+                    <th scope="col">Owner</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>Mortgage</th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <th>Personal loan(s)</th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <th>Credit Card(s)</th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <th>Credit Card(s)</th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <th>Business Loan(s)</th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <th>Lease(s)/rental agreement</th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <th>Other</th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
+
           </fieldset>
 
-          <!-- Property Investment Details -->
-          <fieldset>
-            <legend>Property Investment Details</legend>
+          
 
-            <!--  Tell us about your business -->
-            <div class="row g-3">
-              <div class="col-12">
-                <p class="lead fs-5 mb-2 fw-bold">
-                  Property Details (include your Principal Place of Residence)
-                </p>
-              </div>
-              <div class="responsive-table">
-                <table class="table table-bordered">
-                  <thead>
-                    <tr>
-                      <th>Suburb</th>
-                      <th>State</th>
-                      <th>Ownership Details</th>
-                      <th>Property Type</th>
-                      <th>Date of Purchase</th>
-                      <th>Purchase Price</th>
-                      <th>Current Market Value</th>
-                      <th>Debt</th>
-                      <th>Loan Type/ Lender</th>
-                      <th>Equity</th>
-                      <th>Weekly Rental Income</th>
-                      <th>Depreciation Claimed?</th>
-                      <th>Have you lived in this property?</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            <div class="row g-3">
-              <!-- future property investment plans -->
-              <div class="col-12">
-                <div class="result-group">
-                  <div class="property">
-                    What are your future property investment plans?
-                  </div>
-                  <div class="value">Lorem ipsum dolor sit amet.</div>
-                </div>
-              </div>
-
-              <!-- Comments -->
-              <div class="col-12">
-                <div class="result-group">
-                  <div class="property">Comments</div>
-                  <div class="value">Lorem ipsum dolor sit amet.</div>
-                </div>
-              </div>
-            </div>
-          </fieldset>
-
-          <!-- Shares and Managed Funds Details -->
-          <fieldset>
-            <legend>Shares and Managed Funds Details</legend>
-
-            <!--  Tell us about your business -->
-            <div class="row g-3">
-              <div class="col-12">
-                <p class="lead fs-5 mb-2 fw-bold">
-                  Do you own any Shares or Managed Funds?
-                </p>
-              </div>
-              <div class="responsive-table">
-                <table class="table table-bordered">
-                  <thead>
-                    <tr>
-                      <th>Name</th>
-                      <th>Ownership Details</th>
-                      <th>Date of Purchase</th>
-                      <th>Total Value of Purchase</th>
-                      <th>Current Market Value</th>
-                      <th>Debt</th>
-                      <th>Loan Type</th>
-                      <th>Equity</th>
-                      <th>Dividend</th>
-                      <th>Holding or selling?</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            <div class="row g-3">
-              <!-- future shares or managed funds -->
-              <div class="col-12">
-                <div class="result-group">
-                  <div class="property">
-                    What are your future shares or managed funds investment
-                    plans?
-                  </div>
-                  <div class="value">Lorem ipsum dolor sit amet.</div>
-                </div>
-              </div>
-
-              <!-- analysis of your future shares -->
-              <div class="col-12">
-                <div class="result-group">
-                  <div class="property">
-                    Would you like an analysis of your future shares and managed
-                    funds plans by a Chan & Naylor Financial Planner?
-                  </div>
-                  <div class="value">No</div>
-                </div>
-              </div>
-
-              <!-- Comments -->
-              <div class="col-12">
-                <div class="result-group">
-                  <div class="property">Comments</div>
-                  <div class="value">
-                    Lorem ipsum dolor sit amet consectetur.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </fieldset>
-
-          <!-- Other Assets and Liabilities Details -->
-          <fieldset>
-            <legend>Other Assets and Liabilities Details</legend>
-
-            <!--  Lifestyle Assets -->
-            <div class="row g-3">
-              <div class="col-12">
-                <p class="lead fs-5 mb-2 fw-bold">Lifestyle Assets</p>
-              </div>
-              <div class="responsive-table">
-                <table class="table table-bordered">
-                  <thead>
-                    <tr>
-                      <th>Lifestyle Assets</th>
-                      <th>Description</th>
-                      <th>Value</th>
-                      <th>Owner</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th>Lifestyle Assets</th>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th>Motor Vehicle(s)</th>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th>Other Vehicle(s)</th>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th>Collectibles/Antiques</th>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th>Other</th>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th>Total</th>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            <!--  Superannuation Assets -->
-            <div class="row g-3">
-              <div class="col-12">
-                <p class="lead fs-5 mb-2 fw-bold">Superannuation Assets</p>
-              </div>
-              <div class="responsive-table">
-                <table class="table table-bordered">
-                  <thead>
-                    <tr>
-                      <th>Superannuation Assets</th>
-                      <th>Superannuation Provider</th>
-                      <th>Insurance Yes / No</th>
-                      <th>Current Value</th>
-                      <th>Owner</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th>Superannuation 1</th>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th>Superannuation 2</th>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th>Superannuation 3</th>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th>Superannuation 4</th>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th>Total</th>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            <!--  Liabilities -->
-            <div class="row g-3">
-              <div class="col-12">
-                <p class="lead fs-5 mb-2 fw-bold">Liabilities</p>
-              </div>
-              <div class="responsive-table">
-                <table class="table table-bordered">
-                  <thead>
-                    <tr>
-                      <th>Liabilities</th>
-                      <th>Balance Owing</th>
-                      <th>Lender</th>
-                      <th>Interest Rate</th>
-                      <th>Repayment Amount</th>
-                      <th>Repayment (P&I-I/O)</th>
-                      <th>Owner</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th>Mortgage</th>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th>Personal loan(s)</th>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th>Credit Card(s)</th>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th>Credit Card(s)</th>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th>Business Loan(s)</th>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th>Lease(s)/rental agreement</th>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th>Other</th>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th>Total</th>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </fieldset>
-
-          <!-- Objectives -->
-          <fieldset>
-            <legend>Objectives</legend>
-
-            <div class="row g-3">
-              <!-- In what areas -->
-              <div class="col-12">
-                <div class="result-group">
-                  <div class="property">
-                    In what areas do you require assistance and what's important
-                    about money to you?
-                  </div>
-                  <div class="value">Lorem ipsum dolor sit amet.</div>
-                </div>
-              </div>
-
-              <!-- analysis of your future shares -->
-              <div class="col-12">
-                <div class="result-group">
-                  <div class="property">
-                    Please describe what you would like to achieve over the
-                    following timeframes
-                  </div>
-                  <div class="value">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Sint, veniam?
-                  </div>
-                </div>
-              </div>
-
-              <!-- Short Term (Immediate) -->
-              <div class="col-12">
-                <div class="result-group">
-                  <div class="property">Short Term (Immediate)</div>
-                  <div class="value">
-                    Lorem ipsum dolor sit amet consectetur.
-                  </div>
-                </div>
-              </div>
-
-              <!-- Medium Term (2 - 5 years) -->
-              <div class="col-12">
-                <div class="result-group">
-                  <div class="property">Medium Term (2 - 5 years)</div>
-                  <div class="value">
-                    Lorem ipsum dolor sit amet consectetur.
-                  </div>
-                </div>
-              </div>
-
-              <!-- Long Term ( 5yrs +) -->
-              <div class="col-12">
-                <div class="result-group">
-                  <div class="property">Long Term ( 5yrs +)</div>
-                  <div class="value">
-                    Lorem ipsum dolor sit amet consectetur.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </fieldset>
-
-          <!-- Insurances & Wills -->
-          <fieldset>
-            <legend>Insurances & Wills</legend>
-
-            <!--  Insurances - Do you have -->
-            <div class="row g-3">
-              <div class="col-12">
-                <p class="lead fs-5 mb-2 fw-bold">
-                  Insurances - Do you have
-                </p>
-              </div>
-              <div class="responsive-table">
-                <table class="table table-bordered">
-                  <tbody>
-                    <tr>
-                      <th>Life Insurance</th>
-                      <td>-</td>
-                      <th>Approximate Insured Value</th>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th>Income Protection?</th>
-                      <td>-</td>
-                      <th>Approximate Insured Value</th>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <th>Trauma Insurance?</th>
-                      <td>-</td>
-                      <th>Approximate Insured Value</th>
-                      <td>-</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            <div class="row g-3">
-              <!-- analysis of your future -->
-              <div class="col-12">
-                <div class="result-group">
-                  <div class="property">
-                    Would you like an analysis of your future shares and managed funds plans by a Chan & Naylor Financial Planner?
-                  </div>
-                  <div class="value">Yes</div>
-                </div>
-              </div>
-
-              <!-- Will – Do you have a will? -->
-              <div class="col-12">
-                <div class="result-group">
-                  <div class="property">
-                    Will - Do you have a will?
-                  </div>
-                  <div class="value">No</div>
-                </div>
-              </div>
-
-              <!-- Do you Have Enduring Powers of Attorney? -->
-              <div class="col-12">
-                <div class="result-group">
-                  <div class="property">
-                    Do you Have Enduring Powers of Attorney?
-                  </div>
-                  <div class="value">No</div>
-                </div>
-              </div>
-
-              <!-- Notes and Diagrams -->
-              <div class="col-12">
-                <div class="result-group">
-                  <div class="property">Notes and Diagrams</div>
-                  <div class="value">
-                    Lorem ipsum dolor sit amet consectetur.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </fieldset>
+          
         </div>
       </div>
     </div>

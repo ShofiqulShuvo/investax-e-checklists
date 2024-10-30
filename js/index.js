@@ -296,3 +296,106 @@ window.addEventListener("resize", setMenuBtnBehavior);
 
 // Initial call to set up the menu behavior based on current screen size
 setMenuBtnBehavior();
+
+
+
+
+
+
+// Function to apply the input restriction to all number inputs
+function applyNumberInputRestriction() {
+  document.querySelectorAll('input[type="number"]').forEach(input => {
+    input.addEventListener('input', function () {
+      this.value = this.value.replace(/[^0-9.]/g, ''); // Allow only numbers and dots
+    });
+  });
+}
+
+// Initial call to apply the restriction on page load
+applyNumberInputRestriction();
+
+// Set up a MutationObserver to watch for changes in the DOM
+const observer = new MutationObserver((mutations) => {
+  mutations.forEach(() => {
+    // Reapply the input restriction in case new inputs are added to the DOM
+    applyNumberInputRestriction();
+  });
+});
+
+// Configuration for the observer: watch for additions of child nodes or subtree changes
+const config = { childList: true, subtree: true };
+
+// Start observing the document body for DOM changes
+observer.observe(document.body, config);
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Set the file size limit (in bytes)
+  const fileSizeLimit = 50 * 1024 * 1024; // 50 MB
+
+  // Function to handle file selection and size validation
+  function setupFileInput(input) {
+      input.addEventListener('change', function() {
+          // Get the selected file
+          const file = input.files[0];
+
+          // Remove any existing error message
+          const existingErrorMsg = input.nextElementSibling;
+          if (existingErrorMsg && existingErrorMsg.classList.contains('error')) {
+              existingErrorMsg.remove(); // Remove the existing error message if present
+          }
+
+          // Check if the file size exceeds the limit
+          if (file && file.size > fileSizeLimit) {
+              // Create and display the error message
+              const errorMsg = document.createElement('p'); // Create a new <p> element
+              errorMsg.classList.add('error'); // Add a class for easy identification
+              errorMsg.style.color = 'red'; // Set the text color to red
+              errorMsg.textContent = "File size exceeds 50 MB. Please upload a smaller file."; // Set the error message text
+
+              // Insert the error message after the input element in the DOM
+              input.parentNode.insertBefore(errorMsg, input.nextSibling); // Place the error message after the file input
+              input.value = ''; // Clear the file input to prevent submission of the invalid file
+          }
+      });
+  }
+
+  // Initial setup for existing file input elements
+  const initialFileInputs = document.querySelectorAll('input[type="file"]');
+  initialFileInputs.forEach(setupFileInput);
+
+  // Create a MutationObserver to monitor changes in the DOM
+  const mutationobserver = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+          if (mutation.type === 'childList') {
+              mutation.addedNodes.forEach((node) => {
+                  // Check if the added node is an input of type file
+                  if (node.nodeType === Node.ELEMENT_NODE && node.tagName === 'INPUT' && node.type === 'file') {
+                      setupFileInput(node); // Attach the event listener to the new file input
+                  }
+
+                  // If the added node contains file inputs
+                  if (node.nodeType === Node.ELEMENT_NODE) {
+                      const newFileInputs = node.querySelectorAll('input[type="file"]');
+                      newFileInputs.forEach(setupFileInput); // Attach event listeners to new file inputs
+                  }
+              });
+          }
+      });
+  });
+
+  // Start observing the document for changes in the child elements
+  mutationobserver.observe(document.body, { childList: true, subtree: true });
+});
+
+
+
